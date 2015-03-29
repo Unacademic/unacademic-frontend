@@ -1,0 +1,127 @@
+@font-face {
+  font-family: NittyNormal;
+  src: url('./NN.woff') format('woff');
+}
+
+@font-face {
+  font-family: NittyBold;
+  src: url('./NB.woff') format('woff');
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+  }
+
+button {
+  font-family: NittyBold;
+  box-sizing: border-box;
+  font-size: 13px;
+  height: calc(var(--baseUnit) * 1.5);
+  background: var(--inverseColor);
+  color: var(--baseColor);
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border: none;
+}
+
+table {
+  font-size: 13px;
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  box-sizing: border-box;
+  border: none;
+  height: calc(var(--baseUnit) * 1.5);
+
+
+}
+
+th {
+  font-weight: bold;
+  color: var(--inverseColor);
+  background-color: var(--baseColor);
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  width: 50%;
+}
+
+component(app){
+  display: flex;
+  font-family: NittyNormal;
+  height: 100%;
+}
+
+component(cards){
+  display: flex;
+  overflow-x: scroll;
+  align-items: flex-start;
+  height: 100%;
+}
+
+component(main){
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--lightBaseColor);
+  flex-direction: column;
+  height: 100%;
+}
+
+component(timeline){
+  height: 200px;
+  background-color: var(--betweenBaseColor);
+}
+
+component(historyButtons){
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: (100%/2);
+    height: calc(var(--baseUnit) * 2);
+    &:hover {
+      color: var(--highlightColor);
+    }
+    &:disabled {
+      color: var(--lightBaseColor);
+      background-color: var(--betweenBaseColor);
+    }
+  }
+}
+
+component(modeButtons){
+  display: flex;
+  justify-content: space-between;
+  button {
+   width: calc(100%/3);
+  }
+  button.active {
+    background-color: var(--baseColor);
+    color: var(--inverseColor);
+  }
+}
+
+component(authenticate){
+  display: flex;
+  justify-content: space-between;
+  button {
+   width: 100%;
+  }
+  button.active {
+    color: var(--highlightColor);
+  }
+}
+
+
+component(debugger){
+  color: var(--baseColor);
+  background-color: var(--inverseColor);
+}
+

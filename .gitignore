@@ -1,0 +1,4 @@
+/node_modules
+/build
+.ruby-version
+npm-debug.log
