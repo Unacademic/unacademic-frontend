@@ -1,7 +1,7 @@
 module.exports = {
   devtool: '',
   target: 'node',
-  entry: './test/index.js',
+  entry: './test/index.spec.js',
   output: {
     path: __dirname + '/test',
     filename: 'testBundle.js'

@@ -1,7 +1,7 @@
 import Unacademic from '../../../src/scripts/components/app/Unacademic.jsx';
 import { React, TestUtils, fixtures, testdom } from '../../react-helpers';
 
-describe("Layout", () => {
+describe("Unacademic", () => {
   let element;
 
   beforeEach(() => {

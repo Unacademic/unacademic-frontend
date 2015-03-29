@@ -10,9 +10,10 @@ class ModeButton extends React.Component {
 
   render(){
     let classes = this.props.current === this.props.mode  ? 'active' : null;
+    let ref = this.props.mode + 'Button';
 
     return (
-      <button className={ classes } onClick={ this.switchMode.bind(this) }>
+      <button ref={ ref } className={ classes } onClick={ this.switchMode.bind(this) }>
         { _.capitalize(this.props.mode) }
       </button>
     )

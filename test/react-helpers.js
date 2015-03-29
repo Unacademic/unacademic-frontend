@@ -1,11 +1,12 @@
 import chai from 'chai';
 import R from 'ramda';
-import chaiString from 'chai-string';
+import sinonChai from "sinon-chai"
+import sinon from "sinon";
 import React from 'react/addons';
 import { jsdom } from 'jsdom';
 
-chai.use(chaiString);
 let expect = chai.expect;
+chai.use(sinonChai);
 
 class Item {
   constructor(id){
@@ -28,6 +29,7 @@ let appState = { user, mode, history };
 let fixtures = { appState, model };
 
 global.expect = expect;
+global.sinon = sinon;
 
 function testdom(markup){
   if (typeof document !== 'undefined') return

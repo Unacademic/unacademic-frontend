@@ -50,7 +50,7 @@
     "react": "^0.13.0",
     "react-hot-loader": "^1.1.5",
     "react-tools": "^0.13.0-rc1",
-    "sinon": "^1.12.2",
+    "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",
     "sinon-chai": "^2.7.0",
     "style-loader": "^0.8.3",
     "superagent": "^0.21.0",
