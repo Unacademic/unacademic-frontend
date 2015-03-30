@@ -1,34 +1,38 @@
 import { React, TestUtils, fixtures } from '../../react-helpers';
-import ControlPanel from '../../../src/scripts/components/sidebar/controlPanel/ControlPanel.jsx';
+import ControlPanel from '../../../src/components//sidebar/controlPanel/ControlPanel.jsx';
 
 describe("Control Panel", () => {
-  let component;
+  let container;
   let { appState } = fixtures;
 
   describe("without user", () => {
     beforeEach(() => {
-      component = React.renderToString(
-        <ControlPanel appState={ appState }/>
-      );
+      container = renderElement(appState);
     })
 
     it("displays the signin button", () => {
-      expect(component).not.to.match(/Browse/);
-      expect(component).to.match(/Sign In/);
+      expect(container).not.to.match(/Browse/);
+      expect(container).to.match(/Sign In/);
     });
   });
 
   describe("with user", () => {
     beforeEach(() => {
       appState.user = 'yeehaa';
-      component = React.renderToString(
+      container = React.renderToString(
         <ControlPanel appState={ appState }/>
       );
     })
 
     it("displays the mode buttons", () => {
-      expect(component).to.match(/Browse/);
-      expect(component).not.to.match(/Sign In/);
+      expect(container).to.match(/Browse/);
+      expect(container).not.to.match(/Sign In/);
     });
   });
 });
+
+function renderElement(appState){
+  return React.renderToString(
+    <ControlPanel appState={ appState }/>
+  );
+}

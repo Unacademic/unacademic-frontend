@@ -9,8 +9,8 @@ class AuthenticateButton extends React.Component {
 
   render() {
     return (
-      <section className="authenticate">
-        <button ref="authenticateButton" onClick={ this.authenticate }>Sign In</button>
+      <section className="authentication-panel">
+        <button className="authentication-button" onClick={ this.authenticate }>Sign In</button>
       </section>
     )
   }

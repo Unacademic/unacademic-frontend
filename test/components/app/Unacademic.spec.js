@@ -1,4 +1,4 @@
-import Unacademic from '../../../src/scripts/components/app/Unacademic.jsx';
+import Unacademic from '../../../src/components/app/Unacademic.jsx';
 import { React, TestUtils, fixtures, testdom } from '../../react-helpers';
 
 describe("Unacademic", () => {

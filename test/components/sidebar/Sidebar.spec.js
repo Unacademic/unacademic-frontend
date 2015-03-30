@@ -1,5 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import Sidebar from '../../../src/scripts/components/sidebar/Sidebar.jsx';
+import Sidebar from '../../../src/components/sidebar/Sidebar.jsx';
 
 describe("Sidebar", () => {
   let element;

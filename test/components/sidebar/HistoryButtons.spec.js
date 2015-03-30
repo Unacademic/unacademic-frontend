@@ -1,41 +1,104 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import AuthenticateButton from '../../../src/scripts/components/sidebar/controlPanel/AuthenticateButton.jsx';
-import Actions from '../../../src/scripts/actions/index.js';
+import HistoryButtons from '../../../src/components/sidebar/controlPanel/HistoryButtons.jsx';
+import Actions from '../../../src/actions/index.js';
 
-describe("Authenticate Button", () => {
+describe("HistoryButtons Button", () => {
   let element;
-  let button;
+  let revertHistoryButton, forwardHistoryButton;
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
-    [element, button] = renderButton();
   })
 
   describe("initial render", () => {
-    it("has the right class", () => {
-      expect(element.className).to.equal('authenticate');
+
+    beforeEach(() => {
+      [element, revertHistoryButton, forwardHistoryButton] = renderButtons();
+    });
+
+    it("has the right class on the container", () => {
+      expect(element.className).to.equal('historyButtons');
     });
   });
 
-  describe("On Click", () => {
+  describe("place in history", () => {
 
-    beforeEach(() => {
-      Actions.authenticate = sinon.spy();
-      React.addons.TestUtils.Simulate.click(button);
+    describe("when there is no earlier and no later state", () => {
+      it("has both buttons disabled", () => {
+        [, revertHistoryButton, forwardHistoryButton] = renderButtons(true, true);
+        expect(revertHistoryButton.disabled).to.be.true;
+        expect(forwardHistoryButton.disabled).to.be.true;
+      });
     });
 
-    it("should authenticate the user", () => {
-      expect(Actions.authenticate).to.be.calledOnce;
+    describe("when there is no earlier state, but there is a later one", () => {
+      it("has revert history button disabled", () => {
+        [, revertHistoryButton, forwardHistoryButton] = renderButtons(true, false);
+        expect(revertHistoryButton.disabled).to.be.true;
+        expect(forwardHistoryButton.disabled).to.be.false;
+      });
+    });
+
+    describe("when there is an earlier state, but there is no later one", () => {
+      it("has forward history button disabled", () => {
+        [, revertHistoryButton, forwardHistoryButton] = renderButtons(false, true);
+        expect(revertHistoryButton.disabled).to.be.false;
+        expect(forwardHistoryButton.disabled).to.be.true;
+      });
+    });
+
+    describe("when there is an earlier and a later state", () => {
+      it("has both buttons disabled", () => {
+        [, revertHistoryButton, forwardHistoryButton] = renderButtons(false, false);
+        expect(revertHistoryButton.disabled).to.be.false;
+        expect(forwardHistoryButton.disabled).to.be.false;
+      });
+    });
+  });
+
+  describe("click handling", () => {
+
+    beforeEach(() => {
+      [element, revertHistoryButton, forwardHistoryButton] = renderButtons();
+    });
+
+    describe("when revert history is clicked", () => {
+
+      beforeEach(() => {
+        Actions.revertHistory = sinon.spy();
+        React.addons.TestUtils.Simulate.click(revertHistoryButton);
+      });
+
+      it("calls the right action", () => {
+        expect(Actions.revertHistory).to.be.calledOnce;
+      });
+    });
+
+    describe("when forward history is clicked", () => {
+
+      beforeEach(() => {
+        [element, revertHistoryButton, forwardHistoryButton] = renderButtons();
+      });
+
+      beforeEach(() => {
+        Actions.forwardHistory = sinon.spy();
+        React.addons.TestUtils.Simulate.click(forwardHistoryButton);
+      });
+
+      it("calls the right action", () => {
+        expect(Actions.forwardHistory).to.be.calledOnce;
+      });
     });
   });
 });
 
-function renderButton(){
+function renderButtons(isEarliest, isLatest){
   let container = TestUtils.renderIntoDocument(
-    <AuthenticateButton />
+    <HistoryButtons isEarliest={ isEarliest } isLatest={ isLatest }/>
   );
 
-  let button = React.findDOMNode(container.refs.authenticateButton);
+  let revertHistoryButton = React.findDOMNode(container.refs.revertHistory);
+  let forwardHistoryButton = React.findDOMNode(container.refs.forwardHistory);
   let element = React.findDOMNode(container);
-  return [element, button];
+  return [element, revertHistoryButton, forwardHistoryButton];
 }

@@ -5,14 +5,14 @@ var customProperties = require('postcss-custom-properties');
 var customSelectors = require('postcss-custom-selectors');
 var nested = require('postcss-nested');
 var csstyle = require('csstyle');
-var variables = require('./src/styles/variables');
+var variables = require('./src/components/app/variables');
 
 var config = {
   entry: {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      './src/scripts/entry.jsx'
+      './src/entry.jsx'
     ],
     vendor: [
       'react',
