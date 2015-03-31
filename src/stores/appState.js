@@ -1,5 +1,5 @@
 import BaseStore from './BaseStore';
-import { Map, Stack }  from 'immutable';
+import TimeMachineService from '../services/TimeMachine.js';
 import AppStateConstants from '../constants/AppStateConstants'
 
 let _History;
@@ -14,27 +14,14 @@ let initialState = {
 class AppState extends BaseStore {
 
   constructor(){
-    this.initialState = Map(initialState);
-    this.initializeHistory(initialState);
+    this.TimeMachine = new TimeMachineService(initialState);
     super();
   }
 
-  get _current(){
-    return _History.first();
-  }
-
   get current() {
-    let currentState = this._current.toJS();
-    let isLatest = _Future.size < 1 ? true : false;
-    let isEarliest = _History.size <= 1 ? true : false;
-    currentState.history = { isLatest, isEarliest };
-    return currentState;
+    return this.TimeMachine.current.toJS();
   }
 
-  initializeHistory(){
-    _History = Stack([this.initialState])
-    _Future =  Stack([]);
-  }
 
   authenticate(){
     this.update({ user: 'yeehaa' })
@@ -45,27 +32,18 @@ class AppState extends BaseStore {
   }
 
   revertHistory(){
-    if(_History.size > 1){
-      _Future = _Future.push(this._current);
-      _History = _History.shift();
-      this.emitChange();
-    }
+    let change = this.TimeMachine.revertHistory();
+    return change ? this.emitChange() : null;
   }
 
   forwardHistory(){
-    if(_Future.size > 0){
-      let lastState = _Future.first();
-      _History = _History.push(lastState);
-      _Future = _Future.shift();
-      this.emitChange();
-    }
+    let change = this.TimeMachine.forwardHistory();
+    return change ? this.emitChange() : null;
   }
 
   update(props){
-    props.timestamp = Date.now();
-    _History = _History.push(this._current.merge(props));
-    _Future = Stack([]);
-    this.emitChange();
+    let change = this.TimeMachine.update(props);
+    return change ? this.emitChange() : null;
   }
 
   handleAction(action){
