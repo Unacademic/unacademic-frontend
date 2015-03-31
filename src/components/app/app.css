@@ -108,7 +108,7 @@ component(modeButtons){
   }
 }
 
-component(authenticate){
+component(authentication-panel){
   display: flex;
   justify-content: space-between;
   button {
