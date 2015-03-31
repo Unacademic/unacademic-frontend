@@ -14,11 +14,14 @@ class TimeMachine {
   }
 
   get current() {
+    return this.decorateState(this._current);
+  }
+
+  decorateState(state){
     let isLatest = _Future.size < 1 ? true : false;
     let isEarliest = _History.size <= 1 ? true : false;
     let historyState = Map({ isEarliest, isLatest });
-    let augmentedAppState = this._current.set('history', historyState);
-    return augmentedAppState;
+    return state.set('history', historyState);
   }
 
   initializeHistory(){

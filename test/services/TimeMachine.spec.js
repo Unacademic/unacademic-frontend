@@ -1,7 +1,7 @@
 import TimeMachineService from '../../src/services/TimeMachine.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 
-describe.only("TimeMachineService Service", () => {
+describe("TimeMachineService Service", () => {
   let TimeMachine;
   let currentAppState;
 
