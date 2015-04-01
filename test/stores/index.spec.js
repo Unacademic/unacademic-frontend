@@ -1,1 +1,1 @@
-import './appState.spec.js';
+import './AppState.spec.js';

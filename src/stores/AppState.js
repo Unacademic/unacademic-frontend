@@ -2,9 +2,6 @@ import BaseStore from './BaseStore';
 import TimeMachineService from '../services/TimeMachine.js';
 import AppStateConstants from '../constants/AppStateConstants'
 
-let _History;
-let _Future;
-
 let initialState = {
   timestamp: Date.now(),
   user: undefined,
@@ -13,7 +10,7 @@ let initialState = {
 
 class AppState extends BaseStore {
 
-  constructor(){
+  constructor(TimeMachineService, initialState){
     this.TimeMachine = new TimeMachineService(initialState);
     super();
   }

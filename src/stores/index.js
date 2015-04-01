@@ -1,4 +1,4 @@
-import AppStateStore from './appState';
+import AppStateStore from './AppState';
 import ModelStore from './collection';
 
 let AppState = new AppStateStore();
