@@ -3,7 +3,7 @@ import AppStateConstants from '../../src/constants/AppStateConstants.js';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 import { Map, Stack }  from 'immutable';
 
-describe.only("AppState Store", () => {
+describe("AppState Store", () => {
   let AppState;
   let TimeMachineService;
   let initialState;
@@ -11,7 +11,8 @@ describe.only("AppState Store", () => {
   beforeEach(() => {
     TimeMachineService = sinon.stub();
     initialState = { user: 'yeehaa' }
-    AppState = new AppStateStore(TimeMachineService, initialState);
+    let TimeMachine = new TimeMachineService(initialState);
+    AppState = new AppStateStore(TimeMachine);
   });
 
   describe("initial state", () => {
@@ -83,7 +84,7 @@ describe.only("AppState Store", () => {
           expect(AppState.TimeMachine.revertHistory).called;
         });
 
-        it("should emit a  change", () => {
+        it("should emit a change", () => {
           expect(AppState.emitChange).called;
         });
       });
@@ -100,7 +101,7 @@ describe.only("AppState Store", () => {
           expect(AppState.TimeMachine.revertHistory).called;
         });
 
-        it("should emit a  change", () => {
+        it("should emit a change", () => {
           expect(AppState.emitChange).not.called;
         });
       });
@@ -124,7 +125,7 @@ describe.only("AppState Store", () => {
           expect(AppState.TimeMachine.forwardHistory).called;
         });
 
-        it("should emit a  change", () => {
+        it("should emit a change", () => {
           expect(AppState.emitChange).called;
         });
       });
@@ -141,7 +142,7 @@ describe.only("AppState Store", () => {
           expect(AppState.TimeMachine.forwardHistory).called;
         });
 
-        it("should emit a  change", () => {
+        it("should emit a change", () => {
           expect(AppState.emitChange).not.called;
         });
       });
@@ -153,5 +154,4 @@ function createPropertyStub(object, propertyName){
   Object.defineProperty(object, propertyName, {
     get(){ return { toJS(){ return 'success'; } } }
   });
-
 }

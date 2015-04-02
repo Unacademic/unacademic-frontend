@@ -5,7 +5,6 @@ let _Future;
 
 class TimeMachine {
   constructor(initialState){
-    console.log(initialState);
     this.initialState = Map(initialState);
     this.initializeHistory(initialState);
   }

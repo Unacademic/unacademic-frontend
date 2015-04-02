@@ -1,24 +1,16 @@
 import BaseStore from './BaseStore';
-import TimeMachineService from '../services/TimeMachine.js';
 import AppStateConstants from '../constants/AppStateConstants'
-
-let initialState = {
-  timestamp: Date.now(),
-  user: undefined,
-  mode: 'browse',
-};
 
 class AppState extends BaseStore {
 
-  constructor(TimeMachineService, initialState){
-    this.TimeMachine = new TimeMachineService(initialState);
+  constructor(TimeMachine){
+    this.TimeMachine = TimeMachine;
     super();
   }
 
   get current() {
     return this.TimeMachine.current.toJS();
   }
-
 
   authenticate(){
     this.update({ user: 'yeehaa' })
@@ -61,6 +53,5 @@ class AppState extends BaseStore {
     return true;
   }
 }
-
 
 export default AppState;
