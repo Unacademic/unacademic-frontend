@@ -7,7 +7,6 @@ class Main extends React.Component {
     return (
       <section className="main">
         <Cards collection={ collection } className="cards" />
-        <section className="timeline"></section>
       </section>
     )
   }

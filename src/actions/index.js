@@ -20,6 +20,12 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
+  browseModel(selection){
+    AppDispatcher.dispatch({
+      actionType: AppStateConstants.BROWSE_MODEL,
+      selection: selection
+    });
+  },
   switchMode(mode){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SWITCH_MODE,

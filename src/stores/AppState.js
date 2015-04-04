@@ -1,6 +1,6 @@
 import BaseStore from './BaseStore';
 import AppStateConstants from '../constants/AppStateConstants'
-
+let viewModel;
 class AppState extends BaseStore {
 
   constructor(TimeMachine){
@@ -12,8 +12,17 @@ class AppState extends BaseStore {
     return this.TimeMachine.current.toJS();
   }
 
+  get viewModel() {
+    return viewModel;
+  }
+
   authenticate(){
     this.update({ user: 'yeehaa' })
+  }
+
+  browseModel(selection){
+    console.log(selection);
+    viewModel = selection;
   }
 
   switchMode(mode){
@@ -42,6 +51,9 @@ class AppState extends BaseStore {
         break;
       case AppStateConstants.SWITCH_MODE:
         this.switchMode(action.mode);
+        break;
+      case AppStateConstants.BROWSE_MODEL:
+        this.browseModel(action.selection);
         break;
       case AppStateConstants.REVERT_HISTORY:
         this.revertHistory();

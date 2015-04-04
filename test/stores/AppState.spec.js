@@ -50,6 +50,23 @@ describe("AppState Store", () => {
       });
     });
 
+    describe("browsing a model", () => {
+      let id;
+
+      beforeEach(() => {
+        id = 1;
+        action = {
+          actionType: AppStateConstants.BROWSE_MODEL,
+          selection: { id }
+        }
+        AppState.handleAction(action);
+      });
+
+      it("should set right id for the current model", () => {
+        expect(AppState.viewModel).to.deep.equal({ id });
+      });
+    });
+
     describe("switch between modes", () => {
 
       beforeEach(() => {

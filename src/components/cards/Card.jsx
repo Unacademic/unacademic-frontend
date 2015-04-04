@@ -1,29 +1,17 @@
 import './card.css';
 import React from 'react';
+import CardNav from './CardNav.jsx';
 
 class Card extends React.Component {
   render(){
+    let model = this.props.model;
     return (
       <section className="card">
-        <img src={ this.props.model.image }></img>
+        <img src={ model.image }></img>
         <hgroup>
-          <h1>{ this.props.model.title }</h1>
+          <h1>{ model.title }</h1>
         </hgroup>
-        <section>
-          <p>{ this.props.model.summary }</p>
-        </section>
-        <section>
-          <p>{ this.props.model.curator }</p>
-        </section>
-        <section>
-          { this.props.model.description.map((paragraph, index) => <p key={ index }>{ paragraph }</p>) }
-        </section>
-        <section>
-        </section>
-        <nav>
-          <button>Explore</button>
-          <button>Start</button>
-        </nav>
+        <CardNav id={ model.id }/>
       </section>
     )
   }

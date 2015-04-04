@@ -25,7 +25,7 @@ describe("Main", () => {
     expect(sidebar.length).to.equal(1);
   });
 
-  it("renders the timeline area", () => {
+  it.skip("renders the timeline area", () => {
     let sidebar = element.querySelectorAll('.timeline');
     expect(sidebar.length).to.equal(1);
   });
