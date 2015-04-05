@@ -3,27 +3,9 @@ import AppStateConstants from '../constants/AppStateConstants'
 import API from '../utils/API';
 
 let Actions = {
-  loadedCollection(collection){
-    AppDispatcher.dispatch({
-      actionType: AppStateConstants.LOADED_COLLECTION,
-      collection: collection
-    });
-  },
-  getCollection({ user, mode }){
-    AppDispatcher.dispatch({
-      actionType: AppStateConstants.GET_COLLECTION,
-    });
-    API.getCollection({ user, mode });
-  },
   authenticate(){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.AUTHENTICATE
-    });
-  },
-  browseModel(selection){
-    AppDispatcher.dispatch({
-      actionType: AppStateConstants.BROWSE_MODEL,
-      selection: selection
     });
   },
   switchMode(mode){

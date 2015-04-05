@@ -5,10 +5,12 @@ import { React, TestUtils, fixtures, testdom } from '../../react-helpers';
 describe("CardNav", () => {
   let element;
   let exploreButton;
+  let selection;
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
-    [element, exploreButton] = renderButtons();
+    selection = { id: 1, type: 'Waypoint' };
+    [element, exploreButton] = renderButtons(selection);
   });
 
   describe("render", () => {
@@ -33,15 +35,15 @@ describe("CardNav", () => {
       });
 
       it("calls the right action", () => {
-        expect(Actions.browseModel).to.be.calledWith({ id: 1 });
+        expect(Actions.browseModel).to.be.calledWith(selection);
       });
     });
   });
 });
 
-function renderButtons(isEarliest, isLatest){
+function renderButtons({ type, id }){
   let container = TestUtils.renderIntoDocument(
-    <CardNav id={ 1 }/>
+    <CardNav type={ type } id={ id }/>
   );
 
   let element = React.findDOMNode(container);

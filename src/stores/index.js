@@ -5,11 +5,8 @@ let initialState = {
 };
 
 import TimeMachineService from '../services/TimeMachine.js';
-import AppStateStore from './AppState';
-import ModelStore from './collection';
+import AppStore from './AppState.js';
 
 let TimeMachine = new TimeMachineService(initialState);
-let AppState = new AppStateStore(TimeMachine);
-let Model = new ModelStore();
 
-export { AppState, Model };
+export default new AppStore(TimeMachine);

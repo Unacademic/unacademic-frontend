@@ -2,15 +2,15 @@ import React from 'react';
 import Actions from '../../actions/index.js';
 
 class CardNav extends React.Component {
-  browseModel(id){
-    let selection = { id };
+  browseModel(selection){
     Actions.browseModel(selection);
   }
   render(){
-    let { id } = this.props;
+    let { type, id } = this.props;
+    let selection = { type, id };
     return (
       <nav className="cardNav">
-        <button onClick={ this.browseModel.bind(this, id)} className="browse">
+        <button onClick={ this.browseModel.bind(this, selection)} className="browse">
           Browse
         </button>
       </nav>
@@ -19,7 +19,8 @@ class CardNav extends React.Component {
 }
 
 CardNav.propTypes = {
-  id: React.PropTypes.number.isRequired
+  id: React.PropTypes.number.isRequired,
+  type: React.PropTypes.string.isRequired
 }
 
 

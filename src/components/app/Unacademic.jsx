@@ -7,10 +7,10 @@ import Main from '../main/Main.jsx';
 class Unacademic extends React.Component{
 
   render() {
-    let { model, appState } = this.props;
-    let { collection } = model;
+    let { appState, viewModel } = this.props;
+    let collection = viewModel.collection || [];
     return (
-      <section className="app">
+      <section className='app'>
         <Sidebar appState={ appState }/>
         <Main collection={ collection }/>
       </section>
@@ -19,8 +19,8 @@ class Unacademic extends React.Component{
 };
 
 Unacademic.propTypes = {
-  model: React.PropTypes.object.isRequired,
-  appState: React.PropTypes.object.isRequired
+  appState: React.PropTypes.object.isRequired,
+  viewModel: React.PropTypes.object
 }
 
 export default Unacademic;

@@ -3,3 +3,4 @@
 /test/testBundle.js
 .ruby-version
 npm-debug.log
+**/*.swp

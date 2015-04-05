@@ -1,7 +1,30 @@
 import BaseStore from './BaseStore';
-import AppStateConstants from '../constants/AppStateConstants'
-let viewModel;
-class AppState extends BaseStore {
+import AppStateConstants from '../constants/AppStateConstants';
+
+// MOVE TO SERVICE
+
+import { allWaypoints, userWaypoints } from '../utils/WaypointsFactory';
+
+function setViewModel(appState){
+  let { viewModel, user } = appState;
+
+  if(!viewModel && !user){
+    return {
+      level: 'waypoints',
+      collection: allWaypoints 
+    }
+  }
+
+  if(!viewModel){
+    return {
+      level: 'waypoints',
+      collection: userWaypoints 
+    }
+  }
+
+}
+
+class AppStore extends BaseStore {
 
   constructor(TimeMachine){
     this.TimeMachine = TimeMachine;
@@ -9,11 +32,9 @@ class AppState extends BaseStore {
   }
 
   get current() {
-    return this.TimeMachine.current.toJS();
-  }
-
-  get viewModel() {
-    return viewModel;
+    let appState = this.TimeMachine.current.toJS();
+    let viewModel = setViewModel(appState);
+    return { appState, viewModel };
   }
 
   authenticate(){
@@ -52,9 +73,6 @@ class AppState extends BaseStore {
       case AppStateConstants.SWITCH_MODE:
         this.switchMode(action.mode);
         break;
-      case AppStateConstants.BROWSE_MODEL:
-        this.browseModel(action.selection);
-        break;
       case AppStateConstants.REVERT_HISTORY:
         this.revertHistory();
         break;
@@ -66,4 +84,4 @@ class AppState extends BaseStore {
   }
 }
 
-export default AppState;
+export default AppStore;
