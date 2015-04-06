@@ -3,61 +3,34 @@ import AppStoreConstants from '../../src/constants/AppStateConstants.js';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 import { Map, Stack }  from 'immutable';
 
-describe("AppStore Store", () => {
+describe.only("AppStore Store", () => {
   let AppStore;
-  let TimeMachineService;
-  let initialState;
+  let TimeMachine;
+  let state;
+  let ViewModel;
 
   beforeEach(() => {
-    TimeMachineService = sinon.stub();
-    initialState = { mode: 'browse' }
-    let TimeMachine = new TimeMachineService(initialState);
-    AppStore = new AppStoreStore(TimeMachine);
+    state = { user: 'yeehaa' };
+    TimeMachine = {};
+    ViewModel = {};
+    ViewModel.get = sinon.spy();
+    TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
+    AppStore = new AppStoreStore(TimeMachine, ViewModel);
   });
 
   describe("get current state", () => {
 
-    beforeEach(() => {
-      createPropertyStub(AppStore.TimeMachine, 'current', initialState)
-    });
-
     it("gets the current state from the time machine", () => {
-      let { appState } = AppStore.current;
-      expect(appState.mode).to.equal('browse');
+      let { appState } = AppStore.get();
+      expect(TimeMachine.get).to.be.called;
     })
 
     it("sets the corresponding view model", () => {
-      let { viewModel } = AppStore.current;
-      expect(viewModel.level).to.equal('waypoints');
+      let { viewModel } = AppStore.get();
+      console.log(viewModel);
+      expect(ViewModel.get).to.be.calledWith(state);
     })
   })
-
-  // MOVE TO SERVICE
-
-  describe("without a user", ()=> {
-
-    beforeEach(() => {
-      createPropertyStub(AppStore.TimeMachine, 'current', initialState)
-    });
-
-    it("sets the corresponding collection", () => {
-      let { viewModel } = AppStore.current;
-      expect(viewModel.collection.length).to.equal(9);
-    })
-  });
-
-  describe("without a user", ()=> {
-
-    beforeEach(() => {
-      initialState.user = 'yeehaa';
-      createPropertyStub(AppStore.TimeMachine, 'current', initialState)
-    });
-
-    it("sets the corresponding collection", () => {
-      let { viewModel } = AppStore.current;
-      expect(viewModel.collection.length).to.equal(5);
-    })
-  });
 
   describe("actions", () => {
     let action;

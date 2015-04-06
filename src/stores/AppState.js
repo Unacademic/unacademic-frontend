@@ -26,14 +26,15 @@ function setViewModel(appState){
 
 class AppStore extends BaseStore {
 
-  constructor(TimeMachine){
+  constructor(TimeMachine, ViewModel){
     this.TimeMachine = TimeMachine;
+    this.ViewModel = ViewModel; 
     super();
   }
 
-  get current() {
-    let appState = this.TimeMachine.current.toJS();
-    let viewModel = setViewModel(appState);
+  async get() {
+    let appState = this.TimeMachine.get().toJS();
+    let viewModel = await this.ViewModel.get(appState);
     return { appState, viewModel };
   }
 

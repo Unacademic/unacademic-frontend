@@ -1,7 +1,8 @@
 import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
+require("babel/polyfill");
 
-describe.only("ViewModel Service", () => {
+describe("ViewModel Service", () => {
   let ViewModel;
   let appState;
   let result;

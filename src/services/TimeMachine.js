@@ -13,7 +13,7 @@ class TimeMachine {
     return _History.first();
   }
 
-  get current() {
+  get(){
     return this.decorateState(this._current);
   }
 

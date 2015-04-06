@@ -1,5 +1,5 @@
 import { Map, Stack }  from 'immutable';
-require("babel/polyfill");
+import { allWaypoints, userWaypoints } from '../utils/WaypointsFactory';
 
 class ViewModel {
   async get(appState){
@@ -7,9 +7,9 @@ class ViewModel {
     let title;
     let collection;
     if(!user){
-      collection = [1,2,3,4,5,6,7,8,9];
+      collection = allWaypoints;
     } else {
-      collection = [1,2,3,4,5];
+      collection = userWaypoints;
     }
     return { title, collection } 
   }

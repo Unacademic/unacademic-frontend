@@ -8,13 +8,12 @@ import Unacademic from './Unacademic.jsx';
 class UnacademicContainer extends React.Component{
 
   constructor(){
-    let { appState, viewModel } = AppStore.current;
-    this.state = { appState, viewModel };
+    this.state = {};
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(){
-    let { appState, viewModel } = AppStore.current;
+  async onChange(){
+    let { appState, viewModel } = await AppStore.get();
     this.setState({ appState, viewModel });
   }
 
@@ -29,9 +28,12 @@ class UnacademicContainer extends React.Component{
 
   render() {
     let { appState, viewModel } = this.state;
-    return (
-      <Unacademic viewModel={ viewModel } appState={ appState }/>
-    )
+    if(appState && viewModel){
+      return (
+        <Unacademic viewModel={ viewModel } appState={ appState }/>
+      )
+    }
+    return null;
   }
 };
 
