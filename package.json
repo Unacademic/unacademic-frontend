@@ -22,6 +22,7 @@
     "babel-core": "^4.0.1",
     "babel-loader": "^4.0.0",
     "chai": "^2.1.1",
+    "chai-as-promised": "^4.3.0",
     "chai-string": "^1.1.1",
     "contextify": "^0.1.13",
     "css-loader": "^0.9.1",
