@@ -2,6 +2,7 @@ import keyMirror from 'keymirror';
 
 let constants = keyMirror({
   'AUTHENTICATE': null,
+  'BROWSE_MODEL': null,
   'SWITCH_MODE': null,
   'REVERT_HISTORY': null,
   'FORWARD_HISTORY': null,

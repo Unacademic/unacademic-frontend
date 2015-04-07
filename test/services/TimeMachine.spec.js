@@ -1,23 +1,24 @@
 import TimeMachineService from '../../src/services/TimeMachine.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
+import { Map }  from 'immutable';
 
 describe("TimeMachineService Service", () => {
   let TimeMachine;
   let currentAppState;
 
   beforeEach(() => {
-    let initialState = {
+    let initialState = Map({
       timestamp: Date.now(),
       user: undefined,
       mode: 'browse',
-    };
+    });
     TimeMachine = new TimeMachineService(initialState);
   });
 
   describe("initial state", () => {
 
     beforeEach(() => {
-      currentAppState = TimeMachine.current.toJS();
+      currentAppState = TimeMachine.get().toJS();
     });
 
     it("has the default data", () => {
@@ -36,9 +37,11 @@ describe("TimeMachineService Service", () => {
 
   describe("Modifying History", () => {
     let change;
+    let viewModel;
 
     beforeEach(() => {
-      change = TimeMachine.update({ mode: 'learn'});
+      viewModel = Map({ Waypoint: 1 })
+      change = TimeMachine.update({ mode: 'learn', viewModel });
     });
 
     describe("update history", () => {
@@ -48,8 +51,9 @@ describe("TimeMachineService Service", () => {
       });
 
       it("starts from the correct location", () => {
-        let { mode, isEarliest, isLatest } = getStateData();
+        let { mode, isEarliest, isLatest, viewModel } = getStateData();
         expect(mode).to.equal('learn');
+        expect(viewModel.Waypoint).to.equal(1);
         expect(isEarliest).to.be.false;
         expect(isLatest).to.be.true;
       })
@@ -124,9 +128,9 @@ describe("TimeMachineService Service", () => {
   });
 
   function getStateData(){
-    let currentAppState = TimeMachine.current.toJS();
-    let { mode, history } = currentAppState;
+    let currentAppState = TimeMachine.get().toJS();
+    let { mode, history, viewModel } = currentAppState;
     let { isEarliest, isLatest } = currentAppState.history;
-    return { mode, isEarliest, isLatest };
+    return { mode, isEarliest, isLatest, viewModel };
   }
 });

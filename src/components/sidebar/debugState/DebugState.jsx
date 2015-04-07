@@ -36,12 +36,15 @@ class DebugState extends React.Component {
     let dataArray = R.toPairs(object);
     let createSections = R.map(([title, data]) =>
       <DebugStateSection key={ title } title={ title } data={ data } />);
+
     let sections = createSections(dataArray);
 
     return (
       <section className="debugState">
         <table className="debugger">
-          { sections }
+          <tbody>
+            { sections }
+          </tbody>
         </table>
       </section>
     )

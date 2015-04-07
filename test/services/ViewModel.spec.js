@@ -2,7 +2,7 @@ import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe("ViewModel Service", () => {
+describe.only("ViewModel Service", () => {
   let ViewModel;
   let appState;
   let result;
@@ -17,7 +17,7 @@ describe("ViewModel Service", () => {
 
       beforeEach((done) => {
 
-        let viewModel = { level: 'waypoints' };
+        let viewModel = { waypoints: 'all' };
         appState = { viewModel };
 
         ViewModel.get(appState).then((data) => {
@@ -43,7 +43,7 @@ describe("ViewModel Service", () => {
       beforeEach((done) => {
 
         let viewModel = { level: 'waypoints' };
-        let user = 'yeehaa'; 
+        let user = 'yeehaa';
         appState = { viewModel, user };
 
         ViewModel.get(appState).then((data) => {
@@ -59,7 +59,7 @@ describe("ViewModel Service", () => {
 
       it("has a collection of waypoints", () => {
         let { collection } = result;
-        expect(collection.length).to.equal(5);
+        expect(collection.length).to.equal(2);
         expect(collection[0].constructor.name).to.equal('Waypoint');
       });
     });

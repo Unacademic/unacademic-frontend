@@ -18,7 +18,8 @@ DebugStateRow.propTypes = {
   title: React.PropTypes.string,
   data: React.PropTypes.oneOfType([
     React.PropTypes.string,
-    React.PropTypes.bool
+    React.PropTypes.bool,
+    React.PropTypes.number
   ])
 };
 

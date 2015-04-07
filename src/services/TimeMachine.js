@@ -31,7 +31,8 @@ class TimeMachine {
 
   update(props){
     props.timestamp = Date.now();
-    _History = _History.push(this._current.merge(props));
+    let newState = this._current.mergeDeep(props);
+    _History = _History.push(newState);
     _Future = Stack([]);
     return true;
   }

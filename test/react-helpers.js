@@ -1,14 +1,12 @@
 import chai from 'chai';
 import R from 'ramda';
 import sinonChai from 'sinon-chai'
-import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
 import React from 'react/addons';
 import { jsdom } from 'jsdom';
 
 let expect = chai.expect;
 chai.use(sinonChai);
-chai.use(chaiAsPromised);
 
 class Item {
   constructor(id){

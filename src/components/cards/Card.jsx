@@ -5,7 +5,7 @@ import CardNav from './CardNav.jsx';
 class Card extends React.Component {
   render(){
     let model = this.props.model;
-    let type = model.constructor.name;
+    let type = model.constructor.name.toLowerCase();
     return (
       <section className="card">
         <img src={ model.image }></img>

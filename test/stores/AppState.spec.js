@@ -3,7 +3,7 @@ import AppStoreConstants from '../../src/constants/AppStateConstants.js';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 import { Map, Stack }  from 'immutable';
 
-describe.only("AppStore Store", () => {
+describe("AppStore Store", () => {
   let AppStore;
   let TimeMachine;
   let state;
@@ -13,9 +13,12 @@ describe.only("AppStore Store", () => {
     state = { user: 'yeehaa' };
     TimeMachine = {};
     ViewModel = {};
+
     ViewModel.get = sinon.spy();
     TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
+
     AppStore = new AppStoreStore(TimeMachine, ViewModel);
+    AppStore.emitChange = sinon.spy();
   });
 
   describe("get current state", () => {
@@ -27,7 +30,6 @@ describe.only("AppStore Store", () => {
 
     it("sets the corresponding view model", () => {
       let { viewModel } = AppStore.get();
-      console.log(viewModel);
       expect(ViewModel.get).to.be.calledWith(state);
     })
   })
@@ -39,12 +41,32 @@ describe.only("AppStore Store", () => {
 
       beforeEach(() => {
         action = { actionType: AppStoreConstants.AUTHENTICATE }
-        AppStore.TimeMachine.update = sinon.spy();
+        AppStore.TimeMachine.update = sinon.stub().returns(true);
         AppStore.handleAction(action);
       });
 
       it("should pass the new user to the Time Machine", () => {
-        expect(AppStore.TimeMachine.update).calledWith({ user: 'yeehaa' });
+        let viewModel = { waypoints: 'user' };
+        expect(AppStore.TimeMachine.update).calledWith({ user: 'yeehaa', viewModel });
+      });
+    });
+
+    describe("browse model", () => {
+
+      beforeEach(() => {
+        let selection = { type: 'waypoints', id: 'user' }
+        action = { actionType: AppStoreConstants.BROWSE_MODEL, selection }
+        AppStore.TimeMachine.update = sinon.stub().returns(true);
+        AppStore.handleAction(action);
+      });
+
+      it("should pass the selection to the Time Machine", () => {
+        let viewModel = { waypoints: 'user' };
+        expect(AppStore.TimeMachine.update).calledWith({ viewModel });
+      });
+
+      it("should emit a change", () => {
+        expect(AppStore.emitChange).called;
       });
     });
 
@@ -55,12 +77,16 @@ describe.only("AppStore Store", () => {
           actionType: AppStoreConstants.SWITCH_MODE,
           mode: 'browse'
         }
-        AppStore.TimeMachine.update = sinon.spy();
+        AppStore.TimeMachine.update = sinon.stub().returns(true);
         AppStore.handleAction(action);
       });
 
       it("should pass the new user to the Time Machine", () => {
         expect(AppStore.TimeMachine.update).calledWith({ mode: 'browse' });
+      });
+
+      it("should emit a change", () => {
+        expect(AppStore.emitChange).called;
       });
     });
 
@@ -74,7 +100,6 @@ describe.only("AppStore Store", () => {
 
         beforeEach(() => {
           AppStore.TimeMachine.revertHistory = sinon.stub().returns(true);
-          AppStore.emitChange = sinon.spy();
           AppStore.handleAction(action);
         });
 
@@ -91,7 +116,6 @@ describe.only("AppStore Store", () => {
 
         beforeEach(() => {
           AppStore.TimeMachine.revertHistory = sinon.stub().returns(false);
-          AppStore.emitChange = sinon.spy();
           AppStore.handleAction(action);
         });
 
@@ -115,7 +139,6 @@ describe.only("AppStore Store", () => {
 
         beforeEach(() => {
           AppStore.TimeMachine.forwardHistory = sinon.stub().returns(true);
-          AppStore.emitChange = sinon.spy();
           AppStore.handleAction(action);
         });
 
@@ -132,7 +155,6 @@ describe.only("AppStore Store", () => {
 
         beforeEach(() => {
           AppStore.TimeMachine.forwardHistory = sinon.stub().returns(false);
-          AppStore.emitChange = sinon.spy();
           AppStore.handleAction(action);
         });
 

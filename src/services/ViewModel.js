@@ -1,17 +1,27 @@
 import { Map, Stack }  from 'immutable';
-import { allWaypoints, userWaypoints } from '../utils/WaypointsFactory';
+import { allWaypoints } from '../utils/WaypointsFactory';
 
 class ViewModel {
   async get(appState){
-    let { user } = appState;
-    let title;
+    let { user, viewModel } = appState;
+    let { waypoints, waypoint } = viewModel;
+
+    let model;
     let collection;
-    if(!user){
-      collection = allWaypoints;
+
+    if(waypoint){
+      let { title, checkpoints } = allWaypoints[viewModel.waypoint - 1];
+      model = { title }
+      collection = checkpoints;
     } else {
-      collection = userWaypoints;
+      if(!user){
+        collection = allWaypoints;
+      } else {
+        collection = [allWaypoints[1], allWaypoints[2]]
+      }
     }
-    return { title, collection } 
+    console.log(model, collection);
+    return { model, collection }
   }
 }
 
