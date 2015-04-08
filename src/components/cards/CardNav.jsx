@@ -2,15 +2,15 @@ import React from 'react';
 import Actions from '../../actions/index.js';
 
 class CardNav extends React.Component {
-  browseModel(selection){
-    Actions.browseModel(selection);
+  setViewModel(selection){
+    Actions.setViewModel(selection);
   }
   render(){
     let { type, id } = this.props;
     let selection = { type, id };
     return (
       <nav className="cardNav">
-        <button onClick={ this.browseModel.bind(this, selection)} className="browse">
+        <button onClick={ this.setViewModel.bind(this, selection)} className="browse">
           Browse
         </button>
       </nav>

@@ -30,12 +30,12 @@ describe("CardNav", () => {
     describe("when explore button is clicked", () => {
 
       beforeEach(() => {
-        Actions.browseModel = sinon.spy();
+        Actions.setViewModel = sinon.spy();
         React.addons.TestUtils.Simulate.click(exploreButton);
       });
 
       it("calls the right action", () => {
-        expect(Actions.browseModel).to.be.calledWith(selection);
+        expect(Actions.setViewModel).to.be.calledWith(selection);
       });
     });
   });

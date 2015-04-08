@@ -8,9 +8,9 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
-  browseModel(selection){
+  setViewModel(selection){
     AppDispatcher.dispatch({
-      actionType: AppStateConstants.BROWSE_MODEL,
+      actionType: AppStateConstants.SET_VIEW_MODEL,
       selection: selection
     });
   },

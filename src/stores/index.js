@@ -2,7 +2,8 @@ import { Map }  from 'immutable';
 
 let viewModel = Map({
   waypoints: 'all',
-  waypoint: undefined
+  waypoint: false,
+  checkpoint: false
 });
 
 let initialState = Map({

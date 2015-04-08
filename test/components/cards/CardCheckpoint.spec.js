@@ -7,7 +7,7 @@ describe("CardCheckpoint", () => {
   beforeEach(() => {
     testdom('<html><body></body></html>');
 
-    let [model] = fixtures.viewModel.collection;
+    let [model] = fixtures.viewModel.collection[0].checkpoints;
     let container = TestUtils.renderIntoDocument(
       <CardCheckpoint model={ model } />
     );
@@ -23,7 +23,7 @@ describe("CardCheckpoint", () => {
 
   it("renders no cardButtons", () => {
     let cardButtons = element.querySelectorAll('.cardNav');
-    expect(cardButtons.length).to.equal(0);
+    expect(cardButtons.length).to.equal(1);
   });
 
 });

@@ -9,8 +9,12 @@ class AppStore extends BaseStore {
     super();
   }
 
+  _get(){
+    return this.TimeMachine.get().toJS();
+  }
+
   async get() {
-    let appState = this.TimeMachine.get().toJS();
+    let appState = this._get();
     let viewModel = await this.ViewModel.get(appState);
     return { appState, viewModel };
   }
@@ -20,8 +24,9 @@ class AppStore extends BaseStore {
     this.update({ user: 'yeehaa', viewModel });
   }
 
-  browseModel(selection){
-    let viewModel = setViewModel(selection);
+  setViewModel(selection){
+    let current = this._get().viewModel;
+    let viewModel = this.ViewModel.set({ current, selection });
     this.update({ viewModel });
   }
 
@@ -49,8 +54,8 @@ class AppStore extends BaseStore {
       case AppStateConstants.AUTHENTICATE:
         this.authenticate();
         break;
-      case AppStateConstants.BROWSE_MODEL:
-        this.browseModel(action.selection);
+      case AppStateConstants.SET_VIEW_MODEL:
+        this.setViewModel(action.selection);
         break;
       case AppStateConstants.SWITCH_MODE:
         this.switchMode(action.mode);
@@ -67,7 +72,3 @@ class AppStore extends BaseStore {
 }
 
 export default AppStore;
-
-function setViewModel(selection){
-  return { [selection.type]: selection.id };
-}

@@ -8,9 +8,15 @@ describe("AppStore Store", () => {
   let TimeMachine;
   let state;
   let ViewModel;
+  let selection;
 
   beforeEach(() => {
-    state = { user: 'yeehaa' };
+    state = {
+      user: 'yeehaa',
+      viewModel: {
+        waypoint: 1
+      }
+    };
     TimeMachine = {};
     ViewModel = {};
 
@@ -18,7 +24,10 @@ describe("AppStore Store", () => {
     TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
 
     AppStore = new AppStoreStore(TimeMachine, ViewModel);
+
     AppStore.emitChange = sinon.spy();
+    AppStore.ViewModel.set = sinon.stub().returns(selection);
+    AppStore.TimeMachine.update = sinon.stub().returns(true);
   });
 
   describe("get current state", () => {
@@ -45,27 +54,32 @@ describe("AppStore Store", () => {
         AppStore.handleAction(action);
       });
 
-      it("should pass the new user to the Time Machine", () => {
+      it("passes the new user to the Time Machine", () => {
         let viewModel = { waypoints: 'user' };
         expect(AppStore.TimeMachine.update).calledWith({ user: 'yeehaa', viewModel });
       });
     });
 
-    describe("browse model", () => {
+    describe("set view model", () => {
+      let current;
 
       beforeEach(() => {
-        let selection = { type: 'waypoints', id: 'user' }
-        action = { actionType: AppStoreConstants.BROWSE_MODEL, selection }
-        AppStore.TimeMachine.update = sinon.stub().returns(true);
+        current = state.viewModel;
+        action = { actionType: AppStoreConstants.SET_VIEW_MODEL, selection }
+
         AppStore.handleAction(action);
       });
 
-      it("should pass the selection to the Time Machine", () => {
-        let viewModel = { waypoints: 'user' };
+      it("calls the view model set function", () => {
+        expect(AppStore.ViewModel.set).calledWith({ current, selection });
+      });
+
+      it("passes the selection to the Time Machine", () => {
+        let viewModel = selection;
         expect(AppStore.TimeMachine.update).calledWith({ viewModel });
       });
 
-      it("should emit a change", () => {
+      it("emits a change", () => {
         expect(AppStore.emitChange).called;
       });
     });
@@ -81,11 +95,11 @@ describe("AppStore Store", () => {
         AppStore.handleAction(action);
       });
 
-      it("should pass the new user to the Time Machine", () => {
+      it("passes the new user to the Time Machine", () => {
         expect(AppStore.TimeMachine.update).calledWith({ mode: 'browse' });
       });
 
-      it("should emit a change", () => {
+      it("emits a change", () => {
         expect(AppStore.emitChange).called;
       });
     });

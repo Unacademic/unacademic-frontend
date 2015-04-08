@@ -13,8 +13,11 @@ class Card extends React.Component {
       case 'waypoint':
         card = <CardWaypoint model={ model } type={ type }/>;
         break;
-      default:
+      case 'checkpoint':
         card = <CardCheckpoint model={ model } type={ type }/>;
+        break;
+      case 'resource':
+        card = <div className="card card_resource">{ model.title }</div>;
         break;
     }
     return card;

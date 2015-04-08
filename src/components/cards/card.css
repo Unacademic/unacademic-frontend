@@ -1,5 +1,5 @@
 component(card){
-  boxSizing: border-box;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: var(--baseUnit);
@@ -15,6 +15,21 @@ component(card){
 
   img:hover {
     filter: grayscale(0%);
+  }
+
+  .order {
+    justify-content: center;
+    display: block;
+    margin: 15px;
+    background-color: var(--darkBaseColor);
+
+    h1 {
+      font-family: 'NittyBold';
+      font-size: 150px;
+      text-align: center;
+      margin: 0;
+      color: var(--inverseColor);
+    }
   }
 
   hgroup {
