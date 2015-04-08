@@ -7,9 +7,9 @@ describe("Unacademic", () => {
   beforeEach(() => {
     testdom('<html><body></body></html>');
 
-    let { appState, model } = fixtures;
+    let { appState, viewModel } = fixtures;
     let container = TestUtils.renderIntoDocument(
-      <Unacademic viewModel={ model } appState={ appState } />
+      <Unacademic viewModel={ viewModel } appState={ appState } />
     );
 
     element = React.findDOMNode(container);

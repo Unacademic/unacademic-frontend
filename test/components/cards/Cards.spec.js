@@ -7,7 +7,7 @@ describe("Cards", () => {
   beforeEach(() => {
     testdom('<html><body></body></html>');
 
-    let { collection } = fixtures.model;
+    let { collection } = fixtures.viewModel;
     let container = TestUtils.renderIntoDocument(
       <Cards collection={ collection } />
     );
@@ -22,7 +22,7 @@ describe("Cards", () => {
 
   it("renders the cards", () => {
     let cards = element.querySelectorAll('.card');
-    expect(cards.length).to.equal(5);
+    expect(cards.length).to.equal(9);
   });
 
 });

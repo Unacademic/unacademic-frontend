@@ -8,10 +8,10 @@ class Unacademic extends React.Component{
 
   render() {
     let { appState, viewModel } = this.props;
-    let collection = viewModel.collection || [];
+    let { model, collection } = viewModel;
     return (
       <section className='app'>
-        <Sidebar appState={ appState }/>
+        <Sidebar model={ model } appState={ appState }/>
         <Main collection={ collection }/>
       </section>
     )

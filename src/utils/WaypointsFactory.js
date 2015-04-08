@@ -1,6 +1,14 @@
 import faker from 'faker';
 import R from 'ramda';
 
+class Checkpoint {
+  constructor() {
+    this.title = getRandomString(1,3);
+    this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
+    this.resources = R.map(R.partial(getRandomString, 1, 3), getRandomRange(2,8));
+  };
+};
+
 class Waypoint {
   constructor(index) {
     this.id = index;
@@ -9,12 +17,14 @@ class Waypoint {
     this.curator = 'Yeehaa';
     this.summary = faker.lorem.sentence();
     this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
-    this.checkpoints = R.map(R.partial(getRandomString, 1, 3), getRandomRange(2,8));
+    this.checkpoints = R.map((i) => new Checkpoint(), getRandomRange(2,8));
   };
 };
 
-let allWaypoints = allWaypoints || R.map((i) => new Waypoint(i), R.range(1,10));
-let userWaypoints = userWaypoints || R.map((i) => new Waypoint(i), R.range(1,6));
+
+let allWaypoints = R.map((i) => new Waypoint(i), R.range(1,10));
+
+export { allWaypoints };
 
 function getRandomString(min, max){
   return faker.lorem.words(getRandomInt(min,max)).join(' ')
@@ -28,4 +38,3 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export { allWaypoints, userWaypoints };

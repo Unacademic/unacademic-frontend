@@ -6,22 +6,29 @@ class ViewModel {
     let { user, viewModel } = appState;
     let { waypoints, waypoint } = viewModel;
 
-    let model;
-    let collection;
 
     if(waypoint){
       let { title, checkpoints } = allWaypoints[viewModel.waypoint - 1];
-      model = { title }
-      collection = checkpoints;
-    } else {
+      let type = 'waypoint';
+      let model = { type, title }
+      let collection = checkpoints;
+      return { model, collection }
+    }
+
+    if(waypoints){
+      let title = '_Unacademic';
+      let type = 'waypoints';
+      let model = { type, title };
+      let collection;
+
       if(!user){
         collection = allWaypoints;
       } else {
         collection = [allWaypoints[1], allWaypoints[2]]
       }
+
+      return { model, collection }
     }
-    console.log(model, collection);
-    return { model, collection }
   }
 }
 

@@ -5,28 +5,22 @@ import sinon from 'sinon';
 import React from 'react/addons';
 import { jsdom } from 'jsdom';
 
+import { allWaypoints } from '../src/utils/WaypointsFactory'
+
 let expect = chai.expect;
 chai.use(sinonChai);
 
-class Item {
-  constructor(id){
-    this.id = id;
-    this.description = ['ho'];
-    this.checkpoints = ['hi'];
-  }
-}
-
-let createItem = (id) => new Item(id);
-let range = R.times(R.identity, 5);
-let collection = R.map(createItem, range);
-let model = { collection };
+let collection = allWaypoints;
+let title = '_Unacademic';
+let model = { title };
+let viewModel = { model, collection };
 
 let user = undefined;
 let mode = 'browse';
 let history = [];
 let appState = { user, mode, history };
 
-let fixtures = { appState, model };
+let fixtures = { appState, viewModel };
 
 global.expect = expect;
 global.sinon = sinon;

@@ -6,23 +6,37 @@ describe("Card", () => {
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
+  })
 
-    let { collection } = fixtures.model;
-    let [model] = collection;
-    let container = TestUtils.renderIntoDocument(
-      <Card model={ model } />
-    );
+  describe("when model is waypoint", () => {
 
-    element = React.findDOMNode(container);
+    beforeEach(() => {
+      let [model] = fixtures.viewModel.collection;
+      let container = TestUtils.renderIntoDocument(
+        <Card model={ model } />
+      );
+
+      element = React.findDOMNode(container);
+    });
+
+    it("renders the container", () => {
+      expect(element.className).to.contain('card-waypoint');
+    });
   });
 
-  it("renders the container", () => {
-    expect(element.className).to.equal('card');
-  });
+  describe("when model is checkpoint", () => {
 
-  it("renders the cardButtons", () => {
-    let cardButtons = element.querySelectorAll('.cardNav');
-    expect(cardButtons.length).to.equal(1);
-  });
+    beforeEach(() => {
+      let [model] = fixtures.viewModel.collection[0].checkpoints;
+      let container = TestUtils.renderIntoDocument(
+        <Card model={ model } />
+      );
 
+      element = React.findDOMNode(container);
+    });
+
+    it("renders the container", () => {
+      expect(element.className).to.contain('card-checkpoint');
+    });
+  });
 });

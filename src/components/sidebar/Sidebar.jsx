@@ -9,11 +9,11 @@ class Sidebar extends React.Component {
 
   render() {
 
-    let { appState } = this.props;
+    let { model, appState } = this.props;
 
     return (
       <div className="sidebar">
-        <ContentPanel/>
+        <ContentPanel model={ model }/>
         <DebugState appState={ appState } />
         <ControlPanel appState={ appState }/>
       </div>
@@ -22,7 +22,8 @@ class Sidebar extends React.Component {
 };
 
 Sidebar.propTypes = {
-  appState: React.PropTypes.object.isRequired
+  appState: React.PropTypes.object.isRequired,
+  model: React.PropTypes.object
 }
 
 export default Sidebar;

@@ -7,9 +7,10 @@ describe("Sidebar", () => {
   beforeEach(() => {
     testdom('<html><body></body></html>');
 
-    let { appState } = fixtures;
+    let { appState, viewModel } = fixtures;
+    let { model } = viewModel;
     let container = TestUtils.renderIntoDocument(
-      <Sidebar appState={ appState } />
+      <Sidebar model={ model } appState={ appState } />
     );
 
     element = React.findDOMNode(container);

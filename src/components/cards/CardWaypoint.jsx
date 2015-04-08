@@ -1,0 +1,27 @@
+import './card.css';
+import React from 'react';
+import CardNav from './CardNav.jsx';
+
+class CardWaypoint extends React.Component {
+  render(){
+    let model = this.props.model;
+    let type = model.constructor.name.toLowerCase();
+    let classes = ['card', 'card-waypoint'].join(' ');
+    return (
+      <section className={ classes }>
+        <img src={ model.image }></img>
+        <hgroup>
+          <h1>{ model.title }</h1>
+        </hgroup>
+        <CardNav type={ type } id={ model.id }/>
+      </section>
+    )
+  }
+}
+
+CardWaypoint.propTypes = {
+  model: React.PropTypes.object.isRequired
+}
+
+
+export default CardWaypoint;

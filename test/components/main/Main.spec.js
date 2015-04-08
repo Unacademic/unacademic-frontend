@@ -7,7 +7,7 @@ describe("Main", () => {
   beforeEach(() => {
     testdom('<html><body></body></html>');
 
-    let { collection } = fixtures.model;
+    let { collection } = fixtures.viewModel;
     let container = TestUtils.renderIntoDocument(
       <Main collection={ collection } />
     );

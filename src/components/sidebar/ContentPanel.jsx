@@ -3,15 +3,19 @@ import React from 'react';
 class ContentPanel extends React.Component {
 
   render() {
+    let model = this.props.model;
+    let { title } = model;
+
     return (
       <section className="contentPanel">
-        <h1>_Unacademic</h1>
-        <p> Learn By Dwelling</p>
+        <h1>{ title }</h1>
       </section>
     )
   }
 };
 
-ContentPanel.propTypes = {}
+ContentPanel.propTypes = {
+  model: React.PropTypes.object
+}
 
 export default ContentPanel;

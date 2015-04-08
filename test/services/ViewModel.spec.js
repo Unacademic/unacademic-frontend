@@ -2,7 +2,7 @@ import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe.only("ViewModel Service", () => {
+describe("ViewModel Service", () => {
   let ViewModel;
   let appState;
   let result;
@@ -27,8 +27,9 @@ describe.only("ViewModel Service", () => {
       });
 
       it("has no title", () => {
-        let { title } = result;
-        expect(title).to.be.undefined;
+        let { model } = result;
+        let { title } = model;
+        expect(title).to.equal('_Unacademic');
       });
 
       it("has a collection of waypoints", () => {
@@ -42,7 +43,7 @@ describe.only("ViewModel Service", () => {
 
       beforeEach((done) => {
 
-        let viewModel = { level: 'waypoints' };
+        let viewModel = { waypoints: 'all' };
         let user = 'yeehaa';
         appState = { viewModel, user };
 
@@ -50,11 +51,6 @@ describe.only("ViewModel Service", () => {
           result = data;
           done();
         });
-      });
-
-      it("has no title", () => {
-        let { title } = result;
-        expect(title).to.be.undefined;
       });
 
       it("has a collection of waypoints", () => {
