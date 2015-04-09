@@ -80,6 +80,28 @@ component(main){
   height: 100%;
 }
 
+component(sidebar){
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+component(contentPanel){
+  flex: 1;
+}
+
+component(debugState){
+  flex: 1;
+}
+
+component(controlPanel){
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 component(timeline){
   height: 200px;
   background-color: var(--betweenBaseColor);
@@ -101,11 +123,29 @@ component(historyButtons){
   }
 }
 
-component(modeButtons){
+component(level-panel){
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: calc(var(--baseUnit) * 1);
+  button {
+   width: calc(100%);
+    &:disabled {
+      color: var(--lightBaseColor);
+      background-color: var(--betweenBaseColor);
+    }
+  }
+  button.active {
+    background-color: var(--baseColor);
+    color: var(--inverseColor);
+  }
+}
+
+component(mode-buttons){
   display: flex;
   justify-content: space-between;
   button {
-   width: calc(100%/3);
+   width: calc(100%);
   }
   button.active {
     background-color: var(--baseColor);
@@ -123,7 +163,6 @@ component(authentication-panel){
     color: var(--highlightColor);
   }
 }
-
 
 component(debugger){
   color: var(--baseColor);

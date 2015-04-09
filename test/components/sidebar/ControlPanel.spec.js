@@ -1,38 +1,54 @@
-import { React, TestUtils, fixtures } from '../../react-helpers';
+import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import ControlPanel from '../../../src/components//sidebar/controlPanel/ControlPanel.jsx';
 
 describe("Control Panel", () => {
-  let container;
+  let element;
   let { appState } = fixtures;
+
+  beforeEach(() => {
+    testdom('<html><body></body></html>');
+  })
 
   describe("without user", () => {
     beforeEach(() => {
-      container = renderElement(appState);
+      [element] = renderPanel(appState);
     })
 
-    it("displays the signin button", () => {
-      expect(container).not.to.match(/Browse/);
-      expect(container).to.match(/Sign In/);
+    it("displays the authentication panel", () => {
+      let authenticationPanel = element.querySelector('.authentication-panel');
+      expect(authenticationPanel).not.to.be.null;
+    });
+
+    it("does not display the mode button panel", () => {
+      let modeButtons = element.querySelector('.mode-buttons');
+      expect(modeButtons).to.be.null;
     });
   });
 
   describe("with user", () => {
     beforeEach(() => {
       appState.user = 'yeehaa';
-      container = React.renderToString(
-        <ControlPanel appState={ appState }/>
-      );
-    })
-
-    it("displays the mode buttons", () => {
-      expect(container).to.match(/Browse/);
-      expect(container).not.to.match(/Sign In/);
+      [element] = renderPanel(appState);
     });
+
+    it("does not display the authentication panel", () => {
+      let authenticationPanel = element.querySelector('.authentication-panel');
+      expect(authenticationPanel).to.be.null;
+    });
+
+    it("displays the mode button panel", () => {
+      let modeButtons = element.querySelector('.mode-buttons');
+      expect(modeButtons).not.to.be.null;
+    });
+
   });
 });
 
-function renderElement(appState){
-  return React.renderToString(
+function renderPanel(appState){
+  let container =  TestUtils.renderIntoDocument(
     <ControlPanel appState={ appState }/>
   );
+
+  let element = React.findDOMNode(container);
+  return [element];
 }

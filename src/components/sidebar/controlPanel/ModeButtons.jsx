@@ -9,7 +9,7 @@ class ModeButtons extends React.Component {
       <ModeButton key={ index } mode={ mode } current={ this.props.mode }/>);
     let modeButtons = createButtons(this.props.modes);
     return (
-      <section className="modeButtons">{ modeButtons }</section>
+      <section className="mode-buttons">{ modeButtons }</section>
     );
   }
 };
