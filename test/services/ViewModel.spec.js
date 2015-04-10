@@ -63,7 +63,58 @@ describe("ViewModel Service", () => {
     let expectation;
     let proposal;
 
-    describe('when selection is parent', () => {
+    describe("selection has type and id", () => {
+
+      describe("selection is child", () => {
+        beforeEach(() => {
+
+          current = {
+            waypoints: 'all',
+            waypoint: false,
+            checkpoint: false
+          };
+
+          expectation = {
+            waypoints: 'all',
+            waypoint: 1,
+            checkpoint: false
+          };
+
+          let selection = { type: 'waypoint', id: 1 };
+          proposal = ViewModel.set({ current, selection });
+        });
+
+        it("sets the model to the proposal", () => {
+          expect(proposal).to.deep.equal(expectation);
+        });
+      });
+
+      describe("selection is parent", () => {
+        beforeEach(() => {
+
+          current = {
+            waypoints: 'all',
+            waypoint: 1,
+            checkpoint: 1
+          };
+
+          expectation = {
+            waypoints: 'all',
+            waypoint: 1,
+            checkpoint: false
+          };
+
+          let selection = { type: 'waypoint', id: 1 };
+          proposal = ViewModel.set({ current, selection });
+        });
+
+        it("sets the model to the proposal", () => {
+          expect(proposal).to.deep.equal(expectation);
+        });
+      });
+    });
+
+    xdescribe('selection only has id', () => {
 
       beforeEach(() => {
         current = {
@@ -74,30 +125,19 @@ describe("ViewModel Service", () => {
 
         expectation = {
           waypoints: 'all',
-          waypoint: 1,
+          waypoint: false,
           checkpoint: false
         };
       });
 
+      let selection = { type: 'waypoints' };
+
       it("sets the model to the parent model", () => {
-        proposal = ViewModel.set({ current, selection: 'parent' });
-        expect(proposal).to.deep.equal(expectation);
-      });
-    });
-
-    describe('when selection is normal', () => {
-
-      beforeEach(() => {
-        current = {};
-        expectation = { waypoint: 1 }
-        let selection = { type: 'waypoint', id: 1 };
         proposal = ViewModel.set({ current, selection });
-      });
-
-      it("sets the model to the proposal", () => {
         expect(proposal).to.deep.equal(expectation);
       });
     });
+
   });
 });
 

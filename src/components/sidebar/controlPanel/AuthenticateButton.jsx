@@ -8,12 +8,21 @@ class AuthenticateButton extends React.Component {
   }
 
   render() {
+    let { user } = this.props;
+    let button;
+    let title = user ? _.capitalize(user) : 'Sign In';
     return (
       <section className="authentication-panel">
-        <button className="authentication-button" onClick={ this.authenticate }>Sign In</button>
+        <button disabled={ !!user } className="authentication-button" onClick={ this.authenticate }>
+          { title }
+        </button>
       </section>
     )
   }
+};
+
+AuthenticateButton.propTypes = {
+  user: React.PropTypes.string.isRequired,
 };
 
 export default AuthenticateButton;

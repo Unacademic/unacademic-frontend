@@ -3,7 +3,7 @@ import LevelPanel from '../../../src/components/sidebar/controlPanel/levelPanel/
 import Actions from '../../../src/actions/index.js';
 import _ from 'lodash';
 
-describe.only("LevelPanel Button", () => {
+describe("Level Panel", () => {
   let element;
   let viewModel;
 

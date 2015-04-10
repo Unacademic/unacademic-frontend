@@ -1,5 +1,6 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import LevelButton from '../../../src/components/sidebar/controlPanel/levelPanel/LevelButton.jsx';
+import Actions from '../../../src/actions/index.js';
 import _ from 'lodash';
 
 describe("Level Button", () => {
@@ -47,6 +48,20 @@ describe("Level Button", () => {
       expect(element.className).to.contain('active');
     });
   });
+
+  describe("click handling", () => {
+
+    beforeEach(() => {
+      Actions.setViewModel = sinon.spy();
+      React.addons.TestUtils.Simulate.click(element);
+    });
+
+    it("calls the right action", () => {
+      let selection = { type: 'waypoints' };
+      expect(Actions.setViewModel).to.be.calledWith(selection);
+    });
+  });
+
 });
 
 function renderButton(level, isActive){

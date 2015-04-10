@@ -39,32 +39,34 @@ class ViewModel {
   }
 
   set({ current, selection }){
+    let { type, id } = selection;
     let proposal;
-    switch(selection){
-      case 'parent':
-        proposal = this._setParent(current);
+
+    switch(type){
+      case 'waypoints':
+        proposal = {
+          waypoints: id || current['waypoints'],
+          waypoint: false,
+          checkpoint: false
+        }
         break;
-      default:
-        proposal = { [selection.type]: selection.id };
-        proposal;
+      case 'waypoint':
+        proposal = {
+          waypoints: current['waypoints'],
+          waypoint: id || current['waypoint'],
+          checkpoint: false
+        }
+        break;
+      case 'checkpoint':
+        proposal = {
+          waypoints: current['waypoints'],
+          waypoint: current['waypoint'],
+          checkpoint: id || current['checkpoint']
+        }
         break;
     }
+
     return proposal;
-  }
-
-  _setParent(current){
-    let proposal = current;
-
-    if(proposal.checkpoint){
-      proposal.checkpoint = false;
-      return proposal;
-    }
-
-    if(proposal.waypoint){
-      proposal.waypoint = false;
-      proposal.checkpoint = false;
-      return proposal;
-    }
   }
 }
 

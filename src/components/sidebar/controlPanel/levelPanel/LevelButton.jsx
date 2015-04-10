@@ -5,12 +5,23 @@ import _ from 'lodash';
 
 class LevelButton extends React.Component {
 
+  setViewModel(selection){
+    Actions.setViewModel(selection);
+  }
+
   render() {
     let isActive = this.props.isActive ? 'active' : '';
     let [level, value] = this.props.level;
     let classes = `${level}Button ${isActive}`;
     let title = _.capitalize(level);
-    return <button key={ level } disabled={ !value } className={ classes }>{ title }</button>
+    let selection = { type: level };
+    return (
+      <button disabled={ !value }
+        onClick={ this.setViewModel.bind(this, selection )}
+        className={ classes }>
+        { title }
+      </button>
+    )
   }
 };
 

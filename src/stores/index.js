@@ -6,10 +6,17 @@ let viewModel = Map({
   checkpoint: false
 });
 
+let modes = Map({
+  browse: 'active',
+  learn: 'disabled',
+  curate: 'disabled'
+})
+
 let initialState = Map({
   timestamp: Date.now(),
   user: undefined,
   mode: 'browse',
+  modes,
   viewModel
 });
 

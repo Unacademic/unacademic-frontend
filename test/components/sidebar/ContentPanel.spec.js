@@ -26,10 +26,6 @@ describe("Content Panel", () => {
       expect(title).to.equal('_Unacademic');
     });
 
-    it("has no goto parent button", () => {
-      let button = element.querySelector('button');
-      expect(button).to.be.null;
-    });
   });
 
   describe("model type is waypoints", () => {
@@ -50,12 +46,6 @@ describe("Content Panel", () => {
       expect(title).not.to.equal('_Unacademic');
     });
 
-    it("has a goto parent button", () => {
-      Actions.setViewModel = sinon.spy();
-      let goToParentButton = element.querySelector('.goToParent');
-      React.addons.TestUtils.Simulate.click(goToParentButton);
-      expect(Actions.setViewModel).to.be.calledOnce;
-    });
   });
 });
 

@@ -18,7 +18,7 @@ let viewModel = { model, collection };
 let user = undefined;
 let mode = 'browse';
 let history = [];
-let appState = { user, mode, history };
+let appState = { user, mode, history, viewModel: {}};
 
 let fixtures = { appState, viewModel };
 
