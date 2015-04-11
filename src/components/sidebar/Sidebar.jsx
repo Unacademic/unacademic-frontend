@@ -1,6 +1,7 @@
 import './sidebar.css';
 import ContentPanel from './ContentPanel.jsx';
 import ControlPanel from './controlPanel/ControlPanel.jsx';
+import DebugState from './debugState/DebugState.jsx';
 
 import React from 'react';
 
@@ -13,6 +14,7 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <ContentPanel model={ model }/>
+        <DebugState appState={ appState } />
         <ControlPanel appState={ appState }/>
       </div>
     )

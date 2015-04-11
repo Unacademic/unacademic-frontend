@@ -13,7 +13,7 @@ describe("Mode Button", () => {
   describe("when button is not active", () => {
 
     beforeEach(() => {
-      button = renderButton('learn', 'browse');
+      button = renderButton('browse', 'disabled');
     })
 
     it("has no class of active", () => {
@@ -25,7 +25,7 @@ describe("Mode Button", () => {
   describe("when button is active", () => {
 
     beforeEach(() => {
-      button = renderButton('browse', 'browse');
+      button = renderButton('browse', 'active');
     })
 
     it("has no class of active", () => {
@@ -46,9 +46,9 @@ describe("Mode Button", () => {
   });
 });
 
-function renderButton(current, mode){
+function renderButton(name, status){
   let container = TestUtils.renderIntoDocument(
-    <ModeButton current={ current } mode={ mode }/>
+    <ModeButton status={ status } name={ name }/>
   );
 
   return React.findDOMNode(container.refs.browseButton);

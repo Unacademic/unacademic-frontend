@@ -15,7 +15,6 @@ let modes = Map({
 let initialState = Map({
   timestamp: Date.now(),
   user: undefined,
-  mode: 'browse',
   modes,
   viewModel
 });

@@ -1,7 +1,7 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import ControlPanel from '../../../src/components//sidebar/controlPanel/ControlPanel.jsx';
 
-describe.only("Control Panel", () => {
+describe("Control Panel", () => {
   let element;
   let { appState } = fixtures;
 

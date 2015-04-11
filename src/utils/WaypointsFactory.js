@@ -30,6 +30,7 @@ class Waypoint {
     this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
     this.checkpoints = R.map((i) => new Checkpoint(i), getRandomRange(1,15));
   };
+
 };
 
 let allWaypoints = R.map((i) => new Waypoint(i), R.range(1,10));

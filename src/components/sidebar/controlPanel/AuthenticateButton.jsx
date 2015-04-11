@@ -22,7 +22,7 @@ class AuthenticateButton extends React.Component {
 };
 
 AuthenticateButton.propTypes = {
-  user: React.PropTypes.string.isRequired,
+  user: React.PropTypes.string
 };
 
 export default AuthenticateButton;

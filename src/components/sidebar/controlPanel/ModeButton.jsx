@@ -5,24 +5,25 @@ import _ from 'lodash';
 class ModeButton extends React.Component {
 
   switchMode(){
-    Actions.switchMode(this.props.mode);
+    Actions.switchMode(this.props.name);
   }
 
   render(){
-    let classes = this.props.current === this.props.mode  ? 'active' : null;
-    let ref = this.props.mode + 'Button';
+    let classes = this.props.status === 'active' ? 'active' : null;
+    let ref = this.props.name + 'Button';
+    let isDisabled = this.props.status === 'disabled';
 
     return (
-      <button ref={ ref } className={ classes } onClick={ this.switchMode.bind(this) }>
-        { _.capitalize(this.props.mode) }
+      <button ref={ ref } disabled={ isDisabled } className={ classes } onClick={ this.switchMode.bind(this) }>
+        { _.capitalize(this.props.name) }
       </button>
     )
   }
 };
 
 ModeButton.propTypes = {
-  mode: React.PropTypes.string,
-  currentMode: React.PropTypes.string
+  status: React.PropTypes.string,
+  name: React.PropTypes.string
 };
 
 export default ModeButton;

@@ -96,7 +96,12 @@ describe("AppStore Store", () => {
       });
 
       it("passes the new user to the Time Machine", () => {
-        expect(AppStore.TimeMachine.update).calledWith({ mode: 'browse' });
+        let modes = {
+          browse: 'active',
+          learn: 'disabled',
+          curate: 'disabled'
+        }
+        expect(AppStore.TimeMachine.update).calledWith({ modes });
       });
 
       it("emits a change", () => {

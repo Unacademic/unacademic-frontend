@@ -27,26 +27,6 @@ describe("Content Panel", () => {
     });
 
   });
-
-  describe("model type is waypoints", () => {
-
-    beforeEach(() => {
-      let [model] = fixtures.viewModel.collection;
-      model.type = 'waypoint';
-      [element] = renderPanel(model);
-    });
-
-    it("has the right class on the container", () => {
-      expect(element.className).to.equal('contentPanel');
-    });
-
-    it("has a title", () => {
-      let title = element.querySelector('h1').textContent;
-      expect(title).to.be.defined;
-      expect(title).not.to.equal('_Unacademic');
-    });
-
-  });
 });
 
 function renderPanel(model){

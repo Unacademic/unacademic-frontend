@@ -3,23 +3,21 @@ import HistoryButtons from './HistoryButtons.jsx';
 import AuthenticateButton from './AuthenticateButton.jsx';
 import ModeButtons from './ModeButtons.jsx';
 import LevelPanel from './levelPanel/LevelPanel.jsx';
-import DebugState from '../debugState/DebugState.jsx';
 
 class ControlPanel extends React.Component {
 
   render() {
     let appState = this.props.appState;
-    let { user, mode, history, viewModel } = appState;
+    let { user, modes, history, viewModel } = appState;
     return (
       <section className="controlPanel">
-        <DebugState appState={ appState } />
         <div>
-          <LevelPanel viewModel={ viewModel }/>
-          <ModeButtons mode={ mode }/>
+          <AuthenticateButton  user={ user }/>
+          <HistoryButtons isEarliest={ history.isEarliest } isLatest={ history.isLatest }/>
         </div>
         <div>
-          <HistoryButtons isEarliest={ history.isEarliest } isLatest={ history.isLatest }/>
-          <AuthenticateButton  user={ user }/>
+          <LevelPanel viewModel={ viewModel }/>
+          <ModeButtons modes={ modes }/>
         </div>
       </section>
     )

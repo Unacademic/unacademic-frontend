@@ -8,18 +8,21 @@
   src: url('./NB.woff') format('woff');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: var(--lightBaseColor);
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-  }
+::-webkit-scrollbar {
+  display: none;
+}
 
 button {
   font-family: NittyBold;
-  box-sizing: border-box;
   font-size: 13px;
   height: calc(var(--baseUnit) * 1.5);
   background: var(--inverseColor);
@@ -28,7 +31,21 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
   text-decoration: none;
+  width: 100%;
   border: none;
+
+  &:hover {
+    color: var(--highlightColor);
+  }
+  &:disabled {
+    color: var(--lightBaseColor);
+    background-color: var(--betweenBaseColor);
+  }
+
+  &.active {
+    background-color: var(--baseColor);
+    color: var(--inverseColor);
+  }
 }
 
 table {
@@ -43,8 +60,6 @@ td, th {
   box-sizing: border-box;
   border: none;
   height: calc(var(--baseUnit) * 1.5);
-
-
 }
 
 th {
@@ -59,20 +74,20 @@ td {
   width: 50%;
 }
 
-component(app){
+.app {
   display: flex;
   font-family: NittyNormal;
   height: 100%;
 }
 
-component(cards){
+.cards {
   display: flex;
   overflow-x: scroll;
   align-items: flex-start;
   height: 100%;
 }
 
-component(main){
+.main {
   display: flex;
   justify-content: space-between;
   background-color: var(--lightBaseColor);
@@ -80,89 +95,55 @@ component(main){
   height: 100%;
 }
 
-component(sidebar){
+.sidebar {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
 }
 
-component(contentPanel){
-  flex: 2;
+.contentPanel {
+  flex: 1;
 }
 
-component(controlPanel){
+.controlPanel {
   display: flex;
-  flex: 3;
+  flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
-component(timeline){
+.timeline {
   height: 200px;
   background-color: var(--betweenBaseColor);
 }
 
-component(historyButtons){
+.historyButtons {
   display: flex;
   justify-content: space-between;
   button {
     height: calc(var(--baseUnit) * 2);
-    &:hover {
-      color: var(--highlightColor);
-    }
-    &:disabled {
-      color: var(--lightBaseColor);
-      background-color: var(--betweenBaseColor);
-    }
   }
 }
 
-component(level-panel){
+.level-panel {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  button {
-   width: calc(100%);
-    &:disabled {
-      color: var(--lightBaseColor);
-      background-color: var(--betweenBaseColor);
-    }
-  }
-  button.active {
-    background-color: var(--baseColor);
-    color: var(--inverseColor);
-  }
 }
 
-component(mode-buttons){
+.mode-buttons {
   display: flex;
   justify-content: space-between;
-  button {
-   width: calc(100%);
-  }
-  button.active {
-    background-color: var(--baseColor);
-    color: var(--inverseColor);
-  }
 }
 
-component(authentication-panel){
-  display: flex;
-  justify-content: space-between;
-  button {
-   width: 100%;
-    &:disabled {
-      color: var(--lightBaseColor);
-      background-color: var(--betweenBaseColor);
-    }
-  }
-  button.active {
-    color: var(--highlightColor);
-  }
-}
 
-component(debugger){
+.debugger {
   color: var(--baseColor);
   background-color: var(--inverseColor);
+  flex: 1;
+
+  @media screen and ( max-height: 1600px ){
+    display: none;
+  }
 }

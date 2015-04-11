@@ -15,9 +15,11 @@ class ViewModel {
     }
 
     if(waypoint){
-      let { title, checkpoints } = allWaypoints[viewModel.waypoint - 1];
+      let data = allWaypoints[viewModel.waypoint - 1];
+      let { title, checkpoints, curator, summary, description } = data;
       let type = 'waypoint';
-      let model = { type, title }
+      let model = { type, title, curator, summary, description }
+      model.displayProperties = ['curator', 'summary', 'description'];
       let collection = checkpoints;
       return { model, collection }
     }
