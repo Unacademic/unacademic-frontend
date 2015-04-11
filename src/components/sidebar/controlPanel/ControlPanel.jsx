@@ -10,7 +10,7 @@ class ControlPanel extends React.Component {
     let appState = this.props.appState;
     let { user, modes, history, viewModel } = appState;
     return (
-      <section className="controlPanel">
+      <section className="panel panel-control">
         <div>
           <AuthenticateButton  user={ user }/>
           <HistoryButtons isEarliest={ history.isEarliest } isLatest={ history.isLatest }/>

@@ -17,7 +17,8 @@ describe("Mode Button", () => {
     })
 
     it("has no class of active", () => {
-      expect(button.className).not.to.equal('active');
+      expect(button.className).to.contain('btn');
+      expect(button.className).not.to.contain('btn-is-active');
     });
 
   });
@@ -29,7 +30,8 @@ describe("Mode Button", () => {
     })
 
     it("has no class of active", () => {
-      expect(button.className).to.equal('active');
+      expect(button.className).to.contain('btn');
+      expect(button.className).to.contain('btn-is-active');
     });
   });
 

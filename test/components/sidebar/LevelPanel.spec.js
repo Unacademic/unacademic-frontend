@@ -29,9 +29,9 @@ describe("Level Panel", () => {
     it("has a button for each level", () => {
       let buttons = _.toArray(element.querySelectorAll('button'));
       let [waypointsButton, waypointButton, checkpointButton] = buttons;
-      expect(waypointsButton.className).to.contain('waypointsButton');
-      expect(waypointButton.className).to.contain('waypointButton');
-      expect(checkpointButton.className).to.contain('checkpointButton');
+      expect(waypointsButton.className).to.contain('btn-waypoints');
+      expect(waypointButton.className).to.contain('btn-waypoint');
+      expect(checkpointButton.className).to.contain('btn-checkpoint');
     });
 
     it("they are all disabled", () => {
@@ -62,8 +62,8 @@ describe("Level Panel", () => {
     });
 
     it("waypoints is active", () => {
-      let activeButtons = element.querySelectorAll('.active');
-      expect(activeButtons[0].className).to.contain('waypointsButton');
+      let activeButtons = element.querySelectorAll('.btn-is-active');
+      expect(activeButtons[0].className).to.contain('btn-waypoints');
       expect(activeButtons.length).to.equal(1);
     });
   });
@@ -85,8 +85,8 @@ describe("Level Panel", () => {
     });
 
     it("checkpoint is active", () => {
-      let activeButtons = element.querySelectorAll('.active');
-      expect(activeButtons[0].className).to.contain('checkpointButton');
+      let activeButtons = element.querySelectorAll('.btn-is-active');
+      expect(activeButtons[0].className).to.contain('btn-checkpoint');
       expect(activeButtons.length).to.equal(1);
     });
   });

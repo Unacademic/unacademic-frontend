@@ -13,7 +13,7 @@ class AuthenticateButton extends React.Component {
     let title = user ? _.capitalize(user) : 'Sign In';
     return (
       <section className="authentication-panel">
-        <button disabled={ !!user } className="authentication-button" onClick={ this.authenticate }>
+        <button disabled={ !!user } className="btn btn-authentication" onClick={ this.authenticate }>
           { title }
         </button>
       </section>

@@ -17,7 +17,7 @@ describe("Main", () => {
 
 
   it("renders the container", () => {
-    expect(element.className).to.equal('main');
+    expect(element.className).to.equal('layout-main');
   });
 
   it("renders the cards area", () => {

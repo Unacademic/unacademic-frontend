@@ -9,7 +9,7 @@ class ModeButton extends React.Component {
   }
 
   render(){
-    let classes = this.props.status === 'active' ? 'active' : null;
+    let classes = this.props.status === 'active' ? 'btn btn-is-active' : 'btn';
     let ref = this.props.name + 'Button';
     let isDisabled = this.props.status === 'disabled';
 

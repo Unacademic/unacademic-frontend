@@ -37,7 +37,7 @@ class ContentPanel extends React.Component {
     }
 
     return (
-      <section className="contentPanel">
+      <section className="panel panel-content">
         <hgroup>
           <h1>{ title }</h1>
         </hgroup>

@@ -10,9 +10,8 @@ class LevelButton extends React.Component {
   }
 
   render() {
-    let isActive = this.props.isActive ? 'active' : '';
     let [level, value] = this.props.level;
-    let classes = `${level}Button ${isActive}`;
+    let classes = this.props.isActive ? `btn btn-${level} btn-is-active` : `btn btn-${level}`;
     let title = _.capitalize(level);
     let selection = { type: level };
     return (

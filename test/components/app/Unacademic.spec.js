@@ -18,16 +18,16 @@ describe("Unacademic", () => {
 
   it("renders the container", () => {
     let classes = element.className.split(" ");
-    expect(classes).to.contain('app');
+    expect(classes).to.contain('layout-app');
   });
 
   it("renders the sidebar", () => {
-    let sidebar = element.querySelectorAll('.sidebar');
+    let sidebar = element.querySelectorAll('.layout-sidebar');
     expect(sidebar.length).to.equal(1);
   });
 
-  it.skip("renders the main area", () => {
-    let main = element.querySelectorAll('.main');
+  it("renders the main area", () => {
+    let main = element.querySelectorAll('.layout-main');
     expect(main.length).to.equal(1);
   });
 });

@@ -1,4 +1,3 @@
-import './card.css';
 import React from 'react';
 import CardNav from './CardNav.jsx';
 

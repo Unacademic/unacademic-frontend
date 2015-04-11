@@ -1,0 +1,25 @@
+.table {
+  font-size: 13px;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td, th {
+    border: none;
+    background-color: $inverseColor;
+    color: $baseColor;
+    height: $baseUnit * 1.5;
+  }
+
+  th {
+    font-weight: bold;
+    color: $inverseColor;
+    background-color: $baseColor;
+    width: 100%;
+  }
+
+  td {
+    text-align: center;
+    width: 50%;
+  }
+}

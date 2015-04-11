@@ -19,7 +19,8 @@ describe("Level Button", () => {
     });
 
     it("has the right class name", () => {
-      expect(element.className).to.contain('waypointsButton');
+      expect(element.className).to.contain('btn');
+      expect(element.className).to.contain('btn-waypoints');
     });
 
     it("should be disabled", () => {
@@ -44,9 +45,12 @@ describe("Level Button", () => {
       expect(element.disabled).to.be.false;
     });
 
-    it("should not be active level", () => {
-      expect(element.className).to.contain('active');
+    it("has the right class name", () => {
+      expect(element.className).to.contain('btn');
+      expect(element.className).to.contain('btn-is-active');
+      expect(element.className).to.contain('btn-waypoints');
     });
+
   });
 
   describe("click handling", () => {

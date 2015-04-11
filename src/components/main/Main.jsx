@@ -5,7 +5,7 @@ class Main extends React.Component {
   render() {
     let { collection } = this.props;
     return (
-      <section className="main">
+      <section className="layout-main">
         <Cards collection={ collection } className="cards" />
       </section>
     )

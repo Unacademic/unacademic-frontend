@@ -1,0 +1,24 @@
+.layout-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: NittyNormal;
+  height: 100%;
+  overflow-y: hidden;
+  background: $lightBaseColor;
+}
+
+.layout-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: $sidebarWidth;
+  max-width: $sidebarWidth;
+  padding: $baseUnit;
+  background-color: $darkBaseColor;
+}
+
+.layout-main {
+  padding: $baseUnit;
+  flex-direction: column;
+}

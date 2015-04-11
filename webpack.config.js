@@ -1,11 +1,5 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var autoprefixer = require('autoprefixer-core');
-var customProperties = require('postcss-custom-properties');
-var customSelectors = require('postcss-custom-selectors');
-var nested = require('postcss-nested');
-var csstyle = require('csstyle');
-var variables = require('./src/components/app/variables');
 
 var config = {
   entry: {
@@ -32,7 +26,7 @@ var config = {
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel?experimental'], exclude: /node_modules/},
       { test: /\.json$/, loader: 'json' },
       { test: /\.yml$/, loader: 'json!yaml' },
-      { test: /\.css$/, loader: 'style-loader!css!postcss' },
+      { test: /\.scss$/, loader: 'style!css!sass' },
       { test: /\.(png|woff)$/, loader: 'url-loader?limit=100000' }
     ]
   },
@@ -41,13 +35,6 @@ var config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
-  postcss: [
-    nested,
-    customSelectors(),
-    customProperties({variables: variables}),
-    csstyle,
-    autoprefixer
-  ]
 };
 
 module.exports = config;

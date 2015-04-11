@@ -14,6 +14,11 @@ describe("Control Panel", () => {
       [element] = renderPanel(appState);
     })
 
+    it("has the right class on the container", () => {
+      expect(element.className).to.contain('panel');
+      expect(element.className).to.contain('panel-control');
+    });
+
     it("displays the level panel", () => {
       let modeButtons = element.querySelector('.level-panel');
       expect(modeButtons).not.to.be.null;

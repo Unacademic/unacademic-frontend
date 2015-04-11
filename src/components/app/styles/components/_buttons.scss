@@ -1,0 +1,26 @@
+.btn {
+  font-family: NittyBold;
+  font-size: 13px;
+  height: $baseUnit * 1.5;
+  width: 100%;
+  background: $inverseColor;
+  padding: 10px 20px 10px 20px;
+  margin-top: $baseUnit / 3;
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    color: $highlightColor;
+  }
+
+  &:disabled {
+    color: $lightBaseColor;
+    background-color: $betweenBaseColor;
+  }
+
+  &.btn-is-active {
+    background-color: $baseColor;
+    color: $inverseColor;
+  }
+}
+

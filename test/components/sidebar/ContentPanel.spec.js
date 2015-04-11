@@ -18,7 +18,8 @@ describe("Content Panel", () => {
     });
 
     it("has the right class on the container", () => {
-      expect(element.className).to.equal('contentPanel');
+      expect(element.className).to.contain('panel');
+      expect(element.className).to.contain('panel-content');
     });
 
     it("has a title", () => {

@@ -1,0 +1,35 @@
+$baseUnit: 30px;
+$sidebarWidth: 12 * $baseUnit;
+
+@import 'colors';
+@import 'typography';
+@import 'base';
+@import 'layout';
+@import 'components/logo';
+@import 'components/buttons';
+@import 'components/tables';
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: $inverseColor;
+}
+
+.panel.panel-content {
+  justify-content: flex-start;
+}
+
+.panel.panel-debug {
+  justify-content: center;
+}
+
+.panel.panel-control {
+  justify-content: flex-end;
+}

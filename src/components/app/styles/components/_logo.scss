@@ -1,0 +1,12 @@
+.logo {
+  margin-bottom: 30px;
+
+  h1 {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 0 10px;
+    background-color: $baseColor;
+    color: $inverseColor;
+  }
+}

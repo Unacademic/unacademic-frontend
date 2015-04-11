@@ -12,7 +12,7 @@ module.exports = {
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel?experimental'], exclude: /node_modules/},
       { test: /\.json$/, loader: 'json' },
       { test: /\.yml$/, loader: 'json!yaml' },
-      { test: /\.(css|png|woff)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(css|scss|png|woff)$/, loader: 'url-loader?limit=100000' }
     ]
   }
 }

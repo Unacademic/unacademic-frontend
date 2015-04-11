@@ -15,8 +15,8 @@ class HistoryButtons extends React.Component {
     let { isEarliest, isLatest } = this.props;
     return (
       <div className="historyButtons">
-        <button ref="revertHistory" disabled={ isEarliest } onClick={ this.revertHistory }>Revert History</button>
-        <button ref="forwardHistory" disabled={ isLatest } onClick={ this.forwardHistory }>Forward History</button>
+        <button className="btn" ref="revertHistory" disabled={ isEarliest } onClick={ this.revertHistory }>Revert History</button>
+        <button className="btn" ref="forwardHistory" disabled={ isLatest } onClick={ this.forwardHistory }>Forward History</button>
       </div>
     )
   }

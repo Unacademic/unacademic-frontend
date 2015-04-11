@@ -1,4 +1,3 @@
-import './card.css';
 import React from 'react';
 import CardWaypoint from './CardWaypoint.jsx';
 import CardCheckpoint from './CardCheckpoint.jsx';

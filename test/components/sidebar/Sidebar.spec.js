@@ -17,12 +17,12 @@ describe("Sidebar", () => {
   })
 
   it("renders the content panel", () => {
-    let contentPanel = element.querySelectorAll('.contentPanel');
+    let contentPanel = element.querySelectorAll('.panel-content');
     expect(contentPanel.length).to.equal(1);
   });
 
   it("renders the control panel", () => {
-    let controlPanel = element.querySelectorAll('.controlPanel');
+    let controlPanel = element.querySelectorAll('.panel-control');
     expect(controlPanel.length).to.equal(1);
   });
 });

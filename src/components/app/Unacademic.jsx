@@ -1,5 +1,4 @@
-import css from './app.css';
-
+import './styles/app.scss';
 import React from 'react';
 import Sidebar from '../sidebar/Sidebar.jsx';
 import Main from '../main/Main.jsx';
@@ -10,7 +9,7 @@ class Unacademic extends React.Component{
     let { appState, viewModel } = this.props;
     let { model, collection } = viewModel;
     return (
-      <section className='app'>
+      <section className='layout-app'>
         <Sidebar model={ model } appState={ appState }/>
         <Main collection={ collection }/>
       </section>

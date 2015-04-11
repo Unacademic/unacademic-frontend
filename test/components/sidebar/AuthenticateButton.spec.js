@@ -36,6 +36,6 @@ function renderButton(){
   );
 
   let element = React.findDOMNode(container);
-  let button = element.querySelector('.authentication-button')
+  let button = element.querySelector('.btn-authentication')
   return [element, button];
 }
