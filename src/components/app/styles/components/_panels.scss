@@ -11,6 +11,7 @@
 
 .panel.panel-center {
   justify-content: center;
+  display: none;
 
   @media screen and ( max-height: 1600px ){
     display: none;
@@ -37,14 +38,17 @@
 }
 
 .panel .panel-content_header {
-  height: ($sidebarWidth / 5) * 3;
+  height: $imageHeight;
   background-color: $baseColor;
   margin-left: -$baseUnit;
   margin-right: -$baseUnit;
 }
 
 .panel .panel-content_main {
-  padding: $baseUnit 0;
+  hgroup {
+    padding: (($baseUnit / 3) * 2) 0;
+  }
+
 }
 
 

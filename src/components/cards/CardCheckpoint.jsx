@@ -16,7 +16,7 @@ class CardCheckpoint extends React.Component {
         <section className="card_header">
           <h1>{ id }</h1>
         </section>
-        <div className="card_container">
+        <div className="card_content">
         <hgroup>
           <h1>{ title }</h1>
         </hgroup>
@@ -26,9 +26,8 @@ class CardCheckpoint extends React.Component {
         <section>
           { resourceItems }
         </section>
-        <CardNav type={ type } id={ id }/>
         </div>
-
+        <CardNav type={ type } id={ id }/>
       </section>
     )
   }

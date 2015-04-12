@@ -1,11 +1,11 @@
 .logo {
-  margin-bottom: 30px;
+  margin-bottom: $baseUnit;
 
   h1 {
     display: inline-block;
-    font-size: 22px;
-    line-height: 30px;
-    padding: 0 10px;
+    font-size: rem-calc(22);
+    line-height: rem-calc(30);
+    padding: 0 $thirdUnit;
     background-color: $baseColor;
     color: $inverseColor;
   }

@@ -1,5 +1,6 @@
 .cards {
   display: flex;
+  align-items: flex-start;
   flex-direction: row;
   overflow-x: scroll;
 }
@@ -7,32 +8,57 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  margin: $baseUnit;  
-  min-width: $cardWidth; 
-  max-width: $cardWidth; 
+  justify-content: space-between;
+  margin: $baseUnit;
+  min-width: $cardWidth;
+  max-width: $cardWidth;
   background-color: $inverseColor;
+  padding-bottom: $baseUnit;
 }
 
-
 .card .card_header {
-  height: ($cardWidth / 5) * 3;
+  height: $imageHeight;
   background-color: $baseColor;
+
 }
 
 .card .card_container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  padding: $baseUnit;
+  justify-content: space-between;
   flex: 1;
+
 }
 
 .card .card_content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
+  padding: 0 $baseUnit;
+
+  h1 {
+    padding: $twoThirdUnit 0;
+  }
+
+  section {
+    margin-bottom: $baseUnit;
+
+    h1 {
+      padding: 0;
+      font-size: rem-calc(16);
+      line-height: rem-calc(22);
+      font-family: NittyBold;
+    }
+  }
+
+  .meta {
+    margin-bottom: $twoThirdUnit;
+  }
 }
 
 .card .card_nav {
+  padding: 0 $baseUnit;
+  button {
+    margin-top: 0;
+  }
 }

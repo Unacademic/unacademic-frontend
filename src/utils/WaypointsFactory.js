@@ -1,5 +1,6 @@
 import faker from 'faker';
 import R from 'ramda';
+import _ from 'lodash';
 
 class Resource {
   constructor(id){
@@ -23,7 +24,7 @@ class Checkpoint {
 class Waypoint {
   constructor(index) {
     this.id = index;
-    this.title = getRandomString(1,3);
+    this.title = _.capitalize(getRandomString(2,5));
     this.image = faker.image.image();
     this.curator = 'Yeehaa';
     this.summary = faker.lorem.sentence();
@@ -38,7 +39,9 @@ let allWaypoints = R.map((i) => new Waypoint(i), R.range(1,10));
 export { allWaypoints };
 
 function getRandomString(min, max){
-  return faker.lorem.words(getRandomInt(min,max)).join(' ')
+  let words = faker.lorem.words(getRandomInt(min,max));
+  let capitalizeAll = R.map((word) => _.capitalize(word));
+  return capitalizeAll(words).join(' ');
 }
 
 function getRandomRange(min, max){

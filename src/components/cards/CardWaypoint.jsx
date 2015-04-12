@@ -10,11 +10,11 @@ class CardWaypoint extends React.Component {
     let classes = ['card', 'card-waypoint'].join(' ');
     return (
       <section className={ classes }>
-        <section className="card_header"></section>
-        <div className="card_container">
-          <CardContent model={ model }/>
-          <CardNav type={ type } id={ id }/>
-        </div>
+        <section className="card_header">
+          <img src={ image }/>
+        </section>
+        <CardContent model={ model }/>
+        <CardNav type={ type } id={ id }/>
       </section>
     )
   }

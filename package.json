@@ -14,7 +14,7 @@
     "test": "node webpack-mocha.config.js"
   },
   "devDependencies": {
-    "autoprefixer-core": "^5.1.7",
+    "autoprefixer-loader": "^1.2.0",
     "babel": "^4.1.1",
     "babel-core": "^4.0.1",
     "babel-loader": "^4.0.0",

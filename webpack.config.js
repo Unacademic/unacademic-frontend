@@ -26,7 +26,7 @@ var config = {
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel?experimental'], exclude: /node_modules/},
       { test: /\.json$/, loader: 'json' },
       { test: /\.yml$/, loader: 'json!yaml' },
-      { test: /\.scss$/, loader: 'style!css!sass' },
+      { test: /\.scss$/, loader: 'style!css!autoprefixer!sass' },
       { test: /\.(png|woff)$/, loader: 'url-loader?limit=100000' }
     ]
   },
@@ -34,7 +34,7 @@ var config = {
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
-  ],
+  ]
 };
 
 module.exports = config;

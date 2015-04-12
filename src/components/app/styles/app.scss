@@ -1,6 +1,13 @@
-$baseUnit: 30px;
+@import 'functions.scss';
+
+$baseUnit: rem-calc(30);
+$halfUnit: rem-calc(15);
+$thirdUnit: rem-calc(10);
+$twoThirdUnit: rem-calc(20);
+
 $sidebarWidth: 12 * $baseUnit;
 $cardWidth: 12 * $baseUnit;
+$imageHeight: 7 * $baseUnit;
 
 @import 'colors';
 @import 'typography';
@@ -11,4 +18,3 @@ $cardWidth: 12 * $baseUnit;
 @import 'components/tables';
 @import 'components/panels';
 @import 'components/cards';
-

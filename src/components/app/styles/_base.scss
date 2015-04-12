@@ -12,3 +12,23 @@
 h1, h2, h3, h4 ,h5, h6 {
   font-family: NittyBold;
 }
+
+p {
+  font-size: rem-calc(16);
+  line-height: rem-calc(20);
+}
+
+h1 {
+  font-size: rem-calc(28);
+  line-height: rem-calc(30);
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+img:hover {
+  filter: grayscale(0%);
+}
