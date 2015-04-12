@@ -11,7 +11,7 @@ class ModeButtons extends React.Component {
       <ModeButton key={ index } name={ mode } status={ modes[mode] } />);
     let modeButtons = createButtons(modeNames);
     return (
-      <section className="mode-buttons">{ modeButtons }</section>
+      <section className="panel panel-right panel-modes">{ modeButtons }</section>
     );
   }
 };

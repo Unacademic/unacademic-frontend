@@ -8,6 +8,7 @@ $sidebarWidth: 12 * $baseUnit;
 @import 'components/logo';
 @import 'components/buttons';
 @import 'components/tables';
+@import 'components/panels';
 
 .cards {
   display: flex;
@@ -15,21 +16,3 @@ $sidebarWidth: 12 * $baseUnit;
   overflow-x: scroll;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  color: $inverseColor;
-}
-
-.panel.panel-content {
-  justify-content: flex-start;
-}
-
-.panel.panel-debug {
-  justify-content: center;
-}
-
-.panel.panel-control {
-  justify-content: flex-end;
-}

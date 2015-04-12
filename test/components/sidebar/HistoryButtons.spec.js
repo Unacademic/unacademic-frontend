@@ -1,8 +1,8 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import HistoryButtons from '../../../src/components/sidebar/controlPanel/HistoryButtons.jsx';
+import HistoryPanel from '../../../src/components/sidebar/controlPanel/historyPanel/HistoryPanel.jsx';
 import Actions from '../../../src/actions/index.js';
 
-describe("HistoryButtons Button", () => {
+describe("HistoryPanel Button", () => {
   let element;
   let revertHistoryButton, forwardHistoryButton;
 
@@ -17,7 +17,9 @@ describe("HistoryButtons Button", () => {
     });
 
     it("has the right class on the container", () => {
-      expect(element.className).to.equal('historyButtons');
+      expect(element.className).to.contain('panel');
+      expect(element.className).to.contain('panel-horizontal');
+      expect(element.className).to.contain('panel-history');
     });
   });
 
@@ -94,7 +96,7 @@ describe("HistoryButtons Button", () => {
 
 function renderButtons(isEarliest, isLatest){
   let container = TestUtils.renderIntoDocument(
-    <HistoryButtons isEarliest={ isEarliest } isLatest={ isLatest }/>
+    <HistoryPanel isEarliest={ isEarliest } isLatest={ isLatest }/>
   );
 
   let revertHistoryButton = React.findDOMNode(container.refs.revertHistory);

@@ -37,9 +37,9 @@ class ContentPanel extends React.Component {
     }
 
     return (
-      <section className="panel panel-content">
+      <section className="panel panel-content panel-top">
         <hgroup>
-          <h1>{ title }</h1>
+          <h1>{ type === 'waypoints' ? '' : title }</h1>
         </hgroup>
         { displayItems ? displayItems : null }
       </section>

@@ -17,7 +17,7 @@ class LevelPanel extends React.Component {
     let levelButtons = createLevelButtons(levels);
 
     return (
-      <section className="level-panel">
+      <section className="panel panel-left panel-level">
         { levelButtons }
       </section>
     )

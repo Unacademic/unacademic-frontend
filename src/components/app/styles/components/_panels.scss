@@ -1,0 +1,36 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  color: $inverseColor;
+}
+
+.panel.panel-top {
+  justify-content: flex-start;
+}
+
+.panel.panel-center {
+  justify-content: center;
+
+  @media screen and ( max-height: 1600px ){
+    display: none;
+  }
+}
+
+.panel.panel-bottom {
+  justify-content: flex-end;
+}
+
+.panel.panel-horizontal {
+  margin-top: $baseUnit / 2;
+  flex-direction: row;
+}
+
+.panel.panel-right {
+  flex: 1;
+  margin-left: 5px;
+}
+
+.panel.panel-left {
+  flex: 1;
+  margin-right: 5px;
+}

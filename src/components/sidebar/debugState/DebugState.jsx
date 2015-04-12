@@ -40,7 +40,7 @@ class DebugState extends React.Component {
     let sections = createSections(dataArray);
 
     return (
-      <section className="panel panel-debug">
+      <section className="panel panel-center panel-debug">
         <table className="table table-debug">
           <tbody>
             { sections }

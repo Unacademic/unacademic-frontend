@@ -23,7 +23,9 @@ describe("Level Panel", () => {
     });
 
     it("has the right class on the container", () => {
-      expect(element.className).to.equal('level-panel');
+      expect(element.className).to.contain('panel');
+      expect(element.className).to.contain('panel-left');
+      expect(element.className).to.contain('panel-level');
     });
 
     it("has a button for each level", () => {
