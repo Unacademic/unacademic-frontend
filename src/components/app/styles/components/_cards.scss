@@ -3,13 +3,24 @@
   align-items: flex-start;
   flex-direction: row;
   overflow-x: scroll;
+  height: 100%;
 }
+
+.cards:last-of-type::after {
+  display: block;
+  content: '-';
+  opacity: 0;
+  min-width: $baseUnit;
+  max-width: $baseUnit;
+}
+
 
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: $baseUnit;
+  margin-right: 0;
   min-width: $cardWidth;
   max-width: $cardWidth;
   background-color: $inverseColor;
