@@ -38,10 +38,13 @@ class ContentPanel extends React.Component {
 
     return (
       <section className="panel panel-content panel-top">
-        <hgroup>
-          <h1>{ type === 'waypoints' ? '' : title }</h1>
-        </hgroup>
-        { displayItems ? displayItems : null }
+        <section className="panel-content_header"></section>
+        <div className="panel-content_main">
+          <hgroup>
+            <h1>{ type === 'waypoints' ? '' : title }</h1>
+          </hgroup>
+          { displayItems ? displayItems : null }
+        </div>
       </section>
     )
   }

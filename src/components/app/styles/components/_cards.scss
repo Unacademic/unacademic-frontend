@@ -1,0 +1,38 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  margin: $baseUnit;  
+  min-width: $cardWidth; 
+  max-width: $cardWidth; 
+  background-color: $inverseColor;
+}
+
+
+.card .card_header {
+  height: ($cardWidth / 5) * 3;
+  background-color: $baseColor;
+}
+
+.card .card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: $baseUnit;
+  flex: 1;
+}
+
+.card .card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+.card .card_nav {
+}

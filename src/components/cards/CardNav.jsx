@@ -9,8 +9,8 @@ class CardNav extends React.Component {
     let { type, id } = this.props;
     let selection = { type, id };
     return (
-      <nav className="cardNav">
-        <button onClick={ this.setViewModel.bind(this, selection)} className="browse">
+      <nav className="card_nav">
+        <button onClick={ this.setViewModel.bind(this, selection)} className="btn btn-inverse browse">
           Browse
         </button>
       </nav>

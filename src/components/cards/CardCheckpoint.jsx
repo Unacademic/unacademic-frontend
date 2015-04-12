@@ -13,9 +13,10 @@ class CardCheckpoint extends React.Component {
 
     return (
       <section className={ classes }>
-        <section className="order">
+        <section className="card_header">
           <h1>{ id }</h1>
         </section>
+        <div className="card_container">
         <hgroup>
           <h1>{ title }</h1>
         </hgroup>
@@ -26,6 +27,8 @@ class CardCheckpoint extends React.Component {
           { resourceItems }
         </section>
         <CardNav type={ type } id={ id }/>
+        </div>
+
       </section>
     )
   }

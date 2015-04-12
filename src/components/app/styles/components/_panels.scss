@@ -5,6 +5,7 @@
 }
 
 .panel.panel-top {
+  display: flex;
   justify-content: flex-start;
 }
 
@@ -34,3 +35,17 @@
   flex: 1;
   margin-right: 5px;
 }
+
+.panel .panel-content_header {
+  height: ($sidebarWidth / 5) * 3;
+  background-color: $baseColor;
+  margin-left: -$baseUnit;
+  margin-right: -$baseUnit;
+}
+
+.panel .panel-content_main {
+  padding: $baseUnit 0;
+}
+
+
+

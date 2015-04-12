@@ -1,5 +1,6 @@
 $baseUnit: 30px;
 $sidebarWidth: 12 * $baseUnit;
+$cardWidth: 12 * $baseUnit;
 
 @import 'colors';
 @import 'typography';
@@ -9,10 +10,5 @@ $sidebarWidth: 12 * $baseUnit;
 @import 'components/buttons';
 @import 'components/tables';
 @import 'components/panels';
-
-.cards {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-}
+@import 'components/cards';
 

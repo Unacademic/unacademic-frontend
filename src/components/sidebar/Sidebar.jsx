@@ -12,10 +12,12 @@ class Sidebar extends React.Component {
 
     return (
       <div className="layout-sidebar">
-        <section className="logo">
-          <h1>Unacademic_</h1>
-        </section>
-        <ContentPanel model={ model }/>
+        <div>
+          <section className="logo">
+            <h1>Unacademic_</h1>
+          </section>
+          <ContentPanel model={ model }/>
+        </div>
         <DebugState appState={ appState } />
         <ControlPanel appState={ appState }/>
       </div>
