@@ -1,5 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import LevelPanel from '../../../src/components/sidebar/controlPanel/levelPanel/LevelPanel.jsx';
+import LevelPanel from '../../../src/components/controlPanel/levelPanel/LevelPanel.jsx';
 import Actions from '../../../src/actions/index.js';
 import _ from 'lodash';
 
@@ -23,9 +23,10 @@ describe("Level Panel", () => {
     });
 
     it("has the right class on the container", () => {
-      expect(element.className).to.contain('panel');
-      expect(element.className).to.contain('panel-left');
-      expect(element.className).to.contain('panel-level');
+      let classes = element.className;
+      expect(classes).to.contain('panel');
+      expect(classes).to.contain('panel-left');
+      expect(classes).to.contain('panel-level');
     });
 
     it("has a button for each level", () => {
@@ -96,7 +97,7 @@ describe("Level Panel", () => {
 
 function renderPanel(viewModel){
   let container = TestUtils.renderIntoDocument(
-    <LevelPanel viewModel={ viewModel }/>
+    <LevelPanel position={ "left" } viewModel={ viewModel }/>
   );
 
   let element = React.findDOMNode(container);

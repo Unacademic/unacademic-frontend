@@ -7,35 +7,22 @@ class ViewModel {
     let { waypoints, waypoint, checkpoint} = viewModel;
 
     if(checkpoint){
-      let { title, resources } = allWaypoints[viewModel.waypoint - 1].checkpoints[checkpoint - 1];
-      let type = 'checkpoint';
-      let model = { type, title };
-      let collection = resources;
+      let model = allWaypoints[viewModel.waypoint - 1].checkpoints[checkpoint - 1];
+      let collection = model.resources;
       return { model, collection }
     }
 
     if(waypoint){
-      let data = allWaypoints[viewModel.waypoint - 1];
-      let { title, image, checkpoints, curator, summary, description } = data;
-      let type = 'waypoint';
-      let model = { type, title, image, curator, summary, description }
-      model.displayProperties = ['curator', 'summary', 'description'];
-      let collection = checkpoints;
+      let model = allWaypoints[viewModel.waypoint - 1];
+      let collection = model.checkpoints;
       return { model, collection }
     }
 
     if(waypoints){
       let title = '_Unacademic';
       let type = 'waypoints';
-      let model = { type, title };
-      let collection;
-
-      if(!user){
-        collection = allWaypoints;
-      } else {
-        collection = [allWaypoints[1], allWaypoints[2]]
-      }
-
+      let model = { title, type };
+      let collection = user ? [allWaypoints[1], allWaypoints[2]] : allWaypoints;
       return { model, collection }
     }
   }

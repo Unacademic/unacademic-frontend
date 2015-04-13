@@ -16,7 +16,7 @@ describe("CardNav", () => {
   describe("render", () => {
 
     it("renders the container", () => {
-      expect(element.className).to.equal('cardNav');
+      expect(element.className).to.equal('card_nav');
     });
 
     it("renders the buttons", () => {

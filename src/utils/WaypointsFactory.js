@@ -6,10 +6,9 @@ class Resource {
   constructor(id){
     this.id = id;
     this.title = getRandomString(1,3);
-    this.author = getRandomString(2);
-    this.url = getRandomString(2);
+    this.author = getRandomString(1,2);
+    this.url = getRandomString(1,2);
   }
-
 }
 
 class Checkpoint {

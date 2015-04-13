@@ -1,7 +1,7 @@
 import React from 'react';
-import Actions from '../../../../actions/index';
+import Actions from '../../../actions/index';
 
-class AuthenticateButton extends React.Component {
+class AuthenticationPanel extends React.Component {
 
   authenticate(){
     Actions.authenticate();
@@ -21,8 +21,8 @@ class AuthenticateButton extends React.Component {
   }
 };
 
-AuthenticateButton.propTypes = {
+AuthenticationPanel.propTypes = {
   user: React.PropTypes.string
 };
 
-export default AuthenticateButton;
+export default AuthenticationPanel;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Actions from '../../../../actions/index';
+import Actions from '../../../actions/index';
 import _ from 'lodash';
 
 class ModeButton extends React.Component {

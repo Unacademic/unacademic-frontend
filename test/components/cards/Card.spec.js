@@ -20,23 +20,7 @@ describe("Card", () => {
     });
 
     it("renders the container", () => {
-      expect(element.className).to.contain('card-waypoint');
-    });
-  });
-
-  describe("when model is checkpoint", () => {
-
-    beforeEach(() => {
-      let [model] = fixtures.viewModel.collection[0].checkpoints;
-      let container = TestUtils.renderIntoDocument(
-        <Card model={ model } />
-      );
-
-      element = React.findDOMNode(container);
-    });
-
-    it("renders the container", () => {
-      expect(element.className).to.contain('card-checkpoint');
+      expect(element.className).to.contain('card');
     });
   });
 });

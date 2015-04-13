@@ -1,5 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import ModeButton from '../../../src/components/sidebar/controlPanel/modePanel/ModeButton.jsx';
+import ModeButton from '../../../src/components/controlPanel/modePanel/ModeButton.jsx';
 import Actions from '../../../src/actions/index.js';
 
 describe("Mode Button", () => {

@@ -1,5 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import HistoryPanel from '../../../src/components/sidebar/controlPanel/historyPanel/HistoryPanel.jsx';
+import HistoryPanel from '../../../src/components/controlPanel/historyPanel/HistoryPanel.jsx';
 import Actions from '../../../src/actions/index.js';
 
 describe("HistoryPanel Button", () => {

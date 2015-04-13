@@ -41,29 +41,9 @@
 
 }
 
-.card .card_content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 $baseUnit;
-
-  h1 {
-    padding: $twoThirdUnit 0;
-  }
-
-  section {
-    margin-bottom: $baseUnit;
-
-    h1 {
-      padding: 0;
-      font-size: rem-calc(16);
-      line-height: rem-calc(22);
-      font-family: NittyBold;
-    }
-  }
-
-  .meta {
-    margin-bottom: $twoThirdUnit;
+.card .panel {
+  p, h1 {
+    color: $baseColor;
   }
 }
 

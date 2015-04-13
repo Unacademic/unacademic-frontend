@@ -14,8 +14,8 @@ class ControlPanel extends React.Component {
         <AuthenticationPanel user={ user }/>
         <HistoryPanel isEarliest={ history.isEarliest } isLatest={ history.isLatest }/>
         <div className="panel panel-horizontal">
-          <LevelPanel viewModel={ viewModel }/>
-          <ModePanel modes={ modes }/>
+          <LevelPanel position="left" viewModel={ viewModel }/>
+          <ModePanel position="right" modes={ modes }/>
         </div>
       </section>
     )

@@ -1,6 +1,6 @@
-import ContentPanel from './ContentPanel.jsx';
-import ControlPanel from './controlPanel/ControlPanel.jsx';
-import DebugState from './debugState/DebugState.jsx';
+import ContentPanel from '../contentPanel/ContentPanel.jsx';
+import ControlPanel from '../controlPanel/ControlPanel.jsx';
+import DebugState from '../debugState/DebugState.jsx';
 
 import React from 'react';
 

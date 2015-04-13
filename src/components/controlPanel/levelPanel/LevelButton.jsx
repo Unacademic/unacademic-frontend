@@ -1,5 +1,5 @@
 import React from 'react';
-import Actions from '../../../../actions/index';
+import Actions from '../../../actions/index';
 import R from 'ramda';
 import _ from 'lodash';
 
