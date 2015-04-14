@@ -7,6 +7,7 @@ class ViewModel {
     let { waypoints, waypoint, checkpoint} = viewModel;
 
     if(checkpoint){
+      let waypoint = allWaypoints[viewModel.waypoint - 1];
       let model = allWaypoints[viewModel.waypoint - 1].checkpoints[checkpoint - 1];
       let collection = model.resources;
       return { model, collection }

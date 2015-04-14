@@ -12,8 +12,12 @@ class Resource {
 }
 
 class Checkpoint {
-  constructor(id) {
+  constructor(id, parent) {
     this.id = id;
+    this.waypoint = { 
+      title: parent.title,
+      id: parent.id
+    };
     this.title = getRandomString(1,3);
     this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
     this.resources = R.map((i) => new Resource(i), getRandomRange(2,8));
@@ -28,7 +32,7 @@ class Waypoint {
     this.curator = 'Yeehaa';
     this.summary = faker.lorem.sentence();
     this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
-    this.checkpoints = R.map((i) => new Checkpoint(i), getRandomRange(1,15));
+    this.checkpoints = R.map((i) => new Checkpoint(i, this), getRandomRange(1,15));
   };
 
 };

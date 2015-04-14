@@ -9,6 +9,7 @@ class Sidebar extends React.Component {
   render() {
 
     let { model, appState } = this.props;
+    let type = model.constructor.name.toLowerCase();
 
     return (
       <div className="layout-sidebar">
