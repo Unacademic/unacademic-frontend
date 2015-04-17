@@ -7,9 +7,8 @@ let viewModel = Map({
 });
 
 let modes = Map({
-  browse: 'active',
-  learn: 'disabled',
-  curate: 'disabled'
+  learn: 'active',
+  curate: ''
 })
 
 let initialState = Map({

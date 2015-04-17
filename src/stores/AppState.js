@@ -32,9 +32,8 @@ class AppStore extends BaseStore {
 
   switchMode(mode){
     let modes = {
-      browse: 'disabled',
-      learn: 'disabled',
-      curate: 'disabled'
+      learn: '',
+      curate: '' 
     };
     modes[mode] = 'active'
     this.update({ modes })

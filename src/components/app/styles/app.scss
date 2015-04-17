@@ -7,7 +7,7 @@ $twoThirdUnit: rem-calc(20);
 
 $sidebarWidth: 12 * $baseUnit;
 $cardWidth: 12 * $baseUnit;
-$imageHeight: 7 * $baseUnit;
+$imageHeight: ($cardWidth / 12) * 7;
 
 @import 'colors';
 @import 'typography';

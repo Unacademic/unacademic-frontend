@@ -17,6 +17,24 @@
   background-color: $darkBaseColor;
 }
 
+.layout-levels {
+  display: flex;
+  width: auto;
+
+  .tab {
+    width: 25px;
+    height: 100%;
+  }
+
+  .waypoint {
+    background-color: darken($darkBaseColor, 5%);
+  }
+
+  .waypoints {
+    background-color: darken($darkBaseColor, 10%);
+  }
+}
+
 .layout-main {
   flex-direction: column;
   height: 100%;

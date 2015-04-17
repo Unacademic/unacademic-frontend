@@ -16,7 +16,7 @@ describe("Control Panel", () => {
     expect(element.className).to.contain('panel-bottom');
   });
 
-  it("displays the authentication panel", () => {
+  xit("displays the authentication panel", () => {
     let authenticationPanel = element.querySelector('.panel-authentication');
     expect(authenticationPanel).not.to.be.null;
   });
@@ -26,12 +26,12 @@ describe("Control Panel", () => {
     expect(historyPanel).not.to.be.null;
   });
 
-  it("displays the level panel", () => {
+  xit("displays the level panel", () => {
     let levelPanel = element.querySelector('.panel-level');
     expect(levelPanel).not.to.be.null;
   });
 
-  it("displays the mode button panel", () => {
+  xit("displays the mode button panel", () => {
     let modePanel = element.querySelector('.panel-modes');
     expect(modePanel).not.to.be.null;
   });

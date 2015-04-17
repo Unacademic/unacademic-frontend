@@ -16,9 +16,13 @@ let model = { title };
 let viewModel = { model, collection };
 
 let user = undefined;
-let mode = 'browse';
+let modes = {
+  learn: 'active',
+  curate: ''
+};
 let history = [];
-let appState = { user, mode, history, viewModel: {}};
+
+let appState = { user, modes, history, viewModel: {waypoint: false, checkpoint: false}};
 
 let fixtures = { appState, viewModel };
 

@@ -8,8 +8,13 @@ class Unacademic extends React.Component{
   render() {
     let { appState, viewModel } = this.props;
     let { model, collection } = viewModel;
+    let { waypoint, checkpoint } = appState.viewModel;
     return (
       <section className='layout-app'>
+        <section className="layout-levels">
+          { waypoint && <div className="tab waypoints"></div> }
+          { checkpoint && <div className="tab waypoint"></div> }
+        </section>
         <Sidebar model={ model } appState={ appState }/>
         <Main collection={ collection }/>
       </section>

@@ -6,7 +6,6 @@ class CheckpointSection extends React.Component {
 
   render() {
     let model = this.props.model;
-    console.log(model);
     let { title, description, resources, waypoint } = model;
     let type = model.constructor.name.toLowerCase();
     let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
@@ -17,8 +16,11 @@ class CheckpointSection extends React.Component {
           <h1>{ title }</h1>
         </hgroup>
         <section className="meta">
-          <p>Waypoint: { waypoint.title }</p>
           <p>Resources: { resources.length }</p>
+        </section>
+        <section>
+          <h1>Waypoint</h1>
+          <p>{ waypoint.title }</p>
         </section>
         <section>
           <h1>Description</h1>

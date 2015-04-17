@@ -89,7 +89,7 @@ describe("AppStore Store", () => {
       beforeEach(() => {
         action = {
           actionType: AppStoreConstants.SWITCH_MODE,
-          mode: 'browse'
+          mode: 'learn'
         }
         AppStore.TimeMachine.update = sinon.stub().returns(true);
         AppStore.handleAction(action);
@@ -97,9 +97,8 @@ describe("AppStore Store", () => {
 
       it("passes the new user to the Time Machine", () => {
         let modes = {
-          browse: 'active',
-          learn: 'disabled',
-          curate: 'disabled'
+          learn: 'active',
+          curate: ''
         }
         expect(AppStore.TimeMachine.update).calledWith({ modes });
       });

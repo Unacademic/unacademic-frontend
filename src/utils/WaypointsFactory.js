@@ -32,7 +32,7 @@ class Waypoint {
     this.curator = 'Yeehaa';
     this.summary = faker.lorem.sentence();
     this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
-    this.checkpoints = R.map((i) => new Checkpoint(i, this), getRandomRange(1,15));
+    this.checkpoints = R.map((i) => new Checkpoint(i, this), getRandomRange(1,5));
   };
 
 };
