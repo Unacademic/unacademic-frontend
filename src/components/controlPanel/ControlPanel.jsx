@@ -11,7 +11,6 @@ class ControlPanel extends React.Component {
     let { user, modes, history, viewModel } = appState;
     return (
       <section className="panel panel-bottom panel-control">
-        <HistoryPanel isEarliest={ history.isEarliest } isLatest={ history.isLatest }/>
       </section>
     )
   }
@@ -24,7 +23,7 @@ ControlPanel.propTypes = {
 export default ControlPanel;
 
 // class ControlPanel extends React.Component {
-// 
+//
 //   render() {
 //     let appState = this.props.appState;
 //     let { user, modes, history, viewModel } = appState;
@@ -40,4 +39,4 @@ export default ControlPanel;
 //     )
 //   }
 // };
-// 
+//

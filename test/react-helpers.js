@@ -16,13 +16,17 @@ let model = { title };
 let viewModel = { model, collection };
 
 let user = undefined;
+
 let modes = {
   learn: 'active',
   curate: ''
 };
+
 let history = [];
 
-let appState = { user, modes, history, viewModel: {waypoint: false, checkpoint: false}};
+let view = { waypoints: false, waypoint: false, checkpoint: false };
+
+let appState = { user, modes, history, viewModel: view };
 
 let fixtures = { appState, viewModel };
 

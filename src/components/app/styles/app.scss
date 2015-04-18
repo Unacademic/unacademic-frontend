@@ -14,6 +14,8 @@ $imageHeight: ($cardWidth / 12) * 7;
 @import 'base';
 @import 'layout';
 @import 'components/logo';
+@import 'components/sidebar';
+@import 'components/stack';
 @import 'components/buttons';
 @import 'components/tables';
 @import 'components/panels';

@@ -56,6 +56,7 @@ class ViewModel {
         break;
     }
 
+
     return proposal;
   }
 }

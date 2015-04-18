@@ -10,33 +10,23 @@
 
 .layout-sidebar {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
   min-width: $sidebarWidth;
   max-width: $sidebarWidth;
-  background-color: $darkBaseColor;
-}
 
-.layout-levels {
-  display: flex;
-  width: auto;
-
-  .tab {
-    width: 25px;
-    height: 100%;
+  &.layout-sidebar-is-waypoint {
+    min-width: $sidebarWidth + $baseUnit;
+    max-width: $sidebarWidth + $baseUnit;
   }
 
-  .waypoint {
-    background-color: darken($darkBaseColor, 5%);
-  }
-
-  .waypoints {
-    background-color: darken($darkBaseColor, 10%);
+  &.layout-sidebar-is-checkpoint {
+    min-width: $sidebarWidth + (2 * $baseUnit);
+    max-width: $sidebarWidth + (2 * $baseUnit);
   }
 }
 
 .layout-main {
   flex-direction: column;
   height: 100%;
-
 }
+

@@ -1,21 +1,36 @@
 import React from 'react';
 import Actions from '../../actions/index';
+import LevelSheet from './LevelSheet.jsx';
+import R from 'ramda';
 
 class LevelStack extends React.Component {
 
   render() {
-    let { waypoint, checkpoint } = this.props.viewModel;
+    let { currentMode } = this.props;
+    let classes = ['stack', `stack-is-${ currentMode }`].join(' ');
+    let sheetMaker = R.map((sheetData) => <LevelSheet key={ sheetData } mode={ sheetData } />)
+    let levels = [];
+
+    if(currentMode === 'checkpoint'){
+      levels = ['waypoint', 'waypoints'];
+    }
+
+    if(currentMode === 'waypoint'){
+      levels = ['waypoints'];
+    }
+
+    let sheets = sheetMaker(levels);
+
     return (
-      <section className="layout-levels">
-        { waypoint && <div className="tab waypoints"></div> }
-        { checkpoint && <div className="tab waypoint"></div> }
+      <section className={ classes }>
+        { sheets }
       </section>
     )
   }
 };
 
 LevelStack.propTypes = {
-  viewModel: React.PropTypes.object
+  currentMode: React.PropTypes.string
 }
 
 export default LevelStack;

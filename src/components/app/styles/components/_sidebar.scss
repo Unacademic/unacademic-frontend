@@ -1,0 +1,9 @@
+.sidebar {
+  display: flex;
+  width: 100%;
+  max-width: $sidebarWidth;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $darkBaseColor;
+}
+

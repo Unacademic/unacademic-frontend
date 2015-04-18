@@ -1,0 +1,14 @@
+.stack {
+  display: flex;
+}
+
+.stack_sheet {
+  width: $baseUnit;
+  height: 100%;
+  border: none;
+  background-color: lighten($darkBaseColor, 40%);
+}
+
+.stack_sheet:first-of-type {
+  background-color: lighten($darkBaseColor, 20%);
+}
