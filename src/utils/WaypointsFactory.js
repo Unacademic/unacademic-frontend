@@ -1,43 +1,45 @@
 import faker from 'faker';
 import R from 'ramda';
 import _ from 'lodash';
+import store_data from '../waypoints/store_data.yml';
 
 class Resource {
-  constructor(id){
-    this.id = id;
-    this.title = getRandomString(1,3);
-    this.author = getRandomString(1,2);
-    this.url = getRandomString(1,2);
+  constructor(resource, index){
+    this.id = index + 1;
+    this.author = resource.author;
+    this.title = resource.title;
+    this.url = resource.url; 
   }
 }
 
 class Checkpoint {
-  constructor(id, parent) {
-    this.id = id;
+  constructor(checkpoint, index, parent) {
+    this.id = index + 1;
     this.waypoint = { 
       title: parent.title,
       id: parent.id
     };
-    this.title = getRandomString(1,3);
-    this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
-    this.resources = R.map((i) => new Resource(i), getRandomRange(2,8));
+    this.title = checkpoint.title;
+    this.description = checkpoint.description;
+    this.instructions = checkpoint.instructions;
+    this.resources = R.mapIndexed((resource, index) => new Resource(resource, index), checkpoint.resources); 
   };
 };
 
 class Waypoint {
-  constructor(index) {
-    this.id = index;
-    this.title = _.capitalize(getRandomString(2,5));
-    this.image = faker.image.image();
-    this.curator = 'Yeehaa';
-    this.summary = faker.lorem.sentence();
-    this.description = R.map(faker.lorem.paragraph, getRandomRange(1,3));
-    this.checkpoints = R.map((i) => new Checkpoint(i, this), getRandomRange(1,5));
+  constructor(waypoint) {
+    this.id = 1;
+    this.title = waypoint.title 
+    this.curator = waypoint.curator; 
+    this.summary = waypoint.summary; 
+    this.description = waypoint.description;
+    this.checkpoints = R.mapIndexed((checkpoint, index) => new Checkpoint(checkpoint, index, this), waypoint.checkpoints);
   };
 
 };
 
-let allWaypoints = R.map((i) => new Waypoint(i), R.range(1,10));
+let waypoint = new Waypoint(store_data);
+let allWaypoints = [waypoint]; 
 
 export { allWaypoints };
 

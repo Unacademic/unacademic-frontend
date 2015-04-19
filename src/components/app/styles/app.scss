@@ -5,8 +5,8 @@ $halfUnit: rem-calc(15);
 $thirdUnit: rem-calc(10);
 $twoThirdUnit: rem-calc(20);
 
-$sidebarWidth: 12 * $baseUnit;
-$cardWidth: 12 * $baseUnit;
+$sidebarWidth: 14 * $baseUnit;
+$cardWidth: 14 * $baseUnit;
 $imageHeight: ($cardWidth / 12) * 7;
 
 @import 'colors';

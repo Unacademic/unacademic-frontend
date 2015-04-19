@@ -63,10 +63,20 @@
     }
   }
 
+  .meta p {
+    margin-bottom: 0;
+  }
+
+
   .meta {
     margin-bottom: $twoThirdUnit;
   }
+
+  &.panel-is-resource {
+    margin-top: $twoThirdUnit;
+  }
 }
+
 
 .panel.panel-control {
   padding: $baseUnit;

@@ -22,7 +22,7 @@ describe("Cards", () => {
 
   it("renders the cards", () => {
     let cards = element.querySelectorAll('.card');
-    expect(cards.length).to.equal(9);
+    expect(cards.length).to.equal(1);
   });
 
 });

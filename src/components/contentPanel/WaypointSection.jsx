@@ -1,6 +1,9 @@
 import React from 'react';
 import R from 'ramda';
 import _ from 'lodash';
+import marked from 'marked';
+
+let renderer = new marked.Renderer();
 
 class MainSection extends React.Component {
 
@@ -9,6 +12,7 @@ class MainSection extends React.Component {
     let { title, image, curator, description, summary, checkpoints } = model;
     let type = model.constructor.name.toLowerCase();
     let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
+    let rendereredDescription = {__html: marked(description, { renderer })};
 
     return (
       <section className={ classes }>
@@ -25,7 +29,7 @@ class MainSection extends React.Component {
         </section>
         <section>
           <h1>Description</h1>
-          { R.mapIndexed((paragraph, index) => (<p key={ index }>{ paragraph }</p>), description) }
+          <div dangerouslySetInnerHTML={ rendereredDescription }></div>
         </section>
       </section>
     )

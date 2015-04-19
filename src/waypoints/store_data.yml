@@ -1,0 +1,59 @@
+title: Store and Retrieve Data
+curator: Yeehaa
+
+summary: Learn how to deal with locally and remotely persisted data.
+
+description: |
+  By default, JavaScript programs store their data in memory. This is fine as
+  long as you keep your browser tab open and do not need to share information
+  with others. Things become much more interesting, however, when we start
+  persisting and retrieving data.
+
+checkpoints:
+
+- title: Keep it Local
+  description: |
+    Over the last few years, web browsers have turned into complete operation
+    systems. One of the core tasks of any OS is to persist and retrieve data. The
+    browser’s version of the harddrive is called *local storage*, and is now
+    consistently implemented in all the major browsers.
+
+    Local Storage is a so-called ‘key-value store’, which is a difficult way of
+    saying that it’s one big javascript object, in this case augmented with
+    some convenience methods. 
+  instructions: 
+    - Try LocalStorage out in the developer console in your browser.
+  resources: 
+  - title: Can I Use localStorage
+    url: http://caniuse.com/#search=localstorage
+  - title: A Place To Put Your Stuff
+    url: http://diveintohtml5.info/storage.html
+  - title: Localstorage
+    url: https://www.youtube.com/watch?v=W8SFylZ8Jh4
+
+- title: String it Together
+  description: | 
+    All the keys and values in local storage are simply strings. This works 
+    great, as long as we want to store texts. As soon as we want to persist other
+    types of data, however, we first need to convert them to strings. This process
+    is known under many different names: serialization, stringification, marshalling.
+
+    The opposite of serialization is most often called parsing. It consists of
+    translating a string back to a data structure.
+  instructions: 
+    - | 
+      Build a basic parser that translates our session documents to JavaScript objects. 
+      Included in the plunker are the expectations that your code needs to fulfill, as 
+      well as more detailed instructions.
+  resources:
+  - title: The Codified World
+    author: Flusser, Vilem
+    url: https://www.upress.umn.edu/book-division/books/writings
+  - title: JSON.parse
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+  - title: JSON.stringify
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+  - title: Serialization
+    url: http://en.wikipedia.org/wiki/Serialization
+  - title: JSON
+    url: http://en.wikipedia.org/wiki/JSON

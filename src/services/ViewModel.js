@@ -1,22 +1,26 @@
 import { Map, Stack }  from 'immutable';
 import { allWaypoints } from '../utils/WaypointsFactory';
+import R from 'ramda';
 
 class ViewModel {
   async get(appState){
     let { user, viewModel } = appState;
-    let { waypoints, waypoint, checkpoint} = viewModel;
+    let waypoints = allWaypoints;
+    let waypoint = R.find(R.propEq('id', viewModel.waypoint), allWaypoints);
+    let checkpoint = waypoint ? R.find(R.propEq('id', viewModel.checkpoint), waypoint.checkpoints) : undefined;
 
     if(checkpoint){
-      let waypoint = allWaypoints[viewModel.waypoint - 1];
-      let model = allWaypoints[viewModel.waypoint - 1].checkpoints[checkpoint - 1];
-      let collection = model.resources;
-      return { model, collection }
+      return { 
+        model: checkpoint, 
+        collection: checkpoint.resources 
+      }
     }
 
     if(waypoint){
-      let model = allWaypoints[viewModel.waypoint - 1];
-      let collection = model.checkpoints;
-      return { model, collection }
+      return { 
+        model: waypoint,
+        collection: waypoint.checkpoints 
+      }
     }
 
     if(waypoints){
@@ -55,8 +59,6 @@ class ViewModel {
         }
         break;
     }
-
-
     return proposal;
   }
 }

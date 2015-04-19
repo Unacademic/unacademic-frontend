@@ -48,5 +48,8 @@
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0",
     "yaml-loader": "^0.1.0"
+  },
+  "dependencies": {
+    "marked": "^0.3.3"
   }
 }
