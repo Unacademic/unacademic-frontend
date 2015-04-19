@@ -8,6 +8,7 @@ class Resource {
   constructor(resource, index){
     this.id = index + 1;
     this.author = resource.author;
+    this.notes = resource.notes;
     this.title = resource.title;
     this.url = resource.url;
   }
@@ -28,19 +29,24 @@ class Checkpoint {
 };
 
 class Waypoint {
-  constructor(waypoint, id) {
-    this.id = id;
+  constructor(waypoint) {
+    this.id = waypoint.id || generateUID();
     this.title = waypoint.title
     this.curator = waypoint.curator;
     this.summary = waypoint.summary;
     this.description = waypoint.description;
     this.checkpoints = R.mapIndexed((checkpoint, index) => new Checkpoint(checkpoint, index, this), waypoint.checkpoints);
   };
-
 };
 
-let waypoint1 = new Waypoint(program, 1);
-let waypoint2 = new Waypoint(store_data, 2);
+let index = 0;
+function generateUID(){
+  index = index + 1;
+  return index;
+}
+
+let waypoint1 = new Waypoint(program);
+let waypoint2 = new Waypoint(store_data);
 let allWaypoints = [waypoint1, waypoint2];
 
 export { allWaypoints };
@@ -58,4 +64,3 @@ function getRandomRange(min, max){
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-

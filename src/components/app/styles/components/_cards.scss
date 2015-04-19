@@ -45,6 +45,11 @@
   p, h1, ul, ol {
     color: $baseColor;
   }
+
+  .todos li {
+    background-color: $lightBaseColor;
+    color: $baseColor;
+  }
 }
 
 .card .card_nav {

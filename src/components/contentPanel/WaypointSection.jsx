@@ -33,8 +33,18 @@ class MainSection extends React.Component {
         </section>
         <section>
           <h1>Checkpoints</h1>
-          <ul>
-            { R.mapIndexed((checkpoint, index) => <li key={ index }>{ checkpoint.title }</li>, checkpoints)}
+          <ul className="todos">
+            { R.mapIndexed((checkpoint, index) => {
+                return (
+                  <li key={ index }>
+                    <p>
+                      <span className="checkbox"></span>
+                      { checkpoint.title }
+                    </p>
+                  </li>
+                )
+              }, checkpoints)
+            }
           </ul>
         </section>
       </section>
