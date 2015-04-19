@@ -21,7 +21,7 @@ class MainSection extends React.Component {
         </hgroup>
         <section className="meta">
           <p>Curator: { curator }</p>
-          { type === 'waypoint' && <p>Checkpoints: { checkpoints.length }</p>}
+          <p>Checkpoints: { checkpoints.length }</p>
         </section>
         <section>
           <h1>Summary</h1>
@@ -30,6 +30,12 @@ class MainSection extends React.Component {
         <section>
           <h1>Description</h1>
           <div dangerouslySetInnerHTML={ rendereredDescription }></div>
+        </section>
+        <section>
+          <h1>Checkpoints</h1>
+          <ul>
+            { R.mapIndexed((checkpoint, index) => <li key={ index }>{ checkpoint.title }</li>, checkpoints)}
+          </ul>
         </section>
       </section>
     )

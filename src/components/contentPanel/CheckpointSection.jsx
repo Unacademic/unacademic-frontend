@@ -15,6 +15,9 @@ class CheckpointSection extends React.Component {
     if(!instructions){
       instructions = [];
     }
+    if(!resources){
+      resources = [];
+    }
 
     let rendereredDescription = {__html: marked(description, { renderer })};
 
@@ -34,6 +37,12 @@ class CheckpointSection extends React.Component {
           <h1>Instructions</h1>
           <ul>
           { R.mapIndexed((paragraph, index) => (<li key={ index }>{ paragraph }</li>), instructions) }
+          </ul>
+        </section>
+        <section>
+          <h1>Resources</h1>
+          <ul>
+            { R.mapIndexed((resource, index) => <li key={ index }>{ resource.title }</li>, resources)}
           </ul>
         </section>
       </section>

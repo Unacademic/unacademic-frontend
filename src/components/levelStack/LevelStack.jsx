@@ -12,7 +12,7 @@ class LevelStack extends React.Component {
     let levels = [];
 
     if(currentMode === 'checkpoint'){
-      levels = ['waypoint', 'waypoints'];
+      levels = ['waypoints', 'waypoint'];
     }
 
     if(currentMode === 'waypoint'){

@@ -2,44 +2,46 @@ import faker from 'faker';
 import R from 'ramda';
 import _ from 'lodash';
 import store_data from '../waypoints/store_data.yml';
+import program from '../waypoints/program_or_be_programmed.yml';
 
 class Resource {
   constructor(resource, index){
     this.id = index + 1;
     this.author = resource.author;
     this.title = resource.title;
-    this.url = resource.url; 
+    this.url = resource.url;
   }
 }
 
 class Checkpoint {
   constructor(checkpoint, index, parent) {
     this.id = index + 1;
-    this.waypoint = { 
+    this.waypoint = {
       title: parent.title,
       id: parent.id
     };
     this.title = checkpoint.title;
     this.description = checkpoint.description;
     this.instructions = checkpoint.instructions;
-    this.resources = R.mapIndexed((resource, index) => new Resource(resource, index), checkpoint.resources); 
+    this.resources = R.mapIndexed((resource, index) => new Resource(resource, index), checkpoint.resources);
   };
 };
 
 class Waypoint {
-  constructor(waypoint) {
-    this.id = 1;
-    this.title = waypoint.title 
-    this.curator = waypoint.curator; 
-    this.summary = waypoint.summary; 
+  constructor(waypoint, id) {
+    this.id = id;
+    this.title = waypoint.title
+    this.curator = waypoint.curator;
+    this.summary = waypoint.summary;
     this.description = waypoint.description;
     this.checkpoints = R.mapIndexed((checkpoint, index) => new Checkpoint(checkpoint, index, this), waypoint.checkpoints);
   };
 
 };
 
-let waypoint = new Waypoint(store_data);
-let allWaypoints = [waypoint]; 
+let waypoint1 = new Waypoint(program, 1);
+let waypoint2 = new Waypoint(store_data, 2);
+let allWaypoints = [waypoint1, waypoint2];
 
 export { allWaypoints };
 

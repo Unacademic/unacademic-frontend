@@ -10,7 +10,6 @@ description: |
   persisting and retrieving data.
 
 checkpoints:
-
 - title: Keep it Local
   description: |
     Over the last few years, web browsers have turned into complete operation

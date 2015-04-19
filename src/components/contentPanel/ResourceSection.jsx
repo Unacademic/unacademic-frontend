@@ -6,11 +6,9 @@ class ResourceSection extends React.Component {
 
   render() {
     let model = this.props.model;
-    console.log(model);
     let { title, author, url } = model;
     let type = model.constructor.name.toLowerCase();
     let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
-    console.log(author);
 
     return (
       <section className={ classes }>
