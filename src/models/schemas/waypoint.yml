@@ -1,0 +1,14 @@
+id:
+  required: true
+title:
+  required: true
+  minWordLength: 2
+  maxWordLength: 8
+curator:
+  required: true
+summary:
+  required: true
+description:
+  required: true
+checkpoints:
+  required: true

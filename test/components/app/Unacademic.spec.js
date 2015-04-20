@@ -6,7 +6,6 @@ describe("Unacademic", () => {
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
-
     let { appState, viewModel } = fixtures;
     let container = TestUtils.renderIntoDocument(
       <Unacademic viewModel={ viewModel } appState={ appState } />

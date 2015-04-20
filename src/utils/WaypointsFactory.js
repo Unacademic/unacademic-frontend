@@ -40,6 +40,7 @@ class Waypoint {
 };
 
 let index = 0;
+
 function generateUID(){
   index = index + 1;
   return index;
