@@ -18,9 +18,12 @@ h1, h2, h3, h4 ,h5, h6 {
   font-family: NittyBold;
 }
 
-p {
+p, li {
   font-size: rem-calc(16);
   line-height: rem-calc(20);
+}
+
+p {
   margin-bottom: 1rem;
 
   &:last-of-type {

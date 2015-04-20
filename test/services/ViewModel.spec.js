@@ -34,7 +34,7 @@ describe("ViewModel Service", () => {
 
         it("has a collection of waypoints", () => {
           let { collection } = result;
-          expect(collection.length).to.equal(1);
+          expect(collection.length).to.equal(2);
         });
       });
 
