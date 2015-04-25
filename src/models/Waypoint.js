@@ -1,16 +1,17 @@
-import BaseModel from './BaseModel';
-import schema from './schemas/waypoint.yml';
 import R from 'ramda';
 
-class Checkpoint {
-}
+import BaseModel from './BaseModel';
+import Checkpoint from './Checkpoint';
 
-let createCheckpoints = R.map((checkpoint) => new Checkpoint(Checkpoint));
+import schema from './schemas/waypoint.yml';
+
+let createCheckpoints = R.mapIndexed((checkpoint, index) => new Checkpoint(checkpoint, index + 1));
 
 class Waypoint extends BaseModel {
 
-  constructor(data){
+  constructor(data, index){
     super(data);
+    this.id = index;
     this.checkpoints = createCheckpoints(this.checkpoints);
   }
 

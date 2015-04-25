@@ -1,0 +1,6 @@
+id: 
+  required: true
+title:
+  required: true
+url:
+  required: true

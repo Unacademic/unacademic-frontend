@@ -1,0 +1,10 @@
+id:
+  required: true
+title:
+  required: true
+  minWordLength: 2
+  maxWordLength: 8
+description:
+  required: true
+resources:
+  required: true

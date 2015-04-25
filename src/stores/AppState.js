@@ -33,7 +33,7 @@ class AppStore extends BaseStore {
   switchMode(mode){
     let modes = {
       learn: '',
-      curate: '' 
+      curate: ''
     };
     modes[mode] = 'active'
     this.update({ modes })

@@ -10,16 +10,16 @@ class ViewModel {
     let checkpoint = waypoint ? R.find(R.propEq('id', viewModel.checkpoint), waypoint.checkpoints) : undefined;
 
     if(checkpoint){
-      return { 
-        model: checkpoint, 
-        collection: checkpoint.resources 
+      return {
+        model: checkpoint,
+        collection: checkpoint.resources
       }
     }
 
     if(waypoint){
-      return { 
+      return {
         model: waypoint,
-        collection: waypoint.checkpoints 
+        collection: waypoint.checkpoints
       }
     }
 

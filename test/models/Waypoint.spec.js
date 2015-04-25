@@ -1,13 +1,12 @@
 import Waypoint from '../../src/models/Waypoint.js';
 import data from '../../src/waypoints/store_data.yml';
 
-describe.only("Waypoint Model", () => {
+describe("Waypoint Model", () => {
   let waypoint;
 
   beforeEach(() => {
     data.title = undefined;
-    data.id = 1;
-    waypoint = new Waypoint(data);
+    waypoint = new Waypoint(data, 1);
   });
 
   it("has a schema", () => {
