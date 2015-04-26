@@ -8,7 +8,8 @@ describe("ViewModel Service", () => {
   let result;
 
   beforeEach(() => {
-    ViewModel = new ViewModelService();
+    let allWaypoints = () => fixtures.viewModel.collection;
+    ViewModel = new ViewModelService(allWaypoints);
   });
 
   describe("get viewModel", () => {

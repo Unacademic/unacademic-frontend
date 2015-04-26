@@ -5,7 +5,20 @@ import sinon from 'sinon';
 import React from 'react/addons';
 import { jsdom } from 'jsdom';
 
-import { allWaypoints } from '../src/utils/WaypointsFactory'
+import store_data from '../src/waypoints/store_data.yml';
+import program from '../src/waypoints/program_or_be_programmed.yml';
+import Waypoint from '../src/models/Waypoint';
+
+let index = 0;
+
+function generateUID(){
+  index = index + 1;
+  return index;
+}
+
+let waypoint1 = new Waypoint(program, generateUID());
+let waypoint2 = new Waypoint(store_data, generateUID());
+let allWaypoints = [waypoint1, waypoint2];
 
 let expect = chai.expect;
 chai.use(sinonChai);
