@@ -1,4 +1,3 @@
-import './styles/app.scss';
 import React from 'react';
 import Sidebar from '../sidebar/Sidebar.jsx';
 import Main from '../main/Main.jsx';

@@ -5,8 +5,8 @@ import R from 'ramda';
 class ViewModel {
   async get(appState){
     let { user, viewModel } = appState;
-    let waypoints = allWaypoints;
-    let waypoint = R.find(R.propEq('id', viewModel.waypoint), allWaypoints);
+    let waypoints = await allWaypoints();
+    let waypoint = R.find(R.propEq('id', viewModel.waypoint), waypoints);
     let checkpoint = waypoint ? R.find(R.propEq('id', viewModel.checkpoint), waypoint.checkpoints) : undefined;
 
     if(checkpoint){
@@ -27,7 +27,7 @@ class ViewModel {
       let title = '_Unacademic';
       let type = 'waypoints';
       let model = { title, type };
-      let collection = user ? [allWaypoints[1], allWaypoints[2]] : allWaypoints;
+      let collection = user ? [waypoints[1], waypoints[2]] : waypoints;
       return { model, collection }
     }
   }

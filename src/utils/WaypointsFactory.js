@@ -12,9 +12,12 @@ function generateUID(){
   return index;
 }
 
-let waypoint1 = new Waypoint(program, generateUID());
-let waypoint2 = new Waypoint(store_data, generateUID());
-let allWaypoints = [waypoint1, waypoint2];
+let allWaypoints = () => {
+  return fetch('http://188.166.97.196/api/0/waypoints')
+    .then((res) => res.json())
+    .then((data) => data.map((item) => new Waypoint(item)))
+}
+
 
 export { allWaypoints };
 

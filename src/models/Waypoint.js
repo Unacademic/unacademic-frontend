@@ -11,7 +11,7 @@ class Waypoint extends BaseModel {
 
   constructor(data, index){
     super(data);
-    this.id = index;
+    this.id = data.id || index;
     this.checkpoints = createCheckpoints(this.checkpoints);
   }
 

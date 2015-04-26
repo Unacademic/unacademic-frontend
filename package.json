@@ -9,6 +9,7 @@
     "iojs": ">= 1.6.2"
   },
   "scripts": {
+    "prepare": "mkdir build && cp index.html build/ && npm install",
     "dev": "webpack-dev-server --hot --progress --colors --content-base build",
     "deploy": "NODE_ENV=production webpack -p",
     "test": "node webpack-mocha.config.js"
