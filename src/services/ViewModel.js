@@ -2,9 +2,11 @@ import { Map, Stack }  from 'immutable';
 import R from 'ramda';
 
 class ViewModel {
+
   constructor(api){
     this.api = api;
   }
+
   async get(appState){
     let { user, viewModel } = appState;
     let waypoints = await this.api();

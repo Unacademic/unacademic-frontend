@@ -13,9 +13,15 @@ function generateUID(){
 }
 
 let allWaypoints = () => {
-  return fetch('http://188.166.97.196/api/0/waypoints')
-    .then((res) => res.json())
+  return fetch('http://189.166.97.196/api/0/waypoints')
+    .then((response) => response.json())
     .then((data) => data.map((item) => new Waypoint(item)))
+    .catch(() => { 
+      return [store_data, program].map((waypoint) => {
+        waypoint.id = generateUID();
+        return new Waypoint(waypoint);
+      });
+    });
 }
 
 

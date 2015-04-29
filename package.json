@@ -48,7 +48,8 @@
     "url-loader": "^0.5.5",
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0",
-    "yaml-loader": "^0.1.0"
+    "yaml-loader": "^0.1.0",
+    "nock": "^1.7.1"
   },
   "dependencies": {
     "marked": "^0.3.3"

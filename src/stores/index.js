@@ -1,5 +1,6 @@
 import { Map }  from 'immutable';
 import { allWaypoints } from '../utils/WaypointsFactory';
+import API from '../services/API.js';
 
 let viewModel = Map({
   waypoints: 'all',
