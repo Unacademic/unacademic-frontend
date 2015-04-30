@@ -1,6 +1,9 @@
 import { Map }  from 'immutable';
-import { allWaypoints } from '../utils/WaypointsFactory';
-import API from '../services/API.js';
+import APIService from '../services/API.js';
+
+let baseUrl = 'http://188.166.97.196/api/0';
+let API = new APIService(baseUrl).getWaypoints; 
+
 
 let viewModel = Map({
   waypoints: 'all',
@@ -25,6 +28,6 @@ import ViewModelService from '../services/ViewModel.js';
 import AppStore from './AppState.js';
 
 let TimeMachine = new TimeMachineService(initialState);
-let ViewModel = new ViewModelService(allWaypoints);
+let ViewModel = new ViewModelService(API);
 
 export default new AppStore(TimeMachine, ViewModel);

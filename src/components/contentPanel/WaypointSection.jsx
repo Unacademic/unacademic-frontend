@@ -31,22 +31,6 @@ class MainSection extends React.Component {
           <h1>Description</h1>
           <div dangerouslySetInnerHTML={ rendereredDescription }></div>
         </section>
-        <section>
-          <h1>Checkpoints</h1>
-          <ul className="todos">
-            { R.mapIndexed((checkpoint, index) => {
-                return (
-                  <li key={ index }>
-                    <p>
-                      <span className="checkbox"></span>
-                      { checkpoint.title }
-                    </p>
-                  </li>
-                )
-              }, checkpoints)
-            }
-          </ul>
-        </section>
       </section>
     )
   }
