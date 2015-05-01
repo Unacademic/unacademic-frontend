@@ -4,23 +4,28 @@ curator: Reika Chavers
 summary: learn to curate like a boss in Unacademic
 
 description: | 
-  How many wheels have you had to reinvent already? Our guess would be ‘too 
-  many’. Somehow, we keep creating new textbooks and courses, but most 
+  How many wheels have you had to reinvent already? Our guess would be 'too 
+  many'. Somehow, we keep creating new textbooks and courses, but most 
   information is out there already. You just need a set up that organizes the 
-  information in one place, with just the right amount of structure. You 
-  don’t want to be told what to learn, but you don’t want to have to figure 
-  out everything yourself either. So gather those interesting blog posts, 
-  podcasts, or tutorials, add your comments, and share them. That’s it!
+  this knowledge in one place, with just the right amount of structure. You 
+  don’t want to be told what to learn, but you don’t want to figure it out 
+  from scratch either. So gather those interesting blog posts, podcasts, or 
+  tutorials, add your comments, and share them. That’s it!
 
 checkpoints: 
-  - title: Structure the Logic
+  - title: Structure your Story 
     description: | 
-      Every story needs a structure. Think of a waypoints as a narrative 
-      with an introduction a body and a conclusion. Remember that to pass on 
-      knowledge you need to contextualize and structure for better 
-      understanding. Also people tend to be more motivated in their learning 
-      when its a story. First start with structuring the story you want to 
-      transfer into checkpoints.
+      Learning and curation on unacademic is built around waypoints. Think of
+      them as narratives. And like every good story, they need a structure: a 
+      beginning, an end, and several other exciting events in between them.
+
+      Events in unacademic are called checkpoints. As a curator, you use them 
+      to contextualize the resources that you want to share with others.Learners 
+      use checkpoints to track their progress within your story.
+
+      People tend to be more motivated in their learning when its a story,
+      so create and curate your waypoints accordingly.
+
     instructions: 
       - Read the reference for inspiration
     resources: 
