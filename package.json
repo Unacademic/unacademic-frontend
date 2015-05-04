@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^1.2.0",
+    "axios": "^0.5.4",
     "babel": "^4.1.1",
     "babel-core": "^4.0.1",
     "babel-loader": "^4.0.0",
@@ -35,12 +36,13 @@
     "lodash": "^3.3.0",
     "mocha": "^2.2.1",
     "moment": "^2.9.0",
+    "nock": "^1.7.1",
     "node-sass": "^2.1.1",
     "ramda": "^0.11.0",
     "react": "^0.13.0",
     "react-hot-loader": "^1.1.5",
     "react-tools": "^0.13.0-rc1",
-    "sass-loader": "^0.6.0",
+    "sass-loader": "0.4.2",
     "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",
     "sinon-chai": "^2.7.0",
     "style-loader": "^0.8.3",
@@ -48,8 +50,7 @@
     "url-loader": "^0.5.5",
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0",
-    "yaml-loader": "^0.1.0",
-    "nock": "^1.7.1"
+    "yaml-loader": "^0.1.0"
   },
   "dependencies": {
     "marked": "^0.3.3"
