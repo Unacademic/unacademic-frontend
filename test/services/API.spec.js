@@ -6,7 +6,7 @@ import 'babel/polyfill';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 
 
-describe.only("API Service", () => {
+describe("API Service", () => {
   let API;
   let server;
   let baseUrl;
@@ -32,7 +32,7 @@ describe.only("API Service", () => {
       });
 
       it("should get all waypoints", () => {
-        expect(waypoints.length).to.equal(2);
+        expect(waypoints.length).to.equal(1);
         expect(waypoints[0]).to.be.an.instanceOf(Waypoint);
       });
     });
@@ -49,7 +49,7 @@ describe.only("API Service", () => {
       });
 
       it("should get all waypoints", () => {
-        expect(waypoints.length).to.equal(0);
+        expect(waypoints.length).to.equal(1);
       });
     });
   });

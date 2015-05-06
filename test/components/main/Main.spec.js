@@ -15,9 +15,13 @@ describe("Main", () => {
     element = React.findDOMNode(container);
   });
 
-
   it("renders the container", () => {
     expect(element.className).to.equal('layout-main');
+  });
+
+  it("renders the breadcrumbs area", () => {
+    let breadcrumbs = element.querySelectorAll('.breadcrumbs');
+    expect(breadcrumbs.length).to.equal(1);
   });
 
   it("renders the cards area", () => {
