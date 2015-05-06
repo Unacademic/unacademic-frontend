@@ -47,14 +47,10 @@ class Validator {
   }
 
   validate(instance){
-    let props = R.keys(this.schema);
-    let errors = {};
-
-    let results = R.map((prop) => {
-      let res = this._validate(instance, prop)
-      if(res) errors[prop] = res;
-    }, props);
-
+    let judgements = R.mapObjIndexed((value, key) => {
+      return this._validate(instance, key)
+    }, this.schema);
+    let errors = R.pickBy((key, value) => key && value, judgements);
     let valid = Object.keys(errors).length === 0;
     return { valid, errors };
   }
