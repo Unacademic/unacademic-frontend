@@ -20,10 +20,16 @@ describe("Sidebar", () => {
     it("has the correct classes", () => {
       let classes = element.className.split(' ');
       expect(classes).to.contain('layout-sidebar');
-      expect(classes).to.contain('layout-sidebar-is-waypoints');
     });
 
-    it("renders the LevelStack", () => {
+    it("renders the sidebar", () => {
+      let sidebar = element.querySelector('.sidebar');
+      let classes = sidebar.className.split(' ');
+      expect(classes).to.contain('sidebar-is-waypoints');
+
+    })
+
+    it.skip("renders the LevelStack", () => {
       let stack = element.querySelectorAll('.stack');
       expect(stack.length).to.equal(1);
     });
@@ -46,10 +52,11 @@ describe("Sidebar", () => {
       element = renderSidebar(model, appState);
     });
 
-    it("has the correct classes", () => {
-      let classes = element.className.split(' ');
-      expect(classes).to.contain('layout-sidebar-is-waypoint');
-    });
+    it("has the correct classes on the sidebar", () => {
+      let sidebar = element.querySelector('.sidebar');
+      let classes = sidebar.className.split(' ');
+      expect(classes).to.contain('sidebar-is-waypoint');
+    })
   });
 
   describe("when mode is checkpoint", () => {
@@ -59,10 +66,11 @@ describe("Sidebar", () => {
       element = renderSidebar(model, appState);
     });
 
-    it("has the correct classes", () => {
-      let classes = element.className.split(' ');
-      expect(classes).to.contain('layout-sidebar-is-checkpoint');
-    });
+    it("has the correct classes on the sidebar", () => {
+      let sidebar = element.querySelector('.sidebar');
+      let classes = sidebar.className.split(' ');
+      expect(classes).to.contain('sidebar-is-checkpoint');
+    })
   });
 });
 

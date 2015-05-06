@@ -30,11 +30,11 @@ class Sidebar extends React.Component {
       currentMode = 'checkpoint';
     }
 
-    let classes = ['layout-sidebar', `layout-sidebar-is-${currentMode}`].join(' ');
+    let classes = ['sidebar', `sidebar-is-${currentMode}`].join(' ');
 
     return (
-      <section className={ classes }>
-        <section className="sidebar">
+    <section className="layout-sidebar">
+        <section className={ classes }>
           <div>
             <Logo modes={ modes }/>
             <ContentPanel model={ model }/>
@@ -42,7 +42,6 @@ class Sidebar extends React.Component {
           <DebugState appState={ appState } />
           <ControlPanel appState={ appState }/>
         </section>
-        <LevelStack currentMode={ currentMode }/>
       </section>
     )
   }

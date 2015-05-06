@@ -26,6 +26,7 @@
   max-width: $cardWidth;
   background-color: $inverseColor;
   padding-bottom: $baseUnit;
+  border: rem-calc(1) solid $baseColor;
 }
 
 .card .card_header {
@@ -40,17 +41,6 @@
   justify-content: space-between;
   flex: 1;
 
-}
-
-.card .panel {
-  p, h1, ul, ol {
-    color: $baseColor;
-  }
-
-  .todos li {
-    background-color: $lightBaseColor;
-    color: $baseColor;
-  }
 }
 
 .card .card_nav {
