@@ -1,5 +1,13 @@
 import R from 'ramda';
 
+////////////////////////////
+//       OBJECTIVE
+// change errors collection
+// from array to object
+// test: 1. obj is correct 2. one field fails  3. multiple fields fail
+// leave _validate alone, place logic in map, possibly use reduce
+////////////////////////////
+
 class Validator {
 
   constructor(schema){
@@ -36,14 +44,18 @@ class Validator {
       let wordLength = instance[prop] && instance[prop].split(' ').length;
       return wordLength > max && `${prop} has too many words`;
     }
-
   }
 
   validate(instance){
     let props = R.keys(this.schema);
-    let results = R.map((prop) => this._validate(instance, prop), props);
-    let errors  = R.filter((result) => result, results);
-    let valid   = errors.length === 0;
+    let errors = {};
+
+    let results = R.map((prop) => {
+      let res = this._validate(instance, prop)
+      if(res) errors[prop] = res;
+    }, props);
+
+    let valid = Object.keys(errors).length === 0;
     return { valid, errors };
   }
 }

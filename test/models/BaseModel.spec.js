@@ -33,7 +33,7 @@ describe("BaseModel Model", () => {
   });
 
   describe("no data is correct and provided", () => {
-     beforeEach(() => {
+    beforeEach(() => {
       let data = {};
       model = new Model(data);
     });

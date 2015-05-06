@@ -4,7 +4,6 @@ describe("Validator", () => {
   let judgement;
 
   describe("all data is correct and provided", () => {
-
     beforeEach(() => {
       let required = true;
       let schema = {
@@ -26,7 +25,7 @@ describe("Validator", () => {
     });
 
     it("has no errors", () => {
-      expect(judgement.errors.length).to.equal(0);
+      expect(Object.keys(judgement.errors).length).to.equal(0);
     });
   });
 
@@ -50,15 +49,14 @@ describe("Validator", () => {
     });
 
     it("has no errors", () => {
-      expect(judgement.errors.length).to.equal(2);
+      expect(Object.keys(judgement.errors).length).to.equal(2);
     });
   });
-
 
   describe("a field that...", () => {
     describe("is omitted", () => {
       it("is invalid", () => {
-        let schema = { 'field': { required: true }};
+        let schema = {field: { required: true }};
         let error = new Validator(schema)._validate({ field: undefined }, 'field');
         expect(error).to.contain('not set');
       });
