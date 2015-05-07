@@ -5,13 +5,13 @@ import ContentPanel from '../contentPanel/ContentPanel.jsx';
 class Card extends React.Component {
   render(){
     let model = this.props.model;
-    let { id } = model;
     let type = model.constructor.name.toLowerCase();
+    model.type = type;
 
     return (
       <section className="card">
         <ContentPanel model={ model } />
-        { type !== 'resource' && <CardNav id={ id } type={ type } />}
+        { type !== 'resource' && <CardNav model={ model } />}
       </section>
     )
   }

@@ -6,6 +6,7 @@ class Unacademic extends React.Component{
   render() {
     let { appState, viewModel } = this.props;
     let { model, collection } = viewModel;
+
     return (
       <section className='layout-app'>
         <Sidebar model={ model } appState={ appState }/>

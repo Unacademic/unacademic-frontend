@@ -5,6 +5,7 @@ import './contentPanel/index.spec.js';
 import './controlPanel/index.spec.js';
 import './cards/index.spec.js';
 import './logo/Logo.spec.js';
+import './breadcrumbs/BreadCrumbs.spec.js';
 import './breadcrumbs/BreadCrumb.spec.js';
 import './levelStack/LevelStack.spec.js';
 import './levelStack/LevelSheet.spec.js';

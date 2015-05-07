@@ -7,7 +7,7 @@ class Main extends React.Component {
     let { view, collection } = this.props;
     return (
       <section className="layout-main">
-        <BreadCrumbs view={ view  }></BreadCrumbs>
+        <BreadCrumbs view={ view }></BreadCrumbs>
         <Cards collection={ collection } className="cards" />
       </section>
     )

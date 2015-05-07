@@ -1,71 +1,67 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import BreadCrumbs from '../../../src/components/breadcrumbs/BreadCrumbs.jsx';
+import BreadCrumb from '../../../src/components/breadcrumbs/BreadCrumb.jsx';
 import Actions from '../../../src/actions/index.js';
 
-describe.only("BreadCrumbs", () => {
-  let breadcrumbs;
+describe("BreadCrumb", () => {
+  let breadcrumb;
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
   })
 
-  describe("waypoints", () =>{
+  describe("if current mode", () =>{
+    let classes;
+
     beforeEach(() => {
-      let view = {
-        waypoints: 'all'
-      }
-      breadcrumbs = renderBreadCrumbs(view);
+      let layer = ['waypoints', { id: 1 }];
+      breadcrumb = renderBreadCrumb(layer, 'waypoints');
+      classes = breadcrumb.className.split(" ");
     });
 
-    it("renders one breadcrumb", () => {
-      expect(breadcrumbs.length).to.equal(1);
+    it("has the breadcrumb class on it", () => {
+      expect(classes).to.contain("breadcrumb");
+    });
+
+    it("has the correct title", () => {
+      expect(breadcrumb.textContent).to.equal("Home");
     });
 
     it("has an active class on it", () => {
-      let classes = breadcrumbs[breadcrumbs.length - 1].className.split(" ");
+      expect(classes).to.contain("breadcrumb");
       expect(classes).to.contain("breadcrumb-is-active");
     });
   });
 
-  describe("waypoint", () =>{
-    it("renders two breadcrumbs", () => {
-      let view = {
-        waypoints: 'all',
-        waypoint: '1'
-      }
-      breadcrumbs = renderBreadCrumbs(view);
-      expect(breadcrumbs.length).to.equal(2);
+  describe("if not current mode", () =>{
+    let classes;
+
+    beforeEach(() => {
+      let layer = ['waypoints', 'all'];
+      breadcrumb = renderBreadCrumb(layer, 'waypoint');
     });
 
-    it("has an active class on the last crumb", () => {
-      let classes = breadcrumbs[breadcrumbs.length - 1].className.split(" ");
-      expect(classes).to.contain("breadcrumb-is-active");
-    });
-
-    it("does not have an active class on the other", () => {
-      let classes = breadcrumbs[0].className.split(" ");
+    it("has an active class on it", () => {
+      classes = breadcrumb.className.split(" ");
       expect(classes).not.to.contain("breadcrumb-is-active");
     });
   });
 
-  describe("checkpoint", () =>{
-    it("renders three breadcrumbs", () => {
-      let view = {
-        waypoints: 'all',
-        waypoint: '1',
-        checkpoint: '12'
-      }
-      breadcrumbs = renderBreadCrumbs(view);
-      expect(breadcrumbs.length).to.equal(3);
+  describe('on click', ()=> {
+    it("calls setViewModel Action", () => {
+      let layer = ['waypoints', { id: 1, title: 'hi' }];
+      breadcrumb = renderBreadCrumb(layer, 'waypoints');
+      Actions.setViewModel = sinon.spy();
+      TestUtils.Simulate.click(breadcrumb);
+      let selection = { id: 1, title: 'hi', type: 'waypoints' };
+      expect(Actions.setViewModel).to.be.calledWith(selection);
     });
   });
 });
 
-function renderBreadCrumbs(view){
+function renderBreadCrumb(level, currentMode){
   let container = TestUtils.renderIntoDocument(
-    <BreadCrumbs view={ view }/>
+      <BreadCrumb level={ level } currentMode={ currentMode }/>
   );
 
-  let component = React.findDOMNode(container);
-  return component.querySelectorAll('.breadcrumb');
+  return React.findDOMNode(container);
 }

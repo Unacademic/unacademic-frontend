@@ -18,7 +18,7 @@ describe("ViewModel Service", () => {
 
       describe("without a user", () => {
         beforeEach((done) => {
-          let viewModel = { waypoints: 'all'};
+          let viewModel = { waypoints: { id: 'all'} };
           appState = { viewModel };
 
           ViewModel.get(appState).then((data) => {
@@ -70,18 +70,18 @@ describe("ViewModel Service", () => {
         beforeEach(() => {
 
           current = {
-            waypoints: 'all',
+            waypoints: { id:1, title: 'home' },
             waypoint: false,
             checkpoint: false
           };
 
           expectation = {
-            waypoints: 'all',
-            waypoint: 1,
+            waypoints: { id:1, title: 'home' },
+            waypoint: { id: 1, title: 'tada' },
             checkpoint: false
           };
 
-          let selection = { type: 'waypoint', id: 1 };
+          let selection = { type: 'waypoint', title: 'tada', id: 1 };
           proposal = ViewModel.set({ current, selection });
         });
 
@@ -94,18 +94,18 @@ describe("ViewModel Service", () => {
         beforeEach(() => {
 
           current = {
-            waypoints: 'all',
-            waypoint: 1,
-            checkpoint: 1
+            waypoints: { id:1, title: 'home' },
+            waypoint: { id: 1, title: 'tada' },
+            checkpoint: { id: 1, title: 'tada' },
           };
 
           expectation = {
-            waypoints: 'all',
-            waypoint: 1,
+            waypoints: { id:1, title: 'home' },
+            waypoint: { id: 1, title: 'tada' },
             checkpoint: false
           };
 
-          let selection = { type: 'waypoint', id: 1 };
+          let selection = { type: 'waypoint', title: 'tada', id: 1 };
           proposal = ViewModel.set({ current, selection });
         });
 

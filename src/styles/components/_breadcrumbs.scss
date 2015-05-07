@@ -12,7 +12,7 @@
   padding: 0 $thirdUnit;
   color: $baseColor;
   background-color: $inverseColor;
-  margin-right: 5px;
+  margin-right: rem-calc(10px);
 }
 
 .breadcrumb.breadcrumb-is-active {

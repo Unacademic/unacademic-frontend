@@ -37,7 +37,7 @@ let modes = {
 
 let history = [];
 
-let view = { waypoints: false, waypoint: false, checkpoint: false };
+let view = { waypoints: 'hi', waypoint: false, checkpoint: false };
 
 let appState = { user, modes, history, viewModel: view };
 
