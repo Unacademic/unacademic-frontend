@@ -1,13 +1,5 @@
 import R from 'ramda';
 
-////////////////////////////
-//       OBJECTIVE
-// change errors collection
-// from array to object
-// test: 1. obj is correct 2. one field fails  3. multiple fields fail
-// leave _validate alone, place logic in map, possibly use reduce
-////////////////////////////
-
 class Validator {
 
   constructor(schema){
