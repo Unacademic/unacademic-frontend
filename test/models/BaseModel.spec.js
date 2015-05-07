@@ -9,7 +9,7 @@ class Model extends BaseModel {
   }
 }
 
-describe("BaseModel Model", () => {
+describe.only("BaseModel Model", () => {
   let model;
 
   describe("all data is correct and provided", () => {
@@ -28,7 +28,8 @@ describe("BaseModel Model", () => {
     });
 
     it("has no errors", () => {
-      expect(model.errors.length).to.equal(0);
+      let errors = Object.keys(model.errors);
+      expect(errors.length).to.equal(0);
     });
   });
 
@@ -43,7 +44,8 @@ describe("BaseModel Model", () => {
     });
 
     it("has no errors", () => {
-      expect(model.errors.length).to.equal(2);
+      let errors = Object.keys(model.errors);
+      expect(errors.length).to.equal(2);
     });
   });
 });
