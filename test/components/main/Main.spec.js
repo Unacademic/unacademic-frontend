@@ -8,9 +8,9 @@ describe("Main", () => {
     testdom('<html><body></body></html>');
 
     let { collection } = fixtures.viewModel;
-    let view = fixtures.appState.viewModel;
+    let levels = fixtures.appState.levels;
     let container = TestUtils.renderIntoDocument(
-      <Main view={ view } collection={ collection } />
+      <Main levels={ levels } collection={ collection } />
     );
 
     element = React.findDOMNode(container);

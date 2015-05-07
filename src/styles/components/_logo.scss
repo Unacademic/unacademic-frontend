@@ -1,6 +1,5 @@
 .logo {
   padding: $baseUnit;
-  background-color: $yellow;
 
   h1 {
     display: inline-block;
@@ -10,4 +9,12 @@
     background-color: $baseColor;
     color: $inverseColor;
   }
+}
+
+.layout-app-is-learn .logo {
+  background-color: $yellow;
+}
+
+.layout-app-is-curate .logo {
+  background-color: $red;
 }

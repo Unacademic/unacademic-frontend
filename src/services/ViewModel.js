@@ -8,11 +8,11 @@ class ViewModel {
   }
 
   async get(appState){
-    let { user, viewModel } = appState;
+    let { user, levels } = appState;
     let waypoints = await this.api();
-    let waypointId = viewModel.waypoint && viewModel.waypoint.id;
+    let waypointId = levels.waypoint && levels.waypoint.id;
     let waypoint = R.find(R.propEq('id', waypointId), waypoints);
-    let checkpointId = viewModel.checkpoint && viewModel.checkpoint.id;
+    let checkpointId = levels.checkpoint && levels.checkpoint.id;
     let checkpoint =  waypoint && R.find(R.propEq('id', checkpointId), waypoint.checkpoints);
 
     if(checkpoint){

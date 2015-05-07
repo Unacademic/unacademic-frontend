@@ -11,12 +11,13 @@ describe("BreadCrumbs", () => {
 
   describe("waypoints", () =>{
     beforeEach(() => {
-      let view = {
+      let levels = {
+        current: 'waypoint',
         waypoints: 'all',
         waypoint: false,
         checkpoints: false
       }
-      breadcrumbs = renderBreadCrumbs(view);
+      breadcrumbs = renderBreadCrumbs(levels);
     });
 
     it("renders one breadcrumb", () => {
@@ -48,9 +49,9 @@ describe("BreadCrumbs", () => {
   });
 });
 
-function renderBreadCrumbs(view){
+function renderBreadCrumbs(levels){
   let container = TestUtils.renderIntoDocument(
-    <BreadCrumbs view={ view }/>
+    <BreadCrumbs levels={ levels }/>
   );
 
   let component = React.findDOMNode(container);

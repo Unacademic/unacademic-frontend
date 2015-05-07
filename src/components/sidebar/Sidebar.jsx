@@ -12,25 +12,10 @@ class Sidebar extends React.Component {
 
     let { model, appState } = this.props;
     let { modes } = appState;
-    let { waypoints, waypoint, checkpoint } = appState.viewModel;
+    let { current } = appState.levels;
     let type = model.constructor.name.toLowerCase();
-    let currentMode;
 
-
-    if(waypoints){
-      currentMode = 'waypoints';
-    }
-
-    if(waypoint){
-      currentMode = 'waypoint';
-    }
-
-
-    if(checkpoint){
-      currentMode = 'checkpoint';
-    }
-
-    let classes = ['sidebar', `sidebar-is-${currentMode}`].join(' ');
+    let classes = ['sidebar', `sidebar-is-${current}`].join(' ');
 
     return (
     <section className="layout-sidebar">

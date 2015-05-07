@@ -3,7 +3,7 @@ import AppStoreConstants from '../../src/constants/AppStateConstants.js';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 import { Map, Stack }  from 'immutable';
 
-describe("AppStore Store", () => {
+describe.only("AppStore Store", () => {
   let AppStore;
   let TimeMachine;
   let state;
@@ -13,8 +13,14 @@ describe("AppStore Store", () => {
   beforeEach(() => {
     state = {
       user: 'yeehaa',
-      viewModel: {
-        waypoint: 1
+      modes: {
+        learn: 'disabled',
+        curate: 'active'
+      },
+      levels: {
+        waypoints: 'all',
+        waypoint: 1,
+        checkpoint: false
       }
     };
     TimeMachine = {};
@@ -31,15 +37,31 @@ describe("AppStore Store", () => {
   });
 
   describe("get current state", () => {
+    let appState;
+
+    beforeEach((done) => {
+      AppStore.get().then((data) => {
+        appState = data.appState;
+        done();
+      });
+    });
 
     it("gets the current state from the time machine", () => {
-      let { appState } = AppStore.get();
       expect(TimeMachine.get).to.be.called;
     })
 
-    it("sets the corresponding view model", () => {
-      let { viewModel } = AppStore.get();
+    it("gets the corresponding view model", () => {
       expect(ViewModel.get).to.be.calledWith(state);
+    })
+
+    it("adds a handy current mode shortcut", () => {
+      let { current } = appState.modes;
+      expect(current).to.equal('curate');
+    })
+
+    it("adds a handy current mode shortcut", () => {
+      let { current } = appState.levels;
+      expect(current).to.equal('waypoint');
     })
   })
 
@@ -64,7 +86,7 @@ describe("AppStore Store", () => {
       let current;
 
       beforeEach(() => {
-        current = state.viewModel;
+        current = state.levels;
         action = { actionType: AppStoreConstants.SET_VIEW_MODEL, selection }
 
         AppStore.handleAction(action);
@@ -75,8 +97,8 @@ describe("AppStore Store", () => {
       });
 
       it("passes the selection to the Time Machine", () => {
-        let viewModel = selection;
-        expect(AppStore.TimeMachine.update).calledWith({ viewModel });
+        let levels = selection;
+        expect(AppStore.TimeMachine.update).calledWith({ levels });
       });
 
       it("emits a change", () => {

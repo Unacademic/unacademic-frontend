@@ -5,15 +5,14 @@ import BreadCrumb from './BreadCrumb.jsx';
 
 class BreadCrumbs extends React.Component {
   render() {
-    let levels = R.toPairs(this.props.view);
-    let currentLevels = R.filter(([key, value]) => key && value, levels);
-    let currentMode = currentLevels[currentLevels.length - 1][0];
+    let levelData = this.props.levels;
+    let levels = R.filter(([key, value]) => key !== 'current' && value, R.toPairs(levelData));
+    let currentMode = levelData.current;
 
-    let createBreadCrumbs = R.map((level) => {
+    let breadcrumbs = R.map((level) => {
       return <BreadCrumb key={ level } level={ level } currentMode={ currentMode }/>
-    });
+    }, levels);
 
-    let breadcrumbs = createBreadCrumbs(currentLevels);
     return (
       <nav className="breadcrumbs">
        <ul>
@@ -25,7 +24,7 @@ class BreadCrumbs extends React.Component {
 }
 
 BreadCrumbs.propTypes = {
-  view: React.PropTypes.object
+  levels: React.PropTypes.object
 }
 
 export default BreadCrumbs;

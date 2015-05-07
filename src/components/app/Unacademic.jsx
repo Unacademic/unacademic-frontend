@@ -5,12 +5,14 @@ import Main from '../main/Main.jsx';
 class Unacademic extends React.Component{
   render() {
     let { appState, viewModel } = this.props;
+    let { current } = appState.modes;
     let { model, collection } = viewModel;
+    let classes = `layout-app layout-app-is-${current}`;
 
     return (
-      <section className='layout-app'>
+      <section className={ classes }>
         <Sidebar model={ model } appState={ appState }/>
-        <Main view={ appState.viewModel } collection={ collection }/>
+        <Main levels={ appState.levels } collection={ collection }/>
       </section>
     )
   }

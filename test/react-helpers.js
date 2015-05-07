@@ -37,9 +37,9 @@ let modes = {
 
 let history = [];
 
-let view = { waypoints: 'hi', waypoint: false, checkpoint: false };
+let levels = { waypoints: 'hi', waypoint: false, checkpoint: false };
 
-let appState = { user, modes, history, viewModel: view };
+let appState = { user, modes, history, levels };
 
 let fixtures = { appState, viewModel };
 
