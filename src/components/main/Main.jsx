@@ -4,10 +4,10 @@ import BreadCrumbs from '../breadcrumbs/BreadCrumbs.jsx';
 
 class Main extends React.Component {
   render() {
-    let { collection } = this.props;
+    let { view, collection } = this.props;
     return (
       <section className="layout-main">
-        <BreadCrumbs></BreadCrumbs>
+        <BreadCrumbs view={ view  }></BreadCrumbs>
         <Cards collection={ collection } className="cards" />
       </section>
     )
@@ -15,7 +15,8 @@ class Main extends React.Component {
 }
 
 Main.propTypes = {
-  collection: React.PropTypes.array
+  collection: React.PropTypes.array,
+  view: React.PropTypes.object
 }
 
 export default Main;
