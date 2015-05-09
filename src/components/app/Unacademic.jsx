@@ -5,9 +5,10 @@ import Main from '../main/Main.jsx';
 class Unacademic extends React.Component{
   render() {
     let { appState, viewModel } = this.props;
-    let { current } = appState.modes;
+    let currentLevel = appState.levels.current;
+    let currentMode = appState.modes.current;
     let { model, collection } = viewModel;
-    let classes = `layout-app layout-app-is-${current}`;
+    let classes = `layout-app layout-app-is-${currentLevel} layout-app-is-${currentMode}`;
 
     return (
       <section className={ classes }>

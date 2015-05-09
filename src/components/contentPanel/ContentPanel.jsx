@@ -8,14 +8,22 @@ import ResourceSection from './ResourceSection.jsx';
 class ContentPanel extends React.Component {
 
   render() {
-    let model = this.props.model;
-    let { title, type, image, curator, description, summary, checkpoints } = model;
-    type = model.constructor.name.toLowerCase();
-    type = type === 'object' ? 'waypoints' : type;
+    let { model, appState } = this.props;
 
-    let classes = ['panel', 'panel-content', 'panel-top', `panel-is-${type}`].join(' ');
+    let level;
+    let mode;
 
-    if(type === 'waypoints'){
+    if(appState){
+      level = appState.levels.current;
+      mode = appState.modes.current;
+    } else {
+      let type = model.constructor.name.toLowerCase();
+      level = type === 'object' ? 'waypoints' : type;
+    }
+
+    let classes = ['panel', 'panel-content', 'panel-top', `panel-is-${level}`].join(' ');
+
+    if(level === 'waypoints'){
       return <section className={ classes }></section>
     }
 
@@ -23,9 +31,9 @@ class ContentPanel extends React.Component {
       <section className={ classes }>
         <section className="panel-content_header">
         </section>
-        { type === 'waypoint' && <WaypointSection model={ model }/> }
-        { type === 'checkpoint' && <CheckpointSection model={ model }/> }
-        { type === 'resource' && <ResourceSection model={ model }/> }
+        { level === 'waypoint' && <WaypointSection mode={ mode } model={ model }/> }
+        { level === 'checkpoint' && <CheckpointSection model={ model }/> }
+        { level === 'resource' && <ResourceSection model={ model }/> }
       </section>
     )
   }

@@ -8,11 +8,11 @@
   border-right: rem-calc(1px) solid $baseColor;
 }
 
-.layout-app-is-learn .sidebar.sidebar-is-waypoints {
-  background-color: $yellow;
+.layout-app-is-learn.layout-app-is-waypoints .sidebar {
+  background-color: $learnColor;
 }
 
-.layout-app-is-curate .sidebar.sidebar-is-waypoints {
-  background-color: $red;
+.layout-app-is-curate.layout-app-is-waypoints .sidebar {
+  background-color: $curateColor;
 }
 

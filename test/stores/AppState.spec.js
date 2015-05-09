@@ -3,7 +3,7 @@ import AppStoreConstants from '../../src/constants/AppStateConstants.js';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 import { Map, Stack }  from 'immutable';
 
-describe.only("AppStore Store", () => {
+describe("AppStore Store", () => {
   let AppStore;
   let TimeMachine;
   let state;

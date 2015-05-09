@@ -37,23 +37,31 @@
   margin-right: 5px;
 }
 
-.panel .panel-content_header {
+.panel-content_header {
   height: $imageHeight;
   background-color: $baseColor;
 }
 
-.panel .panel-content_main {
+
+.panel-content_main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0 $baseUnit;
+  padding: $baseUnit $baseUnit $twoThirdUnit $baseUnit;
 
-  h1 {
-    padding: $twoThirdUnit 0;
+  hgroup {
+    margin-bottom: $twoThirdUnit;
+  }
+
+  .editable {
+    border: rem-calc(1px) dotted $inverseColor;
+    padding: 3px;
+    margin: -5px;
   }
 
   section {
     margin-bottom: $baseUnit;
+
 
     h1 {
       padding: 0;
@@ -109,6 +117,14 @@
     margin-top: $twoThirdUnit;
   }
 }
-.panel.panel-control {
-  padding: $baseUnit;
+
+.panel-content_main {
+  .editable {
+  }
+}
+
+.layout-app-is-curate .sidebar .panel-content_main {
+  .editable {
+    border: rem-calc(1px) dotted $curateColor;
+  }
 }

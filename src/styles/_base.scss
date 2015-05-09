@@ -16,6 +16,8 @@ em {
 
 h1, h2, h3, h4 ,h5, h6 {
   font-family: NittyBold;
+  line-height: rem-calc(0);
+
 }
 
 p, li {
@@ -35,7 +37,7 @@ ul {
   list-style: none;
 }
 
-h1 {
+.title {
   font-size: rem-calc(28);
   line-height: rem-calc(30);
 }
@@ -48,4 +50,8 @@ img {
 
 img:hover {
   filter: grayscale(0%);
+}
+
+input, textarea {
+  border: rem-calc(1px) solid $curateColor;
 }

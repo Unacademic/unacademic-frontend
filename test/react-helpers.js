@@ -30,14 +30,11 @@ let viewModel = { model, collection };
 
 let user = undefined;
 
-let modes = {
-  learn: 'active',
-  curate: ''
-};
+let modes = { current: 'learn', learn: 'active', curate: '' };
 
 let history = [];
 
-let levels = { waypoints: 'hi', waypoint: false, checkpoint: false };
+let levels = { current: 'waypoints', waypoints: 'hi', waypoint: false, checkpoint: false };
 
 let appState = { user, modes, history, levels };
 

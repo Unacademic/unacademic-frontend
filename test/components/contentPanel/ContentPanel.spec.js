@@ -8,12 +8,31 @@ describe("Content Panel", () => {
     testdom('<html><body></body></html>');
   })
 
+  describe("level is passed in as property", () => {
+    beforeEach(() => {
+      let [model] = fixtures.viewModel.collection;
+      let appState = {
+        levels: { current: 'waypoints' },
+        modes: { current: 'learn' }
+      }
+      element = renderPanel(model, appState);
+    });
+
+    it("has the right class on the container", () => {
+      let classes = element.className.split(' ');
+      expect(classes).to.contain('panel');
+      expect(classes).to.contain('panel-content');
+      expect(classes).to.contain('panel-top');
+      expect(classes).to.contain('panel-is-waypoints');
+    });
+  });
+
   describe("model type is waypoints", () => {
 
     beforeEach(() => {
       let { model } = fixtures.viewModel;
       model.type = 'waypoints';
-      [element] = renderPanel(model);
+      element = renderPanel(model);
     });
 
     it("has the right class on the container", () => {
@@ -34,7 +53,7 @@ describe("Content Panel", () => {
 
     beforeEach(() => {
       let [model] = fixtures.viewModel.collection;
-      [element] = renderPanel(model);
+      element = renderPanel(model);
     });
 
     it("has the right class on the container", () => {
@@ -54,15 +73,14 @@ describe("Content Panel", () => {
       let header = element.querySelector('.panel-content_main');
       expect(header).not.to.be.null;
     });
-
   });
 });
 
-function renderPanel(model){
+function renderPanel(model, appState){
   let container = TestUtils.renderIntoDocument(
-    <ContentPanel model={ model }/>
+    <ContentPanel appState={ appState } model={ model }/>
   );
 
   let element = React.findDOMNode(container);
-  return [element];
+  return element;
 }

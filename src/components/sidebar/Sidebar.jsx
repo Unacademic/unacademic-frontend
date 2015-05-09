@@ -11,18 +11,15 @@ class Sidebar extends React.Component {
   render() {
 
     let { model, appState } = this.props;
-    let { modes } = appState;
-    let { current } = appState.levels;
+    let { modes, levels } = appState;
     let type = model.constructor.name.toLowerCase();
-
-    let classes = ['sidebar', `sidebar-is-${current}`].join(' ');
 
     return (
     <section className="layout-sidebar">
-        <section className={ classes }>
+        <section className="sidebar">
           <div>
             <Logo modes={ modes }/>
-            <ContentPanel model={ model }/>
+            <ContentPanel appState={ appState } model={ model }/>
           </div>
           <DebugState appState={ appState } />
           <ControlPanel appState={ appState }/>

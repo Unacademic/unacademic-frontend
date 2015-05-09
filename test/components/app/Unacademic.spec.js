@@ -15,9 +15,11 @@ describe("Unacademic", () => {
   });
 
 
-  it("renders the container", () => {
+  it("renders the container with the correct classes", () => {
     let classes = element.className.split(" ");
     expect(classes).to.contain('layout-app');
+    expect(classes).to.contain('layout-app-is-learn');
+    expect(classes).to.contain('layout-app-is-waypoints');
   });
 
   it("renders the sidebar", () => {

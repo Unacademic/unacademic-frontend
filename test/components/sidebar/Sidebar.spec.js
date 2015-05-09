@@ -18,9 +18,8 @@ describe("Sidebar", () => {
   });
 
   it("renders the sidebar", () => {
-    let sidebar = element.querySelector('.sidebar');
-    let classes = sidebar.className.split(' ');
-    expect(classes).to.contain('sidebar-is-waypoints');
+    let sidebar = element.querySelectorAll('.sidebar');
+    expect(sidebar.length).to.equal(1);
   })
 
   it("renders the content panel", () => {

@@ -1,20 +1,24 @@
 .logo {
   padding: $baseUnit;
+  user-select: none;
 
-  h1 {
+  button, button:focus {
+    font-family: NittyBold;
+    outline: none;
     display: inline-block;
     font-size: rem-calc(22);
     line-height: rem-calc(30);
     padding: 0 $thirdUnit;
     background-color: $baseColor;
     color: $inverseColor;
+    border: none;
   }
 }
 
 .layout-app-is-learn .logo {
-  background-color: $yellow;
+  background-color: $learnColor;
 }
 
 .layout-app-is-curate .logo {
-  background-color: $red;
+  background-color: $curateColor;
 }

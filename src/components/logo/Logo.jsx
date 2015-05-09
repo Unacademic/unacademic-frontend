@@ -15,7 +15,7 @@ class Logo extends React.Component {
     let title = learn ? '_Unacademic' : 'Unacademic_';
     return (
       <section onClick={ this.switchMode.bind(this, mode) } className={ classes }>
-        <h1>{ title }</h1> 
+        <button>{ title }</button>
       </section>
     )
   }

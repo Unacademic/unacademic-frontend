@@ -24,25 +24,19 @@ class CheckpointSection extends React.Component {
     return (
       <section className={ classes }>
         <hgroup>
-          <h1>{ title }</h1>
+          <h1 className="title editable">{ title }</h1>
         </hgroup>
         <section className="meta">
           <p>Resources: { resources.length }</p>
         </section>
         <section>
           <h1>Description</h1>
-          <div dangerouslySetInnerHTML={ rendereredDescription }></div>
+          <div className="editable" dangerouslySetInnerHTML={ rendereredDescription }></div>
         </section>
         <section>
           <h1>Instructions</h1>
           <ul>
-          { R.mapIndexed((paragraph, index) => (<li key={ index }>{ paragraph }</li>), instructions) }
-          </ul>
-        </section>
-        <section>
-          <h1>Resources</h1>
-          <ul>
-            { R.mapIndexed((resource, index) => <li key={ index }>{ resource.title }</li>, resources)}
+          { R.mapIndexed((paragraph, index) => (<li className="editable" key={ index }>{ paragraph }</li>), instructions) }
           </ul>
         </section>
       </section>
