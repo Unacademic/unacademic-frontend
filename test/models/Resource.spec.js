@@ -14,7 +14,7 @@ describe("Resource Model", () => {
     expect(resource.schema).to.be.defined;
   });
 
-  it("is not valid", () => {
+  it.skip("is not valid", () => {
     expect(resource.valid).to.be.false;
     expect(resource.errors.length).to.equal(1);
     expect(resource.errors[0]).to.contain('title is not set');

@@ -1,57 +1,69 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import ModeButton from '../../../src/components/controlPanel/modePanel/ModeButton.jsx';
+import Logo from '../../../src/components/logo/Logo.jsx';
 import Actions from '../../../src/actions/index.js';
 
-describe("Mode Button", () => {
-  let button;
+describe("Mode logo", () => {
+  let logo;
+  let modes;
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
-    Actions.switchMode = sinon.spy();
+    modes = {
+      learn: '',
+      curate: ''
+    };
   })
 
-  describe("when button is not active", () => {
+  describe("when mode is learn", () => {
 
     beforeEach(() => {
-      button = renderButton('browse', 'disabled');
+      modes.learn = 'active';
+      logo = renderLogo(modes);
     })
 
-    it("has no class of active", () => {
-      expect(button.className).to.contain('btn');
-      expect(button.className).not.to.contain('btn-is-active');
+    it("has the right classes", () => {
+      let classes = logo.className.split(' ');
+      expect(classes).to.contain('logo');
+      expect(classes).to.contain('logo-is-learn');
     });
 
   });
 
-  describe("when button is active", () => {
+  describe("when logo is curate", () => {
 
     beforeEach(() => {
-      button = renderButton('browse', 'active');
-    })
-
-    it("has no class of active", () => {
-      expect(button.className).to.contain('btn');
-      expect(button.className).to.contain('btn-is-active');
+      modes.curate = 'active'
+      logo = renderLogo(modes);
     });
+
+    it("has the right classes", () => {
+      let classes = logo.className.split(' ');
+      expect(classes).to.contain('logo');
+      expect(classes).to.contain('logo-is-curate');
+    });
+
   });
 
-  describe("when button is clicked", () => {
+  describe("when logo is curate", () => {
 
     beforeEach(() => {
-      button = renderButton('browse', 'browse');
-      React.addons.TestUtils.Simulate.click(button);
+      Actions.switchMode = sinon.spy();
+      modes.curate = 'active'
+      logo = renderLogo(modes);
+      React.addons.TestUtils.Simulate.click(logo);
     });
 
-    it("should authenticate the user", () => {
-      expect(Actions.switchMode).to.be.calledOnce;
+    it("calls the switch mode action", () => {
+      expect(Actions.switchMode).to.be.calledWith('learn');
     });
+
   });
 });
 
-function renderButton(name, status){
+function renderLogo(modes){
   let container = TestUtils.renderIntoDocument(
-    <ModeButton status={ status } name={ name }/>
+    <Logo modes={ modes }/>
   );
 
-  return React.findDOMNode(container.refs.browseButton);
+  return React.findDOMNode(container);
 }
