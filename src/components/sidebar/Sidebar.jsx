@@ -14,7 +14,6 @@ class Sidebar extends React.Component {
     let { modes } = appState;
     let { waypoints, waypoint, checkpoint, resource } = appState.viewModel;
     let type = model.constructor.name.toLowerCase();
-    let currentMode;
 
     if(waypoints){
       currentMode = 'waypoints';
@@ -34,10 +33,12 @@ class Sidebar extends React.Component {
     }
 
     let classes = ['layout-sidebar', `layout-sidebar-is-${currentMode}`].join(' ');
+    // below from master in merge conflict
+    // let classes = ['sidebar', `sidebar-is-${current}`].join(' ');
 
     return (
-      <section className={ classes }>
-        <section className="sidebar">
+    <section className="layout-sidebar">
+        <section className={ classes }>
           <div>
             <Logo modes={ modes }/>
             <ContentPanel model={ model }/>
@@ -45,7 +46,6 @@ class Sidebar extends React.Component {
           <DebugState appState={ appState } />
           <ControlPanel appState={ appState }/>
         </section>
-        <LevelStack currentMode={ currentMode }/>
       </section>
     )
   }

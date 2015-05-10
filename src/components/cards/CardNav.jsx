@@ -2,12 +2,14 @@ import React from 'react';
 import Actions from '../../actions/index.js';
 
 class CardNav extends React.Component {
+
   setViewModel(selection){
     Actions.setViewModel(selection);
   }
+
   render(){
-    let { type, id } = this.props;
-    let selection = { type, id };
+    let { type, title, id } = this.props.model;
+    let selection = { type, title, id };
     return (
       <nav className="card_nav">
         <button onClick={ this.setViewModel.bind(this, selection)} className="btn btn-inverse browse">
@@ -19,8 +21,7 @@ class CardNav extends React.Component {
 }
 
 CardNav.propTypes = {
-  id: React.PropTypes.number.isRequired,
-  type: React.PropTypes.string.isRequired
+  model: React.PropTypes.object.isRequired
 }
 
 

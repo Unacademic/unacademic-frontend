@@ -9,7 +9,7 @@ describe("CardNav", () => {
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
-    selection = { id: 1, type: 'Waypoint' };
+    selection = { id: 1, title: 'hi', type: 'Waypoint' };
     [element, exploreButton] = renderButtons(selection);
   });
 
@@ -41,9 +41,9 @@ describe("CardNav", () => {
   });
 });
 
-function renderButtons({ type, id }){
+function renderButtons(model){
   let container = TestUtils.renderIntoDocument(
-    <CardNav type={ type } id={ id }/>
+    <CardNav model={ model }/>
   );
 
   let element = React.findDOMNode(container);

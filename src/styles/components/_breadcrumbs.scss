@@ -1,0 +1,21 @@
+.breadcrumbs {
+  display: block;
+  padding: $baseUnit;
+}
+
+.breadcrumb {
+  display: inline-block;
+  font-family: NittyNormal;
+  font-weight: 300;
+  font-size: rem-calc(22);
+  line-height: rem-calc(30);
+  padding: 0 $thirdUnit;
+  color: $baseColor;
+  background-color: $inverseColor;
+  margin-right: rem-calc(10px);
+}
+
+.breadcrumb.breadcrumb-is-active {
+  background-color: $baseColor;
+  color: $inverseColor;
+}

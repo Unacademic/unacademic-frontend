@@ -18,8 +18,8 @@ describe("ViewModel Service", () => {
 
       describe("without a user", () => {
         beforeEach((done) => {
-          let viewModel = { waypoints: 'all'};
-          appState = { viewModel };
+          let levels = { waypoints: { id: 'all'} };
+          appState = { levels };
 
           ViewModel.get(appState).then((data) => {
             result = data;
@@ -42,8 +42,8 @@ describe("ViewModel Service", () => {
       describe("with a user", () => {
 
         beforeEach((done) => {
-          let viewModel = { waypoints: 'all' };
-          appState = { viewModel, user: 'yeehaa' };
+          let levels = { waypoints: 'all' };
+          appState = { levels, user: 'yeehaa' };
 
           ViewModel.get(appState).then((data) => {
             result = data;
@@ -178,7 +178,7 @@ describe("ViewModel Service", () => {
             resource: false
           };
 
-          let selection = { type: 'waypoint', id: 1 };
+          let selection = { type: 'waypoint', title: 'tada', id: 1 };
           proposal = ViewModel.set({ current, selection });
         });
 
