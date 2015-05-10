@@ -8,6 +8,12 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
+  updateProp(propData){
+    AppDispatcher.dispatch({
+      actionType: AppStateConstants.UPDATE_PROP,
+      propData: propData
+    });
+  },
   setViewModel(selection){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SET_VIEW_MODEL,

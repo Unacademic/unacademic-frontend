@@ -3,7 +3,7 @@ import Editable from '../../../src/components/editable/Editable.jsx';
 
 import Actions from '../../../src/actions/index.js';
 
-describe.only("Editable", () => {
+describe("Editable", () => {
   let element;
 
   beforeEach(()=>{
@@ -13,6 +13,7 @@ describe.only("Editable", () => {
   describe("editing mode", () => {
 
     beforeEach(()=>{
+      Actions.updateProp = sinon.spy();
       element = renderEditable('title', 'hello', true);
     });
 
@@ -30,9 +31,18 @@ describe.only("Editable", () => {
       expect(element.textContent).to.equal('hello');
     });
 
-    describe("on change", () =>{
-      it("calls back to the parent")
+    describe("on blur", () =>{
+      let value;
 
+      beforeEach(() => {
+        value = "Hello World";
+        TestUtils.Simulate.blur(element, { target: { value: "Hello World" } });
+      });
+
+      it("updates the prop on the model", ()=>{
+        let propName = 'title';
+        expect(Actions.updateProp).to.be.calledWith({ propName, value });
+      })
     });
   });
 

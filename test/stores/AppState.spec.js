@@ -207,6 +207,31 @@ describe("AppStore Store", () => {
         });
       });
     });
+
+    describe.only("update props on the view model", () => {
+      let propData;;
+
+      beforeEach(() => {
+        let propName = 'title';
+        let value = 'Hello World';
+        propData = { propName, value };
+
+        action = {
+          actionType: AppStoreConstants.UPDATE_PROP,
+          propData: propData
+        }
+        AppStore.ViewModel.update = sinon.spy();
+        AppStore.handleAction(action);
+      });
+
+      it("passes the new user to the Time Machine", () => {
+        expect(AppStore.ViewModel.update).calledWith(propData);
+      });
+
+      xit("emits a change", () => {
+        expect(AppStore.emitChange).called;
+      });
+    });
   });
 });
 

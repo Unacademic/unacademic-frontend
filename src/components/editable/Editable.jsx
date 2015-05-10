@@ -1,6 +1,12 @@
 import React from 'react';
+import Actions from '../../actions/index.js';
 
 class Editable extends React.Component {
+
+  updateProp(propName, event){
+    let value = event.target.value;
+    Actions.updateProp({propName, value});
+  }
 
   render(){
     let { editing, value, fieldName } = this.props;
@@ -9,6 +15,7 @@ class Editable extends React.Component {
     if(editing){
       return (
         <textarea className={ classes }
+          onBlur={ this.updateProp.bind(this, fieldName) }
           defaultValue={ value }>
         </textarea>
       )

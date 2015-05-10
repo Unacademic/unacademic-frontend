@@ -54,6 +54,10 @@ class AppStore extends BaseStore {
     this.update({ modes })
   }
 
+  updateProp(propData){
+    this.ViewModel.update(propData);
+  }
+
   revertHistory(){
     let change = this.TimeMachine.revertHistory();
     return change ? this.emitChange() : null;
@@ -86,6 +90,8 @@ class AppStore extends BaseStore {
       case AppStateConstants.FORWARD_HISTORY:
         this.forwardHistory();
         break;
+      case AppStateConstants.UPDATE_PROP:
+        this.updateProp(action.propData);
     }
     return true;
   }

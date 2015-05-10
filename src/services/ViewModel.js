@@ -67,6 +67,10 @@ class ViewModel {
     }
     return proposal;
   }
+
+  update(propData){
+    console.log(propData);
+  }
 }
 
 export default ViewModel;
