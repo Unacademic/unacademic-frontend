@@ -1,6 +1,6 @@
 import Validator from '../../src/services/Validator.js';
 
-describe.skip("Validator", () => {
+describe("Validator", () => {
   let judgement;
 
   describe  ("all data is correct and provided", () => {
