@@ -28,12 +28,13 @@ describe("BaseModel Model", () => {
     });
 
     it("has no errors", () => {
-      expect(model.errors.length).to.equal(0);
+      let errors = Object.keys(model.errors);
+      expect(errors.length).to.equal(0);
     });
   });
 
   describe("no data is correct and provided", () => {
-     beforeEach(() => {
+    beforeEach(() => {
       let data = {};
       model = new Model(data);
     });
@@ -43,7 +44,8 @@ describe("BaseModel Model", () => {
     });
 
     it("has no errors", () => {
-      expect(model.errors.length).to.equal(2);
+      let errors = Object.keys(model.errors);
+      expect(errors.length).to.equal(2);
     });
   });
 });

@@ -11,7 +11,7 @@ class Card extends React.Component {
     return (
       <section className="card">
         <ContentPanel model={ model } />
-        { type !== 'resource' && <CardNav model={ model } />}
+        <CardNav model={ model } />
       </section>
     )
   }

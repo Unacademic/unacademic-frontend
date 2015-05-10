@@ -36,14 +36,14 @@ class Validator {
       let wordLength = instance[prop] && instance[prop].split(' ').length;
       return wordLength > max && `${prop} has too many words`;
     }
-
   }
 
   validate(instance){
-    let props = R.keys(this.schema);
-    let results = R.map((prop) => this._validate(instance, prop), props);
-    let errors  = R.filter((result) => result, results);
-    let valid   = errors.length === 0;
+    let judgements = R.mapObjIndexed((value, key) => {
+      return this._validate(instance, key)
+    }, this.schema);
+    let errors = R.pickBy((key, value) => key && value, judgements);
+    let valid = Object.keys(errors).length === 0;
     return { valid, errors };
   }
 }
