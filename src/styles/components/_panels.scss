@@ -1,7 +1,7 @@
 .panel {
   display: flex;
   flex-direction: column;
-  color: $inverseColor;
+  color: $baseColor;
 }
 
 .panel.panel-top {
@@ -101,7 +101,6 @@
     margin-bottom: 0;
   }
 
-
   .meta {
     margin-bottom: $twoThirdUnit;
   }
@@ -110,8 +109,6 @@
     margin-top: $twoThirdUnit;
   }
 }
-
-
 .panel.panel-control {
   padding: $baseUnit;
 }

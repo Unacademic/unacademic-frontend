@@ -7,7 +7,7 @@ unacademic.id = 1;
 class API {
 
   constructor(baseUrl){
-    this.baseUrl = baseUrl; 
+    this.baseUrl = baseUrl;
     this.getWaypoints = this.getWaypoints.bind(this);
   }
 
@@ -22,7 +22,7 @@ class API {
     // catch (e) {
     //   data = [];
     // }
-    
+
     let waypoints = R.map((item) => new Waypoint(item), data);
     return waypoints;
   }

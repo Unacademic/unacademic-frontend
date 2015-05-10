@@ -1,3 +1,4 @@
+import R from 'ramda';
 import BaseStore from './BaseStore';
 import AppStateConstants from '../constants/AppStateConstants';
 
@@ -16,6 +17,8 @@ class AppStore extends BaseStore {
   async get() {
     let appState = this._get();
     let viewModel = await this.ViewModel.get(appState);
+    appState.modes.current = this.getMode(appState.modes);
+    appState.levels.current = this.getLevel(appState.levels);
     return { appState, viewModel };
   }
 
@@ -24,10 +27,22 @@ class AppStore extends BaseStore {
     this.update({ user: 'yeehaa', viewModel });
   }
 
+  getLevel(viewModel){
+    let levels = R.toPairs(viewModel);
+    let currentLevels = R.filter(([key, value]) => key && value, levels);
+    return currentLevels[currentLevels.length - 1][0];
+  }
+
+  getMode(modes){
+    let modesArray = R.toPairs(modes);
+    let currentMode = R.filter((mode) => mode[1] === 'active', modesArray)[0][0];
+    return currentMode;
+  }
+
   setViewModel(selection){
-    let current = this._get().viewModel;
-    let viewModel = this.ViewModel.set({ current, selection });
-    this.update({ viewModel });
+    let current = this._get().levels;
+    let levels = this.ViewModel.set({ current, selection });
+    this.update({ levels });
   }
 
   switchMode(mode){

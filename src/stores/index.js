@@ -2,10 +2,10 @@ import { Map }  from 'immutable';
 import APIService from '../services/API.js';
 
 let baseUrl = 'http://188.166.97.196/api/0';
-let API = new APIService(baseUrl).getWaypoints; 
+let API = new APIService(baseUrl).getWaypoints;
 
 
-let viewModel = Map({
+let levels = Map({
   waypoints: 'all',
   waypoint: false,
   checkpoint: false
@@ -20,7 +20,7 @@ let initialState = Map({
   timestamp: Date.now(),
   user: undefined,
   modes,
-  viewModel
+  levels
 });
 
 import TimeMachineService from '../services/TimeMachine.js';

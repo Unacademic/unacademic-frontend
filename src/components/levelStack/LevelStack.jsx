@@ -8,7 +8,6 @@ class LevelStack extends React.Component {
   render() {
     let { currentMode } = this.props;
     let classes = ['stack', `stack-is-${ currentMode }`].join(' ');
-    let sheetMaker = R.map((sheetData) => <LevelSheet key={ sheetData } mode={ sheetData } />)
     let levels = [];
 
     if(currentMode === 'checkpoint'){
@@ -19,6 +18,7 @@ class LevelStack extends React.Component {
       levels = ['waypoints'];
     }
 
+    let sheetMaker = R.map((sheetData) => <LevelSheet key={ sheetData } mode={ sheetData } />)
     let sheets = sheetMaker(levels);
 
     return (

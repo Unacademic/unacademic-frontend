@@ -8,10 +8,12 @@ class ViewModel {
   }
 
   async get(appState){
-    let { user, viewModel } = appState;
+    let { user, levels } = appState;
     let waypoints = await this.api();
-    let waypoint = R.find(R.propEq('id', viewModel.waypoint), waypoints);
-    let checkpoint = waypoint ? R.find(R.propEq('id', viewModel.checkpoint), waypoint.checkpoints) : undefined;
+    let waypointId = levels.waypoint && levels.waypoint.id;
+    let waypoint = R.find(R.propEq('id', waypointId), waypoints);
+    let checkpointId = levels.checkpoint && levels.checkpoint.id;
+    let checkpoint =  waypoint && R.find(R.propEq('id', checkpointId), waypoint.checkpoints);
 
     if(checkpoint){
       return {
@@ -37,13 +39,13 @@ class ViewModel {
   }
 
   set({ current, selection }){
-    let { type, id } = selection;
+    let { type, id, title } = selection;
     let proposal;
 
     switch(type){
       case 'waypoints':
         proposal = {
-          waypoints: id || current['waypoints'],
+          waypoints: { id, title } || current['waypoints'],
           waypoint: false,
           checkpoint: false
         }
@@ -51,7 +53,7 @@ class ViewModel {
       case 'waypoint':
         proposal = {
           waypoints: current['waypoints'],
-          waypoint: id || current['waypoint'],
+          waypoint: { id, title  } || current['waypoint'],
           checkpoint: false
         }
         break;
@@ -59,7 +61,7 @@ class ViewModel {
         proposal = {
           waypoints: current['waypoints'],
           waypoint: current['waypoint'],
-          checkpoint: id || current['checkpoint']
+          checkpoint: { id, title } || current['checkpoint']
         }
         break;
     }

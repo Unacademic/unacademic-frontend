@@ -4,6 +4,15 @@
   max-width: $sidebarWidth;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $darkBaseColor;
+  background-color: $inverseColor;
+  border-right: rem-calc(1px) solid $baseColor;
+}
+
+.layout-app-is-learn .sidebar.sidebar-is-waypoints {
+  background-color: $yellow;
+}
+
+.layout-app-is-curate .sidebar.sidebar-is-waypoints {
+  background-color: $red;
 }
 
