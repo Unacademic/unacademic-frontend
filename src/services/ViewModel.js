@@ -9,12 +9,16 @@ class ViewModel {
 
   async get(appState){
     let { user, levels } = appState;
+
+    // move to api
     let waypoints = await this.api();
     let waypointId = levels.waypoint && levels.waypoint.id;
     let waypoint = R.find(R.propEq('id', waypointId), waypoints);
     let checkpointId = levels.checkpoint && levels.checkpoint.id;
     let checkpoint =  waypoint && R.find(R.propEq('id', checkpointId), waypoint.checkpoints);
-    let resource = checkpoint ? R.find(R.propEq('id', viewModel.resource), checkpoint.resources) : undefined;
+    let resourceId = levels.resource && levels.resource.id;
+    let resource = checkpoint && R.find(R.propEq('id', resourceId), checkpoint.resources);
+    // ***
 
     if(resource){
       return {
@@ -62,7 +66,7 @@ class ViewModel {
       case 'waypoint':
         proposal = {
           waypoints: current['waypoints'],
-          waypoint: id || current['waypoint'],
+          waypoint: { id, title } || current['waypoint'],
           checkpoint: false,
           resource: false
         }
@@ -71,7 +75,7 @@ class ViewModel {
         proposal = {
           waypoints: current['waypoints'],
           waypoint: current['waypoint'],
-          checkpoint: id || current['checkpoint'],
+          checkpoint: { id, title } || current['checkpoint'],
           resource: false
         }
         break;
@@ -80,7 +84,7 @@ class ViewModel {
           waypoints: current['waypoints'],
           waypoint: current['waypoint'],
           checkpoint: current['checkpoint'],
-          resource: id || current['resource']
+          resource: { id, title } || current['resource']
         }
         break;
     }
