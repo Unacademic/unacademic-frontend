@@ -12,10 +12,9 @@ class Sidebar extends React.Component {
 
     let { model, appState } = this.props;
     let { modes } = appState;
-    let { waypoints, waypoint, checkpoint } = appState.viewModel;
+    let { waypoints, waypoint, checkpoint, resource } = appState.viewModel;
     let type = model.constructor.name.toLowerCase();
     let currentMode;
-
 
     if(waypoints){
       currentMode = 'waypoints';
@@ -28,6 +27,10 @@ class Sidebar extends React.Component {
 
     if(checkpoint){
       currentMode = 'checkpoint';
+    }
+
+    if(resource){
+      currentMode = 'resource';
     }
 
     let classes = ['layout-sidebar', `layout-sidebar-is-${currentMode}`].join(' ');

@@ -9,7 +9,7 @@ class Model extends BaseModel {
   }
 }
 
-describe.only("BaseModel Model", () => {
+describe("BaseModel Model", () => {
   let model;
 
   describe("all data is correct and provided", () => {

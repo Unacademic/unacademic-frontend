@@ -12,6 +12,14 @@ class ViewModel {
     let waypoints = await this.api();
     let waypoint = R.find(R.propEq('id', viewModel.waypoint), waypoints);
     let checkpoint = waypoint ? R.find(R.propEq('id', viewModel.checkpoint), waypoint.checkpoints) : undefined;
+    let resource = checkpoint ? R.find(R.propEq('id', viewModel.resource), checkpoint.resources) : undefined;
+
+    if(resource){
+      return {
+        model: resource,
+        collection: []
+      }
+    }
 
     if(checkpoint){
       return {
@@ -45,21 +53,32 @@ class ViewModel {
         proposal = {
           waypoints: id || current['waypoints'],
           waypoint: false,
-          checkpoint: false
+          checkpoint: false,
+          resource: false
         }
         break;
       case 'waypoint':
         proposal = {
           waypoints: current['waypoints'],
           waypoint: id || current['waypoint'],
-          checkpoint: false
+          checkpoint: false,
+          resource: false
         }
         break;
       case 'checkpoint':
         proposal = {
           waypoints: current['waypoints'],
           waypoint: current['waypoint'],
-          checkpoint: id || current['checkpoint']
+          checkpoint: id || current['checkpoint'],
+          resource: false
+        }
+        break;
+      case 'resource':
+        proposal = {
+          waypoints: current['waypoints'],
+          waypoint: current['waypoint'],
+          checkpoint: current['checkpoint'],
+          resource: id || current['resource']
         }
         break;
     }

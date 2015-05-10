@@ -57,6 +57,75 @@ describe("ViewModel Service", () => {
         });
       });
     });
+
+    describe("when level is waypoint", () => {
+
+      beforeEach((done) => {
+        let viewModel = { waypoint: 1};
+        appState = { viewModel };
+        ViewModel.get(appState).then((data) => {
+          result = data;
+          done();
+        });
+      });
+
+      it("has no title", () => {
+        let { model } = result;
+        let { title } = model;
+        expect(title).to.equal('Program, or be Programmed');
+      });
+
+      it("has a collection of checkpoints", () => {
+        let { collection } = result;
+        expect(collection.length).to.equal(5);
+      });
+    });
+
+    describe("when level is checkpoint", () => {
+
+      beforeEach((done) => {
+        let viewModel = { waypoint: 1, checkpoint: 1 };
+        appState = { viewModel };
+        ViewModel.get(appState).then((data) => {
+          result = data;
+          done();
+        });
+      });
+
+      it("has no title", () => {
+        let { model } = result;
+        let { title } = model;
+        expect(title).to.equal('Climb Trees');
+      });
+
+      it("has a collection of resources", () => {
+        let { collection } = result;
+        expect(collection.length).to.equal(5);
+      });
+    });
+
+    describe.only("when level is resource", () => {
+
+      beforeEach((done) => {
+        let viewModel = { waypoint: 1, checkpoint: 1, resource: 1 };
+        appState = { viewModel };
+        ViewModel.get(appState).then((data) => {
+          result = data;
+          done();
+        });
+      });
+
+      it("has no title", () => {
+        let { model } = result;
+        let { title } = model;
+        expect(title).to.equal('Chapter 13. The Document-Object-Model');
+      });
+
+      it("has a collection of resources", () => {
+        let { collection } = result;
+        expect(collection.length).to.equal(0);
+      });
+    });
   });
 
   describe("set viewModel", () => {
@@ -71,17 +140,19 @@ describe("ViewModel Service", () => {
 
           current = {
             waypoints: 'all',
-            waypoint: false,
-            checkpoint: false
+            waypoint: 1,
+            checkpoint: 1,
+            resource: false
           };
 
           expectation = {
             waypoints: 'all',
             waypoint: 1,
-            checkpoint: false
+            checkpoint: 1,
+            resource: 1
           };
 
-          let selection = { type: 'waypoint', id: 1 };
+          let selection = { type: 'resource', id: 1 };
           proposal = ViewModel.set({ current, selection });
         });
 
@@ -96,13 +167,15 @@ describe("ViewModel Service", () => {
           current = {
             waypoints: 'all',
             waypoint: 1,
-            checkpoint: 1
+            checkpoint: 1,
+            resource: 1
           };
 
           expectation = {
             waypoints: 'all',
             waypoint: 1,
-            checkpoint: false
+            checkpoint: false,
+            resource: false
           };
 
           let selection = { type: 'waypoint', id: 1 };
