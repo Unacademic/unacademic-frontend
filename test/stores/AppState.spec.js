@@ -208,7 +208,7 @@ describe("AppStore Store", () => {
       });
     });
 
-    describe.only("update props on the view model", () => {
+    describe("update props on the view model", () => {
       let propData;;
 
       beforeEach(() => {

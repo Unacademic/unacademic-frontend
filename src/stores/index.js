@@ -8,7 +8,8 @@ let API = new APIService(baseUrl).getWaypoints;
 let levels = Map({
   waypoints: 'all',
   waypoint: false,
-  checkpoint: false
+  checkpoint: false,
+  resource: false
 });
 
 let modes = Map({

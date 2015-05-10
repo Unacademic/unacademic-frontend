@@ -1,8 +1,12 @@
 import axios from 'axios';
 import R from 'ramda';
+import _ from 'lodash';
 import Waypoint from '../models/Waypoint';
-import unacademic from '../waypoints/how_to_curate.yml';
-unacademic.id = 1;
+import unacademic1 from '../waypoints/how_to_curate.yml';
+unacademic1.id = 1;
+let unacademic2 = _.clone(unacademic1);
+unacademic2.id = 2;
+unacademic2.title = "Hello Greg";
 
 class API {
 
@@ -10,9 +14,36 @@ class API {
     this.baseUrl = baseUrl;
     this.getWaypoints = this.getWaypoints.bind(this);
   }
+  async getAll(){
+    let apiData = [unacademic1, unacademic2];
+    return R.map((item) => new Waypoint(item), apiData);
+  }
+
+  async get(levels){
+    let waypoints = await this.getAll();
+
+    // ***
+    let waypointId = levels.waypoint && levels.waypoint.id;
+    let waypoint = R.find(R.propEq('id', waypointId), waypoints);
+    let checkpointId = levels.checkpoint && levels.checkpoint.id;
+    let checkpoint = waypoint && R.find(R.propEq('id', checkpointId), waypoint.checkpoints);
+    // ***
+
+    if(levels.checkpoint){
+      return checkpoint;
+    }
+
+    if(levels.waypoint){
+      return waypoint;
+    }
+
+    if(levels.waypoints){
+      return waypoints;
+    }
+  }
 
   async getWaypoints(){
-    let data = [unacademic];
+    let data = [unacademic1, unacademic2];
 
     // try {
     //   let response = await axios.get(this.baseUrl + '/waypoints');

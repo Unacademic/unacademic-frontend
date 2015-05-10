@@ -9,6 +9,9 @@ class ViewModel {
 
   async get(appState){
     let { user, levels } = appState;
+    console.log(levels)
+
+    // check if there is a new model (levels !== levels)
 
     // move to api
     let waypoints = await this.api();
@@ -19,11 +22,17 @@ class ViewModel {
     let resourceId = levels.resource && levels.resource.id;
     let resource = checkpoint && R.find(R.propEq('id', resourceId), checkpoint.resources);
     // ***
+    //
+    //
+    // let { type, model  } = await this.api.get({levels});
+    // switch(type)
+    // case 'waypoint':
+    // this.current = { model, collection: waypoint.checkpoint }
 
     if(resource){
       return {
         model: resource,
-        collection: []
+        url: resource.url
       }
     }
 

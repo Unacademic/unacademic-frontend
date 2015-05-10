@@ -14,7 +14,6 @@ describe("Unacademic", () => {
     element = React.findDOMNode(container);
   });
 
-
   it("renders the container with the correct classes", () => {
     let classes = element.className.split(" ");
     expect(classes).to.contain('layout-app');

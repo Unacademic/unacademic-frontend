@@ -6,51 +6,69 @@ import 'babel/polyfill';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 
 
-describe("API Service", () => {
+describe.only("API Service", () => {
   let API;
   let server;
   let baseUrl;
 
   beforeEach(() => {
-    baseUrl = 'http://189.166.97.196/api/0';
     API = new APIService(baseUrl);
   });
 
   describe("get waypoints", ()=> {
     let waypoints;
 
-    describe("when everything goes well", ()=> {
-
-      beforeEach((done) => {
-        let payload = fixtures.viewModel.collection;
-        nock(baseUrl).get('/waypoints').reply(200, payload);
-
-        API.getWaypoints().then((data) => {
-          waypoints = data;
-          done();
-        });
-      });
-
-      it("should get all waypoints", () => {
-        expect(waypoints.length).to.equal(1);
-        expect(waypoints[0]).to.be.an.instanceOf(Waypoint);
+    beforeEach((done) => {
+      let levels = { waypoints: 'all' };
+      API.get(levels).then((data) => {
+        waypoints = data;
+        done();
       });
     });
 
-    describe("in case there is a error", ()=> {
+    it("returns a collection", () => {
+        expect(waypoints.length).to.equal(2);
+    });
+  });
 
-      beforeEach((done) => {
-        nock(baseUrl).get('/waypoints').reply(404);
+  describe("get waypoint", ()=> {
+    let waypoint;
 
-        API.getWaypoints().then((data) => {
-          waypoints = data;
-          done();
-        });
+    beforeEach((done) => {
+      let levels = {
+        waypoints: 'all',
+        waypoint: { id: 1, title: 'tada' }
+      };
+
+      API.get(levels).then((data) => {
+        waypoint = data;
+        done();
       });
+    });
 
-      it("should get all waypoints", () => {
-        expect(waypoints.length).to.equal(1);
+    it("returns a collection", () => {
+        expect(waypoint.title).to.equal('Prevent Wheel Reinvention');
+    });
+  });
+
+  describe("get checkpoint", ()=> {
+    let checkpoint;
+
+    beforeEach((done) => {
+      let levels = {
+        waypoints: 'all',
+        waypoint: { id: 1, title: 'tada' },
+        checkpoint: { id: 1, title: 'hi' }
+      };
+
+      API.get(levels).then((data) => {
+        checkpoint = data;
+        done();
       });
+    });
+
+    it("returns a collection", () => {
+        expect(checkpoint.title).to.equal('Structure your Story');
     });
   });
 });
