@@ -19,12 +19,9 @@ describe("Checkpoint Section", () => {
     it("has the correct classes", () => {
       let classes = element.className.split(' ');
       expect(classes).to.contain('panel-content_main');
-      expect(classes).to.contain('panel-is-checkpoint');
     });
   });
-
 });
-
 
 function renderCheckpoint(model){
   let container = TestUtils.renderIntoDocument(

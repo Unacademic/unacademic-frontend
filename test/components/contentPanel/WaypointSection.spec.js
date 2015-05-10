@@ -1,29 +1,45 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import WaypointSection from '../../../src/components/contentPanel/WaypointSection.jsx';
 
-describe.only("Waypoint Section", () => {
+import Actions from '../../../src/actions/index.js';
+
+describe("Waypoint Section", () => {
   let element;
   let waypoint;
   let checkpoint;
   let resource;
 
   beforeEach(() => {
+    Actions.switchMode = sinon.spy();
     testdom('<html><body></body></html>');
     [waypoint] = fixtures.viewModel.collection;
-    element = renderWaypoint(waypoint);
+    element = renderWaypoint(waypoint, 'waypoints', 'learn');
   })
 
   it("has the correct classes", () => {
     let classes = element.className.split(' ');
     expect(classes).to.contain('panel-content_main');
-    expect(classes).to.contain('panel-is-waypoint');
+  });
+
+  describe("on double click", ()=> {
+    it("calls switchmode if level is waypoint", () => {
+      React.addons.TestUtils.Simulate.doubleClick(element);
+      expect(Actions.switchMode).to.be.calledWith('curate');
+    });
+  });
+
+  describe("on double click", ()=> {
+    it("does not call switchmode if level is not waypoint", () => {
+      element = renderWaypoint(waypoint, '', 'learn');
+      React.addons.TestUtils.Simulate.doubleClick(element);
+      expect(Actions.switchMode).not.to.be.calledWith('curate');
+    });
   });
 });
 
-
-function renderWaypoint(model){
+function renderWaypoint(model, level, mode){
   let container = TestUtils.renderIntoDocument(
-    <WaypointSection model={ model }/>
+    <WaypointSection level={ level } mode={ mode } model={ model }/>
   );
 
   let element = React.findDOMNode(container);

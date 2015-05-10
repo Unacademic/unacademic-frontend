@@ -9,6 +9,10 @@
   justify-content: flex-start;
 }
 
+textarea {
+  width: 100%;
+}
+
 .panel.panel-center {
   padding: $baseUnit;
   justify-content: center;

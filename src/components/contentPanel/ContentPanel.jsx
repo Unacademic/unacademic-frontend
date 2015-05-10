@@ -31,7 +31,7 @@ class ContentPanel extends React.Component {
       <section className={ classes }>
         <section className="panel-content_header">
         </section>
-        { level === 'waypoint' && <WaypointSection mode={ mode } model={ model }/> }
+        { level === 'waypoint' && <WaypointSection level={ level } mode={ mode } model={ model }/> }
         { level === 'checkpoint' && <CheckpointSection model={ model }/> }
         { level === 'resource' && <ResourceSection model={ model }/> }
       </section>

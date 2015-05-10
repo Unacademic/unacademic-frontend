@@ -14,13 +14,11 @@ em {
   display: none;
 }
 
-h1, h2, h3, h4 ,h5, h6 {
+h1, h2, h3, h4 ,h5, h6, .title {
   font-family: NittyBold;
-  line-height: rem-calc(0);
-
 }
 
-p, li {
+p, li, textarea {
   font-size: rem-calc(16);
   line-height: rem-calc(20);
 }

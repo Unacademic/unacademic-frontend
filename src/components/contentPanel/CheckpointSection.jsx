@@ -11,7 +11,6 @@ class CheckpointSection extends React.Component {
     let model = this.props.model;
     let { title, description, instructions, resources, waypoint } = model;
     let type = model.constructor.name.toLowerCase();
-    let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
     if(!instructions){
       instructions = [];
     }
@@ -22,7 +21,7 @@ class CheckpointSection extends React.Component {
     let rendereredDescription = {__html: marked(description, { renderer })};
 
     return (
-      <section className={ classes }>
+      <section className="panel-content_main">
         <hgroup>
           <h1 className="title editable">{ title }</h1>
         </hgroup>
