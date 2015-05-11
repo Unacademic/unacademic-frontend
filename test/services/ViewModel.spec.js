@@ -2,23 +2,37 @@ import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe("ViewModel Service", () => {
+describe.only("ViewModel Service", () => {
   let ViewModel;
   let appState;
   let result;
 
+  class MockAPI {
+    get(){
+      let allWaypoints = fixtures.viewModel.collection
+      return Promise.resolve(allWaypoints);
+    }
+  }
+
   beforeEach(() => {
-    let allWaypoints = () => fixtures.viewModel.collection;
-    ViewModel = new ViewModelService(allWaypoints);
+    ViewModel = new ViewModelService(new MockAPI);
   });
 
-  describe("get viewModel", () => {
+  it("initializes the api", () => {
+    expect(ViewModel.API).not.to.be.undefined;
+  });
 
-    describe("when level is waypoints", () => {
+  describe("waypoints", () => {
+    let levels;
+
+    beforeEach(() => {
+      levels = { waypoints: { id: 'all'} };
+    });
+
+    describe("get viewModel", () => {
 
       describe("without a user", () => {
         beforeEach((done) => {
-          let levels = { waypoints: { id: 'all'} };
           appState = { levels };
 
           ViewModel.get(appState).then((data) => {
@@ -33,6 +47,8 @@ describe("ViewModel Service", () => {
           expect(title).to.equal('_Unacademic');
         });
 
+        it("fetches the data from the API")
+
         it("has a collection of waypoints", () => {
           let { collection } = result;
           expect(collection.length).to.equal(2);
@@ -42,7 +58,6 @@ describe("ViewModel Service", () => {
       describe("with a user", () => {
 
         beforeEach((done) => {
-          let levels = { waypoints: 'all' };
           appState = { levels, user: 'yeehaa' };
 
           ViewModel.get(appState).then((data) => {

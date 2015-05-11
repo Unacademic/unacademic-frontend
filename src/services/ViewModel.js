@@ -3,18 +3,17 @@ import R from 'ramda';
 
 class ViewModel {
 
-  constructor(api){
-    this.api = api;
+  constructor(API){
+    this.API = API;
   }
 
   async get(appState){
     let { user, levels } = appState;
-    console.log(levels)
 
     // check if there is a new model (levels !== levels)
 
     // move to api
-    let waypoints = await this.api();
+    let waypoints = await this.API.get();
     let waypointId = levels.waypoint && levels.waypoint.id;
     let waypoint = R.find(R.propEq('id', waypointId), waypoints);
     let checkpointId = levels.checkpoint && levels.checkpoint.id;
