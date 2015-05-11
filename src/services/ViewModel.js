@@ -9,52 +9,35 @@ class ViewModel {
 
   async get(appState){
     let { user, levels } = appState;
+    let { type, model } = await this.API.get(levels);
 
-    // check if there is a new model (levels !== levels)
-
-    // move to api
-    let waypoints = await this.API.get();
-    let waypointId = levels.waypoint && levels.waypoint.id;
-    let waypoint = R.find(R.propEq('id', waypointId), waypoints);
-    let checkpointId = levels.checkpoint && levels.checkpoint.id;
-    let checkpoint =  waypoint && R.find(R.propEq('id', checkpointId), waypoint.checkpoints);
-    let resourceId = levels.resource && levels.resource.id;
-    let resource = checkpoint && R.find(R.propEq('id', resourceId), checkpoint.resources);
-    // ***
-    //
-    //
-    // let { type, model  } = await this.api.get({levels});
-    // switch(type)
-    // case 'waypoint':
-    // this.current = { model, collection: waypoint.checkpoint }
-
-    if(resource){
+    if(type === 'resource'){
       return {
-        model: resource,
-        url: resource.url
+        model: model,
+        url: model.url
       }
     }
 
-    if(checkpoint){
+    if(type === 'checkpoint'){
       return {
-        model: checkpoint,
-        collection: checkpoint.resources
+        model: model,
+        collection: model.resources
       }
     }
 
-    if(waypoint){
+    if(type === ' waypoint'){
       return {
-        model: waypoint,
-        collection: waypoint.checkpoints
+        model: model,
+        collection: model.checkpoints
       }
     }
 
-    if(waypoints){
+    if(type === 'waypoints'){
+      let waypoints = model;
       let title = '_Unacademic';
-      let type = 'waypoints';
-      let model = { title, type };
+      let meta = { title, type };
       let collection = user ? [waypoints[1], waypoints[2]] : waypoints;
-      return { model, collection }
+      return { model: meta, collection }
     }
   }
 

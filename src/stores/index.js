@@ -2,7 +2,7 @@ import { Map }  from 'immutable';
 import APIService from '../services/API.js';
 
 let baseUrl = 'http://188.166.97.196/api/0';
-let API = new APIService(baseUrl).getWaypoints;
+let API = new APIService(baseUrl);
 
 
 let levels = Map({
