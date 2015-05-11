@@ -47,12 +47,10 @@ class API {
     this.waypoints = await this._getAll();
     let levels = this._getLevels(levels);
     let level = this._filterLevelData(levels);
-    console.log(level);
     return level;
   }
 
   async getWaypoints(){
-    console.log('hi');
     let data = [unacademic1, unacademic2];
 
     // try {

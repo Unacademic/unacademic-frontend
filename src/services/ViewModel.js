@@ -10,35 +10,36 @@ class ViewModel {
   async get(appState){
     let { user, levels } = appState;
     let { type, model } = await this.API.get(levels);
+    let viewModel;
 
-    if(type === 'resource'){
-      return {
-        model: model,
-        url: model.url
-      }
+    switch(type){
+      case 'resource':
+        viewModel = {
+          model: model,
+          url: model.url
+        }
+        break;
+      case 'checkpoint':
+        viewModel = {
+          model: model,
+          collection: model.resources
+        }
+        break;
+      case 'waypoint':
+        viewModel = {
+          model: model,
+          collection: model.checkpoints
+        }
+        break;
+      case 'waypoints':
+        let title = '_Unacademic';
+        let meta = { title, type };
+        let collection = user ? [model[1], model[2]] : model;
+        viewModel = { model: meta, collection };
+        break;
     }
 
-    if(type === 'checkpoint'){
-      return {
-        model: model,
-        collection: model.resources
-      }
-    }
-
-    if(type === ' waypoint'){
-      return {
-        model: model,
-        collection: model.checkpoints
-      }
-    }
-
-    if(type === 'waypoints'){
-      let waypoints = model;
-      let title = '_Unacademic';
-      let meta = { title, type };
-      let collection = user ? [waypoints[1], waypoints[2]] : waypoints;
-      return { model: meta, collection }
-    }
+    return viewModel;
   }
 
   set({ current, selection }){
