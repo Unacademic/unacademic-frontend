@@ -1,28 +1,27 @@
 import React from 'react';
-import Axios from 'axios';
 
 class Viewer extends React.Component {
-
   render() {
-    let { url } = this.props;
-    // appending below will render the source, but in a 404
-    // url = url + "&output=embed";
-
     let viewerStyle = {
+    	boxSizing: 'border-box',
 			width: '100%',
-			height: '100%'
+			height: '100%',
+      backgroundColor: 'pink',
+      overflow: 'scroll'
 		};
-
+    let data = this.props.data
     return (
-      <section className="viewer">
-        <iframe sandbox="allow-same-origin" style={ viewerStyle } src={ url }></iframe>
-      </section>
+      <div className="viewer" style={ viewerStyle }>
+        <a href={ this.props.url }><i>Full Reference</i></a>
+        <br /><br />
+        <div dangerouslySetInnerHTML={ { __html: data.content } } />
+      </div>
     );
   }
 }
 
+
 Viewer.propTypes = {
-  url: React.PropTypes.string
 }
 
 export default Viewer;

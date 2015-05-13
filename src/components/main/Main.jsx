@@ -5,12 +5,13 @@ import Viewer from '../viewer/Viewer.jsx';
 
 class Main extends React.Component {
   render() {
-    let { levels, collection, url } = this.props;
+    let { levels, collection, url, data } = this.props;
+    console.log(data);
     return (
       <section className="layout-main">
         <BreadCrumbs levels={ levels }></BreadCrumbs>
         { collection && <Cards collection={ collection } className="cards" /> }
-        { url && <Viewer url={ url } /> }
+        { url && <Viewer url={ url } data={ data } /> }
       </section>
     )
   }
