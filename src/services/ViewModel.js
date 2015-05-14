@@ -32,10 +32,7 @@ class ViewModel {
         }
         break;
       case 'waypoints':
-        let title = '_Unacademic';
-        let meta = { title, type };
-        let collection = user ? [model[1], model[2]] : model;
-        viewModel = { model: meta, collection };
+        viewModel = { collection: model };
         break;
     }
 
