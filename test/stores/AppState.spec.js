@@ -9,6 +9,7 @@ describe("AppStore Store", () => {
   let state;
   let ViewModel;
   let selection;
+  let Levels;
 
   beforeEach(() => {
     state = {
@@ -25,14 +26,15 @@ describe("AppStore Store", () => {
     };
     TimeMachine = {};
     ViewModel = {};
+    Levels = {};
 
     ViewModel.get = sinon.spy();
     TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
 
-    AppStore = new AppStoreStore(TimeMachine, ViewModel);
+    AppStore = new AppStoreStore(TimeMachine, ViewModel, Levels);
 
     AppStore.emitChange = sinon.spy();
-    AppStore.ViewModel.set = sinon.stub().returns(selection);
+    AppStore.Levels.set = sinon.stub().returns(selection);
     AppStore.TimeMachine.update = sinon.stub().returns(true);
   });
 
@@ -93,7 +95,7 @@ describe("AppStore Store", () => {
       });
 
       it("calls the view model set function", () => {
-        expect(AppStore.ViewModel.set).calledWith({ current, selection });
+        expect(AppStore.Levels.set).calledWith({ current, selection });
       });
 
       it("passes the selection to the Time Machine", () => {

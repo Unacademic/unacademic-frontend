@@ -1,62 +1,14 @@
-import ViewModelService from '../../src/services/ViewModel.js'
+import LevelsService from '../../src/services/Levels.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe("ViewModel Service", () => {
-  let ViewModel;
+describe("Levels Service", () => {
+  let Levels;
   let appState;
   let result;
 
   beforeEach(() => {
-    let allWaypoints = () => fixtures.viewModel.collection;
-    ViewModel = new ViewModelService(allWaypoints);
-  });
-
-  describe("get viewModel", () => {
-
-    describe("when level is waypoints", () => {
-
-      describe("without a user", () => {
-        beforeEach((done) => {
-          let levels = { waypoints: { id: 'all'} };
-          appState = { levels };
-
-          ViewModel.get(appState).then((data) => {
-            result = data;
-            done();
-          });
-        });
-
-        it("has no title", () => {
-          let { model } = result;
-          let { title } = model;
-          expect(title).to.equal('_Unacademic');
-        });
-
-        it("has a collection of waypoints", () => {
-          let { collection } = result;
-          expect(collection.length).to.equal(2);
-        });
-      });
-
-      describe("with a user", () => {
-
-        beforeEach((done) => {
-          let levels = { waypoints: 'all' };
-          appState = { levels, user: 'yeehaa' };
-
-          ViewModel.get(appState).then((data) => {
-            result = data;
-            done();
-          });
-        });
-
-        it("has a collection of waypoints", () => {
-          let { collection } = result;
-          expect(collection.length).to.equal(2);
-        });
-      });
-    });
+    Levels = new LevelsService();
   });
 
   describe("set viewModel", () => {
@@ -64,65 +16,56 @@ describe("ViewModel Service", () => {
     let expectation;
     let proposal;
 
-    describe("selection has type and id", () => {
+    describe("selection is child", () => {
+      beforeEach(() => {
 
-      describe("selection is child", () => {
-        beforeEach(() => {
+        current = {
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: { id: 1, title: 'tada' },
+          resource: false
+        };
 
-          current = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: false
-          };
+        expectation = {
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: { id: 1, title: 'tada' },
+          resource: { id: 1, title: 'yo' }
+        };
 
-          expectation = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: { id: 1, title: 'yo' }
-          };
-
-          let selection = { type: 'resource', title: 'yo', id: 1 };
-          proposal = ViewModel.set({ current, selection });
-        });
-
-        it("sets the model to the proposal", () => {
-          expect(proposal).to.deep.equal(expectation);
-        });
+        let selection = { type: 'resource', title: 'yo', id: 1 };
+        proposal = Levels.set({ current, selection });
       });
 
-      describe("selection is parent", () => {
-        beforeEach(() => {
+      it("sets the model to the proposal", () => {
+        expect(proposal).to.deep.equal(expectation);
+      });
+    });
 
-          current = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: { id: 1, title: 'tada' }
-          };
+    describe("selection is parent", () => {
+      beforeEach(() => {
 
-          expectation = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: false,
-            resource: false
-          };
+        current = {
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: { id: 1, title: 'tada' },
+          resource: { id: 1, title: 'tada' }
+        };
 
-          let selection = { type: 'waypoint', title: 'tada', id: 1 };
-          proposal = ViewModel.set({ current, selection });
-        });
+        expectation = {
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: false,
+          resource: false
+        };
 
-        it("sets the model to the proposal", () => {
-          expect(proposal).to.deep.equal(expectation);
-        });
+        let selection = { type: 'waypoint', title: 'tada', id: 1 };
+        proposal = Levels.set({ current, selection });
+      });
+
+      it("sets the model to the proposal", () => {
+        expect(proposal).to.deep.equal(expectation);
       });
     });
   });
 });
-
-function getViewModel(appState){
-  return new Promise((resolve, reject) => {
-    ViewModel.get(appState).then((data) => resolve(data));
-  });
-}

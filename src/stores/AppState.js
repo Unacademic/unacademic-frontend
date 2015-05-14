@@ -4,9 +4,10 @@ import AppStateConstants from '../constants/AppStateConstants';
 
 class AppStore extends BaseStore {
 
-  constructor(TimeMachine, ViewModel){
+  constructor(TimeMachine, ViewModel, Levels){
     this.TimeMachine = TimeMachine;
     this.ViewModel = ViewModel;
+    this.Levels = Levels;
     super();
   }
 
@@ -41,7 +42,7 @@ class AppStore extends BaseStore {
 
   setViewModel(selection){
     let current = this._get().levels;
-    let levels = this.ViewModel.set({ current, selection });
+    let levels = this.Levels.set({ current, selection });
     this.update({ levels });
   }
 

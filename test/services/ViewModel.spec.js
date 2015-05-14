@@ -2,7 +2,7 @@ import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe.only("ViewModel Service", () => {
+describe("ViewModel Service", () => {
   let ViewModel;
   let result;
   let levels;
@@ -15,96 +15,97 @@ describe.only("ViewModel Service", () => {
     expect(ViewModel.API).not.to.be.undefined;
   });
 
-  describe("resource", () => {
+  describe("get", () => {
+    describe("resource", () => {
 
-    beforeEach((done) => {
-      levels = { resource: { id: 1 } };
-      let response = { type: 'resource', model: { url: 'hello' } };
-      ViewModel.API.get = sinon.stub().returns(response);
+      beforeEach((done) => {
+        levels = { resource: { id: 1 } };
+        let response = { type: 'resource', model: { url: 'hello' } };
+        ViewModel.API.get = sinon.stub().returns(response);
 
-      ViewModel.get({ levels }).then((data) => {
-        result = data;
-        done();
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
+        });
+      });
+
+      it("fetches the data from the API", () => {
+        expect(ViewModel.API.get).to.be.calledWith(levels);
+      });
+
+      it("has a model", () => {
+        expect(result.model).to.be.defined;
+      });
+
+      it("has a url", () => {
+        expect(result.url).to.equal('hello');
       });
     });
 
-    it("fetches the data from the API", () => {
-      expect(ViewModel.API.get).to.be.calledWith(levels);
-    });
+    describe("checkpoint", () => {
 
-    it("has a model", () => {
-      expect(result.model).to.be.defined;
-    });
+      beforeEach(() => {
+        let levels = { checkpoint: { id: 1 } };
+        let response = { type: 'checkpoint', model: { resources: [] } };
+        ViewModel.API.get = sinon.stub().returns(response);
 
-    it("has a url", () => {
-      expect(result.url).to.equal('hello');
-    });
-  });
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
+        });
+      });
 
-  describe("checkpoint", () => {
+      it("has a model", () => {
+        expect(result.model).to.be.defined;
+      });
 
-    beforeEach(() => {
-      let levels = { checkpoint: { id: 1 } };
-      let response = { type: 'checkpoint', model: { resources: [] } };
-      ViewModel.API.get = sinon.stub().returns(response);
-
-      ViewModel.get({ levels }).then((data) => {
-        result = data;
-        done();
+      it("has a collection", () => {
+        expect(result.collection.length).to.equal(0);
       });
     });
 
-    it("has a model", () => {
-      expect(result.model).to.be.defined;
-    });
+    describe("waypoint", () => {
 
-    it("has a collection", () => {
-      expect(result.collection.length).to.equal(0);
-    });
-  });
+      beforeEach((done) => {
+        let levels = { waypoint: { id: 1 } };
+        let response = { type: 'waypoint', model: { checkpoints: [] } };
+        ViewModel.API.get = sinon.stub().returns(response);
 
-  describe("waypoint", () => {
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
+        });
+      });
 
-    beforeEach((done) => {
-      let levels = { waypoint: { id: 1 } };
-      let response = { type: 'waypoint', model: { checkpoints: [] } };
-      ViewModel.API.get = sinon.stub().returns(response);
+      it("has a model", () => {
+        expect(result.model).to.be.defined;
+      });
 
-      ViewModel.get({ levels }).then((data) => {
-        result = data;
-        done();
+      it("has a collection", () => {
+        expect(result.collection.length).to.equal(0);
       });
     });
 
-    // maybe this should not have a model ...
-    it("has a model", () => {
-      expect(result.model).to.be.defined;
-    });
+    describe("waypoints", () => {
 
-    it("has a collection", () => {
-      expect(result.collection.length).to.equal(0);
-    });
-  });
+      beforeEach((done) => {
+        let levels = { waypoints: { id: 1 } };
+        let response = { type: 'waypoints', model: [] };
+        ViewModel.API.get = sinon.stub().returns(response);
 
-  describe("waypoints", () => {
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
+        });
+      });
 
-    beforeEach((done) => {
-      let levels = { waypoints: { id: 1 } };
-      let response = { type: 'waypoints', model: [] };
-      ViewModel.API.get = sinon.stub().returns(response);
+      it("has a model", () => {
+        expect(result.model).not.to.be.defined;
+      });
 
-      ViewModel.get({ levels }).then((data) => {
-        result = data;
-        done();
+      it("has a collection", () => {
+        expect(result.collection.length).to.equal(0);
       });
     });
-
-    it("has a model", () => {
-      expect(result.model).not.to.be.defined;
-    });
-
-    it("has a collection", () => {
-      expect(result.collection.length).to.equal(0);
-    });
   });
-});
+  });
