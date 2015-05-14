@@ -2,24 +2,59 @@ import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe.only("ViewModel Service", () => {
+describe("ViewModel Service", () => {
   let ViewModel;
   let appState;
   let result;
 
-  class MockAPI {
-    get(){
-      let allWaypoints = fixtures.viewModel.collection
-      return Promise.resolve(allWaypoints);
-    }
-  }
-
   beforeEach(() => {
-    ViewModel = new ViewModelService(new MockAPI);
+    ViewModel = new ViewModelService({});
   });
 
   it("initializes the api", () => {
     expect(ViewModel.API).not.to.be.undefined;
+  });
+
+  describe.only("default", () => {
+    let levels;
+
+    beforeEach(() => {
+      levels = { waypoint: { id: 1 } };
+    });
+
+    describe("get viewModel", () => {
+
+      beforeEach((done) => {
+        appState = { levels };
+
+        let response = {
+          type: 'waypoint',
+          model: { checkpoints: [] }
+        };
+
+        ViewModel.API.get = sinon.stub().returns(response);
+
+        ViewModel.get(appState).then((data) => {
+          result = data;
+          done();
+        });
+      });
+
+
+      it("fetches the data from the API", () => {
+        expect(ViewModel.API.get).to.be.called;
+      });
+
+      it("has a model", () => {
+        let { model} = result;
+        expect(model).to.be.defined;
+      });
+
+      it("has a collection", () => {
+        let { collection } = result;
+        expect(collection.length).to.equal(0);
+      });
+    });
   });
 
   describe("waypoints", () => {
@@ -73,71 +108,4 @@ describe.only("ViewModel Service", () => {
       });
     });
   });
-
-  describe("set viewModel", () => {
-    let current;
-    let expectation;
-    let proposal;
-
-    describe("selection has type and id", () => {
-
-      describe("selection is child", () => {
-        beforeEach(() => {
-
-          current = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: false
-          };
-
-          expectation = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: { id: 1, title: 'yo' }
-          };
-
-          let selection = { type: 'resource', title: 'yo', id: 1 };
-          proposal = ViewModel.set({ current, selection });
-        });
-
-        it("sets the model to the proposal", () => {
-          expect(proposal).to.deep.equal(expectation);
-        });
-      });
-
-      describe("selection is parent", () => {
-        beforeEach(() => {
-
-          current = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: { id: 1, title: 'tada' }
-          };
-
-          expectation = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: false,
-            resource: false
-          };
-
-          let selection = { type: 'waypoint', title: 'tada', id: 1 };
-          proposal = ViewModel.set({ current, selection });
-        });
-
-        it("sets the model to the proposal", () => {
-          expect(proposal).to.deep.equal(expectation);
-        });
-      });
-    });
-  });
 });
-
-function getViewModel(appState){
-  return new Promise((resolve, reject) => {
-    ViewModel.get(appState).then((data) => resolve(data));
-  });
-}
