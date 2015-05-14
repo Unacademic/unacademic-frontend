@@ -10,6 +10,7 @@ describe("AppStore Store", () => {
   let ViewModel;
   let selection;
   let Levels;
+  let Modes;
 
   beforeEach(() => {
     state = {
@@ -27,14 +28,16 @@ describe("AppStore Store", () => {
     TimeMachine = {};
     ViewModel = {};
     Levels = {};
+    Modes = {};
 
     ViewModel.get = sinon.spy();
     TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
 
-    AppStore = new AppStoreStore(TimeMachine, ViewModel, Levels);
+    AppStore = new AppStoreStore(TimeMachine, ViewModel, Levels, Modes);
 
     AppStore.emitChange = sinon.spy();
     AppStore.Levels.set = sinon.stub().returns(selection);
+    AppStore.Modes.set = sinon.stub().returns(selection);
     AppStore.TimeMachine.update = sinon.stub().returns(true);
   });
 
@@ -55,16 +58,6 @@ describe("AppStore Store", () => {
     it("gets the corresponding view model", () => {
       expect(ViewModel.get).to.be.calledWith(state);
     })
-
-    it("adds a handy current mode shortcut", () => {
-      let { current } = appState.modes;
-      expect(current).to.equal('curate');
-    })
-
-    it("adds a handy current mode shortcut", () => {
-      let { current } = appState.levels;
-      expect(current).to.equal('waypoint');
-    })
   })
 
   describe("actions", () => {
@@ -84,7 +77,7 @@ describe("AppStore Store", () => {
       });
     });
 
-    describe("set view model", () => {
+    describe("set Levels", () => {
       let current;
 
       beforeEach(() => {
@@ -119,11 +112,12 @@ describe("AppStore Store", () => {
         AppStore.handleAction(action);
       });
 
+      it("calls the view model set function", () => {
+        expect(AppStore.Modes.set).calledWith('learn');
+      });
+
       it("passes the new user to the Time Machine", () => {
-        let modes = {
-          learn: 'active',
-          curate: ''
-        }
+        let modes = selection;
         expect(AppStore.TimeMachine.update).calledWith({ modes });
       });
 

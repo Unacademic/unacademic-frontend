@@ -4,10 +4,11 @@ import AppStateConstants from '../constants/AppStateConstants';
 
 class AppStore extends BaseStore {
 
-  constructor(TimeMachine, ViewModel, Levels){
+  constructor(TimeMachine, ViewModel, Levels, Modes){
     this.TimeMachine = TimeMachine;
     this.ViewModel = ViewModel;
     this.Levels = Levels;
+    this.Modes = Modes;
     super();
   }
 
@@ -18,19 +19,12 @@ class AppStore extends BaseStore {
   async get() {
     let appState = this._get();
     let viewModel = await this.ViewModel.get(appState);
-    appState.modes.current = this.getMode(appState.modes);
     return { appState, viewModel };
   }
 
   authenticate(){
     let viewModel = { waypoints: 'user' }
     this.update({ user: 'yeehaa', viewModel });
-  }
-
-  getMode(modes){
-    let modesArray = R.toPairs(modes);
-    let currentMode = R.filter((mode) => mode[1] === 'active', modesArray)[0][0];
-    return currentMode;
   }
 
   setViewModel(selection){
@@ -40,11 +34,7 @@ class AppStore extends BaseStore {
   }
 
   switchMode(mode){
-    let modes = {
-      learn: '',
-      curate: ''
-    };
-    modes[mode] = 'active'
+    let modes = this.Modes.set(mode);
     this.update({ modes })
   }
 

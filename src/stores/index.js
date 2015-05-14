@@ -14,6 +14,7 @@ let levels = Map({
 });
 
 let modes = Map({
+  current: 'learn',
   learn: 'active',
   curate: ''
 })
@@ -28,10 +29,12 @@ let initialState = Map({
 import TimeMachineService from '../services/TimeMachine.js';
 import ViewModelService from '../services/ViewModel.js';
 import LevelsService from '../services/Levels.js';
+import ModesService from '../services/Modes.js';
 import AppStore from './AppState.js';
 
 let TimeMachine = new TimeMachineService(initialState);
 let ViewModel = new ViewModelService(API);
 let Levels = new LevelsService();
+let Modes = new ModesService();
 
-export default new AppStore(TimeMachine, ViewModel, Levels);
+export default new AppStore(TimeMachine, ViewModel, Levels, Modes);
