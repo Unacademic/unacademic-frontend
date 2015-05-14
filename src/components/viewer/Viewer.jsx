@@ -5,8 +5,8 @@ class Viewer extends React.Component {
     let viewerStyle = {
     	boxSizing: 'border-box',
 			width: '100%',
-			height: '100%',
-      backgroundColor: 'pink',
+			height: '90%',
+      backgroundColor: '#FFFFF',
       overflow: 'scroll'
 		};
     let data = this.props.data
