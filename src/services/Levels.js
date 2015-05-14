@@ -1,6 +1,11 @@
+import R from 'ramda';
 import { Map, Stack }  from 'immutable';
 
 class Levels {
+
+  constructor(levels = ['resource', 'checkpoint', 'waypoint', 'waypoints']){
+    this.levels = levels;
+  }
 
   set({ current, selection }){
     let { type, id, title } = selection;
@@ -40,9 +45,19 @@ class Levels {
         }
         break;
     }
+
+    proposal.current = this._getCurrent(proposal);
+
     return proposal;
   }
 
+  _getCurrent(levels){
+    let levelPairs = R.toPairs(levels);
+    let notFalse = ([key, value]) => value;
+    let activeLevels = R.takeWhile(notFalse, levelPairs);
+    let currentLevel = R.last(activeLevels)[0];
+    return currentLevel;
+  }
 }
 
 export default Levels;

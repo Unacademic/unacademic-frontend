@@ -6,6 +6,7 @@ let API = new APIService(baseUrl);
 
 
 let levels = Map({
+  current: 'waypoints',
   waypoints: 'all',
   waypoint: false,
   checkpoint: false,
@@ -26,9 +27,11 @@ let initialState = Map({
 
 import TimeMachineService from '../services/TimeMachine.js';
 import ViewModelService from '../services/ViewModel.js';
+import LevelsService from '../services/Levels.js';
 import AppStore from './AppState.js';
 
 let TimeMachine = new TimeMachineService(initialState);
 let ViewModel = new ViewModelService(API);
+let Levels = new LevelsService();
 
-export default new AppStore(TimeMachine, ViewModel);
+export default new AppStore(TimeMachine, ViewModel, Levels);

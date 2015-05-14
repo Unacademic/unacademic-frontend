@@ -19,19 +19,12 @@ class AppStore extends BaseStore {
     let appState = this._get();
     let viewModel = await this.ViewModel.get(appState);
     appState.modes.current = this.getMode(appState.modes);
-    appState.levels.current = this.getLevel(appState.levels);
     return { appState, viewModel };
   }
 
   authenticate(){
     let viewModel = { waypoints: 'user' }
     this.update({ user: 'yeehaa', viewModel });
-  }
-
-  getLevel(viewModel){
-    let levels = R.toPairs(viewModel);
-    let currentLevels = R.filter(([key, value]) => key && value, levels);
-    return currentLevels[currentLevels.length - 1][0];
   }
 
   getMode(modes){

@@ -2,7 +2,7 @@ import LevelsService from '../../src/services/Levels.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe("Levels Service", () => {
+describe.only("Levels Service", () => {
   let Levels;
   let appState;
   let result;
@@ -27,6 +27,7 @@ describe("Levels Service", () => {
         };
 
         expectation = {
+          current: 'resource',
           waypoints: { id:1, title: 'home' },
           waypoint: { id: 1, title: 'tada' },
           checkpoint: { id: 1, title: 'tada' },
@@ -53,6 +54,7 @@ describe("Levels Service", () => {
         };
 
         expectation = {
+          current: 'waypoint',
           waypoints: { id:1, title: 'home' },
           waypoint: { id: 1, title: 'tada' },
           checkpoint: false,
