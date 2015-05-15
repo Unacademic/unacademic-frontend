@@ -82,7 +82,7 @@ describe("AppStore Store", () => {
 
       beforeEach(() => {
         current = state.levels;
-        action = { actionType: AppStoreConstants.SET_VIEW_MODEL, selection }
+        action = { actionType: AppStoreConstants.SET_LEVEL, selection }
 
         AppStore.handleAction(action);
       });

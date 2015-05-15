@@ -27,13 +27,13 @@ class AppStore extends BaseStore {
     this.update({ user: 'yeehaa', viewModel });
   }
 
-  setViewModel(selection){
+  setLevel(selection){
     let current = this._get().levels;
     let levels = this.Levels.set({ current, selection });
     this.update({ levels });
   }
 
-  switchMode(mode){
+  setMode(mode){
     let modes = this.Modes.set(mode);
     this.update({ modes })
   }
@@ -62,11 +62,11 @@ class AppStore extends BaseStore {
       case AppStateConstants.AUTHENTICATE:
         this.authenticate();
         break;
-      case AppStateConstants.SET_VIEW_MODEL:
-        this.setViewModel(action.selection);
+      case AppStateConstants.SET_LEVEL:
+        this.setLevel(action.selection);
         break;
       case AppStateConstants.SWITCH_MODE:
-        this.switchMode(action.mode);
+        this.setMode(action.mode);
         break;
       case AppStateConstants.REVERT_HISTORY:
         this.revertHistory();

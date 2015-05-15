@@ -14,9 +14,9 @@ let Actions = {
       propData: propData
     });
   },
-  setViewModel(selection){
+  setLevel(selection){
     AppDispatcher.dispatch({
-      actionType: AppStateConstants.SET_VIEW_MODEL,
+      actionType: AppStateConstants.SET_LEVEL,
       selection: selection
     });
   },
