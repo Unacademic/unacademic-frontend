@@ -4,6 +4,7 @@ import _ from 'lodash';
 import WaypointSection from './WaypointSection.jsx';
 import CheckpointSection from './CheckpointSection.jsx';
 import ResourceSection from './ResourceSection.jsx';
+import Actions from '../../actions/index.js';
 
 class ContentPanel extends React.Component {
 

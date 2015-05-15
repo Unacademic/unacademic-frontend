@@ -10,9 +10,6 @@ let renderer = new marked.Renderer();
 
 class WaypointSection extends React.Component {
 
-  switchMode(){
-    Actions.setMode('curate');
-  }
 
   render() {
     let { mode, model, level } = this.props;
@@ -21,7 +18,7 @@ class WaypointSection extends React.Component {
     let rendereredDescription = {__html: marked(description, { renderer })};
 
     return (
-      <section onDoubleClick={ this.switchMode.bind(this) } className="panel-content_main">
+      <section className="panel-content_main">
         <hgroup>
           <Editable fieldName={ 'title' } value={ title } editing={ isEditing }/>
         </hgroup>

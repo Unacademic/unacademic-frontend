@@ -38,7 +38,13 @@ class AppStore extends BaseStore {
     this.update({ modes })
   }
 
-  updateProp(propData){
+  toggleMode(){
+    let { current } = this._get().modes;
+    let modes = this.Modes.toggle(current);
+    this.update({ modes })
+  }
+
+  updateModelProp(propData){
     this.ViewModel.update(propData);
   }
 
@@ -68,14 +74,17 @@ class AppStore extends BaseStore {
       case AppStateConstants.SET_MODE:
         this.setMode(action.mode);
         break;
+      case AppStateConstants.TOGGLE_MODE:
+        this.toggleMode();
+        break;
       case AppStateConstants.REVERT_HISTORY:
         this.revertHistory();
         break;
       case AppStateConstants.FORWARD_HISTORY:
         this.forwardHistory();
         break;
-      case AppStateConstants.UPDATE_PROP:
-        this.updateProp(action.propData);
+      case AppStateConstants.UPDATE_MODEL_PROP:
+        this.updateModelProp(action.propData);
     }
     return true;
   }

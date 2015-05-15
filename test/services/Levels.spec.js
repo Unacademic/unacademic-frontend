@@ -1,23 +1,73 @@
-import ModesService from '../../src/services/Modes.js'
+import LevelsService from '../../src/services/Levels.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 require("babel/polyfill");
 
-describe("Modes Service", () => {
-  let Modes;
+describe("Levels Service", () => {
+  let Levels;
+  let appState;
+  let result;
 
   beforeEach(() => {
-    Modes = new ModesService();
+    Levels = new LevelsService();
   });
 
-  it("sets the current mode", () => {
-    let expectation = {
-      current: 'learn',
-      learn: 'active',
-      curate: ''
-    };
+  describe("set viewModel", () => {
+    let current;
+    let expectation;
+    let proposal;
 
-    let modes = Modes.set('learn');
+    describe("selection is child", () => {
+      beforeEach(() => {
 
-    expect(modes).to.deep.equal(expectation);
+        current = {
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: { id: 1, title: 'tada' },
+          resource: false
+        };
+
+        expectation = {
+          current: 'resource',
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: { id: 1, title: 'tada' },
+          resource: { id: 1, title: 'yo' }
+        };
+
+        let selection = { type: 'resource', title: 'yo', id: 1 };
+        proposal = Levels.set({ current, selection });
+      });
+
+      it("sets the model to the proposal", () => {
+        expect(proposal).to.deep.equal(expectation);
+      });
+    });
+
+    describe("selection is parent", () => {
+      beforeEach(() => {
+
+        current = {
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: { id: 1, title: 'tada' },
+          resource: { id: 1, title: 'tada' }
+        };
+
+        expectation = {
+          current: 'waypoint',
+          waypoints: { id:1, title: 'home' },
+          waypoint: { id: 1, title: 'tada' },
+          checkpoint: false,
+          resource: false
+        };
+
+        let selection = { type: 'waypoint', title: 'tada', id: 1 };
+        proposal = Levels.set({ current, selection });
+      });
+
+      it("sets the model to the proposal", () => {
+        expect(proposal).to.deep.equal(expectation);
+      });
+    });
   });
 });

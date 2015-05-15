@@ -8,7 +8,7 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
-  updateProp(propData){
+  updateModelProp(propData){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.UPDATE_PROP,
       propData: propData
@@ -24,6 +24,11 @@ let Actions = {
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SET_MODE,
       mode: mode
+    });
+  },
+  toggleMode(mode){
+    AppDispatcher.dispatch({
+      actionType: AppStateConstants.TOGGLE_MODE
     });
   },
   revertHistory(){

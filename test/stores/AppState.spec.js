@@ -38,6 +38,7 @@ describe("AppStore Store", () => {
     AppStore.emitChange = sinon.spy();
     AppStore.Levels.set = sinon.stub().returns(selection);
     AppStore.Modes.set = sinon.stub().returns(selection);
+    AppStore.Modes.toggle = sinon.stub().returns(selection);
     AppStore.TimeMachine.update = sinon.stub().returns(true);
   });
 
@@ -101,7 +102,7 @@ describe("AppStore Store", () => {
       });
     });
 
-    describe("switch between modes", () => {
+    describe("set a new mode", () => {
 
       beforeEach(() => {
         action = {
@@ -125,6 +126,31 @@ describe("AppStore Store", () => {
         expect(AppStore.emitChange).called;
       });
     });
+
+    describe("toggle between modes", () => {
+
+      beforeEach(() => {
+        action = {
+          actionType: AppStoreConstants.TOGGLE_MODE,
+        }
+        AppStore.TimeMachine.update = sinon.stub().returns(true);
+        AppStore.handleAction(action);
+      });
+
+      it("calls the view model set function", () => {
+        expect(AppStore.Modes.toggle).called;
+      });
+
+      it("passes the new user to the Time Machine", () => {
+        let modes = selection;
+        expect(AppStore.TimeMachine.update).calledWith({ modes });
+      });
+
+      it("emits a change", () => {
+        expect(AppStore.emitChange).called;
+      });
+    });
+
 
     describe("move history back", () => {
 
@@ -213,7 +239,7 @@ describe("AppStore Store", () => {
         propData = { propName, value };
 
         action = {
-          actionType: AppStoreConstants.UPDATE_PROP,
+          actionType: AppStoreConstants.UPDATE_MODEL_PROP,
           propData: propData
         }
         AppStore.ViewModel.update = sinon.spy();

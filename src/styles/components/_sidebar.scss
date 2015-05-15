@@ -3,7 +3,7 @@
   width: 100%;
   max-width: $sidebarWidth;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: $inverseColor;
   border-right: rem-calc(1px) solid $baseColor;
 }
