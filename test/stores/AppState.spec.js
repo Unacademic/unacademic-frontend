@@ -105,7 +105,7 @@ describe("AppStore Store", () => {
 
       beforeEach(() => {
         action = {
-          actionType: AppStoreConstants.SWITCH_MODE,
+          actionType: AppStoreConstants.SET_MODE,
           mode: 'learn'
         }
         AppStore.TimeMachine.update = sinon.stub().returns(true);

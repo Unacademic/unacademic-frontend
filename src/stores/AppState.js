@@ -65,7 +65,7 @@ class AppStore extends BaseStore {
       case AppStateConstants.SET_LEVEL:
         this.setLevel(action.selection);
         break;
-      case AppStateConstants.SWITCH_MODE:
+      case AppStateConstants.SET_MODE:
         this.setMode(action.mode);
         break;
       case AppStateConstants.REVERT_HISTORY:

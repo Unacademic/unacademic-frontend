@@ -5,7 +5,7 @@ class Logo extends React.Component {
 
   switchMode(mode){
     let newMode = mode === 'learn' ? 'curate' : 'learn';
-    Actions.switchMode(newMode);
+    Actions.setMode(newMode);
   }
 
   render() {

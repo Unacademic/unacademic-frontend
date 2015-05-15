@@ -11,7 +11,7 @@ let renderer = new marked.Renderer();
 class WaypointSection extends React.Component {
 
   switchMode(){
-    Actions.switchMode('curate');
+    Actions.setMode('curate');
   }
 
   render() {

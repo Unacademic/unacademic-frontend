@@ -20,9 +20,9 @@ let Actions = {
       selection: selection
     });
   },
-  switchMode(mode){
+  setMode(mode){
     AppDispatcher.dispatch({
-      actionType: AppStateConstants.SWITCH_MODE,
+      actionType: AppStateConstants.SET_MODE,
       mode: mode
     });
   },

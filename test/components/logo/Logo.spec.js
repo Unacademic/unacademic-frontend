@@ -47,14 +47,14 @@ describe("Mode logo", () => {
   describe("when logo is curate", () => {
 
     beforeEach(() => {
-      Actions.switchMode = sinon.spy();
+      Actions.setMode = sinon.spy();
       modes.curate = 'active'
       logo = renderLogo(modes);
       React.addons.TestUtils.Simulate.click(logo);
     });
 
     it("calls the switch mode action", () => {
-      expect(Actions.switchMode).to.be.calledWith('learn');
+      expect(Actions.setMode).to.be.calledWith('learn');
     });
 
   });
