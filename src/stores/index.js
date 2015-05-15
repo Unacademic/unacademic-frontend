@@ -1,9 +1,9 @@
 import { Map }  from 'immutable';
 import APIService from '../services/API.js';
 
-let baseUrl = 'http://188.166.97.196/api/0';
+// let baseUrl = 'http://188.166.97.196/api/0';
+let baseUrl = 'https://unacademic-api.firebaseio.com';
 let API = new APIService(baseUrl);
-
 
 let levels = Map({
   current: 'waypoints',
