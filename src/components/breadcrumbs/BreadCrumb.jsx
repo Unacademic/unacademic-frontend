@@ -4,7 +4,7 @@ import Actions from '../../actions/index';
 class BreadCrumb extends React.Component {
 
   handleClick(selection){
-    Actions.setViewModel(selection);
+    Actions.setLevel(selection);
   }
 
   render() {

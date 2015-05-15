@@ -50,10 +50,10 @@ describe("BreadCrumb", () => {
     it("calls setViewModel Action", () => {
       let layer = ['waypoints', { id: 1, title: 'hi' }];
       breadcrumb = renderBreadCrumb(layer, 'waypoints');
-      Actions.setViewModel = sinon.spy();
+      Actions.setLevel = sinon.spy();
       TestUtils.Simulate.click(breadcrumb);
       let selection = { id: 1, title: 'hi', type: 'waypoints' };
-      expect(Actions.setViewModel).to.be.calledWith(selection);
+      expect(Actions.setLevel).to.be.calledWith(selection);
     });
   });
 });
