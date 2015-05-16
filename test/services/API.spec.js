@@ -6,8 +6,7 @@ import nock from 'nock';
 import 'babel/polyfill';
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
 
-
-describe("API Service", () => {
+xdescribe("API Service", () => {
   let API;
   let result;
   let baseUrl = 'https://unacademic-api.firebaseio.com';

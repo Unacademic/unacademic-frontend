@@ -17,3 +17,25 @@ $baseColor: $black;
 
 $curateColor: $red;
 $learnColor: $yellow;
+
+.line {
+  stroke: $mediumgray;
+}
+
+.stop {
+  stroke: $inverseColor;
+}
+
+.stop:hover {
+  fill: $learnColor;
+}
+
+.hidden {
+  fill: $mediumgray;
+  font-size: 12px;
+}
+
+.visible {
+  fill: $curateColor;
+  font-size: 12px;
+}
