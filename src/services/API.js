@@ -17,18 +17,18 @@ class API {
   }
 
   async _getAll(){
-    let apiData;
-    let url = `${this.baseUrl}/waypoints.json`;
+    let apiData = [unacademic1, unacademic2];
+    // let url = `${this.baseUrl}/waypoints.json`;
 
-    try {
-      let response = await axios.get(url);
-      let waypointsData = R.unnest(R.map((userpoints) => R.values(userpoints), R.values(response.data)));
-      apiData = waypointsData;
-    }
+    // try {
+    //   let response = await axios.get(url);
+    //   let waypointsData = R.unnest(R.map((userpoints) => R.values(userpoints), R.values(response.data)));
+    //   apiData = waypointsData;
+    // }
 
-    catch (e) {
-      apiData = [unacademic1];
-    }
+    // catch (e) {
+    //   apiData = [unacademic1];
+    // }
 
     return R.map((item) => new Waypoint(item), apiData);
   }

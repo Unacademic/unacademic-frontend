@@ -19,23 +19,31 @@ $curateColor: $red;
 $learnColor: $yellow;
 
 .line {
-  stroke: $mediumgray;
+  stroke: $darkgray;
+  stroke-width: 3;
+}
+
+.line {
+  stroke: $darkgray;
+  stroke-width: 3;
 }
 
 .stop {
   stroke: $inverseColor;
+  z-index: 9;
 }
 
 .stop:hover {
   fill: $learnColor;
 }
 
-.hidden {
-  fill: $mediumgray;
-  font-size: 12px;
+.legend {
+  font-size: 14px;
+  font-family: NittyBold;
+  fill: $inverseColor;
+  opacity: 0;
 }
 
-.visible {
-  fill: $curateColor;
-  font-size: 12px;
+.legend.legend-is-active {
+  opacity: 1;
 }
