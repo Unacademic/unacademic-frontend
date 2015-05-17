@@ -35,7 +35,7 @@ checkpoints:
       - author: Chuck Wendig
         title: 25 ways to plot, plan and prep your story
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
-  - title: Find references
+  - title: Find References
     description: | 
       Because we do not believe in reinventing the wheel and because there 
       is already so much good content out there, explain your subject or theme 
@@ -43,6 +43,15 @@ checkpoints:
     instructions: 
       - Read the article to see some examples
     resources: 
+      - author: Jonathan Leavitt
+        title: Why 2014 Will Be the Year of Content Overload
+        url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
+      - author: Jonathan Leavitt
+        title: Why 2014 Will Be the Year of Content Overload
+        url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
+      - author: Jonathan Leavitt
+        title: Why 2014 Will Be the Year of Content Overload
+        url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
@@ -57,6 +66,18 @@ checkpoints:
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+      - author: Gerd Leonhard
+        title: The Relevance Of Context In Content Curation
+        url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+      - author: Gerd Leonhard
+        title: The Relevance Of Context In Content Curation
+        url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+      - author: Gerd Leonhard
+        title: The Relevance Of Context In Content Curation
+        url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+      - author: Gerd Leonhard
+        title: The Relevance Of Context In Content Curation
+        url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
   - title: Critically Curate
     description: | 
       Always critically curate content for instance check whom you are 
@@ -64,6 +85,12 @@ checkpoints:
     instructions: 
       - Read the article for extensive understanding
     resources: 
+      - author: Danah Boyd
+        url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
+        title: "Limited Attention: The Flow of Information through Social Media"
+      - author: Danah Boyd
+        url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
+        title: "Limited Attention: The Flow of Information through Social Media"
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"

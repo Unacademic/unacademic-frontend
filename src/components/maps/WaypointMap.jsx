@@ -8,7 +8,7 @@ class WaypointMap extends React.Component {
       height: 245,
       width: 418,
       padding: 30,
-      radius: 7
+      radius: 15
     }
   }
   handleEnter(){
@@ -24,10 +24,10 @@ class WaypointMap extends React.Component {
     let { checkpoints } = this.props.model;
     let baseLine = height / 2;
     let center = width / 2;
-    let interval = ((width - padding * 2) / (checkpoints.length - 1));
+    let interval = ((width - padding * 3) / (checkpoints.length - 1));
 
     let drawStops = R.mapIndexed((checkpoint, index) => {
-      let x = padding + (index * interval);
+      let x = (padding * 1.5) + (index * interval);
       let y = baseLine;
       let textY = baseLine - padding;
       let maxHeight = (textY - padding);
@@ -45,7 +45,7 @@ class WaypointMap extends React.Component {
           y1={ baseLine }
           x2={ width }
           y2={ baseLine }
-          strokeWidth="25"/>
+          strokeWidth="4"/>
         { drawStops(checkpoints) }
       </svg>
     )

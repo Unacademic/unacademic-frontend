@@ -19,19 +19,24 @@ $curateColor: $red;
 $learnColor: $yellow;
 
 .line {
-  stroke: $yellow;
+  stroke: $darkgray;
 }
 
 .stop {
-  stroke: $inverseColor;
+  stroke-width: 2;
+  stroke: $yellow;
+  fill: $baseColor;
 }
 .stop.stop-is-complete {
-  fill: $inverseColor;
+  stroke: $yellow;
+  fill: $yellow;
+}
+.map.map-checkpoints .stop {
+  stroke-width: 12;
 }
 
 .legend {
   font-size: 14px;
-  font-family: NittyBold;
   fill: $inverseColor;
   opacity: 0;
 }

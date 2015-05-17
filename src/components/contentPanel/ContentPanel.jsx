@@ -5,7 +5,8 @@ import WaypointSection from './WaypointSection.jsx';
 import CheckpointSection from './CheckpointSection.jsx';
 import ResourceSection from './ResourceSection.jsx';
 import Actions from '../../actions/index.js';
-import WaypointMap from '../maps/WaypointMap.jsx'
+import WaypointMap from '../maps/WaypointMap.jsx';
+import CheckpointMap from '../maps/CheckpointMap.jsx';
 
 class ContentPanel extends React.Component {
 
@@ -33,6 +34,7 @@ class ContentPanel extends React.Component {
       <section className={ classes }>
         <section className="panel-content_header">
           { level === 'waypoint' && <WaypointMap model={ model }/> }
+          { level === 'checkpoint' && <CheckpointMap model={ model }/> }
         </section>
         { level === 'waypoint' && <WaypointSection level={ level } mode={ mode } model={ model }/> }
         { level === 'checkpoint' && <CheckpointSection model={ model }/> }
