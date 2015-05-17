@@ -6,41 +6,39 @@ class Stop extends React.Component {
   constructor(props){
     super(props);
     this.radius = this.props.params.radius;
-    this.state = { radius: this.radius, isActive: false };
+    this.state = { multiplier: 1, isActive: false };
   }
   handleEnter(){
-    this.setState({ radius: this.radius * 1.5, isActive: true });
+    this.setState({ multiplier: 2, isActive: true });
   }
 
   handleLeave(){
-    this.setState({radius: this.radius, isActive: false });
+    this.setState({multiplier: 1, isActive: false });
   }
 
   render() {
-    let { x, y, center, baseHeight, textY, checkpoint } = this.props.params;
+    let { x, y, center, baseHeight, radius, textY, checkpoint } = this.props.params;
+
     let { title, resources } = checkpoint;
-    let { radius, isActive }= this.state;
+    let { multiplier, isActive }= this.state;
     let active= isActive && 'legend-is-active';
-    let classes = `legend ${active}`
+    let legendClasses = `legend ${active}`
+    let complete = checkpoint.complete && 'stop-is-complete';
+    let stopClasses = `stop ${complete}`
     let transform = `rotate(270, ${x}, ${y})`
 
     return (
       <g onMouseEnter={ this.handleEnter.bind(this) }
         onMouseLeave={ this.handleLeave.bind(this) }>
         <g transform={ transform }>
-          <line className="line"
-            x1={ x + (radius / 2) + 2}
-            y1={ y }
-            x2={ x + (baseHeight * checkpoint.resources.length)}
-            y2={ y }/>
           <circle
-            className="stop"
+            className={ stopClasses }
             cx={ x }
             cy={ y }
-            r={ radius }
-            strokeWidth="3"/>
+            r={ radius * multiplier }
+            strokeWidth={ 3 * multiplier }/>
         </g>
-        <text className={ classes }
+        <text className={ legendClasses }
           textAnchor="middle"
           x={ center } y={ y - textY }>{ title }</text>
       </g>

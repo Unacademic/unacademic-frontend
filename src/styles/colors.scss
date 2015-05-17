@@ -19,22 +19,14 @@ $curateColor: $red;
 $learnColor: $yellow;
 
 .line {
-  stroke: $darkgray;
-  stroke-width: 3;
-}
-
-.line {
-  stroke: $darkgray;
-  stroke-width: 3;
+  stroke: $yellow;
 }
 
 .stop {
   stroke: $inverseColor;
-  z-index: 9;
 }
-
-.stop:hover {
-  fill: $learnColor;
+.stop.stop-is-complete {
+  fill: $inverseColor;
 }
 
 .legend {

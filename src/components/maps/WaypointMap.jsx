@@ -22,9 +22,9 @@ class WaypointMap extends React.Component {
   render() {
     let { height, width, radius, padding } = this.state;
     let { checkpoints } = this.props.model;
-    let baseLine = height - padding;
+    let baseLine = height / 2;
     let center = width / 2;
-    let interval = ((width - padding * 3) / (checkpoints.length - 1));
+    let interval = ((width - padding * 2) / (checkpoints.length - 1));
 
     let drawStops = R.mapIndexed((checkpoint, index) => {
       let x = padding + (index * interval);
@@ -34,17 +34,18 @@ class WaypointMap extends React.Component {
       let maxResources = 2;
       let baseHeight = maxHeight / maxResources;
       let params = { x, y, radius, center, baseHeight, textY, checkpoint }
+      checkpoint.complete = Math.random()<.5;
       return <Stop key={ index } params={ params }/>
     });
 
     return (
       <svg width={ width } height={ height } className="map">
         <line className="line"
-          x1={ padding }
+          x1={ 0}
           y1={ baseLine }
-          x2={ width - padding * 2}
+          x2={ width }
           y2={ baseLine }
-          strokeWidth="3"/>
+          strokeWidth="25"/>
         { drawStops(checkpoints) }
       </svg>
     )
