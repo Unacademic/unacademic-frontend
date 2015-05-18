@@ -11,22 +11,33 @@ class Stop extends React.Component {
     this.state = { multiplier: 1, angle: 135 };
   }
   handleEnter(){
-    this.setState({ multiplier: 1.5 });
+    this.setState({ multiplier: 2.5, angle: 195 });
   }
 
   handleLeave(){
-    this.setState({multiplier: 1 });
+    this.setState({multiplier: 1, angle: 135 });
   }
 
   render() {
     let { x, y, radius, checkpoint } = this.props.params;
     let { title, resources } = checkpoint;
     let { multiplier, angle }= this.state;
-    let complete = checkpoint.complete ? 'stop-is-complete' : 'stop-is-incomplete';
-    let numberOfResources = checkpoint.resources.length;
-    let strokeWidth = (radius / 10) * multiplier;
 
-    let shape = createShape(x, y, radius, multiplier, numberOfResources);
+    let complete = checkpoint.complete && 'stop-is-complete';
+
+    let stopClasses = `stop ${complete}`
+
+    let transform = `rotate(${angle}, ${x}, ${y})`
+
+    let numberOfResources = checkpoint.resources.length;
+
+    let pointRadius = (radius /5) * multiplier;
+    let strokeWidth = pointRadius / 2;
+
+    let shape = SemiRegularPolygon({
+      center: [x, y],
+      radii: R.times(() => radius * multiplier, numberOfResources)
+    });
 
     let points = R.mapIndexed(([cx, cy], index) => {
       return (
@@ -37,11 +48,11 @@ class Stop extends React.Component {
     let point = <Point cx={ x } cy={ y } strokeWidth={ strokeWidth }/>
 
     return (
-      <g transform={ `rotate(${angle}, ${x}, ${y})` }
+      <g transform={ transform }
         onMouseEnter={ this.handleEnter.bind(this) }
         onMouseLeave={ this.handleLeave.bind(this) }>
         <g>
-          <path className={ `stop ${complete}` }
+          <path className={ stopClasses }
             strokeWidth={ strokeWidth }
             d={ shape.path.print() }/>
           { numberOfResources > 1 ? points : point }
@@ -51,12 +62,5 @@ class Stop extends React.Component {
   }
 };
 
-
-function createShape(x, y, radius, multiplier, numberOfResources){
-  return SemiRegularPolygon({
-    center: [x, y],
-    radii: R.times(() => radius * multiplier, numberOfResources)
-  });
-}
 
 export default Stop;

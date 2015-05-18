@@ -8,7 +8,7 @@ class WaypointMap extends React.Component {
       height: 245,
       width: 418,
       padding: 30,
-      radius: 15
+      radius: 20
     }
   }
   handleEnter(){
@@ -45,7 +45,7 @@ class WaypointMap extends React.Component {
           y1={ baseLine }
           x2={ width }
           y2={ baseLine }
-          strokeWidth="4"/>
+          strokeWidth="5"/>
         { drawStops(checkpoints) }
       </svg>
     )

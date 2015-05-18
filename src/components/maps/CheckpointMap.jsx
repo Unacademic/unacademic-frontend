@@ -8,7 +8,7 @@ class CheckpointMap extends React.Component {
       height: 245,
       width: 418,
       padding: 30,
-      radius: 100
+      radius: 90
     }
   }
   handleEnter(){
