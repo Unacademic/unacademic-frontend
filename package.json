@@ -38,6 +38,7 @@
     "moment": "^2.9.0",
     "nock": "^1.7.1",
     "node-sass": "^2.1.1",
+    "paths-js": "^0.3.4",
     "ramda": "^0.11.0",
     "react": "^0.13.0",
     "react-contenteditable": "0.0.2",

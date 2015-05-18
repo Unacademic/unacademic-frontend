@@ -1,5 +1,6 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import ContentPanel from '../../../src/components/contentPanel/ContentPanel.jsx';
+import Actions from '../../../src/actions/index.js';
 
 describe("Content Panel", () => {
   let element;
@@ -11,6 +12,7 @@ describe("Content Panel", () => {
   describe("level is passed in as property", () => {
     beforeEach(() => {
       let [model] = fixtures.viewModel.collection;
+      Actions.setMode = sinon.spy();
       let appState = {
         levels: { current: 'waypoints' },
         modes: { current: 'learn' }
@@ -25,6 +27,7 @@ describe("Content Panel", () => {
       expect(classes).to.contain('panel-top');
       expect(classes).to.contain('panel-is-waypoints');
     });
+
   });
 
   describe("model type is waypoints", () => {
@@ -46,7 +49,6 @@ describe("Content Panel", () => {
     it("has no content", () => {
       expect(element.innerHTML).to.equal('');
     });
-
   });
 
   describe("model type is something else", () => {

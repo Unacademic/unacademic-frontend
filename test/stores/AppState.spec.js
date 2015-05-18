@@ -9,6 +9,8 @@ describe("AppStore Store", () => {
   let state;
   let ViewModel;
   let selection;
+  let Levels;
+  let Modes;
 
   beforeEach(() => {
     state = {
@@ -25,14 +27,18 @@ describe("AppStore Store", () => {
     };
     TimeMachine = {};
     ViewModel = {};
+    Levels = {};
+    Modes = {};
 
     ViewModel.get = sinon.spy();
     TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
 
-    AppStore = new AppStoreStore(TimeMachine, ViewModel);
+    AppStore = new AppStoreStore(TimeMachine, ViewModel, Levels, Modes);
 
     AppStore.emitChange = sinon.spy();
-    AppStore.ViewModel.set = sinon.stub().returns(selection);
+    AppStore.Levels.set = sinon.stub().returns(selection);
+    AppStore.Modes.set = sinon.stub().returns(selection);
+    AppStore.Modes.toggle = sinon.stub().returns(selection);
     AppStore.TimeMachine.update = sinon.stub().returns(true);
   });
 
@@ -53,16 +59,6 @@ describe("AppStore Store", () => {
     it("gets the corresponding view model", () => {
       expect(ViewModel.get).to.be.calledWith(state);
     })
-
-    it("adds a handy current mode shortcut", () => {
-      let { current } = appState.modes;
-      expect(current).to.equal('curate');
-    })
-
-    it("adds a handy current mode shortcut", () => {
-      let { current } = appState.levels;
-      expect(current).to.equal('waypoint');
-    })
   })
 
   describe("actions", () => {
@@ -82,18 +78,18 @@ describe("AppStore Store", () => {
       });
     });
 
-    describe("set view model", () => {
+    describe("set Levels", () => {
       let current;
 
       beforeEach(() => {
         current = state.levels;
-        action = { actionType: AppStoreConstants.SET_VIEW_MODEL, selection }
+        action = { actionType: AppStoreConstants.SET_LEVEL, selection }
 
         AppStore.handleAction(action);
       });
 
       it("calls the view model set function", () => {
-        expect(AppStore.ViewModel.set).calledWith({ current, selection });
+        expect(AppStore.Levels.set).calledWith({ current, selection });
       });
 
       it("passes the selection to the Time Machine", () => {
@@ -106,22 +102,23 @@ describe("AppStore Store", () => {
       });
     });
 
-    describe("switch between modes", () => {
+    describe("set a new mode", () => {
 
       beforeEach(() => {
         action = {
-          actionType: AppStoreConstants.SWITCH_MODE,
+          actionType: AppStoreConstants.SET_MODE,
           mode: 'learn'
         }
         AppStore.TimeMachine.update = sinon.stub().returns(true);
         AppStore.handleAction(action);
       });
 
+      it("calls the view model set function", () => {
+        expect(AppStore.Modes.set).calledWith('learn');
+      });
+
       it("passes the new user to the Time Machine", () => {
-        let modes = {
-          learn: 'active',
-          curate: ''
-        }
+        let modes = selection;
         expect(AppStore.TimeMachine.update).calledWith({ modes });
       });
 
@@ -129,6 +126,31 @@ describe("AppStore Store", () => {
         expect(AppStore.emitChange).called;
       });
     });
+
+    describe("toggle between modes", () => {
+
+      beforeEach(() => {
+        action = {
+          actionType: AppStoreConstants.TOGGLE_MODE,
+        }
+        AppStore.TimeMachine.update = sinon.stub().returns(true);
+        AppStore.handleAction(action);
+      });
+
+      it("calls the view model set function", () => {
+        expect(AppStore.Modes.toggle).called;
+      });
+
+      it("passes the new user to the Time Machine", () => {
+        let modes = selection;
+        expect(AppStore.TimeMachine.update).calledWith({ modes });
+      });
+
+      it("emits a change", () => {
+        expect(AppStore.emitChange).called;
+      });
+    });
+
 
     describe("move history back", () => {
 
@@ -217,7 +239,7 @@ describe("AppStore Store", () => {
         propData = { propName, value };
 
         action = {
-          actionType: AppStoreConstants.UPDATE_PROP,
+          actionType: AppStoreConstants.UPDATE_MODEL_PROP,
           propData: propData
         }
         AppStore.ViewModel.update = sinon.spy();

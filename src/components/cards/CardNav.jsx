@@ -3,8 +3,8 @@ import Actions from '../../actions/index.js';
 
 class CardNav extends React.Component {
 
-  setViewModel(selection){
-    Actions.setViewModel(selection);
+  setLevel(selection){
+    Actions.setLevel(selection);
   }
 
   render(){
@@ -13,7 +13,7 @@ class CardNav extends React.Component {
 
     return (
       <nav className="card_nav">
-        <button onClick={ this.setViewModel.bind(this, selection)} className="btn btn-inverse browse">
+        <button onClick={ this.setLevel.bind(this, selection)} className="btn btn-inverse browse">
           Browse
         </button>
       </nav>

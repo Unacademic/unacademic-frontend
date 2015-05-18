@@ -5,7 +5,7 @@ class Editable extends React.Component {
 
   updateProp(propName, event){
     let value = event.target.value;
-    Actions.updateProp({propName, value});
+    Actions.updateModelProp({propName, value});
   }
 
   render(){

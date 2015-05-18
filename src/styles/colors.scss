@@ -17,3 +17,30 @@ $baseColor: $black;
 
 $curateColor: $red;
 $learnColor: $yellow;
+
+.line {
+  stroke: $darkgray;
+}
+
+.stop {
+  stroke-width: 2;
+  stroke: $yellow;
+  fill: $baseColor;
+}
+.stop.stop-is-complete {
+  stroke: $yellow;
+  fill: $yellow;
+}
+.map.map-checkpoints .stop {
+  stroke-width: 12;
+}
+
+.legend {
+  font-size: 14px;
+  fill: $inverseColor;
+  opacity: 0;
+}
+
+.legend.legend-is-active {
+  opacity: 1;
+}

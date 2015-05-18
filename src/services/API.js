@@ -12,13 +12,24 @@ class API {
 
   constructor(baseUrl){
     this.baseUrl = baseUrl;
-    this.getWaypoints = this.getWaypoints.bind(this);
     this.get = this.get.bind(this);
     this.waypoints = [];
   }
 
   async _getAll(){
     let apiData = [unacademic1, unacademic2];
+    // let url = `${this.baseUrl}/waypoints.json`;
+
+    // try {
+    //   let response = await axios.get(url);
+    //   let waypointsData = R.unnest(R.map((userpoints) => R.values(userpoints), R.values(response.data)));
+    //   apiData = waypointsData;
+    // }
+
+    // catch (e) {
+    //   apiData = [unacademic1];
+    // }
+
     return R.map((item) => new Waypoint(item), apiData);
   }
 
@@ -48,22 +59,6 @@ class API {
     let levels = this._getLevels(levels);
     let level = this._filterLevelData(levels);
     return level;
-  }
-
-  async getWaypoints(){
-    let data = [unacademic1, unacademic2];
-
-    // try {
-    //   let response = await axios.get(this.baseUrl + '/waypoints');
-    //   data = response.data;
-    // }
-
-    // catch (e) {
-    //   data = [];
-    // }
-
-    let waypoints = R.map((item) => new Waypoint(item), data);
-    return waypoints;
   }
 }
 

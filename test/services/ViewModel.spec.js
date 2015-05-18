@@ -4,140 +4,108 @@ require("babel/polyfill");
 
 describe("ViewModel Service", () => {
   let ViewModel;
-  let appState;
   let result;
-
-  class MockAPI {
-    get(){
-      let allWaypoints = fixtures.viewModel.collection
-      return Promise.resolve(allWaypoints);
-    }
-  }
+  let levels;
 
   beforeEach(() => {
-    ViewModel = new ViewModelService(new MockAPI);
+    ViewModel = new ViewModelService({});
   });
 
   it("initializes the api", () => {
     expect(ViewModel.API).not.to.be.undefined;
   });
 
-  describe("waypoints", () => {
-    let levels;
+  describe("get", () => {
+    describe("resource", () => {
 
-    beforeEach(() => {
-      levels = { waypoints: { id: 'all'} };
-    });
+      beforeEach((done) => {
+        levels = { resource: { id: 1 } };
+        let response = { type: 'resource', model: { url: 'hello' } };
+        ViewModel.API.get = sinon.stub().returns(response);
 
-    describe("get viewModel", () => {
-
-      describe("without a user", () => {
-        beforeEach((done) => {
-          appState = { levels };
-
-          ViewModel.get(appState).then((data) => {
-            result = data;
-            done();
-          });
-        });
-
-        it("has no title", () => {
-          let { model } = result;
-          let { title } = model;
-          expect(title).to.equal('_Unacademic');
-        });
-
-        it("fetches the data from the API")
-
-        it("has a collection of waypoints", () => {
-          let { collection } = result;
-          expect(collection.length).to.equal(2);
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
         });
       });
 
-      describe("with a user", () => {
+      it("fetches the data from the API", () => {
+        expect(ViewModel.API.get).to.be.calledWith(levels);
+      });
 
-        beforeEach((done) => {
-          appState = { levels, user: 'yeehaa' };
+      it("has a model", () => {
+        expect(result.model).to.be.defined;
+      });
 
-          ViewModel.get(appState).then((data) => {
-            result = data;
-            done();
-          });
-        });
-
-        it("has a collection of waypoints", () => {
-          let { collection } = result;
-          expect(collection.length).to.equal(2);
-        });
+      it("has a url", () => {
+        expect(result.url).to.equal('hello');
       });
     });
-  });
 
-  describe("set viewModel", () => {
-    let current;
-    let expectation;
-    let proposal;
+    describe("checkpoint", () => {
 
-    describe("selection has type and id", () => {
+      beforeEach(() => {
+        let levels = { checkpoint: { id: 1 } };
+        let response = { type: 'checkpoint', model: { resources: [] } };
+        ViewModel.API.get = sinon.stub().returns(response);
 
-      describe("selection is child", () => {
-        beforeEach(() => {
-
-          current = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: false
-          };
-
-          expectation = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: { id: 1, title: 'yo' }
-          };
-
-          let selection = { type: 'resource', title: 'yo', id: 1 };
-          proposal = ViewModel.set({ current, selection });
-        });
-
-        it("sets the model to the proposal", () => {
-          expect(proposal).to.deep.equal(expectation);
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
         });
       });
 
-      describe("selection is parent", () => {
-        beforeEach(() => {
+      it("has a model", () => {
+        expect(result.model).to.be.defined;
+      });
 
-          current = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: { id: 1, title: 'tada' },
-            resource: { id: 1, title: 'tada' }
-          };
+      it("has a collection", () => {
+        expect(result.collection.length).to.equal(0);
+      });
+    });
 
-          expectation = {
-            waypoints: { id:1, title: 'home' },
-            waypoint: { id: 1, title: 'tada' },
-            checkpoint: false,
-            resource: false
-          };
+    describe("waypoint", () => {
 
-          let selection = { type: 'waypoint', title: 'tada', id: 1 };
-          proposal = ViewModel.set({ current, selection });
+      beforeEach((done) => {
+        let levels = { waypoint: { id: 1 } };
+        let response = { type: 'waypoint', model: { checkpoints: [] } };
+        ViewModel.API.get = sinon.stub().returns(response);
+
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
         });
+      });
 
-        it("sets the model to the proposal", () => {
-          expect(proposal).to.deep.equal(expectation);
+      it("has a model", () => {
+        expect(result.model).to.be.defined;
+      });
+
+      it("has a collection", () => {
+        expect(result.collection.length).to.equal(0);
+      });
+    });
+
+    describe("waypoints", () => {
+
+      beforeEach((done) => {
+        let levels = { waypoints: { id: 1 } };
+        let response = { type: 'waypoints', model: [] };
+        ViewModel.API.get = sinon.stub().returns(response);
+
+        ViewModel.get({ levels }).then((data) => {
+          result = data;
+          done();
         });
+      });
+
+      it("has a model", () => {
+        expect(result.model).not.to.be.defined;
+      });
+
+      it("has a collection", () => {
+        expect(result.collection.length).to.equal(0);
       });
     });
   });
-});
-
-function getViewModel(appState){
-  return new Promise((resolve, reject) => {
-    ViewModel.get(appState).then((data) => resolve(data));
   });
-}

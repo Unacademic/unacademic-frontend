@@ -1,5 +1,6 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import Sidebar from '../../../src/components/sidebar/Sidebar.jsx';
+import Actions from '../../../src/actions/index.js';
 
 describe("Sidebar", () => {
   let element;
@@ -27,9 +28,10 @@ describe("Sidebar", () => {
     expect(contentPanel.length).to.equal(1);
   });
 
-  it("renders the control panel", () => {
-    let controlPanel = element.querySelectorAll('.panel-control');
-    expect(controlPanel.length).to.equal(1);
+  it("toggles mode on doubleClick", () => {
+    Actions.toggleMode = sinon.spy();
+    React.addons.TestUtils.Simulate.doubleClick(element);
+    expect(Actions.toggleMode).to.be.called;
   });
 });
 

@@ -3,26 +3,25 @@ import ControlPanel from '../controlPanel/ControlPanel.jsx';
 import Logo from '../logo/Logo.jsx';
 import DebugState from '../debugState/DebugState.jsx';
 import LevelStack from '../levelStack/LevelStack.jsx';
+import Actions from '../../actions/index.js';
 
 import React from 'react';
 
 class Sidebar extends React.Component {
 
-  render() {
+  toggleMode(){
+    Actions.toggleMode();
+  }
 
+  render() {
     let { model, appState } = this.props;
     let { modes, levels } = appState;
-    let type = model.constructor.name.toLowerCase();
 
     return (
-    <section className="layout-sidebar">
+      <section onDoubleClick={ this.toggleMode.bind(this) }  className="layout-sidebar">
         <section className="sidebar">
-          <div>
-            <Logo modes={ modes }/>
-            <ContentPanel appState={ appState } model={ model }/>
-          </div>
-          <DebugState appState={ appState } />
-          <ControlPanel appState={ appState }/>
+          <Logo modes={ modes }/>
+          { model && <ContentPanel appState={ appState } model={ model }/> }
         </section>
       </section>
     )

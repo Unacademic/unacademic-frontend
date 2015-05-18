@@ -8,22 +8,27 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
-  updateProp(propData){
+  updateModelProp(propData){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.UPDATE_PROP,
       propData: propData
     });
   },
-  setViewModel(selection){
+  setLevel(selection){
     AppDispatcher.dispatch({
-      actionType: AppStateConstants.SET_VIEW_MODEL,
+      actionType: AppStateConstants.SET_LEVEL,
       selection: selection
     });
   },
-  switchMode(mode){
+  setMode(mode){
     AppDispatcher.dispatch({
-      actionType: AppStateConstants.SWITCH_MODE,
+      actionType: AppStateConstants.SET_MODE,
       mode: mode
+    });
+  },
+  toggleMode(mode){
+    AppDispatcher.dispatch({
+      actionType: AppStateConstants.TOGGLE_MODE
     });
   },
   revertHistory(){

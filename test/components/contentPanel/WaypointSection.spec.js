@@ -10,7 +10,6 @@ describe("Waypoint Section", () => {
   let resource;
 
   beforeEach(() => {
-    Actions.switchMode = sinon.spy();
     testdom('<html><body></body></html>');
     [waypoint] = fixtures.viewModel.collection;
     element = renderWaypoint(waypoint, 'waypoints', 'learn');
@@ -19,21 +18,6 @@ describe("Waypoint Section", () => {
   it("has the correct classes", () => {
     let classes = element.className.split(' ');
     expect(classes).to.contain('panel-content_main');
-  });
-
-  describe("on double click", ()=> {
-    it("calls switchmode if level is waypoint", () => {
-      React.addons.TestUtils.Simulate.doubleClick(element);
-      expect(Actions.switchMode).to.be.calledWith('curate');
-    });
-  });
-
-  xdescribe("on double click", ()=> {
-    it("does not call switchmode if level is not waypoint", () => {
-      element = renderWaypoint(waypoint, '', 'learn');
-      React.addons.TestUtils.Simulate.doubleClick(element);
-      expect(Actions.switchMode).not.to.be.calledWith('curate');
-    });
   });
 });
 

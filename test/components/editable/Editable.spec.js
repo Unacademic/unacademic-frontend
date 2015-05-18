@@ -13,7 +13,7 @@ describe("Editable", () => {
   describe("editing mode", () => {
 
     beforeEach(()=>{
-      Actions.updateProp = sinon.spy();
+      Actions.updateModelProp = sinon.spy();
       element = renderEditable('title', 'hello', true);
     });
 
@@ -41,7 +41,7 @@ describe("Editable", () => {
 
       it("updates the prop on the model", ()=>{
         let propName = 'title';
-        expect(Actions.updateProp).to.be.calledWith({ propName, value });
+        expect(Actions.updateModelProp).to.be.calledWith({ propName, value });
       })
     });
   });
