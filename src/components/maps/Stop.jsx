@@ -8,10 +8,10 @@ class Stop extends React.Component {
   constructor(props){
     super(props);
     this.radius = this.props.params.radius;
-    this.state = { multiplier: 1, angle: 135 };
+    this.state = { multiplier: 1, angle: 140 };
   }
   handleEnter(){
-    this.setState({ multiplier: 1.5 });
+    this.setState({ multiplier: 2 });
   }
 
   handleLeave(){
@@ -40,8 +40,8 @@ class Stop extends React.Component {
       <g transform={ `rotate(${angle}, ${x}, ${y})` }
         onMouseEnter={ this.handleEnter.bind(this) }
         onMouseLeave={ this.handleLeave.bind(this) }>
-        <g>
-          <path className={ `stop ${complete}` }
+        <g className={ `stop ${complete}`} >
+          <path
             strokeWidth={ strokeWidth }
             d={ shape.path.print() }/>
           { numberOfResources > 1 ? points : point }

@@ -25,31 +25,23 @@ $learnColor: $yellow;
 
 .layout-app-is-learn .map {
   stroke: $learnColor;
-  fill:: $learnColor;
+  .point {
+    fill:: $learnColor;
+  }
 }
 
 .line {
   stroke: $darkgray;
 }
 
-.stop.stop-is-incomplete {
+.stop {
   fill: $baseColor;
 } 
 
-.point {
+.stop.stop-is-incomplete .point {
   fill: $baseColor;
 } 
 
 .map.map-checkpoints .stop {
   stroke-width: 12;
-}
-
-.legend {
-  font-size: 14px;
-  fill: $inverseColor;
-  opacity: 0;
-}
-
-.legend.legend-is-active {
-  opacity: 1;
 }
