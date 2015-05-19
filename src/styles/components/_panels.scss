@@ -56,7 +56,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: $baseUnit $baseUnit $twoThirdUnit $baseUnit;
+  padding: $baseUnit $baseUnit 0 $baseUnit;
 
   hgroup {
     margin-bottom: $twoThirdUnit;
@@ -83,21 +83,21 @@ textarea {
 
   ol {
     margin-left: $baseUnit;
-    margin-bottom: 1rem;
   }
 
-  .todos li {
+  .todolist .todolist_item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: $baseUnit / 6;
-    background-color: $betweenBaseColor;
+    background-color: $lightBaseColor;
     height: $baseUnit;
     margin-bottom: $baseUnit / 6;
-    color: $darkBaseColor;
+    color: $baseColor;
   }
 
-  .todos p {
+
+  .todolist_item p {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -105,7 +105,7 @@ textarea {
     height: 100%;
   }
 
-  .todos .checkbox {
+  .todolist_item .checkbox {
     display: inline-block;
     margin-right: $baseUnit / 3;
     width: $twoThirdUnit;
@@ -130,6 +130,15 @@ textarea {
 .panel-content_main {
   .editable {
   }
+}
+
+.layout-app-is-curate .todolist .todolist_item:hover {
+  background-color: $curateColor;;
+  color: $inverseColor;
+}
+
+.layout-app-is-learn .todolist .todolist_item:hover {
+  background-color: $learnColor;
 }
 
 .layout-app-is-curate .sidebar .panel-content_main {

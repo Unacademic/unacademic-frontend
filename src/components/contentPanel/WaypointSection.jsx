@@ -4,18 +4,26 @@ import _ from 'lodash';
 import marked from 'marked';
 
 import Editable from '../editable/Editable.jsx';
-import Actions from '../../actions/index.js';
+import TodoList from './TodoList.jsx';
 
 let renderer = new marked.Renderer();
 
 class WaypointSection extends React.Component {
 
-
   render() {
-    let { mode, model, level } = this.props;
-    let { title, image, curator, description, summary, checkpoints } = model;
+    let { mode, model, level, context } = this.props;
+    let { id, title, image, curator, description, summary, checkpoints } = model;
     let isEditing = mode === 'curate';
     let rendereredDescription = {__html: marked(description, { renderer })};
+
+    let descriptionSection = ()=> {
+      return (
+        <section className="description">
+          <h1>Description</h1>
+          <div className="editable" dangerouslySetInnerHTML={ rendereredDescription }></div>
+        </section>
+      )
+    };
 
     return (
       <section className="panel-content_main">
@@ -30,10 +38,8 @@ class WaypointSection extends React.Component {
           <h1>Summary</h1>
           <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
         </section>
-        <section>
-          <h1>Description</h1>
-          <div className="editable" dangerouslySetInnerHTML={ rendereredDescription }></div>
-        </section>
+        { context === 'sidebar' && descriptionSection() }
+        { context === 'card' && <TodoList parent={ id } collection={ checkpoints }/> }
       </section>
     )
   }

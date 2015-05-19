@@ -21,6 +21,10 @@ $learnColor: $yellow;
 .layout-app-is-curate .map {
   stroke: $curateColor;
   fill: $curateColor;
+
+  .point {
+    fill:: $curateColor;
+  }
 }
 
 .layout-app-is-learn .map {
