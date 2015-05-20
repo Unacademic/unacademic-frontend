@@ -8,6 +8,9 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
+  checkComplete(selection){
+    console.log(selection);
+  },
   updateModelProp(propData){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.UPDATE_PROP,

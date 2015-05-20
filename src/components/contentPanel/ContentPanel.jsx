@@ -11,7 +11,7 @@ import CheckpointMap from '../maps/CheckpointMap.jsx';
 class ContentPanel extends React.Component {
 
   render() {
-    let { model, appState } = this.props;
+    let { model, appState, context } = this.props;
 
     let level;
     let mode;
@@ -36,7 +36,7 @@ class ContentPanel extends React.Component {
           { level === 'waypoint' && <WaypointMap model={ model }/> }
           { level === 'checkpoint' && <CheckpointMap model={ model }/> }
         </section>
-        { level === 'waypoint' && <WaypointSection level={ level } mode={ mode } model={ model }/> }
+        { level === 'waypoint' && <WaypointSection context={ context } level={ level } mode={ mode } model={ model }/> }
         { level === 'checkpoint' && <CheckpointSection model={ model }/> }
         { level === 'resource' && <ResourceSection model={ model }/> }
       </section>

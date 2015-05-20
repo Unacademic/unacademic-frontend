@@ -18,29 +18,34 @@ $baseColor: $black;
 $curateColor: $red;
 $learnColor: $yellow;
 
+.layout-app-is-curate .map {
+  stroke: $curateColor;
+  fill: $curateColor;
+
+  .point {
+    fill:: $curateColor;
+  }
+}
+
+.layout-app-is-learn .map {
+  stroke: $learnColor;
+  .point {
+    fill:: $learnColor;
+  }
+}
+
 .line {
   stroke: $darkgray;
 }
 
 .stop {
-  stroke-width: 2;
-  stroke: $yellow;
   fill: $baseColor;
-}
-.stop.stop-is-complete {
-  stroke: $yellow;
-  fill: $yellow;
-}
+} 
+
+.stop.stop-is-incomplete .point {
+  fill: $baseColor;
+} 
+
 .map.map-checkpoints .stop {
   stroke-width: 12;
-}
-
-.legend {
-  font-size: 14px;
-  fill: $inverseColor;
-  opacity: 0;
-}
-
-.legend.legend-is-active {
-  opacity: 1;
 }

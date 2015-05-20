@@ -21,7 +21,7 @@ class Sidebar extends React.Component {
       <section onDoubleClick={ this.toggleMode.bind(this) }  className="layout-sidebar">
         <section className="sidebar">
           <Logo modes={ modes }/>
-          { model && <ContentPanel appState={ appState } model={ model }/> }
+          { model && <ContentPanel context="sidebar"  appState={ appState } model={ model }/> }
         </section>
       </section>
     )
