@@ -31,7 +31,7 @@ describe("TodoList Item", () => {
 
 function renderToDoListItem(item, cb){
   let container = TestUtils.renderIntoDocument(
-    <TodoListItem item={ item } checkComplete={ cb }/>
+    <TodoListItem item={ item } checkDone={ cb }/>
   );
 
   let element = React.findDOMNode(container);

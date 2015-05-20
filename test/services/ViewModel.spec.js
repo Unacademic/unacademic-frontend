@@ -108,4 +108,5 @@ describe("ViewModel Service", () => {
       });
     });
   });
-  });
+
+});

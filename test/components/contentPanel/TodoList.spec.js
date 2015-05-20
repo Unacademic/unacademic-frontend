@@ -27,10 +27,10 @@ describe("TodoList Section", () => {
 
   it("checks complete when an item is clicked", ()=> {
     let todoItem = element.querySelectorAll('.todolist_item')[0];
-    Actions.checkComplete = sinon.spy();
+    Actions.checkDone = sinon.spy();
     TestUtils.Simulate.click(todoItem);
     let item = 1;
-    expect(Actions.checkComplete).to.be.calledWith({ parent, item });
+    expect(Actions.checkDone).to.be.calledWith({ parent, item });
   });
 
 });

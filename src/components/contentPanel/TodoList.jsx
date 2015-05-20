@@ -6,9 +6,9 @@ import Actions from '../../actions/index';
 
 class TodoList extends React.Component {
 
-  checkComplete(item){
+  checkDone(item){
     let { parent } = this.props;
-    Actions.checkComplete({ parent, item });
+    Actions.checkDone({ parent, item });
   }
 
   render() {
@@ -17,7 +17,7 @@ class TodoList extends React.Component {
     let items = R.mapIndexed((item, index) => {
       return (
         <TodoListItem key={ index }
-          checkComplete={ this.checkComplete.bind(this) }
+          checkDone={ this.checkDone.bind(this) }
           item={ item }/>
       )
     }, collection);

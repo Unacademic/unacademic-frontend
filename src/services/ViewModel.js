@@ -1,6 +1,9 @@
 import { Map, Stack }  from 'immutable';
 import R from 'ramda';
 
+let current;
+let oldLevels;
+
 class ViewModel {
 
   constructor(API){
@@ -8,35 +11,47 @@ class ViewModel {
   }
 
   async get(appState){
-    let { user, levels } = appState;
-    let { type, model } = await this.API.get(levels);
-    let viewModel;
+    let user = appState.get('user');
+    let levels = appState.get('levels');
+
+    if(levels === oldLevels){
+      return current;
+    }
+
+    oldLevels = levels;
+
+    let { type, model } = await this.API.get(levels.toJS());
 
     switch(type){
       case 'resource':
-        viewModel = {
+        current = {
           model: model,
           url: model.url
         }
         break;
       case 'checkpoint':
-        viewModel = {
+        current = {
           model: model,
           collection: model.resources
         }
         break;
       case 'waypoint':
-        viewModel = {
+        current = {
           model: model,
           collection: model.checkpoints
         }
         break;
       case 'waypoints':
-        viewModel = { collection: model };
+        current = { collection: model };
         break;
     }
 
-    return viewModel;
+    return current;
+  }
+
+  checkDone({parent, item}){
+    let currentItem = current.collection[parent -1 ].checkpoints[item-1].complete;
+    current.collection[parent - 1].checkpoints[item - 1].complete = currentItem ? false : true;
   }
 
   update(propData){

@@ -14,7 +14,7 @@ class Levels {
     switch(type){
       case 'waypoints':
         proposal = {
-          waypoints: { id, title } || current['waypoints'],
+          waypoints: { id, title } || current.get('waypoints'),
           waypoint: false,
           checkpoint: false,
           resource: false
@@ -22,26 +22,26 @@ class Levels {
         break;
       case 'waypoint':
         proposal = {
-          waypoints: current['waypoints'],
-          waypoint: { id, title } || current['waypoint'],
+          waypoints: current.get('waypoints'),
+          waypoint: { id, title } || current.get('waypoint'),
           checkpoint: false,
           resource: false
         }
         break;
       case 'checkpoint':
         proposal = {
-          waypoints: current['waypoints'],
-          waypoint: current['waypoint'],
-          checkpoint: { id, title } || current['checkpoint'],
+          waypoints: current.get('waypoints'),
+          waypoint: current.get('waypoint'),
+          checkpoint: { id, title } || current.get('checkpoint'),
           resource: false
         }
         break;
       case 'resource':
         proposal = {
-          waypoints: current['waypoints'],
-          waypoint: current['waypoint'],
-          checkpoint: current['checkpoint'],
-          resource: { id, title } || current['resource']
+          waypoints: current.get('waypoints'),
+          waypoint: current.get('waypoint'),
+          checkpoint: current.get('checkpoint'),
+          resource: { id, title } || current.get('resource')
         }
         break;
     }

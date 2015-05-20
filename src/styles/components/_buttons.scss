@@ -1,10 +1,10 @@
 .btn {
   font-family: NittyBold;
-  font-size: 13px;
+  font-size: rem-calc(13);
   height: $baseUnit * 1.5;
   width: 100%;
   background: $inverseColor;
-  padding: 10px 20px 10px 20px;
+  padding: rem-calc(10) rem-calc(20);
   margin-top: $baseUnit / 3;
   text-decoration: none;
   border: none;

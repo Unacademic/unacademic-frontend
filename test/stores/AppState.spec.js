@@ -12,26 +12,32 @@ describe("AppStore Store", () => {
   let Levels;
   let Modes;
 
+  let modes = Map({
+    current: 'curate',
+    learn: 'disabled',
+    curate: 'active'
+  });
+
+  let levels = Map({
+    current: 'waypoint',
+    waypoints: 'all',
+    waypoint: 1,
+    checkpoint: false
+  });
+
   beforeEach(() => {
-    state = {
+    state = Map({
       user: 'yeehaa',
-      modes: {
-        learn: 'disabled',
-        curate: 'active'
-      },
-      levels: {
-        waypoints: 'all',
-        waypoint: 1,
-        checkpoint: false
-      }
-    };
+      modes,
+      levels
+    });
     TimeMachine = {};
     ViewModel = {};
     Levels = {};
     Modes = {};
 
     ViewModel.get = sinon.spy();
-    TimeMachine.get = sinon.stub().returns({ toJS(){ return state } });
+    TimeMachine.get = sinon.stub().returns(state);
 
     AppStore = new AppStoreStore(TimeMachine, ViewModel, Levels, Modes);
 
@@ -82,7 +88,7 @@ describe("AppStore Store", () => {
       let current;
 
       beforeEach(() => {
-        current = state.levels;
+        current = state.get('levels');
         action = { actionType: AppStoreConstants.SET_LEVEL, selection }
 
         AppStore.handleAction(action);
@@ -230,7 +236,32 @@ describe("AppStore Store", () => {
       });
     });
 
-    describe("update props on the view model", () => {
+    describe("marks an item as done", () => {
+      let selection;
+
+      beforeEach(() => {
+        let parent = 2;
+        let item = 1;
+        selection = { parent, item };
+
+        action = {
+          actionType: AppStoreConstants.CHECK_DONE,
+          selection: selection
+        }
+        AppStore.ViewModel.checkDone = sinon.spy();
+        AppStore.handleAction(action);
+      });
+
+      it("checks done on the view model", () => {
+        expect(AppStore.ViewModel.checkDone).calledWith(selection);
+      });
+
+      it("emits a change", () => {
+        expect(AppStore.emitChange).called;
+      });
+    });
+
+    describe("update props", () => {
       let propData;;
 
       beforeEach(() => {
@@ -246,11 +277,11 @@ describe("AppStore Store", () => {
         AppStore.handleAction(action);
       });
 
-      it("passes the new user to the Time Machine", () => {
+      it("update the prop on the view model", () => {
         expect(AppStore.ViewModel.update).calledWith(propData);
       });
 
-      xit("emits a change", () => {
+      it("emits a change", () => {
         expect(AppStore.emitChange).called;
       });
     });
