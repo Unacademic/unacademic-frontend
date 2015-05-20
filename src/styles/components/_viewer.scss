@@ -1,0 +1,37 @@
+.viewer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 90%;
+  margin: 0 20px;
+  padding: 0;
+  font-family: NittyNormal;
+  font-size: rem-calc(22);
+  line-height: rem-calc(30);
+  overflow: scroll;
+
+  a {
+  	text-decoration: none;
+  	font-size: rem-calc(15);
+  }
+
+	.content {
+		width: 40%;
+
+	  h1, h2, h3, h4, h5, h6 {
+			border-bottom: 1px solid #000;
+			margin: 0;
+			display: inline-block;
+	  }
+
+	  p {
+	  	margin: 3px auto 20px auto;
+	  }
+
+		img {
+			max-width: 100%;
+			height: auto;
+			margin: 10px auto;
+		}
+	}
+}

@@ -10,3 +10,4 @@ import './breadcrumbs/BreadCrumbs.spec.js';
 import './breadcrumbs/BreadCrumb.spec.js';
 import './levelStack/LevelStack.spec.js';
 import './levelStack/LevelSheet.spec.js';
+import './viewer/Viewer.spec.js';

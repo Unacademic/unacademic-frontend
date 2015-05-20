@@ -11,7 +11,7 @@ class Main extends React.Component {
       <section className="layout-main">
         <BreadCrumbs levels={ levels }></BreadCrumbs>
         { collection && <Cards collection={ collection } className="cards" /> }
-        { url && <Viewer url={ url } data={ data } /> }
+        { url && <Viewer data={ data } /> }
       </section>
     )
   }

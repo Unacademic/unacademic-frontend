@@ -1,7 +1,7 @@
 import Main from '../../../src/components/main/Main.jsx';
 import { React, TestUtils, fixtures, testdom } from '../../react-helpers';
 
-describe.only("Main", () => {
+describe("Main", () => {
   let element;
 
   beforeEach(() => {
