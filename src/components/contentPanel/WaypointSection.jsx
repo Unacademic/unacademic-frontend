@@ -39,7 +39,7 @@ class WaypointSection extends React.Component {
           <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
         </section>
         { context === 'sidebar' && descriptionSection() }
-        { context === 'card' && <TodoList parent={ id } collection={ checkpoints }/> }
+        { context === 'card' && <TodoList waypoint={ id } collection={ checkpoints }/> }
       </section>
     )
   }

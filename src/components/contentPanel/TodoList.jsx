@@ -7,8 +7,11 @@ import Actions from '../../actions/index';
 class TodoList extends React.Component {
 
   checkDone(item){
-    let { parent } = this.props;
-    Actions.checkDone({ parent, item });
+    let waypointId = this.props.waypoint;
+    let checkpointId = item;
+    let waypoint = { id: waypointId };
+    let checkpoint = { id: checkpointId };
+    Actions.checkDone({ waypoint, checkpoint });
   }
 
   render() {

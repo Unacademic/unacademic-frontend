@@ -17,11 +17,13 @@ describe("ViewModel Service", () => {
   });
 
   describe("get", () => {
+
     describe("resource", () => {
+      let appState;
 
       beforeEach((done) => {
         levels = Map({ resource: { id: 1 } });
-        let appState = Map({ levels });
+        appState = Map({ levels });
         let response = { type: 'resource', model: { url: 'hello' } };
         ViewModel.API.get = sinon.stub().returns(response);
 
