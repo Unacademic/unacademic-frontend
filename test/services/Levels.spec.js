@@ -1,5 +1,6 @@
 import LevelsService from '../../src/services/Levels.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
+import { Map, Stack }  from 'immutable';
 require("babel/polyfill");
 
 describe("Levels Service", () => {
@@ -19,12 +20,12 @@ describe("Levels Service", () => {
     describe("selection is child", () => {
       beforeEach(() => {
 
-        current = {
+        current = Map({
           waypoints: { id:1, title: 'home' },
           waypoint: { id: 1, title: 'tada' },
           checkpoint: { id: 1, title: 'tada' },
           resource: false
-        };
+        });
 
         expectation = {
           current: 'resource',
@@ -46,12 +47,12 @@ describe("Levels Service", () => {
     describe("selection is parent", () => {
       beforeEach(() => {
 
-        current = {
+        current = Map({
           waypoints: { id:1, title: 'home' },
           waypoint: { id: 1, title: 'tada' },
           checkpoint: { id: 1, title: 'tada' },
           resource: { id: 1, title: 'tada' }
-        };
+        });
 
         expectation = {
           current: 'waypoint',

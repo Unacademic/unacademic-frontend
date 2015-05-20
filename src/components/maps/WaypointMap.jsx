@@ -34,7 +34,6 @@ class WaypointMap extends React.Component {
       let maxResources = 2;
       let baseHeight = maxHeight / maxResources;
       let params = { x, y, radius, center, baseHeight, textY, checkpoint }
-      checkpoint.complete = Math.random()<.5;
       return <Stop key={ index } params={ params }/>
     });
 

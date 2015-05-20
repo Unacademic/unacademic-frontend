@@ -114,6 +114,11 @@ textarea {
     vertical-align: center
   }
 
+  .todolist_item .checkbox-is-complete {
+    background-color: $learnColor;
+    border: rem-calc(2px) solid $inverseColor;
+  }
+
   .meta p {
     margin-bottom: 0;
   }

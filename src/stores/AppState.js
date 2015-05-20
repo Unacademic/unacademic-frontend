@@ -13,12 +13,14 @@ class AppStore extends BaseStore {
   }
 
   _get(){
-    return this.TimeMachine.get().toJS();
+    return this.TimeMachine.get();
   }
 
   async get() {
-    let appState = this._get();
-    let viewModel = await this.ViewModel.get(appState);
+    let state = this._get();
+    let viewModel = await this.ViewModel.get(state);
+    console.log(viewModel);
+    let appState = state.toJS();
     return { appState, viewModel };
   }
 
@@ -27,8 +29,13 @@ class AppStore extends BaseStore {
     this.update({ user: 'yeehaa', viewModel });
   }
 
+  checkDone(selection){
+    this.ViewModel.checkDone(selection);
+    this.emitChange();
+  }
+
   setLevel(selection){
-    let current = this._get().levels;
+    let current = this._get().get('levels');
     let levels = this.Levels.set({ current, selection });
     this.update({ levels });
   }
@@ -39,13 +46,15 @@ class AppStore extends BaseStore {
   }
 
   toggleMode(){
-    let { current } = this._get().modes;
+    let currentModes = this._get().get('modes');
+    let current = currentModes.get('current');
     let modes = this.Modes.toggle(current);
     this.update({ modes })
   }
 
   updateModelProp(propData){
     this.ViewModel.update(propData);
+    this.emitChange();
   }
 
   revertHistory(){
@@ -67,6 +76,9 @@ class AppStore extends BaseStore {
     switch(action.actionType) {
       case AppStateConstants.AUTHENTICATE:
         this.authenticate();
+        break;
+      case AppStateConstants.CHECK_DONE:
+        this.checkDone(action.selection);
         break;
       case AppStateConstants.SET_LEVEL:
         this.setLevel(action.selection);
