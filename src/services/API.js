@@ -13,11 +13,18 @@ class API {
   constructor(baseUrl){
     this.baseUrl = baseUrl;
     this.get = this.get.bind(this);
-    this.waypoints = [];
+    this.waypoints = this._getAll();
   }
 
-  async _getAll(){
+  async get(levels){
+    let levels = this._getLevels(levels);
+    let level = this._filterLevelData(levels);
+    return level;
+  }
+
+  _getAll(){
     let apiData = [unacademic1, unacademic2];
+
     // let url = `${this.baseUrl}/waypoints.json`;
 
     // try {
@@ -31,6 +38,12 @@ class API {
     // }
 
     return R.map((item) => new Waypoint(item), apiData);
+  }
+
+  updateProp(data){
+    let one = this._getLevels(data);
+    let two = this._filterLevelData(one);
+    two.model.complete = two.model.complete ? false : true;
   }
 
   _getLevels(levels){
@@ -54,12 +67,6 @@ class API {
     return R.reject(R.isNil, levelData)[0];
   }
 
-  async get(levels){
-    this.waypoints = await this._getAll();
-    let levels = this._getLevels(levels);
-    let level = this._filterLevelData(levels);
-    return level;
-  }
 }
 
 export default API;

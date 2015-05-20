@@ -27,7 +27,6 @@ class CheckpointMap extends React.Component {
     let x = center;
     let y = baseLine;
     let params = { x, y, radius, center, checkpoint }
-    checkpoint.complete = Math.random()<.5;
     return (
       <svg width={ width } height={ height } className="map map-checkpoints">
         <line className="line"

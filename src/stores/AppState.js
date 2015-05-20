@@ -19,7 +19,6 @@ class AppStore extends BaseStore {
   async get() {
     let state = this._get();
     let viewModel = await this.ViewModel.get(state);
-    console.log(viewModel);
     let appState = state.toJS();
     return { appState, viewModel };
   }

@@ -13,13 +13,6 @@ class ViewModel {
   async get(appState){
     let user = appState.get('user');
     let levels = appState.get('levels');
-
-    if(levels === oldLevels){
-      return current;
-    }
-
-    oldLevels = levels;
-
     let { type, model } = await this.API.get(levels.toJS());
 
     switch(type){
@@ -49,9 +42,9 @@ class ViewModel {
     return current;
   }
 
-  checkDone({parent, item}){
-    let currentItem = current.collection[parent -1 ].checkpoints[item-1].complete;
-    current.collection[parent - 1].checkpoints[item - 1].complete = currentItem ? false : true;
+  checkDone(data){
+    this.API.updateProp(data);
+    return true;
   }
 
   update(propData){
