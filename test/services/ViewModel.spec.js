@@ -1,5 +1,6 @@
 import ViewModelService from '../../src/services/ViewModel.js'
 import { React, TestUtils, fixtures, testdom } from '../react-helpers';
+import { Map, Stack }  from 'immutable';
 require("babel/polyfill");
 
 describe("ViewModel Service", () => {
@@ -19,18 +20,19 @@ describe("ViewModel Service", () => {
     describe("resource", () => {
 
       beforeEach((done) => {
-        levels = { resource: { id: 1 } };
+        levels = Map({ resource: { id: 1 } });
+        let appState = Map({ levels });
         let response = { type: 'resource', model: { url: 'hello' } };
         ViewModel.API.get = sinon.stub().returns(response);
 
-        ViewModel.get({ levels }).then((data) => {
+        ViewModel.get(appState).then((data) => {
           result = data;
           done();
         });
       });
 
       it("fetches the data from the API", () => {
-        expect(ViewModel.API.get).to.be.calledWith(levels);
+        expect(ViewModel.API.get).to.be.calledWith(levels.toJS());
       });
 
       it("has a model", () => {
@@ -44,12 +46,13 @@ describe("ViewModel Service", () => {
 
     describe("checkpoint", () => {
 
-      beforeEach(() => {
-        let levels = { checkpoint: { id: 1 } };
+      beforeEach((done) => {
+        let levels = Map({ checkpoint: { id: 1 } });
+        let appState = Map({ levels });
         let response = { type: 'checkpoint', model: { resources: [] } };
         ViewModel.API.get = sinon.stub().returns(response);
 
-        ViewModel.get({ levels }).then((data) => {
+        ViewModel.get(appState).then((data) => {
           result = data;
           done();
         });
@@ -67,11 +70,12 @@ describe("ViewModel Service", () => {
     describe("waypoint", () => {
 
       beforeEach((done) => {
-        let levels = { waypoint: { id: 1 } };
+        let levels = Map({ waypoint: { id: 1 } });
+        let appState = Map({ levels });
         let response = { type: 'waypoint', model: { checkpoints: [] } };
         ViewModel.API.get = sinon.stub().returns(response);
 
-        ViewModel.get({ levels }).then((data) => {
+        ViewModel.get(appState).then((data) => {
           result = data;
           done();
         });
@@ -89,11 +93,12 @@ describe("ViewModel Service", () => {
     describe("waypoints", () => {
 
       beforeEach((done) => {
-        let levels = { waypoints: { id: 1 } };
+        let levels = Map({ waypoints: { id: 1 } });
+        let appState = Map({ levels });
         let response = { type: 'waypoints', model: [] };
         ViewModel.API.get = sinon.stub().returns(response);
 
-        ViewModel.get({ levels }).then((data) => {
+        ViewModel.get(appState).then((data) => {
           result = data;
           done();
         });
