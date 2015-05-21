@@ -1,108 +1,183 @@
-title: Prevent Wheel Reinvention 
+title: Prevent Wheel Reinvention
 curator: Reika Chavers
 
 summary: learn to curate like a boss in Unacademic
 
-description: | 
-  How many wheels have you had to reinvent already? Our guess would be 'too 
-  many'. Somehow, we keep creating new textbooks and courses, but most 
-  information is out there already. You just need a set up that organizes the 
-  this knowledge in one place, with just the right amount of structure. You 
-  don’t want to be told what to learn, but you don’t want to figure it out 
-  from scratch either. So gather those interesting blog posts, podcasts, or 
+description: |
+  How many wheels have you had to reinvent already? Our guess would be 'too
+  many'. Somehow, we keep creating new textbooks and courses, but most
+  information is out there already. You just need a set up that organizes the
+  this knowledge in one place, with just the right amount of structure. You
+  don’t want to be told what to learn, but you don’t want to figure it out
+  from scratch either. So gather those interesting blog posts, podcasts, or
   tutorials, add your comments, and share them. That’s it!
 
-checkpoints: 
-  - title: Structure your Story 
-    description: | 
+checkpoints:
+  - title: Structure your Story
+    description: |
       Learning and curation on unacademic is built around waypoints. Think of
-      them as narratives. And like every good story, they need a structure: a 
+      them as narratives. And like every good story, they need a structure: a
       beginning, an end, and several other exciting events in between them.
 
-      Events in unacademic are called checkpoints. As a curator, you use them 
-      to contextualize the resources that you want to share with others.Learners 
+      Events in unacademic are called checkpoints. As a curator, you use them
+      to contextualize the resources that you want to share with others.Learners
       use checkpoints to track their progress within your story.
 
       People tend to be more motivated in their learning when its a story,
       so create and curate your waypoints accordingly.
 
-    instructions: 
+    instructions:
       - Read the reference for inspiration
-    resources: 
+    resources:
       - author: Chuck Wendig
         title: 25 ways to plot, plan and prep your story
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Chuck Wendig
         title: 25 ways to plot, plan and prep your story
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
   - title: Find References
-    description: | 
-      Because we do not believe in reinventing the wheel and because there 
-      is already so much good content out there, explain your subject or theme 
+    description: |
+      Because we do not believe in reinventing the wheel and because there
+      is already so much good content out there, explain your subject or theme
       via these references."
-    instructions: 
+    instructions:
       - Read the article to see some examples
-    resources: 
+    resources:
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
   - title: Explain the Relevance
-    description: | 
-      Some references are not enough to get to an understanding of a theme or 
-      subject, so clearly explain why it is relevant and add introductions and 
-      highlight certain critical aspects of the reference. 
-    instructions: 
+    description: |
+      Some references are not enough to get to an understanding of a theme or
+      subject, so clearly explain why it is relevant and add introductions and
+      highlight certain critical aspects of the reference.
+    instructions:
       - Watch the reference for an explanation
-    resources: 
+    resources:
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
   - title: Critically Curate
-    description: | 
-      Always critically curate content for instance check whom you are 
+    description: |
+      Always critically curate content for instance check whom you are
       referencing to and whom the associated institutions are to maintain the high quality we promote.
-    instructions: 
+    instructions:
       - Read the article for extensive understanding
-    resources: 
+    resources:
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3
   - title: Almost finished
-    description: | 
-      You are almost there. The role of the curator has changed over time. Our 
-      notion of a curator is someone how helps you. Therefore we find it 
-      important that learners know how you are. Please enter your curator 
+    description: |
+      You are almost there. The role of the curator has changed over time. Our
+      notion of a curator is someone how helps you. Therefore we find it
+      important that learners know how you are. Please enter your curator
       information on your profile page by clicking on your name in the header.
-    instructions: 
+    instructions:
       - Read the reference to understand how the role of the curator has changed over time.
-    resources: 
+    resources:
       - author: Benny Wed
         title: How the role of the curator has changed since the 1960s
         url: "https://www.academia.edu/9672194/How_the_role_of_the_curator_has_changed_since_the_1960s"
+        clarity: 5
+        difficulty: 4
+        enjoyment: 1
+        relevance: 2
+        tempholder: 3

@@ -1,0 +1,16 @@
+.sliders-container {
+  margin: 0;
+
+  .slider {
+  	padding: 8px 0;
+
+  	label {
+  		width: 50%;
+  		display: inline-block;
+  	}
+
+  	input {
+  		width: 50%;
+  	}
+	}
+}
