@@ -26,6 +26,7 @@ describe("Mode logo", () => {
       expect(classes).to.contain('logo');
       expect(classes).to.contain('logo-is-learn');
     });
+
   });
 
   describe("when logo is curate", () => {
@@ -40,6 +41,22 @@ describe("Mode logo", () => {
       expect(classes).to.contain('logo');
       expect(classes).to.contain('logo-is-curate');
     });
+
+  });
+
+  describe("when logo is curate", () => {
+
+    beforeEach(() => {
+      Actions.switchMode = sinon.spy();
+      modes.curate = 'active'
+      logo = renderLogo(modes);
+      React.addons.TestUtils.Simulate.click(logo);
+    });
+
+    it("calls the switch mode action", () => {
+      expect(Actions.switchMode).to.be.calledWith('learn');
+    });
+
   });
 });
 

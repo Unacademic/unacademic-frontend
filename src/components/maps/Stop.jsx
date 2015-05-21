@@ -12,12 +12,10 @@ class Stop extends React.Component {
   }
   handleEnter(){
     this.handleHover(true);
-    this.setState({ multiplier: 2 });
   }
 
   handleLeave(){
     this.handleHover(false);
-    this.setState({multiplier: 1 });
   }
 
   handleHover(status){
@@ -32,6 +30,9 @@ class Stop extends React.Component {
     let { x, y, radius, checkpoint } = params;
     let { title, resources } = checkpoint;
     let { multiplier, angle }= this.state;
+    if(checkpoint.highlight){
+      multiplier = multiplier * 2;
+    }
     let complete = checkpoint.complete ? 'stop-is-complete' : 'stop-is-incomplete';
     let numberOfResources = checkpoint.resources.length;
     let strokeWidth = (radius / 10) * multiplier;
@@ -66,8 +67,6 @@ Stop.propTypes = {
   handleComplete: React.PropTypes.func.isRequired,
   handleHover: React.PropTypes.func.isRequired
 }
-
-
 
 export default Stop;
 

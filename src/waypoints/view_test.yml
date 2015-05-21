@@ -1,0 +1,150 @@
+title: Viewlexx
+curator: Gauthiier
+
+summary: Learn the basics and relevance or coding
+
+description: |
+  While in theory, you could hardcode everything in HTML this becomes 
+  cumbersome quite rapidly. Computers are made to automate boring, difficult, 
+  error-prone, and repetitive tasks, so let's use that potential to the 
+  fullest.
+
+checkpoints:
+  - title: VIDEO
+    description: |
+      The paperless office is an eternal promise that the computer has yet to
+      fulfill. Still, it has managed to save the forests in a different way. In 
+      fact, tree-like structures are everywhere in programming. For instance, in
+      the form of ASTs (Abstract Syntax Trees) and the branches you use in git.
+
+      When dealing with the web in general, and browsers in particular, the 
+      DOM (Document Object Model) is probably the most important tree that you 
+      will encounter. It is the underlying structure of all the different 
+      elements and properties that a webpage consists of.
+    instructions: 
+      - |
+        The easiest way to explore the DOM is through the developer console in
+        your browser. The console is also an invaluable tool while testing and 
+        debugging your code, so take your time to familiarize yourself with i
+    resources:
+      - title: Vimeo
+        author: Haverbeke, Marijn
+        url: https://vimeo.com/68514760
+      - title: Youtube
+        author: Deleuze, Gilles and Felix Guattari. 
+        url: https://www.youtube.com/watch?v=4myXccZ9Mj8
+      - title: Embedded Youtube
+        url: http://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480061/How-To-Add-a-YouTube-Video-to-Your-Web-Site.htm
+
+  - title: HTML
+    description: |
+      CSS not only offers us a convenient way to style our documents, it 
+      also provides us with some great abstractions to query them. It is 
+      therefore not a coincident that we use many of the same abstractions when 
+      we want to deal with documents programmatically.
+
+      While JavaScript has always offered interfaces to query and manipulate 
+      the DOM, dealing with incompatibilities between browsers used to be a 
+      huge pain. So much so actually, that jQuery - a library that abstracts a
+      lot of the differences between browsers behind a common interface - became
+      the de facto standard to deal with HTML documents programmatically.
+
+      With the introduction of evergreen browsers, however, traversing 
+      and manipulating the DOM with plain javascript has actually become very 
+      simple. So lets go native!
+    resources:
+      - title: wikipedia
+        author: Eisenberg, Rob
+        url: https://en.wikipedia.org/wiki/Nintendo
+      - title: Github page
+        author: Haverbeke, Marijn
+        url: https://github.com/coding-the-humanities/unacademic-react-form
+      - title: JavaScript and the DOM
+        notes: older, but basic still apply
+        url: http://code.tutsplus.com/tutorials/javascript-and-the-dom-series-lesson-1--net-3134
+      - title: CNN front page
+        url: http://edition.cnn.com
+      - title: CNN article
+        url: http://edition.cnn.com/2015/05/20/politics/south-china-sea-navy-flight/index.html
+      - title: monoskop
+        url: http://monoskop.org/Monoskop
+
+  - title: PDF
+    description: |
+      Templating is another, and arguably better, way to solve the problem of 
+      writing the same markup over and over again. Since the template contains 
+      all the elements that stay the same from document from document, it allows
+      you to focus on the parts that change. These so-called variables then 
+      need to be injected into the templates.
+
+      Also, while you may appreciate this right now, t is important to 
+      notice that templates make it possible not to manipulate the DOM directly,
+      This greatly reduces the chance that you run into bugs - either your own, 
+      or those of others - and ensure a clearer separation of concerns.
+
+      There are many different solutions for templating available (erb, jade, 
+      handlebars, etc.) partly due to the fact that - until recently - this was 
+      not possible to do natively in HTML. 
+
+      In the latest versions of the HTML specification, this has changed 
+      though. And the most recent iterations of browsers now all support 
+      templates. So, again, let's not use a proprietary solution but use a native
+      alternative instead.
+    resources:
+      - title: SCRIBD
+        author: Bidelman, Eric
+        url: http://www.scribd.com/doc/10268982/Foucault-What-is-an-Author
+      - title: STRAIGHT PDF
+        author: House, Cory
+        url: http://www.gradsch.ohio-state.edu/Depo/ETD_Tutorial/lesson2.pdf
+      - title: 'The Gutenberg Galaxy: The Making of Typographic Man'
+        author: McLuhan, Marshal
+        url: https://www.goodreads.com/book/show/440463.The_Gutenberg_Galaxy
+      - title: So you need a Template Engine
+        url: http://garann.github.io/template-chooser/
+
+  - title: Digging into Data
+    description: |
+      A template without data is not worth much. Information, however, comes 
+      in many shapes and forms: texts, numbers, sounds, images, etc. In order to 
+      store, manipulate, and transmit this plethora of data, computer languages 
+      differentiate between basic types. These types are called data structures.'
+    instructions:
+      - |
+        Familiarize yourself with the basic data structures in JavaScript: 
+        strings, booleans, numbers. If you are curious about more complex and 
+        exotic data structures have a look at the wikipedia list or go straight 
+        to haskell...
+    resources:
+      - title: List of Data Structures
+        url: http://en.wikipedia.org/wiki/List_of_data_structures
+      - title: Try Haskell
+        url: http://tryhaskell.org/
+      - title: Codeschool - JavaScript Road Trip Part 1
+        url: https://www.codeschool.com/courses/javascript-road-trip-part-1
+      - title: Chapter 1. Values, Types, and Operator
+        author: Haverbeke, Marijn
+        url: http://eloquentjavascript.net/01_values.html
+
+  - title: Repeat Yourself
+    description: |
+      The final task for this section, is that you make a fork of this 
+      document. You can structure and style your document whichever way you like
+      to. There are two restrictions, however.
+
+      1. Your fork describes the next session - with the title *Practice Best Practices*
+      2. Don't hardcode your data, use a template instead.
+
+      If you need inspiration for tasks and/or resources. You can have 
+      a look at the [syllabus](http://ast.codingthehumanities.com/)
+      of last year's of this course, or at the 
+      [website](http://coding-the-humanities.github.io/unacademic_static/)
+      of its Ba-Level counterpart.
+
+    resources:
+      - title: Loop Over querySelectorAll Matches
+        author: Coyer, Chris
+        url: http://css-tricks.com/snippets/javascript/loop-queryselectorall-matches/
+      - title: Code, or How You can Write Something Differently
+        author: Kittler, Friedrich.
+        url: http://monoskop.org/images/6/6e/Kittler_Friedrich_2008_Code_or_How_You_Can_Write_Something_Differently.pdf
