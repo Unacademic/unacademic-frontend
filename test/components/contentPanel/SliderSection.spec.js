@@ -11,8 +11,15 @@ describe.only("SliderSection", () => {
   describe("when model is resource", () => {
 
     beforeEach(() => {
+      let criteria = {
+        clarity: 1,
+        difficulty: 2,
+        enjoyment: 3,
+        relevance: 4,
+        tempholder: 5
+      };
       let container = TestUtils.renderIntoDocument(
-        <SliderSection />
+        <SliderSection criteria={ criteria }/>
       );
 
       element = React.findDOMNode(container);

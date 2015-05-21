@@ -7,28 +7,28 @@ class SliderSection extends React.Component {
   	console.log('props', this.props.criteria);
 
     return (
-			<section className='sliders'>
-				<div className="flex-item">
+			<section className='sliders-container'>
+				<div className="slider">
 			  	<label htmlFor="clarity">Clarity</label>
 					<input type="range" name="clarity" min="0" max="5" step="1" value={ clarity } /><br />
 				</div>
 
-				<div className="flex-item">
+				<div className="slider">
 					<label htmlFor="difficulty">Difficulty</label>
 					<input type="range" name="difficulty" min="0" max="5" step="1" placeholder="5" value={ difficulty } /><br />
 				</div>
 
-				<div className="flex-item">
+				<div className="slider">
 					<label htmlFor="enjoyment">Enjoyment</label>
 					<input type="range" name="enjoyment" min="0" max="5" step="1" placeholder="5" value={ enjoyment } /><br />
 				</div>
 
-				<div className="flex-item">
+				<div className="slider">
 					<label htmlFor="relevance">Relevance</label>
 					<input type="range" name="relevance" min="0" max="5" step="1" placeholder="5" value={ relevance } /><br />
 				</div>
 
-				<div className="flex-item">
+				<div className="slider">
 					<label htmlFor="tempholder">(tempholder)</label>
 					<input type="range" name="tempholder" min="0" max="5" step="1" placeholder="5" value={ tempholder } />
 				</div>
