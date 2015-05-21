@@ -7,13 +7,13 @@ class Unacademic extends React.Component{
     let { appState, viewModel } = this.props;
     let currentLevel = appState.levels.current;
     let currentMode = appState.modes.current;
-    let { model, collection, url } = viewModel;
+    let { model, collection, url, data } = viewModel;
     let classes = `layout-app layout-app-is-${currentLevel} layout-app-is-${currentMode}`;
 
     return (
       <section className={ classes }>
         <Sidebar model={ model } appState={ appState }/>
-        <Main levels={ appState.levels } url={ url } collection={ collection }/>
+        <Main levels={ appState.levels } url={ url } collection={ collection } data={ data } />
       </section>
     )
   }
