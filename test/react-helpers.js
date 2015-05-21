@@ -24,9 +24,10 @@ let expect = chai.expect;
 chai.use(sinonChai);
 
 let collection = allWaypoints;
+let data = '';
 let title = '_Unacademic';
 let model = { title };
-let viewModel = { model, collection };
+let viewModel = { model, collection, data };
 
 let user = undefined;
 

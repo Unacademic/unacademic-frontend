@@ -32,4 +32,10 @@ class TodoListItem extends React.Component {
   }
 };
 
+TodoListItem.propTypes = {
+  item: React.PropTypes.object.isRequired,
+  checkDone: React.PropTypes.func.isRequired,
+  handleHover: React.PropTypes.func.isRequired
+}
+
 export default TodoListItem;

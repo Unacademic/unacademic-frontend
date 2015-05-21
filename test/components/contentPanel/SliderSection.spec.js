@@ -1,7 +1,7 @@
 import SliderSection from '../../../src/components/contentPanel/SliderSection.jsx';
 import { React, TestUtils, testdom } from '../../react-helpers';
 
-describe.only("SliderSection", () => {
+describe("SliderSection", () => {
   let element;
   let criteria = {
     clarity: 1,

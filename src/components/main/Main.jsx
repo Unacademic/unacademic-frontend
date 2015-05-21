@@ -6,7 +6,6 @@ import Viewer from '../viewer/Viewer.jsx';
 class Main extends React.Component {
   render() {
     let { levels, collection, url, data } = this.props;
-    console.log(data);
     return (
       <section className="layout-main">
         <BreadCrumbs levels={ levels }></BreadCrumbs>
@@ -20,7 +19,8 @@ class Main extends React.Component {
 Main.propTypes = {
   collection: React.PropTypes.array,
   levels: React.PropTypes.object,
-  url: React.PropTypes.string
+  url: React.PropTypes.string,
+  data: React.PropTypes.object
 }
 
 export default Main;

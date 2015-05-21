@@ -8,6 +8,7 @@ class Logo extends React.Component {
     let mode = learn ? 'learn' : 'curate';
     let classes = ['logo', `logo-is-${ mode }`].join(' ');
     let title = learn ? '_Unacademic' : 'Unacademic_';
+
     return (
       <section className={ classes }>
         <button>{ title }</button>

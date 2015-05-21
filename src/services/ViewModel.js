@@ -18,6 +18,7 @@ class ViewModel {
 
     switch(type){
       case 'resource':
+        console.log(model);
         let data = '';
         let encodedUrl = encodeURIComponent(model.url)
         let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
