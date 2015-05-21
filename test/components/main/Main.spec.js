@@ -10,7 +10,7 @@ describe("Main", () => {
     let { collection } = fixtures.viewModel;
     let levels = fixtures.appState.levels;
     let container = TestUtils.renderIntoDocument(
-      <Main levels={ levels } collection={ collection } />
+      <Main levels={ levels } collection={ collection } url={'http://www.google.com'} />
     );
 
     element = React.findDOMNode(container);
@@ -30,7 +30,7 @@ describe("Main", () => {
     expect(cards.length).to.equal(1);
   });
 
-  it.skip("renders the viewer if there is a url", () => {
+  it("renders the viewer if there is a url", () => {
     let viewer = element.querySelectorAll('.viewer');
     expect(viewer.length).to.equal(1);
   });

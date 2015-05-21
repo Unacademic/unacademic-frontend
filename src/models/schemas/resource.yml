@@ -1,6 +1,16 @@
-id: 
+id:
   required: true
 title:
   required: true
 url:
   required: true
+clarity:
+	required: true
+difficulty:
+	required: true
+enjoyment:
+	required: true
+relevance:
+	required: true
+tempholder:
+	required: true
