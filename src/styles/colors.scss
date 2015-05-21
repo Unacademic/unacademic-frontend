@@ -17,35 +17,3 @@ $baseColor: $black;
 
 $curateColor: $red;
 $learnColor: $yellow;
-
-.layout-app-is-curate .map {
-  stroke: $curateColor;
-  fill: $curateColor;
-
-  .point {
-    fill:: $curateColor;
-  }
-}
-
-.layout-app-is-learn .map {
-  stroke: $learnColor;
-  .point {
-    fill:: $learnColor;
-  }
-}
-
-.line {
-  stroke: $darkgray;
-}
-
-.stop {
-  fill: $baseColor;
-} 
-
-.stop.stop-is-incomplete .point {
-  fill: $baseColor;
-} 
-
-.map.map-checkpoints .stop {
-  stroke-width: 12;
-}

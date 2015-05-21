@@ -4,6 +4,7 @@ let constants = keyMirror({
   'AUTHENTICATE': null,
   'CHECK_COMPLETE': null,
   'SET_MODE': null,
+  'SET_HIGHLIGHT': null,
   'TOGGLE_MODE': null,
   'SET_LEVEL': null,
   'REVERT_HISTORY': null,

@@ -259,6 +259,30 @@ describe("AppStore Store", () => {
       });
     });
 
+    describe("highlights an item", () => {
+      let selection;
+
+      beforeEach(() => {
+        selection = 'hi';
+
+        action = {
+          actionType: AppStoreConstants.SET_HIGHLIGHT,
+          selection: selection,
+          status: true
+        }
+        AppStore.ViewModel.setHighlight = sinon.spy();
+        AppStore.handleAction(action);
+      });
+
+      it("checks done on the view model", () => {
+        expect(AppStore.ViewModel.setHighlight).calledWith(selection, true);
+      });
+
+      it("emits a change", () => {
+        expect(AppStore.emitChange).called;
+      });
+    });
+
     describe("update props", () => {
       let propData;;
 

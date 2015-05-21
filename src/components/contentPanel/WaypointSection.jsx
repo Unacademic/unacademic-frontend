@@ -14,15 +14,21 @@ let renderer = new marked.Renderer();
 class WaypointSection extends React.Component {
 
   handleComplete(item){
+    let selection = this._getSelection(item);
+    Actions.toggleComplete(selection);
+  }
+
+  handleHover(item, status){
+    let selection = this._getSelection(item);
+    Actions.setHighlight(selection, status);
+  }
+
+  _getSelection(item){
     let { model } = this.props;
     let { id } = model;
     let waypoint = { id };
     let checkpoint = { id: item };
-    Actions.toggleComplete({ waypoint, checkpoint });
-  }
-
-  handleHover(id, status){
-    console.log(id, status);
+    return { waypoint, checkpoint };
   }
 
   render() {

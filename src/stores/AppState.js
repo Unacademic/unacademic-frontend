@@ -44,6 +44,11 @@ class AppStore extends BaseStore {
     this.update({ modes })
   }
 
+  setHighlight(selection, status){
+    this.ViewModel.setHighlight(selection, status);
+    this.emitChange();
+  }
+
   toggleMode(){
     let currentModes = this._get().get('modes');
     let current = currentModes.get('current');
@@ -93,6 +98,10 @@ class AppStore extends BaseStore {
         break;
       case AppStateConstants.FORWARD_HISTORY:
         this.forwardHistory();
+        break;
+      case AppStateConstants.SET_HIGHLIGHT:
+        let { selection, status } = action;
+        this.setHighlight(selection, status);
         break;
       case AppStateConstants.UPDATE_MODEL_PROP:
         this.updateModelProp(action.propData);

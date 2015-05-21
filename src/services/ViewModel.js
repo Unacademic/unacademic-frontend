@@ -50,6 +50,10 @@ class ViewModel {
     return true;
   }
 
+  setHighlight({waypoint, checkpoint, resource}, status){
+    current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;
+  }
+
   update(propData){
     console.log(propData);
   }
