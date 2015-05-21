@@ -1,5 +1,6 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import CheckpointSection from '../../../src/components/contentPanel/CheckpointSection.jsx';
+import Actions from '../../../src/actions/index.js';
 
 describe("Checkpoint Section", () => {
   let element;
@@ -19,6 +20,15 @@ describe("Checkpoint Section", () => {
     it("has the correct classes", () => {
       let classes = element.className.split(' ');
       expect(classes).to.contain('panel-content_main');
+    });
+
+    it("checks complete when an item is clicked", ()=> {
+      let todoItem = element.querySelectorAll('.todo')[0];
+      Actions.toggleComplete = sinon.spy();
+      TestUtils.Simulate.click(todoItem);
+      let waypoint = { id: 1 };
+      let checkpoint = { id: 1 };
+      expect(Actions.toggleComplete).to.be.called;
     });
   });
 });

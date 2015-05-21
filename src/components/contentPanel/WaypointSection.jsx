@@ -5,10 +5,25 @@ import marked from 'marked';
 
 import Editable from '../editable/Editable.jsx';
 import TodoList from './TodoList.jsx';
+import WaypointMap from '../maps/WaypointMap.jsx';
+
+import Actions from '../../actions/index';
 
 let renderer = new marked.Renderer();
 
 class WaypointSection extends React.Component {
+
+  handleComplete(item){
+    let { model } = this.props;
+    let { id } = model;
+    let waypoint = { id };
+    let checkpoint = { id: item };
+    Actions.toggleComplete({ waypoint, checkpoint });
+  }
+
+  handleHover(id, status){
+    console.log(id, status);
+  }
 
   render() {
     let { mode, model, level, context } = this.props;
@@ -26,21 +41,32 @@ class WaypointSection extends React.Component {
     };
 
     return (
-      <section className="panel-content_main">
-        <hgroup>
-          <Editable fieldName={ 'title' } value={ title } editing={ isEditing }/>
-        </hgroup>
-        <section className="meta">
-          <p>Curator: { curator }</p>
-          <p>Checkpoints: { checkpoints.length }</p>
+      <div>
+        <section className="panel-content_header">
+          <WaypointMap
+            handleHover={ this.handleHover.bind(this) }
+            handleComplete={ this.handleComplete.bind(this) }
+            model={ model }/>
         </section>
-        <section>
-          <h1>Summary</h1>
-          <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
+        <section className="panel-content_main">
+          <hgroup>
+            <Editable fieldName={ 'title' } value={ title } editing={ isEditing }/>
+          </hgroup>
+          <section className="meta">
+            <p>Curator: { curator }</p>
+            <p>Checkpoints: { checkpoints.length }</p>
+          </section>
+          <section>
+            <h1>Summary</h1>
+            <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
+          </section>
+          { context === 'sidebar' && descriptionSection() }
+          { context === 'card' && <TodoList
+              handleHover={ this.handleHover.bind(this) }
+              handleComplete={ this.handleComplete.bind(this) }
+              collection={ checkpoints }/> }
         </section>
-        { context === 'sidebar' && descriptionSection() }
-        { context === 'card' && <TodoList waypoint={ id } collection={ checkpoints }/> }
-      </section>
+      </div>
     )
   }
 };

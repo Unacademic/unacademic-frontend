@@ -28,7 +28,7 @@ class AppStore extends BaseStore {
     this.update({ user: 'yeehaa', viewModel });
   }
 
-  checkDone(selection){
+  toggleComplete(selection){
     this.ViewModel.checkDone(selection);
     this.emitChange();
   }
@@ -76,8 +76,8 @@ class AppStore extends BaseStore {
       case AppStateConstants.AUTHENTICATE:
         this.authenticate();
         break;
-      case AppStateConstants.CHECK_DONE:
-        this.checkDone(action.selection);
+      case AppStateConstants.TOGGLE_COMPLETE:
+        this.toggleComplete(action.selection);
         break;
       case AppStateConstants.SET_LEVEL:
         this.setLevel(action.selection);

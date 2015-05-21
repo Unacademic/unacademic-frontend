@@ -8,9 +8,9 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
-  checkDone(selection){
+  toggleComplete(selection){
     AppDispatcher.dispatch({
-      actionType: AppStateConstants.CHECK_DONE,
+      actionType: AppStateConstants.TOGGLE_COMPLETE,
       selection: selection
     });
   },

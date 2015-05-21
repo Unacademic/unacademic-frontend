@@ -137,12 +137,12 @@ textarea {
   }
 }
 
-.layout-app-is-curate .todolist .todolist_item:hover {
+.layout-app-is-curate .todolist .todolist_item-is-highlighted {
   background-color: $curateColor;;
   color: $inverseColor;
 }
 
-.layout-app-is-learn .todolist .todolist_item:hover {
+.layout-app-is-learn .todolist .todolist_item-is-highlighted {
   background-color: $learnColor;
 }
 

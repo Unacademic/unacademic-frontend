@@ -11,17 +11,11 @@ class WaypointMap extends React.Component {
       radius: 20
     }
   }
-  handleEnter(){
-    this.setState({radius: 20});
-  }
-
-  handleLeave(){
-    this.setState({radius: 10});
-  }
 
   render() {
     let { height, width, radius, padding } = this.state;
-    let { checkpoints } = this.props.model;
+    let { model, handleComplete, handleHover } = this.props;
+    let { checkpoints } = model;
     let baseLine = height / 2;
     let center = width / 2;
     let interval = ((width - padding * 3) / (checkpoints.length - 1));
@@ -34,7 +28,10 @@ class WaypointMap extends React.Component {
       let maxResources = 2;
       let baseHeight = maxHeight / maxResources;
       let params = { x, y, radius, center, baseHeight, textY, checkpoint }
-      return <Stop key={ index } params={ params }/>
+      return <Stop
+        handleHover={ handleHover.bind(this) }
+        handleComplete={ handleComplete.bind(this) }
+        key={ index } params={ params }/>
     });
 
     return (

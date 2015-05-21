@@ -11,15 +11,25 @@ class Stop extends React.Component {
     this.state = { multiplier: 1, angle: 140 };
   }
   handleEnter(){
+    this.handleHover(true);
     this.setState({ multiplier: 2 });
   }
 
   handleLeave(){
+    this.handleHover(false);
     this.setState({multiplier: 1 });
   }
 
+  handleHover(status){
+    let { handleHover, params } = this.props;
+    let { checkpoint } = params;
+    let id = checkpoint.id;
+    this.props.handleHover(id, status);
+  }
+
   render() {
-    let { x, y, radius, checkpoint } = this.props.params;
+    let { params, handleComplete } = this.props;
+    let { x, y, radius, checkpoint } = params;
     let { title, resources } = checkpoint;
     let { multiplier, angle }= this.state;
     let complete = checkpoint.complete ? 'stop-is-complete' : 'stop-is-incomplete';
@@ -33,11 +43,11 @@ class Stop extends React.Component {
         <Point key={ index } cx={ cx } cy={ cy } strokeWidth={ strokeWidth }/>
       )
     }, shape.path.points());
-
     let point = <Point cx={ x } cy={ y } strokeWidth={ strokeWidth }/>
 
     return (
-      <g transform={ `rotate(${angle}, ${x}, ${y})` }
+      <g className="todo" transform={ `rotate(${angle}, ${x}, ${y})` }
+        onClick= { handleComplete.bind(this, checkpoint.id) }
         onMouseEnter={ this.handleEnter.bind(this) }
         onMouseLeave={ this.handleLeave.bind(this) }>
         <g className={ `stop ${complete}`} >
@@ -51,6 +61,15 @@ class Stop extends React.Component {
   }
 };
 
+Stop.propTypes = {
+  params: React.PropTypes.object.isRequired,
+  handleComplete: React.PropTypes.func.isRequired,
+  handleHover: React.PropTypes.func.isRequired
+}
+
+
+
+export default Stop;
 
 function createShape(x, y, radius, multiplier, numberOfResources){
   return SemiRegularPolygon({
@@ -58,5 +77,3 @@ function createShape(x, y, radius, multiplier, numberOfResources){
     radii: R.times(() => radius * multiplier, numberOfResources)
   });
 }
-
-export default Stop;

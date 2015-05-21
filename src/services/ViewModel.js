@@ -42,8 +42,11 @@ class ViewModel {
     return current;
   }
 
-  checkDone(data){
-    this.API.updateProp(data);
+  checkDone({waypoint, checkpoint, resource}){
+    if(!waypoint){
+      waypoint = { id: current.model.id }
+    }
+    this.API.updateProp({waypoint, checkpoint, resource});
     return true;
   }
 

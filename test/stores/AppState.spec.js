@@ -240,12 +240,10 @@ describe("AppStore Store", () => {
       let selection;
 
       beforeEach(() => {
-        let parent = 2;
-        let item = 1;
-        selection = { parent, item };
+        selection = 'hi';
 
         action = {
-          actionType: AppStoreConstants.CHECK_DONE,
+          actionType: AppStoreConstants.TOGGLE_COMPLETE,
           selection: selection
         }
         AppStore.ViewModel.checkDone = sinon.spy();
