@@ -4,7 +4,6 @@ class SliderSection extends React.Component {
 
   render() {
   	let { clarity, difficulty, enjoyment, relevance, tempholder } = this.props.criteria;
-  	console.log('props', this.props.criteria);
 
     return (
 			<section className='sliders-container'>
