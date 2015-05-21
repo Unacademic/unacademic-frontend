@@ -6,11 +6,11 @@ import SliderSection from './SliderSection.jsx';
 class ResourceSection extends React.Component {
 
   render() {
+
     let { context, model } = this.props;
     let { title, author, url, notes, clarity, difficulty, enjoyment, relevance, tempholder } = model;
     let type = model.constructor.name.toLowerCase();
     let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
-
     let criteria = {
       clarity: clarity,
       difficulty: difficulty,
