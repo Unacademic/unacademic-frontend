@@ -1,0 +1,18 @@
+.sliders {
+  // border: 1px solid red;
+  margin: 0;
+
+  .flex-item {
+  	// border: 1px solid blue;
+  	padding: 8px;
+
+  	label {
+  		width: 50%;
+  		display: inline-block;
+  	}
+
+  	input {
+  		width: 50%;
+  	}
+	}
+}

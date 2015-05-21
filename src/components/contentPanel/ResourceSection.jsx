@@ -1,6 +1,7 @@
 import React from 'react';
 import R from 'ramda';
 import _ from 'lodash';
+import SliderSection from './SliderSection.jsx';
 
 class ResourceSection extends React.Component {
 
@@ -9,24 +10,13 @@ class ResourceSection extends React.Component {
     let { title, author, url, notes } = model;
     let type = model.constructor.name.toLowerCase();
     let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
-    let sliders = ()=> {
-      return (
-        <div>
-        <input type="range" name="clarity" min="0" max="5" /><br />
-        <input type="range" name="difficulty" min="0" max="5" /><br />
-        <input type="range" name="enjoyment" min="0" max="5" /><br />
-        <input type="range" name="relevance" min="0" max="5" /><br />
-        <input type="range" name="_something_" min="0" max="5" />
-        </div>
-      )
-    }
 
     return (
       <section className={ classes }>
         <section className="meta">
           <p>Title: <a href={ url }>{ title }</a></p>
           { author && <p>Author: { author }</p> }
-          { context === 'sidebar' && sliders() }
+          { context === 'sidebar' && <SliderSection /> }
         </section>
         <section>
           <h1>Notes</h1>
