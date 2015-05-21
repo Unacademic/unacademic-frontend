@@ -3,31 +3,34 @@ import React from 'react';
 class SliderSection extends React.Component {
 
   render() {
+  	let { clarity, difficulty, enjoyment, relevance, tempholder } = this.props.criteria;
+  	console.log('props', this.props.criteria);
+
     return (
 			<section className='sliders'>
 				<div className="flex-item">
-			  	<label for="clarity">Clarity</label>
-					<input type="range" name="clarity" min="0" max="5" /><br />
+			  	<label htmlFor="clarity">Clarity</label>
+					<input type="range" name="clarity" min="0" max="5" step="1" value={ clarity } /><br />
 				</div>
 
 				<div className="flex-item">
-					<label for="difficulty">Difficulty</label>
-					<input type="range" name="difficulty" min="0" max="5" /><br />
+					<label htmlFor="difficulty">Difficulty</label>
+					<input type="range" name="difficulty" min="0" max="5" step="1" placeholder="5" value={ difficulty } /><br />
 				</div>
 
 				<div className="flex-item">
-					<label for="enjoyment">Enjoyment</label>
-					<input type="range" name="enjoyment" min="0" max="5" /><br />
+					<label htmlFor="enjoyment">Enjoyment</label>
+					<input type="range" name="enjoyment" min="0" max="5" step="1" placeholder="5" value={ enjoyment } /><br />
 				</div>
 
 				<div className="flex-item">
-					<label for="relevance">Relevance</label>
-					<input type="range" name="relevance" min="0" max="5" /><br />
+					<label htmlFor="relevance">Relevance</label>
+					<input type="range" name="relevance" min="0" max="5" step="1" placeholder="5" value={ relevance } /><br />
 				</div>
 
 				<div className="flex-item">
-					<label for="_something_">_something_</label>
-					<input type="range" name="_something_" min="0" max="5" />
+					<label htmlFor="tempholder">(tempholder)</label>
+					<input type="range" name="tempholder" min="0" max="5" step="1" placeholder="5" value={ tempholder } />
 				</div>
 			</section>
   	)
