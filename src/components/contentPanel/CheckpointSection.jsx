@@ -22,6 +22,10 @@ class CheckpointSection extends React.Component {
     Actions.toggleComplete({ checkpoint, resource});
   }
 
+  handleHover(id, status){
+    console.log(id, status);
+  }
+
   render() {
     let { model, context } = this.props;
     let { title, description, instructions, resources, waypoint } = model;
@@ -69,7 +73,7 @@ class CheckpointSection extends React.Component {
           </section>
           { context === 'sidebar' && descriptionSection() }
           { context === 'sidebar' && instructionsSection() }
-          { context === 'card' && <TodoList handleComplete={ this.handleComplete.bind(this) } collection={ resources }/> }
+          { context === 'card' && <TodoList handleHover={ this.handleHover.bind(this) }handleComplete={ this.handleComplete.bind(this) } collection={ resources }/> }
         </section>
       </div>
     )
