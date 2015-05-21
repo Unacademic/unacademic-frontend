@@ -19,14 +19,6 @@ class ResourceSection extends React.Component {
       tempholder: tempholder
     };
 
-    let criteria = {
-      clarity: clarity,
-      difficulty: difficulty,
-      enjoyment: enjoyment,
-      relevance: relevance,
-      tempholder: tempholder
-    };
-
     return (
       <section className={ classes }>
         <section className="meta">
