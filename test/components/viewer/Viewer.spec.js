@@ -8,7 +8,7 @@ describe("Viewer", () => {
     testdom('<html><body></body></html>');
   })
 
-  describe.only("when model is resource", () => {
+  describe("when model is resource", () => {
 
     beforeEach(() => {
       let container = TestUtils.renderIntoDocument(
