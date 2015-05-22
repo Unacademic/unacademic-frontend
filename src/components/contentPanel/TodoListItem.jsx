@@ -15,17 +15,27 @@ class TodoListItem extends React.Component {
     }
 
     let isComplete = item.complete ? 'complete' : 'incomplete';
+    let classes = ['todolist_item']
+
+    if(item.highlight){
+      classes.push('todolist_item-is-highlighted')
+    }
 
     return (
-      <li
-        onMouseLeave={ handleHover.bind(this, false, id) }
-        onMouseEnter={ handleHover.bind(this, true, id) }
+      <li onMouseOut={ handleHover.bind(this, id, false) }
+        onMouseOver={ handleHover.bind(this, id, true) }
         onClick={ checkDone.bind(this, item.id) }
-        className="todolist_item">
-        <p><span className={ `checkbox checkbox-is-${isComplete}` }></span>{ title }</p>
+        className={ classes.join(' ') }>
+          <p><span className={ `checkbox checkbox-is-${isComplete}` }></span>{ title }</p>
       </li>
     )
   }
 };
+
+TodoListItem.propTypes = {
+  item: React.PropTypes.object.isRequired,
+  checkDone: React.PropTypes.func.isRequired,
+  handleHover: React.PropTypes.func.isRequired
+}
 
 export default TodoListItem;

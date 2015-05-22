@@ -26,6 +26,7 @@ describe("ViewModel Service", () => {
         appState = Map({ levels });
         let response = { type: 'resource', model: { url: 'hello' } };
         ViewModel.API.get = sinon.stub().returns(response);
+        ViewModel.API.getResourceData = sinon.stub().returns('Greg was Here');
 
         ViewModel.get(appState).then((data) => {
           result = data;
@@ -37,12 +38,16 @@ describe("ViewModel Service", () => {
         expect(ViewModel.API.get).to.be.calledWith(levels.toJS());
       });
 
+      it("fetches the data from the API", () => {
+        expect(ViewModel.API.getResourceData).to.be.calledWith('hello');
+      });
+
       it("has a model", () => {
         expect(result.model).to.be.defined;
       });
 
-      it("has a url", () => {
-        expect(result.url).to.equal('hello');
+      it("has a data", () => {
+        expect(result.data).to.equal('Greg was Here');
       });
     });
 

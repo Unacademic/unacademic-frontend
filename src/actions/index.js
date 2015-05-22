@@ -14,6 +14,14 @@ let Actions = {
       selection: selection
     });
   },
+  setHighlight(selection, status, context){
+    AppDispatcher.dispatch({
+      actionType: AppStateConstants.SET_HIGHLIGHT,
+      selection: selection,
+      status: status,
+      context: context
+    });
+  },
   updateModelProp(propData){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.UPDATE_PROP,

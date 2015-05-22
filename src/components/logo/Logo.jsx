@@ -7,7 +7,8 @@ class Logo extends React.Component {
     let { learn, curate } = this.props.modes;
     let mode = learn ? 'learn' : 'curate';
     let classes = ['logo', `logo-is-${ mode }`].join(' ');
-    let title = learn ? '_Unacademic' : 'Unacademic_';
+    let title = learn ? '_Offcourse' : 'Offcourse_';
+
     return (
       <section className={ classes }>
         <button>{ title }</button>

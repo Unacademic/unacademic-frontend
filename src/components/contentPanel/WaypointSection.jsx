@@ -14,15 +14,22 @@ let renderer = new marked.Renderer();
 class WaypointSection extends React.Component {
 
   handleComplete(item){
+    let selection = this._getSelection(item);
+    Actions.toggleComplete(selection);
+  }
+
+  handleHover(item, status){
+    let { context } = this.props;
+    let selection = this._getSelection(item);
+    Actions.setHighlight(selection, status, context);
+  }
+
+  _getSelection(item){
     let { model } = this.props;
     let { id } = model;
     let waypoint = { id };
     let checkpoint = { id: item };
-    Actions.toggleComplete({ waypoint, checkpoint });
-  }
-
-  handleHover(id, status){
-    console.log(id, status);
+    return { waypoint, checkpoint };
   }
 
   render() {
@@ -54,7 +61,6 @@ class WaypointSection extends React.Component {
           </hgroup>
           <section className="meta">
             <p>Curator: { curator }</p>
-            <p>Checkpoints: { checkpoints.length }</p>
           </section>
           <section>
             <h1>Summary</h1>
@@ -62,6 +68,7 @@ class WaypointSection extends React.Component {
           </section>
           { context === 'sidebar' && descriptionSection() }
           { context === 'card' && <TodoList
+              title={ 'Checkpoints' }
               handleHover={ this.handleHover.bind(this) }
               handleComplete={ this.handleComplete.bind(this) }
               collection={ checkpoints }/> }

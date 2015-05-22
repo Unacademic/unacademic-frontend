@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Viewer extends React.Component {	
+class Viewer extends React.Component {
 
   render() {
     //let data = this.props.data
@@ -20,7 +20,7 @@ class Viewer extends React.Component {
 
   	if(data.content === null)
   		if(data.media.hasOwnProperty('html')) {
-  			return data.media.html;  			
+  			return data.media.html;
   		}
   		else {
   			let https = 'https'
@@ -28,7 +28,7 @@ class Viewer extends React.Component {
 	  			let warning = '<warning>The current resource could not be loaded...<br>'
 	  			warning += '<img src="https://nyobetabeat.files.wordpress.com/2012/06/anigif_777-2432-1303312751-40.gif"/>'
 	  			warning += '<br><br>Please refer to the following link:\n'
-	  			return warning + '<div><a href=' + data.url + ' target="_blank">' + data.title + '</a></div></warning>'  			  				
+	  			return warning + '<div><a href=' + data.url + ' target="_blank">' + data.title + '</a></div></warning>'
   			} else {
   				return '<iframe frameborder="0" src=' + data.url + '>' + data.url + '</iframe>'
   			}
@@ -39,6 +39,7 @@ class Viewer extends React.Component {
 }
 
 Viewer.propTypes = {
+  data: React.PropTypes.object.isRequired
 }
 
 export default Viewer;

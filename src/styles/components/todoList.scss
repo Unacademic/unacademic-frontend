@@ -1,0 +1,47 @@
+.todolist_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $baseUnit / 6;
+  background-color: $lightBaseColor;
+  height: $baseUnit;
+  margin-bottom: $baseUnit / 6;
+  color: $baseColor;
+}
+
+.todolist_item p {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.checkbox {
+  display: inline-block;
+  margin-right: $baseUnit / 3;
+  width: $twoThirdUnit;
+  height: $twoThirdUnit;
+  background-color: $inverseColor;
+  vertical-align: center
+}
+
+.layout-app-is-learn .checkbox-is-complete {
+  background-color: $learnColor;
+  border: rem-calc(2px) solid $inverseColor;
+}
+
+.layout-app-is-curate .checkbox-is-complete {
+  background-color: $curateColor;
+  border: rem-calc(2px) solid $inverseColor;
+}
+
+.layout-app-is-curate .todolist_item-is-highlighted {
+  background-color: $curateColor;
+  color: $inverseColor;
+}
+
+.layout-app-is-learn .todolist_item-is-highlighted {
+  background-color: $learnColor;
+}
+

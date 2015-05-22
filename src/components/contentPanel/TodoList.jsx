@@ -6,7 +6,7 @@ import TodoListItem from './TodoListItem.jsx';
 class TodoList extends React.Component {
 
   render() {
-    let { collection, handleComplete, handleHover } = this.props;
+    let { collection, title, handleComplete, handleHover } = this.props;
 
     let items = R.mapIndexed((item, index) => {
 
@@ -20,7 +20,7 @@ class TodoList extends React.Component {
 
     return (
       <section className="panel_section todolist">
-        <h1>Resources</h1>
+        <h1>{ title }</h1>
         <ul>
           { items }
         </ul>
@@ -29,7 +29,12 @@ class TodoList extends React.Component {
   }
 };
 
+TodoList.defaultProps = {
+  title: 'Items'
+}
+
 TodoList.propTypes = {
+  title: React.PropTypes.string,
   collection: React.PropTypes.array.isRequired,
   handleComplete: React.PropTypes.func.isRequired,
   handleHover: React.PropTypes.func.isRequired
