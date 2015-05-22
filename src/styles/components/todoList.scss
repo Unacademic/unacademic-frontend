@@ -1,4 +1,4 @@
-.todolist_item {
+.todolist_item, .resource {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,6 +7,10 @@
   height: $baseUnit;
   margin-bottom: $baseUnit / 6;
   color: $baseColor;
+}
+
+.resource {
+  height: $baseUnit * 2;
 }
 
 .todolist_item p {
