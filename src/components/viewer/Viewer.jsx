@@ -39,7 +39,7 @@ class Viewer extends React.Component {
 }
 
 Viewer.propTypes = {
-  data: React.PropTypes.string
+  data: React.PropTypes.object.isRequired
 }
 
 export default Viewer;

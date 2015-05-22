@@ -5,12 +5,12 @@ import Viewer from '../viewer/Viewer.jsx';
 
 class Main extends React.Component {
   render() {
-    let { levels, collection, url, data } = this.props;
+    let { levels, collection, data } = this.props;
     return (
       <section className="layout-main">
         <BreadCrumbs levels={ levels }></BreadCrumbs>
         { collection && <Cards collection={ collection } className="cards" /> }
-        { url && <Viewer data={ data } /> }
+        { data && <Viewer data={ data } /> }
       </section>
     )
   }
@@ -19,7 +19,6 @@ class Main extends React.Component {
 Main.propTypes = {
   collection: React.PropTypes.array,
   levels: React.PropTypes.object,
-  url: React.PropTypes.string,
   data: React.PropTypes.object
 }
 

@@ -18,7 +18,6 @@ class CheckpointSection extends React.Component {
       let resource = { id: item };
     }
 
-    console.log({ checkpoint, resource })
     Actions.toggleComplete({ checkpoint, resource});
   }
 
@@ -29,7 +28,6 @@ class CheckpointSection extends React.Component {
   render() {
     let { model, context } = this.props;
     let { title, highlight, description, instructions, resources, waypoint } = model;
-    console.log(highlight);
     let type = model.constructor.name.toLowerCase();
     if(!instructions){
       instructions = [];

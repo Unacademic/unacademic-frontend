@@ -22,6 +22,13 @@ class API {
     return level;
   }
 
+  async getResourceData(url){
+    let encodedUrl = encodeURIComponent(url)
+    let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
+    let response = await axios.get(apiUrl);
+    return response.data;
+  }
+
   _getAll(){
     let apiData = [unacademic1, unacademic2];
 
