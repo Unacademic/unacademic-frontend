@@ -19,8 +19,9 @@ class WaypointSection extends React.Component {
   }
 
   handleHover(item, status){
+    let { context } = this.props;
     let selection = this._getSelection(item);
-    Actions.setHighlight(selection, status);
+    Actions.setHighlight(selection, status, context);
   }
 
   _getSelection(item){
@@ -60,7 +61,6 @@ class WaypointSection extends React.Component {
           </hgroup>
           <section className="meta">
             <p>Curator: { curator }</p>
-            <p>Checkpoints: { checkpoints.length }</p>
           </section>
           <section>
             <h1>Summary</h1>
@@ -68,6 +68,7 @@ class WaypointSection extends React.Component {
           </section>
           { context === 'sidebar' && descriptionSection() }
           { context === 'card' && <TodoList
+              title={ 'Checkpoints' }
               handleHover={ this.handleHover.bind(this) }
               handleComplete={ this.handleComplete.bind(this) }
               collection={ checkpoints }/> }

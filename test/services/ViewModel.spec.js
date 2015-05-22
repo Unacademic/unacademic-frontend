@@ -18,7 +18,7 @@ describe("ViewModel Service", () => {
 
   describe("get", () => {
 
-    describe.skip("resource", () => {
+    describe.only("resource", () => {
       let appState;
 
       beforeEach((done) => {

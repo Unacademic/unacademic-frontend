@@ -18,7 +18,6 @@ class ViewModel {
 
     switch(type){
       case 'resource':
-        console.log(model);
         let data = '';
         let encodedUrl = encodeURIComponent(model.url)
         let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
@@ -59,8 +58,12 @@ class ViewModel {
     return true;
   }
 
-  setHighlight({waypoint, checkpoint, resource}, status){
-    current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;
+  setHighlight({waypoint, checkpoint, resource}, status, context){
+    if(context === 'card'){
+      current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;
+    } else {
+      current.collection[checkpoint.id- 1].highlight = status;
+    }
   }
 
   update(propData){

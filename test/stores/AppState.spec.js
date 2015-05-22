@@ -268,14 +268,15 @@ describe("AppStore Store", () => {
         action = {
           actionType: AppStoreConstants.SET_HIGHLIGHT,
           selection: selection,
-          status: true
+          status: true,
+          context: 'sidebar'
         }
         AppStore.ViewModel.setHighlight = sinon.spy();
         AppStore.handleAction(action);
       });
 
       it("checks done on the view model", () => {
-        expect(AppStore.ViewModel.setHighlight).calledWith(selection, true);
+        expect(AppStore.ViewModel.setHighlight).calledWith(selection, true, 'sidebar');
       });
 
       it("emits a change", () => {

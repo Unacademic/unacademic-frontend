@@ -28,7 +28,8 @@ class CheckpointSection extends React.Component {
 
   render() {
     let { model, context } = this.props;
-    let { title, description, instructions, resources, waypoint } = model;
+    let { title, highlight, description, instructions, resources, waypoint } = model;
+    console.log(highlight);
     let type = model.constructor.name.toLowerCase();
     if(!instructions){
       instructions = [];
@@ -68,12 +69,9 @@ class CheckpointSection extends React.Component {
           <hgroup>
             <h1 className="title editable">{ title }</h1>
           </hgroup>
-          <section className="meta">
-            <p>Resources: { resources.length }</p>
-          </section>
           { context === 'sidebar' && descriptionSection() }
           { context === 'sidebar' && instructionsSection() }
-          { context === 'card' && <TodoList handleHover={ this.handleHover.bind(this) }handleComplete={ this.handleComplete.bind(this) } collection={ resources }/> }
+          { context === 'card' && <TodoList title={ 'Resources' } handleHover={ this.handleHover.bind(this) }handleComplete={ this.handleComplete.bind(this) } collection={ resources }/> }
         </section>
       </div>
     )

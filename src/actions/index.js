@@ -14,11 +14,12 @@ let Actions = {
       selection: selection
     });
   },
-  setHighlight(selection, status){
+  setHighlight(selection, status, context){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SET_HIGHLIGHT,
       selection: selection,
-      status: status
+      status: status,
+      context: context
     });
   },
   updateModelProp(propData){
