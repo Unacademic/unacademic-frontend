@@ -70,9 +70,19 @@ class CheckpointSection extends React.Component {
 
     let resourceList = ()=> {
       return (
+        <section className="resourceList">
+        <h1>Resources</h1>
         <ul>
-          <li className="resource">Hello</li>
+        { R.map(({title}) => {
+           let newTitle = title.substring(0, 55);
+           return (
+             <li className="resource_item">
+               <p><span className="checkbox"></span>{ newTitle }</p>
+             </li>
+           )
+        }, resources) }
         </ul>
+        </section>
       )
     };
 
@@ -87,7 +97,7 @@ class CheckpointSection extends React.Component {
           </hgroup>
           { context === 'sidebar' && descriptionSection() }
           { context === 'sidebar' && instructionsSection() }
-          { context === 'card' && resourceList() }
+          { context === 'card' && resourceList(resources) }
         </section>
       </div>
     )
