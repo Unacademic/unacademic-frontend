@@ -55,4 +55,8 @@ class SliderSection extends React.Component {
   }
 }
 
+SliderSection.propTypes = {
+	criteria: React.PropTypes.object.isRequired
+};
+
 export default SliderSection;
