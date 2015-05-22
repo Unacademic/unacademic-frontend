@@ -4,13 +4,31 @@ import BreadCrumbs from '../breadcrumbs/BreadCrumbs.jsx';
 import Viewer from '../viewer/Viewer.jsx';
 
 class Main extends React.Component {
+  constructor(){
+    this.state = {
+      userId: false
+    }
+  }
+
+  handleClick(){
+    this.setState({
+      userId: 'Yeehaa'
+    });
+  }
   render() {
     let { levels, collection, data } = this.props;
+    let { userId } = this.state;
     return (
       <section className="layout-main">
-        <BreadCrumbs levels={ levels }></BreadCrumbs>
-        { collection && <Cards collection={ collection } className="cards" /> }
-        { data && <Viewer data={ data } /> }
+      <div className="layout-main_header">
+      <BreadCrumbs levels={ levels }></BreadCrumbs>
+      <ul>
+      <li onClick={ this.handleClick.bind(this) }
+      className="breadcrumb">{ userId || 'Log In' }</li>
+      </ul>
+      </div>
+      { collection && <Cards collection={ collection } className="cards" /> }
+      { data && <Viewer data={ data } /> }
       </section>
     )
   }

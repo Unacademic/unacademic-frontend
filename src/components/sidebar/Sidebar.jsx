@@ -34,3 +34,17 @@ Sidebar.propTypes = {
 }
 
 export default Sidebar;
+
+function getIntroduction(){
+    return '';
+  // return `
+  //   Welcome,
+
+  //   to the tool that maps the universe of knowledge.
+  //   Offcourse is a simple tool, but the impact on your learning is abslotutely huge.
+  //   By helping you structure your learning, giving you the space to store and share your learning and providing you with metrics about your personal learning we help you boost your applicable knowledge curve.
+
+  //   This sidebar will be the legend to your map.
+  //   Start your learning by learning about Offcourse.
+  // `
+}

@@ -30,6 +30,15 @@ describe("Checkpoint Section", () => {
       let checkpoint = { id: 1 };
       expect(Actions.toggleComplete).to.be.called;
     });
+
+    it.only("adds highlight on a mouse enter", ()=> {
+      let todoItem = element.querySelectorAll('.todolist_item')[0];
+      Actions.setHighlight = sinon.spy();
+      TestUtils.Simulate.mouseOver(todoItem);
+      let checkpoint = { id: 1 };
+      let resource = { id: 1 };
+      expect(Actions.setHighlight).to.be.calledWith({ checkpoint, resource }, true)
+    });
   });
 });
 
