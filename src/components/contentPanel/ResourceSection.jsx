@@ -21,6 +21,7 @@ class ResourceSection extends React.Component {
           <hgroup>
             <h1 className="title">{ title }</h1>
           </hgroup>
+          { context === 'sidebar' && <SliderSection model={ model } criteria={ criteria }/> }
         </section>
       </div>
     )

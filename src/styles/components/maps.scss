@@ -31,7 +31,8 @@
 }
 
 .ring {
-  stroke-width: 0;
+  stroke-width: 1;
+  stroke: $darkBaseColor;
 }
 
 .map:hover .ring {

@@ -34,19 +34,40 @@ checkpoints:
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
         criteria:
           clarity: 5
-          difficulty: 4
-          enjoyment: 1
-          relevance: 2
-          tempholder: 3
+          difficulty: 5
+          enjoyment: 0
+          relevance: 5
+          tempholder: 5
+          greg: 5
+          yeehaa: 5
+          charlotte: 5
       - author: Chuck Wendig
         title: 25 Ways to Plot, Plan and Prep Your Story
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
         criteria:
-          clarity: 5
-          difficulty: 4
+          clarity: 1
+          difficulty: 1
           enjoyment: 1
-          relevance: 2
-          tempholder: 3
+          relevance: 1
+          tempholder: 1
+      - author: Chuck Wendig
+        title: 25 Ways to Plot, Plan and Prep Your Story
+        url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
+        criteria:
+          clarity: 1
+          difficulty: 1
+          enjoyment: 1
+          relevance: 1
+          tempholder: 1
+      - author: Chuck Wendig
+        title: 25 Ways to Plot, Plan and Prep Your Story
+        url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
+        criteria:
+          clarity: 1
+          difficulty: 1
+          enjoyment: 1
+          relevance: 1
+          tempholder: 1
   - title: Find References
     description: |
       Because we do not believe in reinventing the wheel and because there

@@ -73,10 +73,10 @@ class CheckpointSection extends React.Component {
         <section className="resourceList">
         <h1>Resources</h1>
         <ul>
-        { R.map(({title}) => {
+        { R.map(({title, id}) => {
            let newTitle = title.substring(0, 55);
            return (
-             <li className="resource_item">
+             <li key={ id } className="resource_item">
                <p><span className="checkbox"></span>{ newTitle }</p>
              </li>
            )
