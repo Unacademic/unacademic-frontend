@@ -21,8 +21,18 @@ class CheckpointSection extends React.Component {
     Actions.toggleComplete({ checkpoint, resource});
   }
 
-  handleHover(id, status){
-    console.log(id, status);
+  handleHover(item, status){
+    let { context } = this.props;
+    let selection = this._getSelection(item);
+    // Actions.setHighlight(selection, status, context);
+  }
+
+  _getSelection(item){
+    let { model } = this.props;
+    let { id } = model;
+    let checkpoint = { id };
+    let resource = { id: item };
+    return { checkpoint, resource };
   }
 
   render() {
@@ -56,12 +66,30 @@ class CheckpointSection extends React.Component {
           </ul>
         </section>
       )
-    }
+    };
+
+    let resourceList = ()=> {
+      return (
+        <section className="resourceList">
+        <h1>Resources</h1>
+        <ul>
+        { R.map(({title}) => {
+           let newTitle = title.substring(0, 55);
+           return (
+             <li className="resource_item">
+               <p><span className="checkbox"></span>{ newTitle }</p>
+             </li>
+           )
+        }, resources) }
+        </ul>
+        </section>
+      )
+    };
 
     return (
       <div>
         <section className="panel-content_header">
-          <CheckpointMap handleComplete={ this.handleComplete.bind(this, null) } model={ model }/>
+          <CheckpointMap handleHover={ this.handleHover.bind(this) } handleComplete={ this.handleComplete.bind(this, null) } model={ model }/>
         </section>
         <section className="panel-content_main">
           <hgroup>
@@ -69,7 +97,7 @@ class CheckpointSection extends React.Component {
           </hgroup>
           { context === 'sidebar' && descriptionSection() }
           { context === 'sidebar' && instructionsSection() }
-          { context === 'card' && <TodoList title={ 'Resources' } handleHover={ this.handleHover.bind(this) }handleComplete={ this.handleComplete.bind(this) } collection={ resources }/> }
+          { context === 'card' && resourceList(resources) }
         </section>
       </div>
     )
