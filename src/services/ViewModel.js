@@ -53,6 +53,10 @@ class ViewModel {
     return true;
   }
 
+  updateCriteria(selection){
+    this.API.updateCriteria(selection);
+  }
+
   setHighlight({waypoint, checkpoint, resource}, status, context){
     if(context === 'card'){
       current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;

@@ -14,6 +14,12 @@ let Actions = {
       selection: selection
     });
   },
+  updateCriteria(selection){
+    AppDispatcher.dispatch({
+      actionType: AppStateConstants.UPDATE_CRITERIA,
+      selection: selection
+    });
+  },
   setHighlight(selection, status, context){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SET_HIGHLIGHT,

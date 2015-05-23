@@ -9,7 +9,8 @@ let constants = keyMirror({
   'SET_LEVEL': null,
   'REVERT_HISTORY': null,
   'FORWARD_HISTORY': null,
-  'UPDATE_MODEL_PROP': null
+  'UPDATE_MODEL_PROP': null,
+  'UPDATE_CRITERIA': null
 });
 
 export default constants;

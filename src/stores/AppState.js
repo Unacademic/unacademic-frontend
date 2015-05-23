@@ -76,6 +76,13 @@ class AppStore extends BaseStore {
     return change ? this.emitChange() : null;
   }
 
+  updateCriteria(selection){
+    let levels = this._get().get('levels').toJS();
+
+    this.ViewModel.updateCriteria({levels, criterium: selection});
+    this.emitChange();
+  }
+
   handleAction(action){
     switch(action.actionType) {
       case AppStateConstants.AUTHENTICATE:
@@ -105,6 +112,10 @@ class AppStore extends BaseStore {
         break;
       case AppStateConstants.UPDATE_MODEL_PROP:
         this.updateModelProp(action.propData);
+        break;
+      case AppStateConstants.UPDATE_CRITERIA:
+        this.updateCriteria(action.selection);
+        break;
     }
     return true;
   }
