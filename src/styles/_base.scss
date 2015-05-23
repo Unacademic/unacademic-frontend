@@ -17,6 +17,7 @@ em {
 
 h1, h2, h3, h4 ,h5, h6, .title {
   font-family: NittyBold;
+  word-spacing: rem-calc(-3px);
 }
 
 p, li, textarea {

@@ -62,6 +62,10 @@ class Stop extends React.Component {
   }
 };
 
+Stop.defaultProps = {
+  handleHover: () => {}
+}
+
 Stop.propTypes = {
   params: React.PropTypes.object.isRequired,
   handleComplete: React.PropTypes.func.isRequired,

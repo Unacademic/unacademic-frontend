@@ -19,3 +19,11 @@
  flex-direction: column;
   flex: 1;
 }
+
+.layout-main_header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex: 1;
+  padding: $baseUnit;
+}

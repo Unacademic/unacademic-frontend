@@ -102,6 +102,26 @@ textarea {
   }
 }
 
+.layout-app-is-checkpoint .card .panel-content_header {
+  height: $cardWidth;
+
+  hgroup .title {
+    font-size: rem-calc(20px);
+  }
+}
+
+.layout-app-is-resource .sidebar .panel-content_header {
+  height: $cardWidth;
+
+  hgroup .title {
+    font-size: rem-calc(20px);
+  }
+}
+
+.layout-app-is-checkpoint .card .panel-content_main .title {  
+  font-size: rem-calc(20px);
+  text-align: center;
+}
 
 .layout-app-is-curate .sidebar .panel-content_main {
   .editable {
