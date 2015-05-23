@@ -11,13 +11,6 @@ class CheckpointMap extends React.Component {
       radius: 90
     }
   }
-  handleEnter(){
-    this.setState({radius: 20});
-  }
-
-  handleLeave(){
-    this.setState({radius: 10});
-  }
 
   render() {
     let { height, width, radius, padding } = this.state;
@@ -28,6 +21,7 @@ class CheckpointMap extends React.Component {
     let x = center;
     let y = baseLine;
     let params = { x, y, radius, center, checkpoint }
+
     return (
       <svg width={ width } height={ height } className="map map-checkpoints">
         <line className="line"

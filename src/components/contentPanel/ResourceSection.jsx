@@ -2,6 +2,7 @@ import React from 'react';
 import R from 'ramda';
 import _ from 'lodash';
 import SliderSection from './SliderSection.jsx';
+import ResourceMap from '../maps/ResourceMap.jsx';
 
 class ResourceSection extends React.Component {
 
@@ -10,7 +11,6 @@ class ResourceSection extends React.Component {
     let { context, model } = this.props;
     let { title, author, url, notes, clarity, difficulty, enjoyment, relevance, tempholder } = model;
     let type = model.constructor.name.toLowerCase();
-    let classes = ['panel-content_main', `panel-is-${type}`].join(' ');
 
     let criteria = {
       clarity: clarity,
@@ -21,17 +21,16 @@ class ResourceSection extends React.Component {
     };
 
     return (
-      <section className={ classes }>
-        <section className="meta">
-          <p>Title: <a href={ url }>{ title }</a></p>
-          { author && <p>Author: { author }</p> }
-          { context === 'sidebar' && <SliderSection criteria={ criteria } /> }
+      <div>
+        <section className="panel-content_header">
+          <ResourceMap criteria={ criteria }/>
         </section>
-        <section>
-          <h1>Notes</h1>
-          { notes && <p>{ notes }</p> }
+        <section className="panel-content_main">
+          <hgroup>
+            <h1 className="title">{ title }</h1>
+          </hgroup>
         </section>
-      </section>
+      </div>
     )
   }
 };

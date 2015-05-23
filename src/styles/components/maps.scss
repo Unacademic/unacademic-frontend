@@ -29,3 +29,11 @@
 .map.map-checkpoints .stop {
   stroke-width: 12;
 }
+
+.ring {
+  stroke-width: 0;
+}
+
+.map:hover .ring {
+  stroke-width: 3;
+}
