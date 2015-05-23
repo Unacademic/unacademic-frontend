@@ -54,5 +54,7 @@ describe("SliderSection", () => {
       let el = element.querySelector('input[name="tempholder"]');
       expect(el.value).to.equal('5');
     });
+
+    it("updates the state")
   });
 });

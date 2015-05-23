@@ -1,39 +1,44 @@
 import React from 'react';
+import R from 'ramda';
+import Actions from '../../actions/index';
 
 class SliderSection extends React.Component {
 
+	handleChange(event) {
+		let name = event.target.name;
+		let value = event.target.value;
+		let model = this.props.model;
+		let resource = { resource: model.id };
+		let property = { [name]: value };
+		let selection = { resource, property };
+
+		Actions.updateCriteria(selection);
+	}
+
   render() {
-  	let { clarity, difficulty, enjoyment, relevance, tempholder } = this.props.criteria;
+		let criteriaNames = Object.keys(this.props.criteria);
+
+    let criteriaFields = R.map((fieldName)=> {
+      return (
+      	<div key={ fieldName } className="slider">
+			  	<label htmlFor={ fieldName }>{ fieldName }</label>
+					<input type="range" name={ fieldName } min="0" max="5" step="1"
+					   value={ this.props.criteria[fieldName] }
+					   onChange={ this.handleChange.bind(this) } /><br />
+				</div>
+      )
+    }, criteriaNames)
 
     return (
 			<section className='sliders-container'>
-				<div className="slider">
-			  	<label htmlFor="clarity">Clarity</label>
-					<input type="range" name="clarity" min="0" max="5" step="1" value={ clarity } /><br />
-				</div>
-
-				<div className="slider">
-					<label htmlFor="difficulty">Difficulty</label>
-					<input type="range" name="difficulty" min="0" max="5" step="1" placeholder="5" value={ difficulty } /><br />
-				</div>
-
-				<div className="slider">
-					<label htmlFor="enjoyment">Enjoyment</label>
-					<input type="range" name="enjoyment" min="0" max="5" step="1" placeholder="5" value={ enjoyment } /><br />
-				</div>
-
-				<div className="slider">
-					<label htmlFor="relevance">Relevance</label>
-					<input type="range" name="relevance" min="0" max="5" step="1" placeholder="5" value={ relevance } /><br />
-				</div>
-
-				<div className="slider">
-					<label htmlFor="tempholder">(tempholder)</label>
-					<input type="range" name="tempholder" min="0" max="5" step="1" placeholder="5" value={ tempholder } />
-				</div>
+			  { criteriaFields }
 			</section>
   	)
   }
 }
+
+SliderSection.propTypes = {
+	criteria: React.PropTypes.object.isRequired
+};
 
 export default SliderSection;

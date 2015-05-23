@@ -32,19 +32,21 @@ checkpoints:
       - author: Chuck Wendig
         title: 25 Ways to Plot, Plan and Prep Your Story
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Chuck Wendig
         title: 25 Ways to Plot, Plan and Prep Your Story
         url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
   - title: Find References
     description: |
       Because we do not believe in reinventing the wheel and because there
@@ -56,35 +58,39 @@ checkpoints:
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Jonathan Leavitt
         title: Why 2014 Will Be the Year of Content Overload
         url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
   - title: Explain the Relevance
     description: |
       Some references are not enough to get to an understanding of a theme or
@@ -96,43 +102,48 @@ checkpoints:
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
   - title: Critically Curate
     description: |
       Always critically curate content for instance check whom you are
@@ -143,27 +154,30 @@ checkpoints:
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
       - author: Danah Boyd
         url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
         title: "Limited Attention: The Flow of Information through Social Media"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3
   - title: Almost finished
     description: |
       You are almost there. The role of the curator has changed over time. Our
@@ -176,8 +190,9 @@ checkpoints:
       - author: Benny Wed
         title: How the role of the curator has changed since the 1960s
         url: "https://www.academia.edu/9672194/How_the_role_of_the_curator_has_changed_since_the_1960s"
-        clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        criteria:
+          clarity: 5
+          difficulty: 4
+          enjoyment: 1
+          relevance: 2
+          tempholder: 3

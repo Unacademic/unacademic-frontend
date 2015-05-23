@@ -14,6 +14,8 @@ class API {
     this.baseUrl = baseUrl;
     this.get = this.get.bind(this);
     this.waypoints = this._getAll();
+    this.resourceUrl = '';
+    this.data = '';
   }
 
   async get(levels){
@@ -23,10 +25,14 @@ class API {
   }
 
   async getResourceData(url){
-    let encodedUrl = encodeURIComponent(url)
-    let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
-    let response = await axios.get(apiUrl);
-    return response.data;
+    if(url !== this.resourceUrl){
+      this.resourceUrl = url;
+      let encodedUrl = encodeURIComponent(this.resourceUrl)
+      let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
+      let response = await axios.get(apiUrl);
+      this.data = response.data;
+    }
+    return this.data;
   }
 
   _getAll(){
@@ -51,6 +57,13 @@ class API {
     let one = this._getLevels(data);
     let two = this._filterLevelData(one);
     two.model.complete = two.model.complete ? false : true;
+  }
+
+  updateCriteria({levels, criterium}){
+    let levelData = this._getLevels(levels);
+    let level = this._filterLevelData(levelData);
+    let propName = Object.keys(criterium.property)[0];
+    level.model.criteria[propName] = criterium.property[propName];
   }
 
   _getLevels(levels){

@@ -9,16 +9,8 @@ class ResourceSection extends React.Component {
   render() {
 
     let { context, model } = this.props;
-    let { title, author, url, notes, clarity, difficulty, enjoyment, relevance, tempholder } = model;
+    let { title, author, url, notes, criteria } = model;
     let type = model.constructor.name.toLowerCase();
-
-    let criteria = {
-      clarity: clarity,
-      difficulty: difficulty,
-      enjoyment: enjoyment,
-      relevance: relevance,
-      tempholder: tempholder
-    };
 
     return (
       <div>

@@ -308,6 +308,32 @@ describe("AppStore Store", () => {
         expect(AppStore.emitChange).called;
       });
     });
+
+    describe("update criteria", () => {
+      let selection;
+
+      beforeEach(() => {
+        selection = { resource: 1, 'clarity': 2 };
+
+        action = {
+          actionType: AppStoreConstants.UPDATE_CRITERIA,
+          selection: selection
+        };
+
+        AppStore.ViewModel.updateCriteria = sinon.spy();
+        AppStore.handleAction(action);
+      });
+
+      it("with a new value", () => {
+        expect(AppStore.ViewModel.updateCriteria).calledWith({
+          levels: levels.toJS(), criterium: selection
+        });
+      });
+
+      it("emits a change", () => {
+        expect(AppStore.emitChange).called;
+      });
+    });
   });
 });
 
