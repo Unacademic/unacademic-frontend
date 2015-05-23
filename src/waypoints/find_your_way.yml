@@ -1,0 +1,101 @@
+title: Find Your Way
+curator: Reika Chavers
+
+summary: learn to navigate through Offcourse
+
+description: |
+  Do you have a hard time finding your way through the interface? We have minimised the interface design so that you can keep your focus on learning and curating. The core functionalities are limited to the ones you need: mode button, toolbar and the card stack. That’s all!
+
+checkpoints:
+  - title: Switch Cognitive Modes
+    introduction: |
+      Learn more effectively by switching between two modes - learning and curating. Changing your perspective makes your learning more active, and your retention will surge. Because you’re switching cognitive modes, your understanding of a topic will be impressive.
+
+      instructions:
+        - Have a look at the resources for in depth understanding
+      resources:
+      - author: Meryl Reis Louis and Robert I Sutton
+        title: Switching Cognitive Gears: From Habits of Mind to Active Thinking
+        url: "http://hum.sagepub.com/content/44/1/55"
+        clarity: 4
+        difficulty: 5
+        uptodateness: 4
+        pertinence: 3
+        enjoyment: 4
+        time_to_digest: 65 minutes
+        tags:  cognitive modes, creative thinking
+        type: text
+      - author:
+        title: Guideline nine, multiple modes
+        url: "http://www.guidelinesonlearning.com/guideline-nine"
+        clarity: 4
+        difficulty: 1
+        uptodateness: 3
+        pertinence: 2
+        enjoyment: 2
+        time_to_digest: 2 minutes
+        tags:  learn, modes
+        type: text
+        notes: If you have extra time, scan through the other guidelines.
+      - author: Kimm Fesenmaier
+        title: Switching on One-shot Learning in the Brain
+        url: "https://www.caltech.edu/news/switching-one-shot-learning-brain-46629"
+        clarity: 4
+        difficulty: 3
+        uptodateness: 5
+        pertinence: 2
+        enjoyment: 5
+        time_to_digest: 22 minutes
+        tags:  learn, science, brain
+        type: text
+        notes: Especially the fourth paragraph is useful.
+  - title: Tool the bar
+    introduction: |
+      To keep all the important information in the same place, the toolbar is your anchorpoint. The toolbar shows you where you are in the interface. For instance when you start learning a waypoint, the waypoint moves to the toolbar and all the checkpoint are visible on the right.
+
+      instructions:
+        - Consume the resources for inspiration
+      resources:
+      - author:
+        title: Toolbar
+        url: "https://en.wikipedia.org/wiki/Toolbar"
+        clarity: 5
+        difficulty: 1
+        uptodateness: 5
+        pertinence: 5
+        enjoyment: 2
+        time_to_digest: 2 minutes
+        tags:  toolbar, interface
+        type: text
+        notes: Short but sweet
+      - author: Janne Jul Jensen
+        title: User Interface Techniques
+        url: "https://www.youtube.com/watch?v=7OSkB4BCx00"
+        clarity: 4
+        difficulty: 3
+        uptodateness: 4
+        pertinence: 3
+        enjoyment: 3
+        time_to_digest: 51 minutes
+        tags:  interface, design, usabillity, users
+        type: video
+        notes: Especially the first 20 minutes are useful.
+  - title: Playing Cards
+    introduction: |
+      The use of a card interface is to ressemble physiscal material. This helps structuring information, for instance what information belongs together.
+
+      instructions:
+        - Go through the resource to get a better understanding of design principles
+      resources:
+      - author:
+        title: Material Design
+        url: "http://www.google.com/design/spec/material-design/introduction.html"
+        clarity: 5
+        difficulty: 1
+        uptodateness: 4
+        pertinence: 5
+        enjoyment: 5
+        time_to_digest: 120 minutes
+        tags:  material design, google, interface
+        type: text
+        notes: Google has clearly defined their design principles in this easy spec.

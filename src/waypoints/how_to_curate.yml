@@ -164,20 +164,22 @@ checkpoints:
         enjoyment: 1
         relevance: 2
         tempholder: 3
-  - title: Almost finished
-    description: |
-      You are almost there. The role of the curator has changed over time. Our
-      notion of a curator is someone how helps you. Therefore we find it
-      important that learners know how you are. Please enter your curator
-      information on your profile page by clicking on your name in the header.
+  - title: Now You Are a Real Curator
+    introduction: |
+       The role of the curator has changed over time. Our
+      notion of a curator is someone how helps you.
     instructions:
-      - Read the reference to understand how the role of the curator has changed over time.
+      - Read the reference.
     resources:
       - author: Benny Wed
         title: How the role of the curator has changed since the 1960s
         url: "https://www.academia.edu/9672194/How_the_role_of_the_curator_has_changed_since_the_1960s"
         clarity: 5
-        difficulty: 4
-        enjoyment: 1
-        relevance: 2
-        tempholder: 3
+        difficulty: 2
+        uptodateness: 4
+        pertinence: 4
+        enjoyment: 3
+        time_to_digest: 20 minutes
+        tags: curator,
+        type: text
+        notes: Note how the role of the curator has changed over time.
