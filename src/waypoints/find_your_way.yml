@@ -11,11 +11,11 @@ checkpoints:
     introduction: |
       Learn more effectively by switching between two modes - learning and curating. Changing your perspective makes your learning more active, and your retention will surge. Because you’re switching cognitive modes, your understanding of a topic will be impressive.
 
-      instructions:
-        - Have a look at the resources for in depth understanding
-      resources:
+    instructions:
+      - Have a look at the resources for in depth understanding
+    resources:
       - author: Meryl Reis Louis and Robert I Sutton
-        title: Switching Cognitive Gears: From Habits of Mind to Active Thinking
+        title: Switching Cognitive Gears, From Habits of Mind to Active Thinking
         url: "http://hum.sagepub.com/content/44/1/55"
         clarity: 4
         difficulty: 5
@@ -53,9 +53,9 @@ checkpoints:
     introduction: |
       To keep all the important information in the same place, the toolbar is your anchorpoint. The toolbar shows you where you are in the interface. For instance when you start learning a waypoint, the waypoint moves to the toolbar and all the checkpoint are visible on the right.
 
-      instructions:
-        - Consume the resources for inspiration
-      resources:
+    instructions:
+      - Consume the resources for inspiration
+    resources:
       - author:
         title: Toolbar
         url: "https://en.wikipedia.org/wiki/Toolbar"
@@ -84,9 +84,9 @@ checkpoints:
     introduction: |
       The use of a card interface is to ressemble physiscal material. This helps structuring information, for instance what information belongs together.
 
-      instructions:
-        - Go through the resource to get a better understanding of design principles
-      resources:
+    instructions:
+      - Go through the resource to get a better understanding of design principles
+    resources:
       - author:
         title: Material Design
         url: "http://www.google.com/design/spec/material-design/introduction.html"
