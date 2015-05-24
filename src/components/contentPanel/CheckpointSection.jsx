@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import CheckpointMap from '../maps/CheckpointMap.jsx';
 import Actions from '../../actions/index';
+import ResourceList from './ResourceList.jsx'
 
 let renderer = new marked.Renderer();
 
@@ -80,24 +81,6 @@ class CheckpointSection extends React.Component {
       )
     };
 
-    let resourceList = ()=> {
-      return (
-        <section className="resourceList">
-        <h1>Resources</h1>
-        <ul>
-        { R.map(({title, id}) => {
-           let newTitle = title.substring(0, 55);
-           return (
-             <li key={ id } className="resource_item">
-               <p><span className="checkbox"></span>{ newTitle }</p>
-             </li>
-           )
-        }, resources) }
-        </ul>
-        </section>
-      )
-    };
-
     return (
       <div className={ this.classes() }>
         <section className={ `${this.name}_header` }>
@@ -109,7 +92,7 @@ class CheckpointSection extends React.Component {
           </hgroup>
           { context === 'sidebar' && descriptionSection() }
           { context === 'sidebar' && instructionsSection() }
-          { context === 'card' && resourceList(resources) }
+          { context === 'card' && <ResourceList resources={ resources } /> }
         </section>
       </div>
     )
