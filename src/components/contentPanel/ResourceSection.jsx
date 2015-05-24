@@ -1,10 +1,18 @@
 import React from 'react';
-import R from 'ramda';
-import _ from 'lodash';
+
+import Actions from '../../actions/index';
+
 import SliderSection from '../sliders/SliderSection.jsx';
 import ResourceMap from '../maps/ResourceMap.jsx';
 
 class ResourceSection extends React.Component {
+
+  updateCriteria(fieldName, value) {
+    let { id } = this.props.model;
+    let resource = { id: 1 };
+    let property = {[fieldName]: value};
+    Actions.updateCriteria({ resource, property });
+  }
 
   render() {
     let { context, model } = this.props;
@@ -20,7 +28,10 @@ class ResourceSection extends React.Component {
           <hgroup>
             <h1 className="title">{ title }</h1>
           </hgroup>
-          { context === 'sidebar' && <SliderSection model={ model } criteria={ criteria }/> }
+          { context === 'sidebar' && <SliderSection
+              handleChange={ this.updateCriteria.bind(this) }
+              model={ model }
+              criteria={ criteria }/> }
         </section>
       </div>
     )

@@ -38,6 +38,7 @@ class CheckpointSection extends React.Component {
     let { model, context } = this.props;
     let { title, highlight, description, instructions, resources, waypoint } = model;
     let type = model.constructor.name.toLowerCase();
+
     if(!instructions){
       instructions = [];
     }

@@ -1,10 +1,11 @@
-import SliderSection from '../../../src/components/sliders/SliderSection.jsx';
+import Slider from '../../../src/components/sliders/Slider.jsx';
 import { React, TestUtils, testdom } from '../../react-helpers';
 
-describe("SliderSection", () => {
+describe("Slider", () => {
   let element;
-
+  let fieldName;
   let cb;
+
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
@@ -13,13 +14,13 @@ describe("SliderSection", () => {
   describe("when model is resource", () => {
 
     beforeEach(() => {
-      let criteria = { clarity: 1 };
+      fieldName = 'clarity';
       cb = sinon.spy();
-      element = renderSliderSection(criteria, cb);
+      element = renderSlider(fieldName, 1, cb);
     });
 
     it("renders the SliderSection in the sidebar", () => {
-      expect(element.className).to.contain('sliders-container');
+      expect(element.className).to.contain('slider');
     });
 
     it("renders the correct value for clarity", () => {
@@ -31,15 +32,15 @@ describe("SliderSection", () => {
       it('triggers the callback', () => {
         let input = element.querySelector('input[name="clarity"]');
         TestUtils.Simulate.change(input, { target: { value: 2 } });
-        expect(cb).to.be.calledWith('clarity', 2);
+        expect(cb).to.be.calledWith(fieldName, 2);
       });
     });
   });
 });
 
-function renderSliderSection(criteria, cb){
+function renderSlider(fieldName, value, cb){
   let container = TestUtils.renderIntoDocument(
-    <SliderSection criteria={ criteria } handleChange={ cb }/>
+    <Slider handleChange={ cb } fieldName={ fieldName } value={ value }/>
   );
 
   return React.findDOMNode(container);

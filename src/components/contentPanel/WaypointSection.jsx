@@ -1,11 +1,9 @@
 import React from 'react';
-import R from 'ramda';
-import _ from 'lodash';
 import marked from 'marked';
 
+import WaypointMap from '../maps/WaypointMap.jsx';
 import Editable from '../editable/Editable.jsx';
 import TodoList from '../todoList/TodoList.jsx';
-import WaypointMap from '../maps/WaypointMap.jsx';
 
 import Actions from '../../actions/index';
 

@@ -1,6 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
 import BreadCrumbs from '../../../src/components/breadcrumbs/BreadCrumbs.jsx';
-import Actions from '../../../src/actions/index.js';
 
 describe("BreadCrumbs", () => {
   let breadcrumbs;

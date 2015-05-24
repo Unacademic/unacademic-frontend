@@ -11,3 +11,4 @@ import './levelStack/index.spec.js';
 import './viewer/Viewer.spec.js';
 
 import './sliders/SliderSection.spec.js';
+import './sliders/Slider.spec.js';

@@ -1,11 +1,8 @@
-import ContentPanel from '../contentPanel/ContentPanel.jsx';
-import ControlPanel from '../controlPanel/ControlPanel.jsx';
-import Logo from '../logo/Logo.jsx';
-import DebugState from '../debugState/DebugState.jsx';
-import LevelStack from '../levelStack/LevelStack.jsx';
+import React from 'react';
 import Actions from '../../actions/index.js';
 
-import React from 'react';
+import ContentPanel from '../contentPanel/ContentPanel.jsx';
+import Logo from '../logo/Logo.jsx';
 
 class Sidebar extends React.Component {
 

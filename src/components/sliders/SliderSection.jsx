@@ -1,31 +1,17 @@
 import React from 'react';
 import R from 'ramda';
 import Actions from '../../actions/index';
+import Slider from './Slider.jsx';
 
 class SliderSection extends React.Component {
 
-  handleChange(event) {
-    let name = event.target.name;
-    let value = event.target.value;
-    let model = this.props.model;
-    let resource = { resource: model.id };
-    let property = { [name]: value };
-    let selection = { resource, property };
-
-    Actions.updateCriteria(selection);
-  }
-
   render() {
-    let criteriaNames = Object.keys(this.props.criteria);
+    let { handleChange, criteria } = this.props;
+    let criteriaNames = R.toPairs(criteria);
 
-    let criteriaFields = R.map((fieldName)=> {
+    let criteriaFields = R.map(([fieldName, value])=> {
       return (
-        <div key={ fieldName } className="slider">
-        <label htmlFor={ fieldName }>{ fieldName }</label>
-        <input type="range" name={ fieldName } min="0" max="5" step="1"
-        value={ this.props.criteria[fieldName] }
-        onChange={ this.handleChange.bind(this) } /><br />
-        </div>
+          <Slider key={ fieldName } fieldName={ fieldName } value={  value } handleChange={ handleChange }/>
       )
     }, criteriaNames)
 
@@ -38,7 +24,8 @@ class SliderSection extends React.Component {
 }
 
 SliderSection.propTypes = {
-  criteria: React.PropTypes.object.isRequired
+  criteria: React.PropTypes.object.isRequired,
+  handleChange: React.PropTypes.func.isRequired
 };
 
 export default SliderSection;

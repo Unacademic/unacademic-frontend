@@ -12,8 +12,8 @@ class TodoList extends React.Component {
 
       return (
         <TodoListItem key={ index }
-          checkDone={ handleComplete.bind(this) }
-          handleHover={ handleHover.bind(this) }
+          checkDone={ handleComplete }
+          handleHover={ handleHover }
           item={ item }/>
       )
     }, collection);
