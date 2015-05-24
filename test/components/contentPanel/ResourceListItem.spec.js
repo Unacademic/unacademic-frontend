@@ -21,7 +21,7 @@ describe("ResourceListItem", () => {
 
     it("finds a resource item", () => {
       let classes = element.className.split(' ');
-      expect(classes).to.contain('resourcelist_item');
+      expect(classes).to.contain('resource_item');
     });
   });
 });
