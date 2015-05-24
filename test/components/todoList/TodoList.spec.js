@@ -1,5 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import TodoList from '../../../src/components/contentPanel/TodoList.jsx';
+import TodoList from '../../../src/components/todoList/TodoList.jsx';
 
 describe("TodoList Section", () => {
   let element;

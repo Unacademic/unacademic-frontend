@@ -1,5 +1,5 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import TodoListItem from '../../../src/components/contentPanel/TodoListItem.jsx';
+import TodoListItem from '../../../src/components/todoList/TodoListItem.jsx';
 
 import Actions from '../../../src/actions/index.js';
 

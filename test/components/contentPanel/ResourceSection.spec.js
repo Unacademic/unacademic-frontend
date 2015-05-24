@@ -14,23 +14,32 @@ describe("Resource Section", () => {
 
   describe("model type is checkpoint", () => {
     beforeEach(() => {
-      [element] = renderResource(model);
+      element = renderResource(model, 'sidebar');
     })
 
-    it("has the correct classes", () => {
-      let classes = element.className.split(' ');
-      expect(classes).to.contain('panel-content_main');
-      expect(classes).to.contain('panel-is-resource');
+    it("renders the header", () => {
+      let query = element.querySelectorAll('.panel-content_header');
+      expect(query.length).to.equal(1);
+    });
+
+    it("renders the header", () => {
+      let query = element.querySelectorAll('.panel-content_main');
+      expect(query.length).to.equal(1);
+    });
+
+    it("renders the sliders", () => {
+        let query = element.querySelectorAll('.sliders-container');
+      expect(query.length).to.equal(1);
     });
   });
 });
 
 
-function renderResource(model){
+function renderResource(model, context){
   let container = TestUtils.renderIntoDocument(
-    <ResourceSection model={ model }/>
+    <ResourceSection context={ context }model={ model }/>
   );
 
   let element = React.findDOMNode(container);
-  return [element];
+  return element;
 }

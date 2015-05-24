@@ -1,13 +1,12 @@
 import React from 'react';
 import R from 'ramda';
 import _ from 'lodash';
-import SliderSection from './SliderSection.jsx';
+import SliderSection from '../sliders/SliderSection.jsx';
 import ResourceMap from '../maps/ResourceMap.jsx';
 
 class ResourceSection extends React.Component {
 
   render() {
-
     let { context, model } = this.props;
     let { title, author, url, notes, criteria } = model;
     let type = model.constructor.name.toLowerCase();

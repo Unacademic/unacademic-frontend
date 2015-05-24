@@ -22,7 +22,7 @@ describe("Checkpoint Model", () => {
 
   it("is has all, correct checkpoints", () => {
     let resources = checkpoint.resources;
-    expect(resources.length).to.equal(3);
+    expect(resources.length).to.equal(4);
     expect(resources[0].constructor.name).to.equal('Resource')
   });
 });

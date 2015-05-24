@@ -4,7 +4,6 @@ import _ from 'lodash';
 import marked from 'marked';
 import CheckpointMap from '../maps/CheckpointMap.jsx';
 import Actions from '../../actions/index';
-import TodoList from './TodoList.jsx';
 
 let renderer = new marked.Renderer();
 

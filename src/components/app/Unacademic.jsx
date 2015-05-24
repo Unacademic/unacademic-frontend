@@ -13,7 +13,7 @@ class Unacademic extends React.Component{
     return (
       <section className={ classes }>
         <Sidebar model={ model } appState={ appState }/>
-        <Main levels={ appState.levels } url={ url } collection={ collection } data={ data } />
+        <Main levels={ appState.levels } collection={ collection } data={ data } />
       </section>
     )
   }

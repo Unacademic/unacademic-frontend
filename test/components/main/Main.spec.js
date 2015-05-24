@@ -35,9 +35,4 @@ describe("Main", () => {
     let viewer = element.querySelectorAll('.viewer');
     expect(viewer.length).to.equal(1);
   });
-
-  it.skip("renders the timeline area", () => {
-    let sidebar = element.querySelectorAll('.timeline');
-    expect(sidebar.length).to.equal(1);
-  });
 });

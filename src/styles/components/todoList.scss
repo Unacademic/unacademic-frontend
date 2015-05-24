@@ -53,9 +53,9 @@
 .resource_item .checkbox {
   display: inline-block;
   margin-right: ($baseUnit / 3) * 2;
-  width: $baseUnit * 2;
+  width: $baseUnit * 1.5;
   height: $baseUnit * 1.5;
-  background-color: $inverseColor;
+  background-color: $lightBaseColor;
   vertical-align: center
 }
 

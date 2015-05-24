@@ -24,7 +24,7 @@ let expect = chai.expect;
 chai.use(sinonChai);
 
 let collection = allWaypoints;
-let data = '';
+let data = { content: '' };
 let title = '_Unacademic';
 let model = { title };
 let viewModel = { model, collection, data };

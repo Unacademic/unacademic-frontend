@@ -29,6 +29,7 @@ checkpoints:
     url: http://diveintohtml5.info/storage.html
   - title: Localstorage
     url: https://www.youtube.com/watch?v=W8SFylZ8Jh4
+  - criteria: ''
 
 - title: String it Together
   description: | 

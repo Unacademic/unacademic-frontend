@@ -1,4 +1,4 @@
-import SliderSection from '../../../src/components/contentPanel/SliderSection.jsx';
+import SliderSection from '../../../src/components/sliders/SliderSection.jsx';
 import { React, TestUtils, testdom } from '../../react-helpers';
 
 describe("SliderSection", () => {

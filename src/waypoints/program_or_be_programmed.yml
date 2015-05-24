@@ -30,6 +30,8 @@ checkpoints:
       - title: Chapter 13. The Document-Object-Model
         author: Haverbeke, Marijn
         url: http://eloquentjavascript.net/13_dom.html
+        criteria: 
+          interesting: 5
       - title: Rhizome
         author: Deleuze, Gilles and Felix Guattari. 
         url: https://www.upress.umn.edu/book-division/books/a-thousand-plateaus
