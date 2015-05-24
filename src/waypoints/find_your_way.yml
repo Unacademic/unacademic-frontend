@@ -19,18 +19,19 @@ checkpoints:
         url: "http://hum.sagepub.com/content/44/1/55"
         clarity: 4
         difficulty: 5
-        uptodateness: 4
+        up_to_date: 4
         pertinence: 3
         enjoyment: 4
         time_to_digest: 65 minutes
         tags:  cognitive modes, creative thinking
         type: text
+        notes: The full article is not available to everybody
       - author:
         title: Guideline nine, multiple modes
         url: "http://www.guidelinesonlearning.com/guideline-nine"
         clarity: 4
         difficulty: 1
-        uptodateness: 3
+        up_to_date: 3
         pertinence: 2
         enjoyment: 2
         time_to_digest: 2 minutes
@@ -42,7 +43,7 @@ checkpoints:
         url: "https://www.caltech.edu/news/switching-one-shot-learning-brain-46629"
         clarity: 4
         difficulty: 3
-        uptodateness: 5
+        up_to_date: 5
         pertinence: 2
         enjoyment: 5
         time_to_digest: 22 minutes
@@ -61,7 +62,7 @@ checkpoints:
         url: "https://en.wikipedia.org/wiki/Toolbar"
         clarity: 5
         difficulty: 1
-        uptodateness: 5
+        up_to_date: 5
         pertinence: 5
         enjoyment: 2
         time_to_digest: 2 minutes
@@ -73,7 +74,7 @@ checkpoints:
         url: "https://www.youtube.com/watch?v=7OSkB4BCx00"
         clarity: 4
         difficulty: 3
-        uptodateness: 4
+        up_to_date: 4
         pertinence: 3
         enjoyment: 3
         time_to_digest: 51 minutes
@@ -92,7 +93,7 @@ checkpoints:
         url: "http://www.google.com/design/spec/material-design/introduction.html"
         clarity: 5
         difficulty: 1
-        uptodateness: 4
+        up_to_date: 4
         pertinence: 5
         enjoyment: 5
         time_to_digest: 120 minutes
