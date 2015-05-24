@@ -35,8 +35,9 @@ checkpoints:
         pertinence: 2
         enjoyment: 4
         time_to_digest: 22 minutes
-        tags:   story telling, creative thinking
         tags:
+          - story telling
+          - creative thinking
         type: text
         notes: People tend to be more motivated in their learning when its a story so create and curate your waypoints accordingly
       - author: Connie Malamed
@@ -48,7 +49,9 @@ checkpoints:
         pertinence: 3
         enjoyment: 5
         time_to_digest: 13 minutes
-        tags:   story telling, learning
+        tags:
+          - story telling
+          -  learning
         type: text
         notes: The embedded movie is very entertaining
   - title: Find References
@@ -66,7 +69,9 @@ checkpoints:
         pertinence: 4
         enjoyment: 5
         time_to_digest: 6 minutes
-        tags:   content overload, content curation
+        tags:
+          - content overload
+          - content curation
         type: movie
         notes: If interested also watch the other parts
       - author: Rueben
@@ -78,7 +83,9 @@ checkpoints:
         pertinence: 3
         enjoyment: 2
         time_to_digest: 7 minutes
-        tags: content overload, information overload
+        tags:
+          - content overload
+          - information overload
         type: text
         notes:
       - author: Unknown
@@ -90,7 +97,9 @@ checkpoints:
         pertinence: 2
         enjoyment: 5
         time_to_digest: 2 minutes
-        tags: web evolution, the internet
+        tags:
+          - web evolution
+          - the internet
         type: tool
         notes: Explore the tool
       - author: Unknown
@@ -102,7 +111,8 @@ checkpoints:
         pertinence: 3
         enjoyment: 5
         time_to_digest: 9 minutes
-        tags: internet archive,
+        tags:
+          - internet archive
         type: tool
         notes: This tool let's you view websites of the past
   - title: Explain the Relevance
@@ -120,7 +130,9 @@ checkpoints:
         pertinence: 4
         enjoyment: 2
         time_to_digest: 2 minutes
-        tags:   relevance, content
+        tags:
+          - relevance
+          - content
         type: video
         notes: If you have any extra time look at the related video's
       - author: Gerd Leonhard
@@ -132,8 +144,9 @@ checkpoints:
         pertinence: 2
         enjoyment: 4
         time_to_digest: 22 minutes
-        tags:   story telling, creative thinking
         tags:
+          - story telling
+          - creative thinking
         type: text
         notes: People tend to be more motivated in their learning when its a story so create and curate your waypoints accordingly.
       - author: Mark Layne
@@ -145,7 +158,8 @@ checkpoints:
         pertinence: 2
         enjoyment: 3
         time_to_digest: 3 minutes
-        tags: content curation
+        tags:
+          - content curation
         type: video
         notes: Don't mind the advertisement
       - author: Margot Bloomstein
@@ -157,7 +171,9 @@ checkpoints:
         pertinence: 4
         enjoyment: 3
         time_to_digest: 3 minutes
-        tags:   content curation, adding value
+        tags:
+          - content curation
+          - adding value
         type: video
         notes: The Why to adding context is well defined
   - title: Critically Curate
@@ -175,7 +191,9 @@ checkpoints:
         pertinence: 4
         enjoyment: 2
         time_to_digest: 29 minutes
-        tags: sources, referencing
+        tags:
+          - sources
+          - referencing
         type: text
         notes: This article is useful but not leading for our platform
       - author: University of Reading
@@ -187,8 +205,8 @@ checkpoints:
         pertinence: 4
         enjoyment: 2
         time_to_digest: 1 minute
-        tags: referencing
         tags:
+          - referencing
         type: text
         notes:
       - author: Danah Boyd
@@ -200,7 +218,10 @@ checkpoints:
         pertinence: 4
         enjoyment: 5
         time_to_digest: 42 minutes
-        tags: information, attention, content
+        tags:
+          - information
+          - attention
+          - content
         type: text
         notes: This article might seem a long read but it's worth it
   - title: Now You Are a Real Curator
@@ -219,6 +240,7 @@ checkpoints:
         pertinence: 4
         enjoyment: 3
         time_to_digest: 20 minutes
-        tags: curator,
+        tags:
+          - curator
         type: text
         notes: Note how the role of the curator has changed over time.

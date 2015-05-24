@@ -23,7 +23,9 @@ checkpoints:
         pertinence: 3
         enjoyment: 4
         time_to_digest: 65 minutes
-        tags:  cognitive modes, creative thinking
+        tags:
+          - cognitive modes
+          - creative thinking
         type: text
         notes: The full article is not available to everybody
       - author:
@@ -35,7 +37,9 @@ checkpoints:
         pertinence: 2
         enjoyment: 2
         time_to_digest: 2 minutes
-        tags:  learn, modes
+        tags:
+          - learn
+          - modes
         type: text
         notes: If you have extra time, scan through the other guidelines.
       - author: Kimm Fesenmaier
@@ -47,7 +51,10 @@ checkpoints:
         pertinence: 2
         enjoyment: 5
         time_to_digest: 22 minutes
-        tags:  learn, science, brain
+        tags:
+          - learn
+          - science
+          - brain
         type: text
         notes: Especially the fourth paragraph is useful.
   - title: Tool the bar
@@ -66,7 +73,9 @@ checkpoints:
         pertinence: 5
         enjoyment: 2
         time_to_digest: 2 minutes
-        tags:  toolbar, interface
+        tags:
+          - toolbar
+          - interface
         type: text
         notes: Short but sweet
       - author: Janne Jul Jensen
@@ -78,7 +87,11 @@ checkpoints:
         pertinence: 3
         enjoyment: 3
         time_to_digest: 51 minutes
-        tags:  interface, design, usabillity, users
+        tags:
+          - interface
+          - design
+          - usabillity
+          - users
         type: video
         notes: Especially the first 20 minutes are useful.
   - title: Playing Cards
@@ -97,6 +110,9 @@ checkpoints:
         pertinence: 5
         enjoyment: 5
         time_to_digest: 120 minutes
-        tags:  material design, google, interface
+        tags:
+          - material design
+          - google
+          - interface
         type: text
         notes: Google has clearly defined their design principles in this easy spec.
