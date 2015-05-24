@@ -1,13 +1,19 @@
 import React from 'react';
 import R from 'ramda';
-import _ from 'lodash';
 import marked from 'marked';
+import classnames from 'classnames';
+
 import CheckpointMap from '../maps/CheckpointMap.jsx';
 import Actions from '../../actions/index';
 
 let renderer = new marked.Renderer();
 
 class CheckpointSection extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.name = 'panel';
+  }
 
   handleComplete(item){
     let id = this.props.model.id;
@@ -32,6 +38,12 @@ class CheckpointSection extends React.Component {
     let checkpoint = { id };
     let resource = { id: item };
     return { checkpoint, resource };
+  }
+
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
   }
 
   render() {
@@ -87,11 +99,11 @@ class CheckpointSection extends React.Component {
     };
 
     return (
-      <div>
-        <section className="panel-content_header">
+      <div className={ this.classes() }>
+        <section className={ `${this.name}_header` }>
           <CheckpointMap handleHover={ this.handleHover.bind(this) } handleComplete={ this.handleComplete.bind(this, null) } model={ model }/>
         </section>
-        <section className="panel-content_main">
+        <section className={ `${this.name}_main` }>
           <hgroup>
             <h1 className="title editable">{ title }</h1>
           </hgroup>

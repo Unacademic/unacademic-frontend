@@ -1,17 +1,31 @@
 import React from 'react';
-import CardNav from './CardNav.jsx';
+import classnames from 'classnames';
+
 import ContentPanel from '../contentPanel/ContentPanel.jsx';
+import CardNav from './CardNav.jsx';
 
 class Card extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.name = 'card';
+  }
+
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
+  }
+
   render(){
-    let model = this.props.model;
+    let { model } = this.props;
     let type = model.constructor.name.toLowerCase();
     model.type = type;
 
     return (
-      <section className="card">
-        <ContentPanel context="card" model={ model } />
-        <CardNav model={ model } />
+      <section className={ this.classes() }>
+      <ContentPanel context={ this.name } model={ model } />
+      <CardNav model={ model } />
       </section>
     )
   }
@@ -20,6 +34,5 @@ class Card extends React.Component {
 Card.propTypes = {
   model: React.PropTypes.object.isRequired
 }
-
 
 export default Card;

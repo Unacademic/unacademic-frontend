@@ -103,15 +103,6 @@ checkpoints:
           enjoyment: 1
           relevance: 2
           tempholder: 3
-      - author: Jonathan Leavitt
-        title: Why 2014 Will Be the Year of Content Overload
-        url: "https://medium.com/@nscalice/why-2014-will-be-the-year-of-content-overload-c9afcc9a39b1"
-        criteria:
-          clarity: 5
-          difficulty: 4
-          enjoyment: 1
-          relevance: 2
-          tempholder: 3
   - title: Explain the Relevance
     description: |
       Some references are not enough to get to an understanding of a theme or

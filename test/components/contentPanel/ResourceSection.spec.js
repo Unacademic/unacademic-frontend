@@ -19,12 +19,12 @@ describe("Resource Section", () => {
     })
 
     it("renders the header", () => {
-      let query = element.querySelectorAll('.panel-content_header');
+      let query = element.querySelectorAll('.panel_header');
       expect(query.length).to.equal(1);
     });
 
     it("renders the header", () => {
-      let query = element.querySelectorAll('.panel-content_main');
+      let query = element.querySelectorAll('.panel_main');
       expect(query.length).to.equal(1);
     });
 

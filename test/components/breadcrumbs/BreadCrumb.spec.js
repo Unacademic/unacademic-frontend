@@ -58,9 +58,9 @@ describe("BreadCrumb", () => {
   });
 });
 
-function renderBreadCrumb(level, currentMode){
+function renderBreadCrumb(level, current){
   let container = TestUtils.renderIntoDocument(
-      <BreadCrumb level={ level } currentMode={ currentMode }/>
+    <BreadCrumb level={ level } current={ current }/>
   );
 
   return React.findDOMNode(container);

@@ -1,17 +1,6 @@
-.layout-app-is-curate .map {
-  stroke: $curateColor;
-  fill: $curateColor;
-
-  .point {
-    fill:: $curateColor;
-  }
-}
-
-.layout-app-is-learn .map {
-  stroke: $learnColor;
-  .point {
-    fill:: $learnColor;
-  }
+.map {
+  width: 100%;
+  height: 100%;
 }
 
 .line {
@@ -38,3 +27,20 @@
 .map:hover .ring {
   stroke-width: 3;
 }
+
+.app-is-curate .map {
+  stroke: $curateColor;
+  fill: $curateColor;
+
+  .point {
+    fill:: $curateColor;
+  }
+}
+
+.app-is-learn .map {
+  stroke: $learnColor;
+  .point {
+    fill:: $learnColor;
+  }
+}
+

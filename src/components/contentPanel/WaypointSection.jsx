@@ -1,5 +1,6 @@
 import React from 'react';
 import marked from 'marked';
+import classnames from 'classnames';
 
 import WaypointMap from '../maps/WaypointMap.jsx';
 import Editable from '../editable/Editable.jsx';
@@ -10,6 +11,10 @@ import Actions from '../../actions/index';
 let renderer = new marked.Renderer();
 
 class WaypointSection extends React.Component {
+  constructor(props){
+    super(props);
+    this.name = 'panel';
+  }
 
   handleComplete(item){
     let selection = this._getSelection(item);
@@ -30,6 +35,12 @@ class WaypointSection extends React.Component {
     return { waypoint, checkpoint };
   }
 
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
+  }
+
   render() {
     let { mode, model, level, context } = this.props;
     let { id, title, image, curator, description, summary, checkpoints } = model;
@@ -46,14 +57,14 @@ class WaypointSection extends React.Component {
     };
 
     return (
-      <div>
-        <section className="panel-content_header">
+      <section className={ this.classes() }>
+        <section className={ `${this.name}_header` }>
           <WaypointMap
             handleHover={ this.handleHover.bind(this) }
             handleComplete={ this.handleComplete.bind(this) }
             model={ model }/>
         </section>
-        <section className="panel-content_main">
+        <section className={ `${this.name}_main` }>
           <hgroup>
             <Editable fieldName={ 'title' } value={ title } editing={ isEditing }/>
           </hgroup>
@@ -65,13 +76,12 @@ class WaypointSection extends React.Component {
             <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
           </section>
           { context === 'sidebar' && descriptionSection() }
-          { context === 'card' && <TodoList
-              title={ 'Checkpoints' }
+          { context === 'card' && <TodoList title={ 'Checkpoints' }
               handleHover={ this.handleHover.bind(this) }
               handleComplete={ this.handleComplete.bind(this) }
               collection={ checkpoints }/> }
         </section>
-      </div>
+      </section>
     )
   }
 };

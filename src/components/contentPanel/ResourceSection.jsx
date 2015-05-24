@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import Actions from '../../actions/index';
 
@@ -7,11 +8,22 @@ import ResourceMap from '../maps/ResourceMap.jsx';
 
 class ResourceSection extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.name = 'panel';
+  }
+
   updateCriteria(fieldName, value) {
     let { id } = this.props.model;
     let resource = { id: 1 };
     let property = {[fieldName]: value};
     Actions.updateCriteria({ resource, property });
+  }
+
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
   }
 
   render() {
@@ -20,11 +32,11 @@ class ResourceSection extends React.Component {
     let type = model.constructor.name.toLowerCase();
 
     return (
-      <div>
-        <section className="panel-content_header">
+      <section className={ this.classes() }>
+        <section className={ `${this.name}_header` }>
           <ResourceMap criteria={ criteria }/>
         </section>
-        <section className="panel-content_main">
+        <section className={ `${this.name}_main` }>
           <hgroup>
             <h1 className="title">{ title }</h1>
           </hgroup>
@@ -33,7 +45,7 @@ class ResourceSection extends React.Component {
               model={ model }
               criteria={ criteria }/> }
         </section>
-      </div>
+        </section>
     )
   }
 };

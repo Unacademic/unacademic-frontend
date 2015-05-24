@@ -12,11 +12,8 @@ describe("Card", () => {
 
     beforeEach(() => {
       let [model] = fixtures.viewModel.collection;
-      let container = TestUtils.renderIntoDocument(
-        <Card model={ model } />
-      );
+      element = renderCard(model);
 
-      element = React.findDOMNode(container);
     });
 
     it("renders the container", () => {
@@ -24,3 +21,11 @@ describe("Card", () => {
     });
   });
 });
+
+function renderCard(model){
+  let container = TestUtils.renderIntoDocument(
+    <Card model={ model } />
+  );
+
+  return React.findDOMNode(container);
+}

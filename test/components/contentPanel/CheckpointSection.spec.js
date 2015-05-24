@@ -18,7 +18,7 @@ describe("Checkpoint Section", () => {
     })
 
     it("has the correct classes", () => {
-      let mainPanel = element.querySelectorAll('.panel-content_main');
+      let mainPanel = element.querySelectorAll('.panel_main');
       expect(mainPanel.length).to.equal(1);
     });
 

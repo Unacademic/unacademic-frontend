@@ -8,21 +8,10 @@
   border-right: rem-calc(1.5) solid $baseColor;
 }
 
-.layout-app-is-learn.layout-app-is-waypoints .sidebar {
+.app-is-learn.app-is-waypoints .sidebar {
   background-color: $learnColor;
 }
 
-.layout-app-is-curate.layout-app-is-waypoints .sidebar {
+.app-is-curate.app-is-waypoints .sidebar {
   background-color: $curateColor;
 }
-
-.layout-app-is-waypoints .sidebar {
-  font-size: rem-calc(20);
-}
-
-.layout-app-is-waypoints {
-  
-  .layout-main {
-  }
-}
-

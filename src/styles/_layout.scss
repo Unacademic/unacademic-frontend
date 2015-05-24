@@ -1,4 +1,4 @@
-.layout-app {
+.app {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -20,7 +20,7 @@
   flex: 1;
 }
 
-.layout-main_header{
+.layout-topbar {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
