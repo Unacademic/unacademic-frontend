@@ -9,21 +9,23 @@ describe("ResourceList", () => {
     testdom('<html><body></body></html>');
   });
 
-  describe.only("model type is checkpoint", () => {
+  describe("model type is checkpoint", () => {
     beforeEach(() => {
       let container = TestUtils.renderIntoDocument(
         <ResourceList resources={ resources } />
       );
 
       element = React.findDOMNode(container);
-      // console.log('element', element);
     });
 
     it("renders the resourceList section", () => {
-      let query = element.querySelectorAll('.resourceList');
-      // console.log('query', query);
-      expect(query.length).to.equal(1);
+      let classes = element.className.split(' ');
+      expect(classes).to.contain('resourcelist');
+    });
+
+    it("has a list of resource items", () => {
+      let query = element.querySelectorAll('.resourcelist_item');
+      expect(query.length).to.equal(2);
     });
   });
 });
-

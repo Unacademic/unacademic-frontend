@@ -3,10 +3,10 @@ import React from 'react';
 class ResourceListItem extends React.Component {
 
   render() {
-    let { key, newTitle } = this.props;
+    let { key, title } = this.props;
     return (
-      <li key={ key } className="resource_item">
-        <p><span className="checkbox"></span>{ newTitle }</p>
+      <li key={ key } className="resourcelist_item">
+        <p><span className="checkbox"></span>{ title }</p>
       </li>
     )
   }
@@ -14,7 +14,7 @@ class ResourceListItem extends React.Component {
 
 ResourceListItem.propTypes = {
   key: React.PropTypes.string,
-  newTitle: React.PropTypes.string
+  title: React.PropTypes.string
 };
 
 export default ResourceListItem;

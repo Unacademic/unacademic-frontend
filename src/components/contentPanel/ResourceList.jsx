@@ -9,12 +9,12 @@ class ResourceList extends React.Component {
     let resourceList = R.map(( {title, id} ) => {
       let newTitle = title.substring(0, 55);
       return (
-        <ResourceListItem key={ id } newTitle={ newTitle } />
+        <ResourceListItem key={ id } title={ newTitle } />
        )
       }, resources );
 
     return (
-      <section className="resourceList">
+      <section className="resourcelist">
         <h1>Resources</h1>
         <ul>
           { resourceList }
