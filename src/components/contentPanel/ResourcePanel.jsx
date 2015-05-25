@@ -54,10 +54,6 @@ class ResourcePanel extends React.Component {
               handleChange={ this.updateCriteria.bind(this) }
               model={ model }
               criteria={ criteria }/> }
-          { context === 'sidebar' && <SliderSection
-              handleChange={ this.updateCriteria.bind(this) }
-              model={ model }
-              criteria={ criteria }/> }
         </section>
         </section>
     )
