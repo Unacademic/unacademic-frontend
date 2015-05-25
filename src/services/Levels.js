@@ -52,6 +52,7 @@ class Levels {
   }
 
   _getCurrent(levels){
+    console.log(levels);
     let levelPairs = R.toPairs(levels);
     let notFalse = ([key, value]) => value;
     let activeLevels = R.takeWhile(notFalse, levelPairs);

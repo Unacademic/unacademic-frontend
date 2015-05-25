@@ -6,7 +6,7 @@ class Radar extends React.Component {
   getCurve(curve, i) {
     var path = curve.polygon.path.print();
     return (
-      <path key={ i } d={ path } fill="#E5CF39" strokeWidth="1"/>
+      <path className="curve" key={ i } d={ path } strokeWidth="1"/>
     );
   }
 

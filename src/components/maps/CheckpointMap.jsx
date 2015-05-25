@@ -30,7 +30,7 @@ class CheckpointMap extends React.Component {
           y1={ baseLine }
           x2={ width }
           y2={ baseLine }
-          strokeWidth="25"/>
+          strokeWidth="5"/>
           <Stop handleHover={ handleHover.bind(this) } handleComplete={ handleComplete.bind(this) } params={ params }/>
       </svg>
     )

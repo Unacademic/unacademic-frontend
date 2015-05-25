@@ -36,7 +36,7 @@ class Unacademic extends React.Component{
         <section className="layout-sidebar layout-sidebar-left">
           <Sidebar model={ model } appState={ appState }/>
         </section>
-        <section className="layout-main">
+        { levels.current !== 'introduction' && (<section className="layout-main">
           <section className="layout-topbar">
             <BreadCrumbs levels={ levels }></BreadCrumbs>
             <LoginButton userId={ user }/>
@@ -45,7 +45,7 @@ class Unacademic extends React.Component{
             { collection && <Cards collection={ collection } className="cards" /> }
             { data && <Viewer data={ data } /> }
           </section>
-        </section>
+        </section>) }
       </section>
     )
   }

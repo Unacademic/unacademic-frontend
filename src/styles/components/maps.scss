@@ -29,7 +29,7 @@
   stroke: $curateColor;
   fill: $curateColor;
 
-  .point {
+  .point, .curve {
     fill: $curateColor;
   }
 
@@ -40,7 +40,7 @@
 
 .app-is-learn .map {
   stroke: $learnColor;
-  .point {
+  .point, .curve {
     fill: $learnColor;
   }
 

@@ -6,7 +6,7 @@ let baseUrl = 'https://unacademic-api.firebaseio.com';
 let API = new APIService(baseUrl);
 
 let levels = Map({
-  current: 'waypoints',
+  current: 'introduction',
   waypoints: 'all',
   waypoint: false,
   checkpoint: false,

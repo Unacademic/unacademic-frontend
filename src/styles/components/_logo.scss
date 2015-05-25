@@ -1,6 +1,7 @@
 .logo {
   padding: $baseUnit;
   user-select: none;
+  transition: background-color 0.4s ease;
 
   p, button, button:focus {
     font-family: NittyBold;

@@ -1,10 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
+import Actions from '../../actions/index';
 
 class LogoExtended extends React.Component {
   constructor(props){
     super(props);
     this.name = 'logo';
+  }
+
+  handleClick(selection){
+    let selection = { id: 'all', type: 'waypoints' };
+    Actions.setLevel(selection);
   }
 
   classes(){
@@ -26,7 +32,7 @@ class LogoExtended extends React.Component {
         <button>{ title }</button>
         <p>Tiny Bits of Structure</p><br/>
         <p>Lots of Learning</p><br/>
-        <p>Start</p><br/>
+        <button className='.step_1' onClick={ this.handleClick.bind(this) }>Start</button><br/>
         <p>Dwelling Today</p>
       </section>
     )

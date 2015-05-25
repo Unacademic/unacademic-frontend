@@ -3,5 +3,5 @@ steps:
   element: .logo
   position: bottom
 - text: This is the second step in the tour.
-  element: .btn
+  element: .sidebar
   position: right

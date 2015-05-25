@@ -12,6 +12,7 @@ class Sidebar extends React.Component {
     this.name = 'sidebar';
   }
 
+
   classes(){
     return classnames({
       [this.name]: true
@@ -26,11 +27,12 @@ class Sidebar extends React.Component {
     let { model, appState } = this.props;
     let { modes, levels } = appState;
     let level = levels.current;
+    console.log(this.classes());
 
     return (
       <section onDoubleClick={ this.toggleMode.bind(this) } className={ this.classes() }>
-        { level !== 'waypoints' && <Logo mode={ modes.current }/> }
-        { level === 'waypoints' && <LogoExtended mode={ modes.current }/> }
+        { level === 'introduction' && <LogoExtended mode={ modes.current }/> }
+        { level !== 'introduction' && <Logo mode={ modes.current }/> }
         { model && <ContentPanel context={ this.name } appState={ appState } model={ model }/> }
       </section>
     )
