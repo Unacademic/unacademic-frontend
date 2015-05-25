@@ -2,18 +2,28 @@
   padding: $baseUnit;
   user-select: none;
 
-  button, button:focus {
+  p, button, button:focus {
     font-family: NittyBold;
     outline: none;
     display: inline-block;
     font-size: rem-calc(22);
     line-height: rem-calc(30);
+    margin-bottom: rem-calc(10);
     padding: 0 $thirdUnit;
-    background-color: $baseColor;
-    color: $inverseColor;
     border: none;
   }
+
+  button, button:focus {
+    background-color: $baseColor;
+    color: $inverseColor;
+  }
+
+  p {
+    background-color: $inverseColor;
+    color: $baseColor;
+  }
 }
+
 
 .app-is-learn .logo {
   background-color: $learnColor;

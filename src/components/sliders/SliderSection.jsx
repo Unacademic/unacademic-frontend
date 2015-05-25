@@ -17,7 +17,8 @@ class SliderSection extends React.Component {
 
     return (
       <section className='sliders-container'>
-      { criteriaFields }
+        <h1>Criteria</h1>
+        { criteriaFields }
       </section>
     )
   }
