@@ -4,65 +4,65 @@ curator: Yeehaa
 summary: Learn the basics and relevance or coding
 
 description: |
-  While in theory, you could hardcode everything in HTML this becomes 
-  cumbersome quite rapidly. Computers are made to automate boring, difficult, 
-  error-prone, and repetitive tasks, so let's use that potential to the 
+  While in theory, you could hardcode everything in HTML this becomes
+  cumbersome quite rapidly. Computers are made to automate boring, difficult,
+  error-prone, and repetitive tasks, so let's use that potential to the
   fullest.
 
 checkpoints:
   - title: Climb Trees
     description: |
       The paperless office is an eternal promise that the computer has yet to
-      fulfill. Still, it has managed to save the forests in a different way. In 
+      fulfill. Still, it has managed to save the forests in a different way. In
       fact, tree-like structures are everywhere in programming. For instance, in
       the form of ASTs (Abstract Syntax Trees) and the branches you use in git.
 
-      When dealing with the web in general, and browsers in particular, the 
-      DOM (Document Object Model) is probably the most important tree that you 
-      will encounter. It is the underlying structure of all the different 
+      When dealing with the web in general, and browsers in particular, the
+      DOM (Document Object Model) is probably the most important tree that you
+      will encounter. It is the underlying structure of all the different
       elements and properties that a webpage consists of.
-    instructions: 
+    instructions:
       - |
         The easiest way to explore the DOM is through the developer console in
-        your browser. The console is also an invaluable tool while testing and 
+        your browser. The console is also an invaluable tool while testing and
         debugging your code, so take your time to familiarize yourself with i
     resources:
       - title: Chapter 13. The Document-Object-Model
-        author: Haverbeke, Marijn
+        author: Marijn Haverbeke
         url: http://eloquentjavascript.net/13_dom.html
       - title: Rhizome
-        author: Deleuze, Gilles and Felix Guattari. 
+        author: Gilles Deleuze and Felix Guattari.
         url: https://www.upress.umn.edu/book-division/books/a-thousand-plateaus
       - title: Discover Devtools (chapter 1 - 3)
         url: http://discover-devtools.codeschool.com/
       - title: Introduction to Chrome Developer Tools, Part One
-        author: Ladd, Seth
+        author: Seth Ladd
         url: http://www.html5rocks.com/en/tutorials/developertools/part1/
       - title: Chomsky Hierarchy
         url: http://en.wikipedia.org/wiki/Chomsky_hierarchy
 
   - title: Manipulate Documents
     description: |
-      CSS not only offers us a convenient way to style our documents, it 
-      also provides us with some great abstractions to query them. It is 
-      therefore not a coincident that we use many of the same abstractions when 
+      CSS not only offers us a convenient way to style our documents, it
+      also provides us with some great abstractions to query them. It is
+      therefore not a coincident that we use many of the same abstractions when
       we want to deal with documents programmatically.
 
-      While JavaScript has always offered interfaces to query and manipulate 
-      the DOM, dealing with incompatibilities between browsers used to be a 
+      While JavaScript has always offered interfaces to query and manipulate
+      the DOM, dealing with incompatibilities between browsers used to be a
       huge pain. So much so actually, that jQuery - a library that abstracts a
       lot of the differences between browsers behind a common interface - became
       the de facto standard to deal with HTML documents programmatically.
 
-      With the introduction of evergreen browsers, however, traversing 
-      and manipulating the DOM with plain javascript has actually become very 
+      With the introduction of evergreen browsers, however, traversing
+      and manipulating the DOM with plain javascript has actually become very
       simple. So let's go native!
     resources:
       - title: Evergreen Browsers
-        author: Eisenberg, Rob
+        author: Rob Eisenberg
         url: http://eisenbergeffect.bluespire.com/evergreen-browsers/
-      - title: Chapter 13. The Document-Object-Model' 
-        author: Haverbeke, Marijn
+      - title: Chapter 13. The Document-Object-Model'
+        author: Marijn Haverbeke
         url: http://eloquentjavascript.net/13_dom.html
       - title: JavaScript and the DOM
         notes: older, but basic still apply
@@ -72,49 +72,49 @@ checkpoints:
 
   - title: Make Templates
     description: |
-      Templating is another, and arguably better, way to solve the problem of 
-      writing the same markup over and over again. Since the template contains 
+      Templating is another, and arguably better, way to solve the problem of
+      writing the same markup over and over again. Since the template contains
       all the elements that stay the same from document from document, it allows
-      you to focus on the parts that change. These so-called variables then 
+      you to focus on the parts that change. These so-called variables then
       need to be injected into the templates.
 
-      Also, while you may appreciate this right now, t is important to 
+      Also, while you may appreciate this right now, t is important to
       notice that templates make it possible not to manipulate the DOM directly,
-      This greatly reduces the chance that you run into bugs - either your own, 
+      This greatly reduces the chance that you run into bugs - either your own,
       or those of others - and ensure a clearer separation of concerns.
 
-      There are many different solutions for templating available (erb, jade, 
-      handlebars, etc.) partly due to the fact that - until recently - this was 
-      not possible to do natively in HTML. 
+      There are many different solutions for templating available (erb, jade,
+      handlebars, etc.) partly due to the fact that - until recently - this was
+      not possible to do natively in HTML.
 
-      In the latest versions of the HTML specification, this has changed 
-      though. And the most recent iterations of browsers now all support 
+      In the latest versions of the HTML specification, this has changed
+      though. And the most recent iterations of browsers now all support
       templates. So, again, let's not use a proprietary solution but use a native
       alternative instead.
     resources:
       - title: HTML's New Template Tag. Standardizing Client-Side
-        author: Bidelman, Eric
+        author: Eric Bidelman
         url: http://www.html5rocks.com/en/tutorials/webcomponents/template/
       - title: HTML5 Web Component Fundamentals (chapter 2, templates)
-        author: House, Cory
+        author: Cory House
         url: http://www.pluralsight.com/courses/web-components-shadow-dom"
       - title: 'The Gutenberg Galaxy: The Making of Typographic Man'
-        author: McLuhan, Marshal
+        author: Marshall McLuhan
         url: https://www.goodreads.com/book/show/440463.The_Gutenberg_Galaxy
       - title: So you need a Template Engine
         url: http://garann.github.io/template-chooser/
 
   - title: Digging into Data
     description: |
-      A template without data is not worth much. Information, however, comes 
-      in many shapes and forms: texts, numbers, sounds, images, etc. In order to 
-      store, manipulate, and transmit this plethora of data, computer languages 
+      A template without data is not worth much. Information, however, comes
+      in many shapes and forms: texts, numbers, sounds, images, etc. In order to
+      store, manipulate, and transmit this plethora of data, computer languages
       differentiate between basic types. These types are called data structures.'
     instructions:
       - |
-        Familiarize yourself with the basic data structures in JavaScript: 
-        strings, booleans, numbers. If you are curious about more complex and 
-        exotic data structures have a look at the wikipedia list or go straight 
+        Familiarize yourself with the basic data structures in JavaScript:
+        strings, booleans, numbers. If you are curious about more complex and
+        exotic data structures have a look at the wikipedia list or go straight
         to haskell...
     resources:
       - title: List of Data Structures
@@ -124,28 +124,28 @@ checkpoints:
       - title: Codeschool - JavaScript Road Trip Part 1
         url: https://www.codeschool.com/courses/javascript-road-trip-part-1
       - title: Chapter 1. Values, Types, and Operator
-        author: Haverbeke, Marijn
+        author: Marijn Haverbeke
         url: http://eloquentjavascript.net/01_values.html
 
   - title: Repeat Yourself
     description: |
-      The final task for this section, is that you make a fork of this 
+      The final task for this section, is that you make a fork of this
       document. You can structure and style your document whichever way you like
       to. There are two restrictions, however.
 
       1. Your fork describes the next session - with the title *Practice Best Practices*
       2. Don't hardcode your data, use a template instead.
 
-      If you need inspiration for tasks and/or resources. You can have 
+      If you need inspiration for tasks and/or resources. You can have
       a look at the [syllabus](http://ast.codingthehumanities.com/)
-      of last year's of this course, or at the 
+      of last year's of this course, or at the
       [website](http://coding-the-humanities.github.io/unacademic_static/)
       of its Ba-Level counterpart.
 
     resources:
       - title: Loop Over querySelectorAll Matches
-        author: Coyer, Chris
+        author: Chris Coyer
         url: http://css-tricks.com/snippets/javascript/loop-queryselectorall-matches/
       - title: Code, or How You can Write Something Differently
-        author: Kittler, Friedrich.
+        author: Friedrich Kittler
         url: http://monoskop.org/File:Kittler_Friedrich_2008_Code_or_How_You_Can_Write_Something_Differently.pdf

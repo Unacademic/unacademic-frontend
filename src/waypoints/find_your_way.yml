@@ -4,18 +4,19 @@ curator: Reika Chavers
 summary: learn to navigate through Offcourse
 
 description: |
-  Do you have a hard time finding your way through the interface? We have minimised the interface design so that you can keep your focus on learning and curating. The core functionalities are limited to the ones you need: mode button, toolbar and the card stack. That’s all!
+  Do you have a hard time finding your way through the interface? We have minimised the interface design so that you can keep your focus on learning and curating. The core functionalities are limited to the ones you need: mode button, toolbar and the card stack. That's all!
 
 checkpoints:
   - title: Switch Cognitive Modes
     introduction: |
-      Learn more effectively by switching between two modes - learning and curating. Changing your perspective makes your learning more active, and your retention will surge. Because you’re switching cognitive modes, your understanding of a topic will be impressive.
+      You learn most effectively when you explain what you've learnt to someone else. Changing your perspective makes your learning more active. Switch between cognitive modes (learning & curating) on Offcourse by clicking the logo in the left upper corner.
 
     instructions:
-      - Have a look at the resources for in depth understanding
+      - Have a look at the resources for in depth understanding and explore switching modes by clicking the Offcourse logo in the left upper corner
     resources:
       - author: Meryl Reis Louis and Robert I Sutton
-        title: Switching Cognitive Gears, From Habits of Mind to Active Thinking
+        title: |
+        Switching Cognitive Gears, From Habits of Mind to Active Thinking
         url: "http://hum.sagepub.com/content/44/1/55"
         clarity: 4
         difficulty: 5
@@ -29,7 +30,8 @@ checkpoints:
         type: text
         notes: The full article is not available to everybody
       - author:
-        title: Guideline nine, multiple modes
+        title: |
+        Guideline nine, multiple modes
         url: "http://www.guidelinesonlearning.com/guideline-nine"
         clarity: 4
         difficulty: 1
@@ -41,7 +43,8 @@ checkpoints:
           - learn
           - modes
         type: text
-        notes: If you have extra time, scan through the other guidelines.
+        notes: |
+        If you have extra time, scan through the other guidelines.
       - author: Kimm Fesenmaier
         title: Switching on One-shot Learning in the Brain
         url: "https://www.caltech.edu/news/switching-one-shot-learning-brain-46629"
@@ -59,7 +62,7 @@ checkpoints:
         notes: Especially the fourth paragraph is useful.
   - title: Tool the bar
     introduction: |
-      To keep all the important information in the same place, the toolbar is your anchorpoint. The toolbar shows you where you are in the interface. For instance when you start learning a waypoint, the waypoint moves to the toolbar and all the checkpoint are visible on the right.
+      On the left you see your toolbar. Hereâ€™s your information. Itâ€™s your legend. At the top are your breadcrumbs, which show you where you are in the interface. You can use them to navigate. Try tooling your bar!
 
     instructions:
       - Consume the resources for inspiration
@@ -96,11 +99,48 @@ checkpoints:
         notes: Especially the first 20 minutes are useful.
   - title: Playing Cards
     introduction: |
-      The use of a card interface is to ressemble physiscal material. This helps structuring information, for instance what information belongs together.
+      The use of a card interface is to resemble physical material. This helps structuring information, for instance what information belongs together. Organize your learning resources on cards on Offcourse.
 
     instructions:
-      - Go through the resource to get a better understanding of design principles
+      - Understand and contextualize material design principles and cards and organize your learning resources on cards in Offcourse
+
     resources:
+      - author:
+        title: User Interface Design Basics
+        url: http://www.usability.gov/what-and-why/user-interface-design.html
+        clarity: 5
+        difficulty: 2
+        up_to_date: 4
+        pertinence: 5
+        enjoyment: 4
+      - - author: Mark Wilson
+        title: How Google Unified its Products with a Simple Index Card
+        url: http://www.fastcodesign.com/1672605/how-google-unified-its-products-with-a-simple-index-card
+        clarity: 4
+        difficulty: 2
+        up_to_date: 4
+        pertinence: 4
+        enjoyment: 4
+        tags:
+          - cards
+          - google
+          - material design
+          - design language
+          - interface
+      - author: -
+        title: Components > Cards
+        url: http://www.google.com/design/spec/components/cards.html#cards-actions
+        clarity: 5
+        difficulty: 1
+        up_to_date: 4
+        pertinence: 5
+        enjoyment: 5
+        time_to_digest: 10 min
+        tags:
+          - material design
+          - google
+          - interface
+          - cards
       - author:
         title: Material Design
         url: "http://www.google.com/design/spec/material-design/introduction.html"
@@ -115,4 +155,4 @@ checkpoints:
           - google
           - interface
         type: text
-        notes: Google has clearly defined their design principles in this easy spec.
+        notes: Google has clearly defined their design principles in this easy spec

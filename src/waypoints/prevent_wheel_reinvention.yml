@@ -1,12 +1,12 @@
 title: Prevent Wheel Reinvention
 curator: Reika Chavers
 
-summary: learn to curate like a boss in Unacademic
+summary: Master curation at Offcourse and become an expert
 
 description: |
   How many wheels have you had to reinvent already? Our guess would be 'too
   many'. Somehow, we keep creating new textbooks and courses, but most
-  information is out there already. You just need a set up that organizes the
+  information is out there already. You just need a set up that organizes
   this knowledge in one place, with just the right amount of structure. You
   don’t want to be told what to learn, but you don’t want to figure it out
   from scratch either. So gather those interesting blog posts, podcasts, or
@@ -14,14 +14,12 @@ description: |
 
 checkpoints:
   - title: Structure your Story
-    description: |
-      Learning and curation on unacademic is built around waypoints. Think of
-      them as narratives. And like every good story, they need a structure: a
-      beginning, an end, and several other exciting events in between them.
-
-      Events in unacademic are called checkpoints. As a curator, you use them
-      to contextualize the resources that you want to share with others.Learners
-      use checkpoints to track their progress within your story.
+    introduction: |
+      Learning and curation at Offcourse are built around waypoints. Think of
+      them as narratives. Like every good story, they need a structure: a
+      beginning, an end, and exciting events. At Offcourse events are called
+      checkpoints. You use them to contextualize the resources you want to share.
+      Learners use checkpoints to track their progress within your story.
 
     instructions:
       - Read the resources for inspiration and understanding
@@ -39,7 +37,7 @@ checkpoints:
           - story telling
           - creative thinking
         type: text
-        notes: People tend to be more motivated in their learning when its a story so create and curate your waypoints accordingly
+        notes: People tend to be more motivated in their learning with a story so create and curate your waypoints accordingly
       - author: Connie Malamed
         title: Why You Need To Use Storytelling For Learning
         url: "http://theelearningcoach.com/elearning2-0/why-you-need-to-use-storytelling-for-learning/"
@@ -55,8 +53,10 @@ checkpoints:
         type: text
         notes: The embedded movie is very entertaining
   - title: Find References
-    description: |
-      Because we do not believe in reinventing the wheel and because there is already so much good content out there, explain your subject or theme via these references.
+    introduction: |
+      Because we do not believe in reinventing the wheel
+      and because there is already so much good content out there,
+      explain and analyse your subject or theme through references.
     instructions:
       - Have a look at the recources to see some examples
     resources:
@@ -114,10 +114,13 @@ checkpoints:
         tags:
           - internet archive
         type: tool
-        notes: This tool let's you view websites of the past
+        notes: This tool lets you view websites of the past
   - title: Explain the Relevance
-    description: |
-      Some references are not enough to get to an understanding of a theme or subject, so clearly explain why it is relevant and add introductions and highlight certain critical aspects of the reference.
+    introduction: |
+      Some references are not enough to get an understanding
+      of a theme or subject, so elaborate on why they might be relevant,
+      add introductions and highlight certain critical aspects
+      of the reference.
     instructions:
       - Watch the resources for an explanation
     resources:
@@ -134,7 +137,7 @@ checkpoints:
           - relevance
           - content
         type: video
-        notes: If you have any extra time look at the related video's
+        notes: If you have any extra time look at the related videos
       - author: Gerd Leonhard
         title: The Relevance Of Context In Content Curation
         url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
@@ -148,7 +151,7 @@ checkpoints:
           - story telling
           - creative thinking
         type: text
-        notes: People tend to be more motivated in their learning when its a story so create and curate your waypoints accordingly.
+        notes: People tend to be more motivated in their learning with a story so create and curate your waypoints accordingly.
       - author: Mark Layne
         title: What is Content Curation
         url: "https://www.youtube.com/watch?v=MdMH5lT31jk"
@@ -175,10 +178,12 @@ checkpoints:
           - content curation
           - adding value
         type: video
-        notes: The Why to adding context is well defined
-  - title: Critically Curate
+        notes: The reason to why add context is well defined
+  - title: Be Critical and Curate
     description: |
-      Always critically curate content for instance check whom you are referencing to and whom the associated institutions are to maintain the high quality we promote.
+      Always curate content critically. For instance, do not forget to check
+      whom you are referencing to, and which are the associated
+      institutions in order to maintain the high quality we promote.
     instructions:
       - Read the resources for extensive understanding
     resources:
@@ -223,11 +228,11 @@ checkpoints:
           - attention
           - content
         type: text
-        notes: This article might seem a long read but it's worth it
+        notes: This article might seem a long read but it is worth it
   - title: Now You Are a Real Curator
     introduction: |
        The role of the curator has changed over time. Our
-      notion of a curator is someone how helps you.
+      notion of a curator is someone who helps you.
     instructions:
       - Read the reference.
     resources:
