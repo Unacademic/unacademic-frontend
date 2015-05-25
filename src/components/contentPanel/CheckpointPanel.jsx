@@ -9,7 +9,7 @@ import ResourceList from './ResourceList.jsx'
 
 let renderer = new marked.Renderer();
 
-class CheckpointSection extends React.Component {
+class CheckpointPanel extends React.Component {
 
   constructor(props){
     super(props);
@@ -61,7 +61,7 @@ class CheckpointSection extends React.Component {
 
     let rendereredDescription = {__html: marked(description, { renderer })};
 
-    let descriptionSection = ()=> {
+    let descriptionPanel = ()=> {
       return (
         <section className="description">
           <h1>Description</h1>
@@ -70,7 +70,7 @@ class CheckpointSection extends React.Component {
       )
     };
 
-    let instructionsSection = ()=> {
+    let instructionsPanel = ()=> {
       return (
         <section>
           <h1>Instructions</h1>
@@ -90,8 +90,8 @@ class CheckpointSection extends React.Component {
           <hgroup>
             <h1 className="title editable">{ title }</h1>
           </hgroup>
-          { context === 'sidebar' && descriptionSection() }
-          { context === 'sidebar' && instructionsSection() }
+          { context === 'sidebar' && descriptionPanel() }
+          { context === 'sidebar' && instructionsPanel() }
           { context === 'card' && <ResourceList resources={ resources } /> }
         </section>
       </div>
@@ -99,8 +99,8 @@ class CheckpointSection extends React.Component {
   }
 };
 
-CheckpointSection.propTypes = {
+CheckpointPanel.propTypes = {
   model: React.PropTypes.object
 }
 
-export default CheckpointSection;
+export default CheckpointPanel;

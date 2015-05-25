@@ -1,8 +1,8 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import ResourceSection from '../../../src/components/contentPanel/ResourceSection.jsx';
+import ResourcePanel from '../../../src/components/contentPanel/ResourcePanel.jsx';
 import Actions from '../../../src/actions/index.js';
 
-describe("Resource Section", () => {
+describe("Resource Panel", () => {
   let element;
   let model;
 
@@ -13,7 +13,7 @@ describe("Resource Section", () => {
     [model] = checkpoint.resources;
   })
 
-  describe("model type is checkpoint", () => {
+  describe("context is sidebar", () => {
     beforeEach(() => {
       element = renderResource(model, 'sidebar');
     })
@@ -42,11 +42,22 @@ describe("Resource Section", () => {
       expect(Actions.updateCriteria).to.be.calledWith({ resource, property })
     });
   });
+
+  describe("context is cards", () => {
+    beforeEach(() => {
+      element = renderResource(model, 'cards');
+    })
+
+    it("does not render the sliders", () => {
+      let query = element.querySelectorAll('.sliders-container');
+      expect(query.length).to.equal(0);
+    });
+  });
 });
 
 function renderResource(model, context){
   let container = TestUtils.renderIntoDocument(
-    <ResourceSection context={ context } model={ model }/>
+    <ResourcePanel context={ context } model={ model }/>
   );
 
   let element = React.findDOMNode(container);

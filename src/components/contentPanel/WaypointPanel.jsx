@@ -1,16 +1,15 @@
 import React from 'react';
-import marked from 'marked';
 import classnames from 'classnames';
 
 import WaypointMap from '../maps/WaypointMap.jsx';
 import Editable from '../editable/Editable.jsx';
 import TodoList from '../todoList/TodoList.jsx';
 
+import DescriptionSection from './sections/DescriptionSection.jsx';
+
 import Actions from '../../actions/index';
 
-let renderer = new marked.Renderer();
-
-class WaypointSection extends React.Component {
+class WaypointPanel extends React.Component {
   constructor(props){
     super(props);
     this.name = 'panel';
@@ -45,16 +44,6 @@ class WaypointSection extends React.Component {
     let { mode, model, level, context } = this.props;
     let { id, title, image, curator, description, summary, checkpoints } = model;
     let isEditing = mode === 'curate';
-    let rendereredDescription = {__html: marked(description, { renderer })};
-
-    let descriptionSection = ()=> {
-      return (
-        <section className="description">
-          <h1>Description</h1>
-          <div className="editable" dangerouslySetInnerHTML={ rendereredDescription }></div>
-        </section>
-      )
-    };
 
     return (
       <section className={ this.classes() }>
@@ -75,7 +64,7 @@ class WaypointSection extends React.Component {
             <h1>Summary</h1>
             <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
           </section>
-          { context === 'sidebar' && descriptionSection() }
+          { context === 'sidebar' && <DescriptionSection description={ description }/> }
           { context === 'card' && <TodoList title={ 'Checkpoints' }
               handleHover={ this.handleHover.bind(this) }
               handleComplete={ this.handleComplete.bind(this) }
@@ -86,10 +75,10 @@ class WaypointSection extends React.Component {
   }
 };
 
-WaypointSection.propTypes = {
+WaypointPanel.propTypes = {
   model: React.PropTypes.object,
   mode: React.PropTypes.string,
   level: React.PropTypes.string
 }
 
-export default WaypointSection;
+export default WaypointPanel;

@@ -6,7 +6,7 @@ import Actions from '../../actions/index';
 import SliderSection from '../sliders/SliderSection.jsx';
 import ResourceMap from '../maps/ResourceMap.jsx';
 
-class ResourceSection extends React.Component {
+class ResourcePanel extends React.Component {
 
   constructor(props){
     super(props);
@@ -50,9 +50,9 @@ class ResourceSection extends React.Component {
   }
 };
 
-ResourceSection.propTypes = {
+ResourcePanel.propTypes = {
   model: React.PropTypes.object,
   context: React.PropTypes.string
 }
 
-export default ResourceSection;
+export default ResourcePanel;
