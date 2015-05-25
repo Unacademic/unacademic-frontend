@@ -2,10 +2,8 @@ import axios from 'axios';
 import R from 'ramda';
 import _ from 'lodash';
 import Waypoint from '../models/Waypoint';
-import curate from '../waypoints/how_to_curate.yml';
-curate.id = 1;
 import dwell from '../waypoints/learn_to_dwell.yml';
-dwell.id = 2;
+dwell.id = 1;
 
 class API {
 
@@ -35,7 +33,7 @@ class API {
   }
 
   _getAll(){
-    let apiData = [curate, dwell];
+    let apiData = [dwell];
 
     // let url = `${this.baseUrl}/waypoints.json`;
 
