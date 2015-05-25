@@ -8,9 +8,11 @@ class Viewer extends React.Component {
     let iframe_able = true;
 
     if(data.content === null)
+
       if(data.media.hasOwnProperty('html')) {
         return data.media.html;
       }
+
       else {
         let https = 'https'
         if(data.url.substring(0, https.length) === https || !iframe_able) {

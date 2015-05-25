@@ -42,7 +42,7 @@ checkpoints:
       - author:
           - Sandra Y. OkitaDaniel
           - L. Schwartz
-        title: 'Learning by Teaching Human Pupils and Teachable Agents: The Importance of Recursive Feedback'
+        title: Learning by Teaching Human Pupils and Teachable Agents
         url: http://aaalab.stanford.edu/papers/Learning_by_Teaching_Human_Pupils_and_Teachable_Agents.pdf
         criteria:
           clarity: 2
