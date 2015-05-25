@@ -69,21 +69,27 @@ textarea {
   }
 }
 
-@media (max-height: 768px) {
+@media (max-height: 600px) {
  section.app {
     display: none;
   }
 }
 
-@media (min-height: 768px) {
+@media (min-height: 600px) {
   html {
     font-size: 10px;
   }
 }
 
-@media (min-height: 900px) {
+@media (min-height: 800px) {
   html {
     font-size: 12px;
+  }
+}
+
+@media (min-height: 900px) {
+  html {
+    font-size: 13px;
   }
 }
 

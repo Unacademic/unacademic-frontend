@@ -43,7 +43,7 @@ class CheckpointPanel extends React.Component {
 
   render() {
     let { model, context } = this.props;
-    let { title, highlight, description, instructions, resources, waypoint } = model;
+    let { title, highlight, introduction, instructions, resources, waypoint } = model;
     let type = model.constructor.name.toLowerCase();
 
     let instructionsPanel = ()=> {
@@ -70,7 +70,7 @@ class CheckpointPanel extends React.Component {
             <h1 className="title editable">{ title }</h1>
           </hgroup>
 
-          { context === 'sidebar' && <DescriptionSection description={ description }/> }
+          { context === 'sidebar' && <DescriptionSection description={ introduction }/> }
           { context === 'sidebar' && instructionsPanel() }
           { context === 'card' && <ResourceList resources={ resources } /> }
         </section>
