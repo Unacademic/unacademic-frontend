@@ -62,6 +62,41 @@ textarea {
   width: 100%;
 }
 
-html {
-  font-size: 10px;
+
+@media (orientation: portrait) { 
+ section.app {
+    display: none;
+  }
 }
+
+@media (max-height: 768px) {
+ section.app {
+    display: none;
+  }
+}
+
+@media (min-height: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (min-height: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-height: 1000px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
