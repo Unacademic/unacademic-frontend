@@ -27,7 +27,6 @@ class Sidebar extends React.Component {
     let { model, appState } = this.props;
     let { modes, levels } = appState;
     let level = levels.current;
-    console.log(this.classes());
 
     return (
       <section onDoubleClick={ this.toggleMode.bind(this) } className={ this.classes() }>

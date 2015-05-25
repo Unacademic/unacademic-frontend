@@ -32,8 +32,7 @@ class ResourcePanel extends React.Component {
     let { context, model } = this.props;
     let { title, author, url, notes, criteria, tags, time_to_digest } = model;
     let type = model.constructor.name.toLowerCase();
-    let tagBlocks = R.map((tag) => <span className="tag">{ _.capitalize(tag) }</span>, tags);
-    console.log(tagBlocks);
+    let tagBlocks = R.mapIndexed((tag, index) => <span key={ index } className="tag">{ _.capitalize(tag) }</span>, tags);
 
     return (
       <section className={ this.classes() }>
