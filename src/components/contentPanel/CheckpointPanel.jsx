@@ -83,7 +83,7 @@ class CheckpointPanel extends React.Component {
 
     return (
       <div className={ this.classes() }>
-        <section className={ `${this.name}_header` }>
+        <section className={ `step_2 ${this.name}_header` }>
           <CheckpointMap handleHover={ this.handleHover.bind(this) } handleComplete={ this.handleComplete.bind(this, null) } model={ model }/>
         </section>
         <section className={ `${this.name}_main` }>

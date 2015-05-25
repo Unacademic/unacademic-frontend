@@ -47,8 +47,8 @@ class WaypointPanel extends React.Component {
 
     return (
       <section className={ this.classes() }>
-        <section className={ `${this.name}_header` }>
-          <WaypointMap
+        <section className={ `step_1 ${this.name}_header` }>
+        <WaypointMap
             handleHover={ this.handleHover.bind(this) }
             handleComplete={ this.handleComplete.bind(this) }
             model={ model }/>
