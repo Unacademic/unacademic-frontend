@@ -24,7 +24,7 @@ describe("ResourceList", () => {
     });
 
     it("has a list of resource items", () => {
-      let query = element.querySelectorAll('.resourcelist_item');
+      let query = element.querySelectorAll('.resource_item');
       expect(query.length).to.equal(2);
     });
   });

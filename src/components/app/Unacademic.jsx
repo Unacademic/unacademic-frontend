@@ -1,52 +1,59 @@
 import React from 'react';
+import classnames from 'classnames';
+
 import Sidebar from '../sidebar/Sidebar.jsx';
-import Main from '../main/Main.jsx';
+import BreadCrumbs from '../breadcrumbs/BreadCrumbs.jsx';
+import LoginButton from '../authentication/LoginButton.jsx';
+import Cards from '../cards/Cards.jsx';
+import Viewer from '../viewer/Viewer.jsx';
 
-var TourGuideMixin = require('react-tour-guide').Mixin;
+class Unacademic extends React.Component{
 
-var tour = {
-  startIndex: 0,
-  scrollToSteps: true,
-  steps: [
-    {
-      text: 'Explore a Waypoint- our construct for guided learning!',
-      element:  '.btn',
-      position: 'bottom-left'
-    },
-    {
-      text: "Here's the Waypoint you just clicked. Here in the Sidebar, you'll always find relevant information for the current level you're on!",
-      element: '.title',
-      position: 'bottom-right'
-    },
-    {
-      text: "A Waypoint is comprised of Checkpoints, made to break the learning into focused, digestable sections.",
-      element: '.btn',
-      position: 'left'
-    }
-  ]
-};
-var cb = function() {
-  console.log('User has completed tour!');
-};
+  constructor(props){
+    super(props);
+    this.name = 'app';
+  }
 
-var Unacademic = React.createClass({
+  classes(){
+    let { levels, modes } = this.props.appState;
+    let levelClass = `${this.name}-is-${levels.current}`;
+    let modeClass = `${this.name}-is-${modes.current}`;
 
-  mixins: [TourGuideMixin(tour, cb)],
+    return classnames({
+      [this.name]: true,
+      [levelClass]: levels.current,
+      [modeClass]: modes.current
+    });
+  }
 
-  render: function(){
+  render() {
     let { appState, viewModel } = this.props;
-    let currentLevel = appState.levels.current;
-    let currentMode = appState.modes.current;
-    let { model, collection, url, data } = viewModel;
-    let classes = `layout-app layout-app-is-${currentLevel} layout-app-is-${currentMode}`;
+    let { levels, modes, user } = appState;
+    let { model, collection, data } = viewModel;
 
-      return (
-        <section className={ classes }>
+    return (
+      <section className={ this.classes() }>
+        <section className="layout-sidebar layout-sidebar-left">
           <Sidebar model={ model } appState={ appState }/>
-          <Main levels={ appState.levels } collection={ collection } data={ data } />
         </section>
-      )
-    }
-});
+        <section className="layout-main">
+          <section className="layout-topbar">
+            <BreadCrumbs levels={ levels }></BreadCrumbs>
+            <LoginButton userId={ user }/>
+          </section>
+          <section className="layout-content">
+            { collection && <Cards collection={ collection } className="cards" /> }
+            { data && <Viewer data={ data } /> }
+          </section>
+        </section>
+      </section>
+    )
+  }
+};
 
-module.exports = Unacademic;
+Unacademic.propTypes = {
+  appState: React.PropTypes.object.isRequired,
+  viewModel: React.PropTypes.object
+}
+
+export default Unacademic;

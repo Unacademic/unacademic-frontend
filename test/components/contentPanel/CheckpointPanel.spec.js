@@ -1,8 +1,8 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import CheckpointSection from '../../../src/components/contentPanel/CheckpointSection.jsx';
+import CheckpointPanel from '../../../src/components/contentPanel/CheckpointPanel.jsx';
 import Actions from '../../../src/actions/index.js';
 
-describe("Checkpoint Section", () => {
+describe("Checkpoint Panel", () => {
   let element;
   let model;
 
@@ -18,7 +18,7 @@ describe("Checkpoint Section", () => {
     })
 
     it("has the correct classes", () => {
-      let mainPanel = element.querySelectorAll('.panel-content_main');
+      let mainPanel = element.querySelectorAll('.panel_main');
       expect(mainPanel.length).to.equal(1);
     });
 
@@ -45,7 +45,7 @@ describe("Checkpoint Section", () => {
 
 function renderCheckpoint(model, context){
   let container = TestUtils.renderIntoDocument(
-    <CheckpointSection context={ context } model={ model }/>
+    <CheckpointPanel context={ context } model={ model }/>
   );
 
   let element = React.findDOMNode(container);

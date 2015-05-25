@@ -2,7 +2,7 @@
   display: block;
 }
 
-.breadcrumb {
+.breadcrumb, .login {
   display: inline-block;
   font-family: NittyNormal;
   font-weight: 300;
@@ -15,6 +15,12 @@
 }
 
 .breadcrumb.breadcrumb-is-active {
+  background-color: $baseColor;
+  color: $inverseColor;
+}
+
+
+.login.login-is-active {
   background-color: $baseColor;
   color: $inverseColor;
 }

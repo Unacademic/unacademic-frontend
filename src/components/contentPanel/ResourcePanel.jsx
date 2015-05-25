@@ -1,11 +1,17 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import Actions from '../../actions/index';
 
 import SliderSection from '../sliders/SliderSection.jsx';
 import ResourceMap from '../maps/ResourceMap.jsx';
 
-class ResourceSection extends React.Component {
+class ResourcePanel extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.name = 'panel';
+  }
 
   updateCriteria(fieldName, value) {
     let { id } = this.props.model;
@@ -14,17 +20,23 @@ class ResourceSection extends React.Component {
     Actions.updateCriteria({ resource, property });
   }
 
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
+  }
+
   render() {
     let { context, model } = this.props;
     let { title, author, url, notes, criteria } = model;
     let type = model.constructor.name.toLowerCase();
 
     return (
-      <div>
-        <section className="panel-content_header">
+      <section className={ this.classes() }>
+        <section className={ `${this.name}_header` }>
           <ResourceMap criteria={ criteria }/>
         </section>
-        <section className="panel-content_main">
+        <section className={ `${this.name}_main` }>
           <hgroup>
             <h1 className="title">{ title }</h1>
           </hgroup>
@@ -33,14 +45,14 @@ class ResourceSection extends React.Component {
               model={ model }
               criteria={ criteria }/> }
         </section>
-      </div>
+        </section>
     )
   }
 };
 
-ResourceSection.propTypes = {
+ResourcePanel.propTypes = {
   model: React.PropTypes.object,
   context: React.PropTypes.string
 }
 
-export default ResourceSection;
+export default ResourcePanel;

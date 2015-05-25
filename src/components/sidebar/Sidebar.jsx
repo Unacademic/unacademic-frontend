@@ -1,10 +1,21 @@
 import React from 'react';
+import classnames from 'classnames';
+
+import Logo from '../logo/Logo.jsx';
+import ContentPanel from '../contentPanel/ContentPanel.jsx';
 import Actions from '../../actions/index.js';
 
-import ContentPanel from '../contentPanel/ContentPanel.jsx';
-import Logo from '../logo/Logo.jsx';
-
 class Sidebar extends React.Component {
+  constructor(props){
+    super(props);
+    this.name = 'sidebar';
+  }
+
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
+  }
 
   toggleMode(){
     Actions.toggleMode();
@@ -15,11 +26,9 @@ class Sidebar extends React.Component {
     let { modes, levels } = appState;
 
     return (
-      <section onDoubleClick={ this.toggleMode.bind(this) }  className="layout-sidebar">
-        <section className="sidebar">
-          <Logo modes={ modes }/>
-          { model && <ContentPanel context="sidebar"  appState={ appState } model={ model }/> }
-        </section>
+      <section onDoubleClick={ this.toggleMode.bind(this) } className={ this.classes() }>
+        <Logo mode={ modes.current }/>
+        { model && <ContentPanel context={ this.name } appState={ appState } model={ model }/> }
       </section>
     )
   }

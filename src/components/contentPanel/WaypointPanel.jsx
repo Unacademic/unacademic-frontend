@@ -1,15 +1,19 @@
 import React from 'react';
-import marked from 'marked';
+import classnames from 'classnames';
 
 import WaypointMap from '../maps/WaypointMap.jsx';
 import Editable from '../editable/Editable.jsx';
 import TodoList from '../todoList/TodoList.jsx';
 
+import DescriptionSection from './sections/DescriptionSection.jsx';
+
 import Actions from '../../actions/index';
 
-let renderer = new marked.Renderer();
-
-class WaypointSection extends React.Component {
+class WaypointPanel extends React.Component {
+  constructor(props){
+    super(props);
+    this.name = 'panel';
+  }
 
   handleComplete(item){
     let selection = this._getSelection(item);
@@ -30,30 +34,26 @@ class WaypointSection extends React.Component {
     return { waypoint, checkpoint };
   }
 
+  classes(){
+    return classnames({
+      [this.name]: true
+    });
+  }
+
   render() {
     let { mode, model, level, context } = this.props;
     let { id, title, image, curator, description, summary, checkpoints } = model;
     let isEditing = mode === 'curate';
-    let rendereredDescription = {__html: marked(description, { renderer })};
-
-    let descriptionSection = ()=> {
-      return (
-        <section className="description">
-          <h1>Description</h1>
-          <div className="editable" dangerouslySetInnerHTML={ rendereredDescription }></div>
-        </section>
-      )
-    };
 
     return (
-      <div>
-        <section className="panel-content_header">
+      <section className={ this.classes() }>
+        <section className={ `${this.name}_header` }>
           <WaypointMap
             handleHover={ this.handleHover.bind(this) }
             handleComplete={ this.handleComplete.bind(this) }
             model={ model }/>
         </section>
-        <section className="panel-content_main">
+        <section className={ `${this.name}_main` }>
           <hgroup>
             <Editable fieldName={ 'title' } value={ title } editing={ isEditing }/>
           </hgroup>
@@ -64,22 +64,21 @@ class WaypointSection extends React.Component {
             <h1>Summary</h1>
             <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
           </section>
-          { context === 'sidebar' && descriptionSection() }
-          { context === 'card' && <TodoList
-              title={ 'Checkpoints' }
+          { context === 'sidebar' && <DescriptionSection description={ description }/> }
+          { context === 'card' && <TodoList title={ 'Checkpoints' }
               handleHover={ this.handleHover.bind(this) }
               handleComplete={ this.handleComplete.bind(this) }
               collection={ checkpoints }/> }
         </section>
-      </div>
+      </section>
     )
   }
 };
 
-WaypointSection.propTypes = {
+WaypointPanel.propTypes = {
   model: React.PropTypes.object,
   mode: React.PropTypes.string,
   level: React.PropTypes.string
 }
 
-export default WaypointSection;
+export default WaypointPanel;

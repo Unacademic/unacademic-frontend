@@ -26,24 +26,6 @@
   vertical-align: center
 }
 
-.layout-app-is-learn .checkbox-is-complete {
-  background-color: $learnColor;
-  border: rem-calc(2px) solid $inverseColor;
-}
-
-.layout-app-is-curate .checkbox-is-complete {
-  background-color: $curateColor;
-  border: rem-calc(2px) solid $inverseColor;
-}
-
-.layout-app-is-curate .todolist_item-is-highlighted {
-  background-color: $curateColor;
-  color: $inverseColor;
-}
-
-.layout-app-is-learn .todolist_item-is-highlighted {
-  background-color: $learnColor;
-}
 
 .resource_item {
   height: $baseUnit * 2;
@@ -65,4 +47,23 @@
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+}
+
+.app-is-learn .checkbox-is-complete {
+  background-color: $learnColor;
+  border: rem-calc(2px) solid $inverseColor;
+}
+
+.app-is-curate .checkbox-is-complete {
+  background-color: $curateColor;
+  border: rem-calc(2px) solid $inverseColor;
+}
+
+.app-is-curate .todolist_item-is-highlighted {
+  background-color: $curateColor;
+  color: $inverseColor;
+}
+
+.app-is-learn .todolist_item-is-highlighted {
+  background-color: $learnColor;
 }

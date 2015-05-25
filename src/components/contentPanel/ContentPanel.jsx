@@ -1,12 +1,24 @@
 import React from 'react';
-import R from 'ramda';
-import _ from 'lodash';
-import WaypointSection from './WaypointSection.jsx';
-import CheckpointSection from './CheckpointSection.jsx';
-import ResourceSection from './ResourceSection.jsx';
+import classnames from 'classnames';
+
+import WaypointPanel from './WaypointPanel.jsx';
+import CheckpointPanel from './CheckpointPanel.jsx';
+import ResourcePanel from './ResourcePanel.jsx';
 import Actions from '../../actions/index.js';
 
 class ContentPanel extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.name = 'container';
+  }
+
+  classes(){
+    let extendedName = `${this.name}-content`;
+    return classnames({
+      [this.name]: true
+    });
+  }
 
   render() {
     let { model, appState, context } = this.props;
@@ -22,18 +34,13 @@ class ContentPanel extends React.Component {
       level = type === 'object' ? 'waypoints' : type;
     }
 
-    let classes = ['panel', 'panel-content', 'panel-top', `panel-is-${level}`].join(' ');
-
-    if(level === 'waypoints'){
-      return <section className={ classes }></section>
-    }
-
     return (
-      <section className={ classes }>
-        { level === 'waypoint' && <WaypointSection context={ context } level={ level } mode={ mode } model={ model }/> }
-        { level === 'checkpoint' && <CheckpointSection context={ context } model={ model }/> }
-        { level === 'resource' && <ResourceSection context={ context } model={ model }/> }
-      </section>
+      <div>
+        { level === 'waypoints' && null }
+        { level === 'waypoint' && <WaypointPanel context={ context } level={ level } mode={ mode } model={ model }/> }
+        { level === 'checkpoint' && <CheckpointPanel context={ context } model={ model }/> }
+        { level === 'resource' && <ResourcePanel context={ context } model={ model }/> }
+      </div>
     )
   }
 };

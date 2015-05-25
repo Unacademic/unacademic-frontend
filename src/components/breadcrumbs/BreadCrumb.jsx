@@ -1,18 +1,39 @@
 import React from 'react';
 import Actions from '../../actions/index';
+import classnames from 'classnames';
 
 class BreadCrumb extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.name = 'breadcrumb';
+  }
 
   handleClick(selection){
     Actions.setLevel(selection);
   }
 
+  classes(){
+    let { level, current } = this.props;
+    let [ type ] = level;
+    let isActive = type === current;
+    let activeClass = `${this.name}-is-active`;
+
+    return classnames({
+      [this.name]: true,
+      [activeClass]: isActive
+    });
+  }
+
   render() {
-    let { level, currentMode } = this.props;
+    let { level, current } = this.props;
     let [ type, {id, title} ] = level;
     let selection = { type, id, title };
-    let classes = `breadcrumb ${ type === currentMode && 'breadcrumb-is-active'}`;
-    return <li onClick={ this.handleClick.bind(this, selection) } className={ classes }>{ title || 'Home' }</li>
+    return (
+      <li onClick={ this.handleClick.bind(this, selection) } className={ this.classes() }>
+        { title || 'Home' }
+      </li>
+    )
   }
 }
 

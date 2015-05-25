@@ -5,7 +5,7 @@ class ResourceListItem extends React.Component {
   render() {
     let { key, title } = this.props;
     return (
-      <li key={ key } className="resourcelist_item">
+      <li key={ key } className="resource_item">
         <p><span className="checkbox"></span>{ title }</p>
       </li>
     )

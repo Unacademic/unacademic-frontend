@@ -6,7 +6,7 @@ class Radar extends React.Component {
   getCurve(curve, i) {
     var path = curve.polygon.path.print();
     return (
-      <path key={ i } d={ path } fill="#E5CF39" strokeWidth="0" stroke="grey"/>
+      <path key={ i } d={ path } fill="#E5CF39" strokeWidth="1"/>
     );
   }
 
@@ -17,7 +17,6 @@ class Radar extends React.Component {
     );
   }
 
-
   render() {
     let { data, max, r, rings, x, y  } = this.props;
     r = r - 15;
@@ -25,10 +24,10 @@ class Radar extends React.Component {
 
     return (
       <g className="radar" fill="none" stroke="3">
-      { paths.rings.map(this.getRing.bind(this)) }
-      <g opacity="1">
-      { paths.curves.map(this.getCurve.bind(this)) }
-      </g>
+        { paths.rings.map(this.getRing.bind(this)) }
+        <g opacity="1">
+          { paths.curves.map(this.getCurve.bind(this)) }
+        </g>
       </g>
     );
   }

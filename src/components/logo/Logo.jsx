@@ -1,16 +1,29 @@
 import React from 'react';
-import Actions from '../../actions/index';
+import classnames from 'classnames';
 
 class Logo extends React.Component {
+  constructor(props){
+    super(props);
+    this.name = 'logo';
+  }
+
+  classes(){
+    let { mode } = this.props;
+    let classes = ['logo', `logo-is-${ mode }`].join(' ');
+    let modeClass = `${this.name}-is-${mode}`;
+
+    return classnames({
+      [this.name]: true,
+      [modeClass]: mode
+    });
+  }
 
   render() {
-    let { learn, curate } = this.props.modes;
-    let mode = learn ? 'learn' : 'curate';
-    let classes = ['logo', `logo-is-${ mode }`].join(' ');
-    let title = learn ? '_Offcourse' : 'Offcourse_';
+    let { mode } = this.props;
+    let title = mode === 'learn' ? '_Offcourse' : 'Offcourse_';
 
     return (
-      <section className={ classes }>
+      <section className={ this.classes() }>
         <button>{ title }</button>
       </section>
     )
@@ -18,7 +31,7 @@ class Logo extends React.Component {
 };
 
 Logo.propTypes = {
-  modes: React.PropTypes.object
+  mode: React.PropTypes.string
 }
 
 export default Logo;

@@ -55,3 +55,7 @@ img:hover {
 input, textarea {
   border: rem-calc(1px) solid $curateColor;
 }
+
+textarea {
+  width: 100%;
+}

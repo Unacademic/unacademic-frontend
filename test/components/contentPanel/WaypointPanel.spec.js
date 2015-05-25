@@ -1,8 +1,8 @@
 import { React, TestUtils, testdom, fixtures } from '../../react-helpers';
-import WaypointSection from '../../../src/components/contentPanel/WaypointSection.jsx';
+import WaypointPanel from '../../../src/components/contentPanel/WaypointPanel.jsx';
 import Actions from '../../../src/actions/index.js';
 
-describe("Waypoint Section", () => {
+describe("Waypoint Panel", () => {
   let element;
   let waypoint;
   let checkpoint;
@@ -17,7 +17,7 @@ describe("Waypoint Section", () => {
     })
 
     it("has the correct classes", () => {
-      let mainPanel = element.querySelectorAll('.panel-content_main');
+      let mainPanel = element.querySelectorAll('.panel_main');
       expect(mainPanel.length).to.equal(1);
     });
 
@@ -72,7 +72,7 @@ describe("Waypoint Section", () => {
 
 function renderWaypoint(model, level, mode, context){
   let container = TestUtils.renderIntoDocument(
-      <WaypointSection level={ level } mode={ mode } model={ model } context={ context }/>
+      <WaypointPanel level={ level } mode={ mode } model={ model } context={ context }/>
   );
 
   let element = React.findDOMNode(container);
