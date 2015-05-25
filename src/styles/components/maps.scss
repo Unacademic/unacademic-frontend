@@ -11,9 +11,6 @@
   fill: $baseColor;
 } 
 
-.stop.stop-is-incomplete .point {
-  fill: $baseColor;
-} 
 
 .map.map-checkpoints .stop {
   stroke-width: 12;
@@ -33,14 +30,22 @@
   fill: $curateColor;
 
   .point {
-    fill:: $curateColor;
+    fill: $curateColor;
   }
+
+  .stop-is-incomplete .point {
+    fill: $baseColor;
+  } 
 }
 
 .app-is-learn .map {
   stroke: $learnColor;
   .point {
-    fill:: $learnColor;
+    fill: $learnColor;
   }
+
+  .stop-is-incomplete .point {
+    fill: $baseColor;
+  } 
 }
 

@@ -10,6 +10,7 @@ import DescriptionSection from './sections/DescriptionSection.jsx';
 import Actions from '../../actions/index';
 
 class WaypointPanel extends React.Component {
+
   constructor(props){
     super(props);
     this.name = 'panel';
@@ -47,23 +48,29 @@ class WaypointPanel extends React.Component {
 
     return (
       <section className={ this.classes() }>
+
         <section className={ `step_1 ${this.name}_header` }>
-        <WaypointMap
+          <WaypointMap
             handleHover={ this.handleHover.bind(this) }
             handleComplete={ this.handleComplete.bind(this) }
             model={ model }/>
         </section>
+
         <section className={ `${this.name}_main` }>
-          <hgroup>
+
+          <hgroup className="panel_section">
             <Editable fieldName={ 'title' } value={ title } editing={ isEditing }/>
           </hgroup>
-          <section className="meta">
+
+          <section className="panel_section meta">
             <p>Curator: { curator }</p>
           </section>
-          <section>
+
+          <section className="panel_section">
             <h1>Summary</h1>
             <Editable fieldName={ 'summary' } value={ summary } editing={ isEditing }/>
           </section>
+
           { context === 'sidebar' && <DescriptionSection description={ description }/> }
           { context === 'card' && <TodoList title={ 'Checkpoints' }
               handleHover={ this.handleHover.bind(this) }

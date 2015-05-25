@@ -6,6 +6,7 @@
   user-select: none;
 }
 
+
 em {
   font-style: normal;
   font-family: NittyBold;
@@ -38,6 +39,7 @@ ul {
 }
 
 .title {
+  font-weight: 500;
   font-size: rem-calc(28);
   line-height: rem-calc(30);
 }
@@ -58,4 +60,8 @@ input, textarea {
 
 textarea {
   width: 100%;
+}
+
+html {
+  font-size: 10px;
 }

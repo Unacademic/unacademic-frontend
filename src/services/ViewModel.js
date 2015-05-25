@@ -58,10 +58,19 @@ class ViewModel {
   }
 
   setHighlight({waypoint, checkpoint, resource}, status, context){
-    if(context === 'card'){
-      current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;
+
+    if(!resource){
+      if(context === 'card'){
+        current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;
+      } else {
+        current.collection[checkpoint.id- 1].highlight = status;
+      }
     } else {
-      current.collection[checkpoint.id- 1].highlight = status;
+      if(context === 'card'){
+        current.collection[checkpoint.id - 1].resources[resource.id- 1].highlight = status;
+      } else {
+        current.collection[resource.id - 1].highlight = status;
+      }
     }
   }
 
