@@ -7,7 +7,7 @@ class ResourceMap extends React.Component {
     this.state = {
       height: 418,
       width: 418,
-      padding: 30,
+      padding: 20,
       radius: 418 / 2
     }
   }
@@ -15,10 +15,12 @@ class ResourceMap extends React.Component {
   render() {
     let { height, width, padding, radius } = this.state;
     let { criteria } = this.props;
-    let data = [criteria];
+    let data = [criteria];    
+
+    radius = radius - padding / 2;
 
     return (
-      <svg viewBox={ `0 0 ${width} ${height}` }width={ width } height={ height } className="map">
+      <svg viewBox={ `0 ${-padding} ${width} ${height}` } width={ width } height={ height } className="map">
         <Radar data={ data } x={ radius } y={ radius } r={ radius }/>
       </svg>
     )
