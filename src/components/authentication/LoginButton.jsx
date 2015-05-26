@@ -10,6 +10,7 @@ class LoginButton extends React.Component{
   }
 
   handleClick(){
+    alert('coming soon...');
     // Actions.authenticate();
   }
 
