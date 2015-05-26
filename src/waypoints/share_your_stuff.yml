@@ -1,5 +1,5 @@
 title: Share Your Stuff
-curator: Angeliki
+curator: Angeliki Chalkia
 
 summary: Share your stuff and contribute and learn at the same time
 
@@ -13,7 +13,7 @@ checkpoints:
       Rating and reviewing content helps future users of the platform to make better choices. More important, by reviewing content, you become critical towards the material you use and you actually learn. Start rating and reviewing content on Offcourse yourself.
 
     instructions:
-      - Read the references for context and inspiration
+      - Read the References for Context and Inspiration
     resources:
       - authors: Wikipedia
         title: Peer Review
@@ -32,7 +32,7 @@ checkpoints:
       - authors:
         - Kwangsu Cho
         - Charles MacArthur
-        title: Learning by reviewing
+        title: Learning by Reviewing
         url: "http://psycnet.apa.org/psycinfo/2011-01104-001/"
         criteria:
             clarity: 4
@@ -71,7 +71,7 @@ checkpoints:
       - Discover the importance of open source and share your knowledge
     resources:
       - authors: The Guardian
-        title: Tesla Motors to open source its technology
+        title: Tesla Motors to Open Source its Technology
         url: "http://www.theguardian.com/technology/2014/jun/13/tesla-open-source-technology"
         criteria:
             clarity: 5
@@ -84,7 +84,7 @@ checkpoints:
           - open source
           - software
         type: text
-        notes: Read why Tesla open sourced its technology
+        notes: Read why Tesla Open Sourced its Technology
       - authors:
           - Aleksi Aaltonen
           - Stephan Seiler

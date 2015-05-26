@@ -44,16 +44,6 @@ ul {
   line-height: rem-calc(30);
 }
 
-img {
-  height: 100%;
-  width: 100%;
-  filter: grayscale(100%);
-}
-
-img:hover {
-  filter: grayscale(0%);
-}
-
 input, textarea {
   border: rem-calc(1px) solid $curateColor;
 }

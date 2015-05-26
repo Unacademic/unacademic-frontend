@@ -14,39 +14,6 @@ checkpoints:
     instructions:
       - Have a look at the resources for in depth understanding and explore switching modes by clicking the Offcourse logo in the left upper corner
     resources:
-      - authorss: Meryl Reis Louis and Robert I Sutton
-        title: |
-          Switching Cognitive Gears, From Habits of Mind to Active Thinking
-        url: "http://hum.sagepub.com/content/44/1/55"
-        criteria:
-          clarity: 4
-          difficulty: 5
-          up_to_date: 4
-          pertinence: 3
-          enjoyment: 4
-          time_to_digest: 65 minutes
-        tags:
-          - cognitive modes
-          - creative thinking
-        type: text
-        notes: The full article is not available to everybody
-      - authors:
-        title: |
-          Guideline nine, multiple modes
-        url: "http://www.guidelinesonlearning.com/guideline-nine"
-        criteria:
-          clarity: 4
-          difficulty: 1
-          up_to_date: 3
-          pertinence: 2
-          enjoyment: 2
-          time_to_digest: 2 minutes
-        tags:
-          - learn
-          - modes
-        type: text
-        notes: |
-         If you have extra time, scan through the other guidelines.
       - authors: Kimm Fesenmaier
         title: Switching on One-shot Learning in the Brain
         url: "https://www.caltech.edu/news/switching-one-shot-learning-brain-46629"
@@ -63,21 +30,57 @@ checkpoints:
           - brain
         type: text
         notes: Especially the fourth paragraph is useful.
+      - authors:
+        title: |
+          Guideline Nine, Multiple Modes
+        url: "http://www.guidelinesonlearning.com/guideline-nine"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 3
+          pertinence: 2
+          enjoyment: 2
+          time_to_digest: 2 minutes
+        tags:
+          - learn
+          - modes
+        type: text
+        notes: |
+         If you have extra time, scan through the other guidelines.
+      - authors: Meryl Reis Louis and Robert I Sutton
+        title: |
+          Switching Cognitive Gears, From Habits of Mind to Active Thinking
+        url: "http://hum.sagepub.com/content/44/1/55"
+        criteria:
+          clarity: 4
+          difficulty: 5
+          up_to_date: 4
+          pertinence: 3
+          enjoyment: 4
+          time_to_digest: 65 minutes
+        tags:
+          - cognitive modes
+          - creative thinking
+        type: text
+        notes: The full article is not available to everybody
   - title: Tool the Bar
     introduction: |
-      On the left you see your toolbar. Hereâ€™s your information. Itâ€™s your legend. At the top are your breadcrumbs, which show you where you are in the interface. You can use them to navigate. Try tooling your bar!
-
+      On the left you see your toolbar. Here's your information. 
+      It's your legend. At the top are your breadcrumbs, which show 
+      you where you are in the interface. 
+      You can use them to navigate. Try tooling your bar!
     instructions:
       - Consume the resources for inspiration
     resources:
       - authors:
         title: Toolbar
         url: "https://en.wikipedia.org/wiki/Toolbar"
-        clarity: 5
-        difficulty: 1
-        up_to_date: 5
-        pertinence: 5
-        enjoyment: 2
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 5
+          pertinence: 5
+          enjoyment: 2
         time_to_digest: 2 minutes
         tags:
           - toolbar
@@ -101,7 +104,7 @@ checkpoints:
           - users
         type: video
         notes: Especially the first 20 minutes are useful.
-  - title: Playing Cards
+  - title: Play Cards
     introduction: |
       The use of a card interface is to resemble physical material. This helps structuring information, for instance what information belongs together. Organize your learning resources on cards on Offcourse.
 

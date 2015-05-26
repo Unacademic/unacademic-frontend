@@ -17,15 +17,19 @@
 }
 
 .layout-main {
- flex-direction: column;
+  flex-direction: column;
   flex: 1;
+}
+
+.layout-content {
+  display: block;
+  height: auto;
 }
 
 .layout-topbar {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  flex: 1;
   padding: $baseUnit;
 }
 
