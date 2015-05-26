@@ -24,7 +24,7 @@ checkpoints:
     instructions:
         - (re)define your view on intelligence and teachers vs. students
     resources:
-      - author: Ken Robinson
+      - authors: Ken Robinson
         title: How Schools Kill Creativity
         url: http://www.ted.com/talks/ken_robinson_says_schools_kill_creativity
         criteria:
@@ -39,7 +39,7 @@ checkpoints:
           - creativity
           - intelligence
         type: video
-      - author:
+      - authors:
           - Sandra Y. OkitaDaniel
           - L. Schwartz
         title: Learning by Teaching Human Pupils and Teachable Agents
@@ -69,7 +69,7 @@ checkpoints:
     instructions:
         - watch these movies and learn about the science behind being wrong
     resources:
-      - author: Nishant Kothary
+      - authors: Nishant Kothary
         title: The Power of Error
         url: http://2013.dareconf.com/videos/kothary
         criteria:
@@ -86,7 +86,7 @@ checkpoints:
           - error
           - celine dion
         type: movie
-      - author: Kathryn Schulz
+      - authors: Kathryn Schulz
         title: On Being Wrong
         url: http://www.ted.com/talks/kathryn_schulz_on_being_wrong?language=en
         criteria:
@@ -114,7 +114,7 @@ checkpoints:
     instructions:
         - choose your virtues
     resources:
-      - author: Larry Wall
+      - authors: Larry Wall
         title: Virtues of a Programmer
         url: http://threevirtues.com
         criteria:
@@ -129,7 +129,7 @@ checkpoints:
           - programming
           - perl
         type: text
-      - author: Charlotte van Oostrum
+      - authors: Charlotte van Oostrum
         title: |
           Impatience, Laziness, and Hubris” in “The End of Learning
         url: http://codingthehumanities.com/posts/the-end-of-learning
@@ -145,7 +145,7 @@ checkpoints:
           - programming
           - education
         type: text
-      - author: Larry Wall
+      - authors: Larry Wall
         title: |
           Patience, Diligence and Humility
         url: http://www.oreilly.com/openbook/opensources/book/larry.html
@@ -163,7 +163,7 @@ checkpoints:
           - community
           - tolkien
         type: text
-      - author: Jessica Lahey
+      - authors: Jessica Lahey
         title: The Benefits of Character Education
         url: http://www.theatlantic.com/national/archive/2013/05/the-benefits-of-character-education/275585/
         criteria:
@@ -191,7 +191,7 @@ checkpoints:
     instructions:
         - launch or test a project
     resources:
-      - author: Ricky Robinett
+      - authors: Ricky Robinett
         title: Failure to Launch
         url: http://2013.dareconf.com/videos/robinett
         criteria:
@@ -207,7 +207,7 @@ checkpoints:
           - side project
           - feedback
         type: movie
-      - author: Lisa Regan
+      - authors: Lisa Regan
         title: Five Questions for Lean Content Curator Stephany Hay
         url: http://www.startuplessonslearned.com/2013/08/five-questions-for-lean-content-creator.html
         criteria:
@@ -233,7 +233,7 @@ checkpoints:
     instructions:
         - start dwelling
     resources:
-      - author: James Joyce
+      - authors: James Joyce
         title: Ulysses
         url: https://www.gutenberg.org/files/4300/4300-h/4300-h.htm
         criteria:
@@ -249,7 +249,7 @@ checkpoints:
           - stream of consciousness
           - flow
           - classic
-      - author: Dave Gray
+      - authors: Dave Gray
         title: Visual Thinking
         url: http://www.davegrayinfo.com/visual-thinking-school/
         criteria:
@@ -264,7 +264,7 @@ checkpoints:
           - drawing
           - organize
           - communication
-      - author: Simeon ten Holt
+      - authors: Simeon ten Holt
         title: Canto Ostinato
         url: https://open.spotify.com/album/3LsgRpCZpQZwUlhwA2D6ju
         criteria:

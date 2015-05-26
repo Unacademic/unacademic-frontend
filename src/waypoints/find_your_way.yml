@@ -14,60 +14,63 @@ checkpoints:
     instructions:
       - Have a look at the resources for in depth understanding and explore switching modes by clicking the Offcourse logo in the left upper corner
     resources:
-      - author: Meryl Reis Louis and Robert I Sutton
+      - authorss: Meryl Reis Louis and Robert I Sutton
         title: |
-        Switching Cognitive Gears, From Habits of Mind to Active Thinking
+          Switching Cognitive Gears, From Habits of Mind to Active Thinking
         url: "http://hum.sagepub.com/content/44/1/55"
-        clarity: 4
-        difficulty: 5
-        up_to_date: 4
-        pertinence: 3
-        enjoyment: 4
-        time_to_digest: 65 minutes
+        criteria:
+          clarity: 4
+          difficulty: 5
+          up_to_date: 4
+          pertinence: 3
+          enjoyment: 4
+          time_to_digest: 65 minutes
         tags:
           - cognitive modes
           - creative thinking
         type: text
         notes: The full article is not available to everybody
-      - author:
+      - authors:
         title: |
-        Guideline nine, multiple modes
+          Guideline nine, multiple modes
         url: "http://www.guidelinesonlearning.com/guideline-nine"
-        clarity: 4
-        difficulty: 1
-        up_to_date: 3
-        pertinence: 2
-        enjoyment: 2
-        time_to_digest: 2 minutes
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 3
+          pertinence: 2
+          enjoyment: 2
+          time_to_digest: 2 minutes
         tags:
           - learn
           - modes
         type: text
         notes: |
-        If you have extra time, scan through the other guidelines.
-      - author: Kimm Fesenmaier
+         If you have extra time, scan through the other guidelines.
+      - authors: Kimm Fesenmaier
         title: Switching on One-shot Learning in the Brain
         url: "https://www.caltech.edu/news/switching-one-shot-learning-brain-46629"
-        clarity: 4
-        difficulty: 3
-        up_to_date: 5
-        pertinence: 2
-        enjoyment: 5
-        time_to_digest: 22 minutes
+        criteria:
+          clarity: 4
+          difficulty: 3
+          up_to_date: 5
+          pertinence: 2
+          enjoyment: 5
+          time_to_digest: 22 minutes
         tags:
           - learn
           - science
           - brain
         type: text
         notes: Especially the fourth paragraph is useful.
-  - title: Tool the bar
+  - title: Tool the Bar
     introduction: |
       On the left you see your toolbar. Hereâ€™s your information. Itâ€™s your legend. At the top are your breadcrumbs, which show you where you are in the interface. You can use them to navigate. Try tooling your bar!
 
     instructions:
       - Consume the resources for inspiration
     resources:
-      - author:
+      - authors:
         title: Toolbar
         url: "https://en.wikipedia.org/wiki/Toolbar"
         clarity: 5
@@ -81,14 +84,15 @@ checkpoints:
           - interface
         type: text
         notes: Short but sweet
-      - author: Janne Jul Jensen
+      - authors: Janne Jul Jensen
         title: User Interface Techniques
         url: "https://www.youtube.com/watch?v=7OSkB4BCx00"
-        clarity: 4
-        difficulty: 3
-        up_to_date: 4
-        pertinence: 3
-        enjoyment: 3
+        criteria:
+          clarity: 4
+          difficulty: 3
+          up_to_date: 4
+          pertinence: 3
+          enjoyment: 3
         time_to_digest: 51 minutes
         tags:
           - interface
@@ -105,50 +109,55 @@ checkpoints:
       - Understand and contextualize material design principles and cards and organize your learning resources on cards in Offcourse
 
     resources:
-      - author:
+      - authors: Mark Wilson
         title: User Interface Design Basics
-        url: http://www.usability.gov/what-and-why/user-interface-design.html
-        clarity: 5
-        difficulty: 2
-        up_to_date: 4
-        pertinence: 5
-        enjoyment: 4
-      - - author: Mark Wilson
+        url: "http://www.usability.gov/what-and-why/user-interface-design.html"
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 4
+        time_to_digest: 15 minutes
         title: How Google Unified its Products with a Simple Index Card
-        url: http://www.fastcodesign.com/1672605/how-google-unified-its-products-with-a-simple-index-card
-        clarity: 4
-        difficulty: 2
-        up_to_date: 4
-        pertinence: 4
-        enjoyment: 4
+        url: "http://www.fastcodesign.com/1672605/how-google-unified-its-products-with-a-simple-index-card"
+        criteria:
+          clarity: 4
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 4
+          enjoyment: 4
+        time_to_digest: 21 minutes
         tags:
           - cards
           - google
           - material design
           - design language
           - interface
-      - author: -
+      - authors:
         title: Components > Cards
-        url: http://www.google.com/design/spec/components/cards.html#cards-actions
-        clarity: 5
-        difficulty: 1
-        up_to_date: 4
-        pertinence: 5
-        enjoyment: 5
-        time_to_digest: 10 min
+        url: "http://www.google.com/design/spec/components/cards.html#cards-actions"
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 5
+          time_to_digest: 10 minutes
         tags:
           - material design
           - google
           - interface
           - cards
-      - author:
+      - authors:
         title: Material Design
         url: "http://www.google.com/design/spec/material-design/introduction.html"
-        clarity: 5
-        difficulty: 1
-        up_to_date: 4
-        pertinence: 5
-        enjoyment: 5
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 5
         time_to_digest: 120 minutes
         tags:
           - material design
