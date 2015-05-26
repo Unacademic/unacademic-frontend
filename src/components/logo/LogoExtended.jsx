@@ -25,13 +25,13 @@ class LogoExtended extends React.Component {
 
   render() {
     let { mode } = this.props;
-    let title = mode === 'learn' ? '_Offcourse' : 'Offcourse_';
+    let title = mode === 'learn' ? 'Offcourse_' : '_Offcourse';
 
     return (
       <section className={ this.classes() }>
-        <button>{ title }</button>
-        <p>Tiny Bits of Structure</p><br/>
-        <p>Lots of Learning</p><br/>
+        <button>{ title }</button><br/>
+        <p>Learn</p><br/>
+        <p>By Dwelling</p>
       </section>
     )
   }

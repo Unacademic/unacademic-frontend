@@ -4,7 +4,7 @@ import RadarPaths from 'paths-js/radar';
 
 class Radar extends React.Component {
   getCurve(curve, i) {
-    var path = curve.polygon.path.print();
+    var path = curve.polygon.path.print();    
     return (
       <path className="curve" key={ i } d={ path } strokeWidth="1"/>
     );
@@ -17,10 +17,16 @@ class Radar extends React.Component {
     );
   }
 
+  getPoint(point, i) {
+    return <circle cx={ point[0] } cy={ point[1] } r={ 12 } className="point"/>
+  }
+
   render() {
     let { data, max, r, rings, x, y  } = this.props;
-    r = r - 15;
-    let paths = RadarPaths({ data, max, r, rings, center: [x, y + 15]  });
+    let paths = RadarPaths({ data, max, r, rings, center: [x, y]  });
+
+    let curve = paths.curves[0];    
+    let points = curve.polygon.path.points();    
 
     return (
       <g className="radar" fill="none" stroke="3">
@@ -28,6 +34,7 @@ class Radar extends React.Component {
         <g opacity="1">
           { paths.curves.map(this.getCurve.bind(this)) }
         </g>
+        { points.map(this.getPoint.bind(this)) }
       </g>
     );
   }

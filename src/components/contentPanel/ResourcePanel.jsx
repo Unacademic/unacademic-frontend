@@ -47,14 +47,17 @@ class ResourcePanel extends React.Component {
             <p>Time to Digest: { time_to_digest }</p>
           </section>
           <section>
-            <h1>Tags</h1>
             <p>{ tagBlocks }</p>
           </section>
           { context === 'sidebar' && <SliderSection
               handleChange={ this.updateCriteria.bind(this) }
               model={ model }
               criteria={ criteria }/> }
-        </section>
+          <section>
+            <h1>Notes</h1>
+            { notes }
+          </section>
+          </section>
         </section>
     )
   }

@@ -27,9 +27,10 @@
 }
 
 .logo .logo-big, .logo .logo-big:focus {
-  margin-bottom: rem-calc(10);
-  font-size: rem-calc(33);
-  line-height: rem-calc(45);
+  margin-bottom: rem-calc(15);
+  font-size: rem-calc(73.3333);
+  line-height: rem-calc(100);
+  padding: 0 ($thirdUnit * 2);
 }
 
 .logo .logo-big.logo-big-inverse {

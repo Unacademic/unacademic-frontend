@@ -23,7 +23,7 @@ checkpoints:
           up_to_date: 5
           pertinence: 2
           enjoyment: 5
-          time_to_digest: 22 minutes
+        time_to_digest: 22 minutes
         tags:
           - learn
           - science
@@ -40,7 +40,7 @@ checkpoints:
           up_to_date: 3
           pertinence: 2
           enjoyment: 2
-          time_to_digest: 2 minutes
+        time_to_digest: 2 minutes
         tags:
           - learn
           - modes
@@ -57,7 +57,7 @@ checkpoints:
           up_to_date: 4
           pertinence: 3
           enjoyment: 4
-          time_to_digest: 65 minutes
+        time_to_digest: 65 minutes
         tags:
           - cognitive modes
           - creative thinking
@@ -146,7 +146,7 @@ checkpoints:
           up_to_date: 4
           pertinence: 5
           enjoyment: 5
-          time_to_digest: 10 minutes
+        time_to_digest: 10 minutes
         tags:
           - material design
           - google

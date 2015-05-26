@@ -20,7 +20,7 @@ class Logo extends React.Component {
 
   render() {
     let { mode } = this.props;
-    let title = mode === 'learn' ? '_Offcourse' : 'Offcourse_';
+    let title = mode === 'learn' ? 'Offcourse_' : '_Offcourse';
 
     return (
       <section className={ this.classes() }>

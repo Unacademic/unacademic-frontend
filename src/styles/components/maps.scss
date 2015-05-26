@@ -13,7 +13,7 @@
 
 
 .map.map-checkpoints .stop {
-  stroke-width: 12;
+  stroke-width: 4;
 }
 
 .ring {
@@ -27,10 +27,18 @@
 
 .app-is-curate .map {
   stroke: $curateColor;
-  fill: $curateColor;
 
-  .point, .curve {
-    fill: $curateColor;
+  .point {
+    fill: $curateColor;    
+  }
+
+  .curve {
+    fill: none;
+    stroke-width: 4;  
+  }  
+
+  .line {
+    stroke-width: 2;
   }
 
   .stop-is-incomplete .point {
@@ -40,9 +48,19 @@
 
 .app-is-learn .map {
   stroke: $learnColor;
-  .point, .curve {
+
+  .point {
     fill: $learnColor;
   }
+
+  .curve {
+    fill: none;
+    stroke-width: 4;  
+  }
+
+  .line {
+    stroke-width: 2;
+  }  
 
   .stop-is-incomplete .point {
     fill: $baseColor;
