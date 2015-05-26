@@ -6,7 +6,6 @@ summary: Share your stuff and contribute and learn at the same time
 description: |
   Sharing is the cornerstone of our platform. To enrich knowlegde you need to have input and content easily accessible by everybody. Input does not necessarily mean to write and compile a waypoint yourself.You also contribute by rating and reviewing the material you have just consumed by doing so, you actually enable your learning process and become an active member of a vital community.
 
-
 checkpoints:
   - title: Rate and review content
     introduction: |
@@ -33,7 +32,7 @@ checkpoints:
         - Kwangsu Cho
         - Charles MacArthur
         title: Learning by reviewing
-        url: "http://psycnet.apa.org/psycinfo/2011-01104-001/"
+        url: "http://www.cideronline.org/podcasts/pdf/2.pdf"
         criteria:
             clarity: 4
             difficulty: 1
@@ -47,17 +46,16 @@ checkpoints:
         type: text
         notes: This an abstract of a research
       - authors:
-        - Ilya M. Goldin
-        - Kevin D. Ashley
-        title: Learning by Reviewing through Peer Feedback Refinement
-        url: "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.168.5832&rep=rep1&type=pdf"
+        - Christian Schunn
+        title: Learning from Peer Review
+        url: "http://www.lrdc.pitt.edu/schunn/research/peers.html"
        criteria:
             clarity: 4
-            difficulty: 4
+            difficulty: 3
             up_to_date: 4
             pertinence: 3
-            enjoyment: 2
-        time_to_digest: 10 minutes
+            enjoyment: 3
+        time_to_digest: 4 minutes
         tags:
         - peer review
         - learning process
