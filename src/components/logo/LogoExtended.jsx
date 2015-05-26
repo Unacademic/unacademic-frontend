@@ -32,8 +32,6 @@ class LogoExtended extends React.Component {
         <button>{ title }</button>
         <p>Tiny Bits of Structure</p><br/>
         <p>Lots of Learning</p><br/>
-        <button className='.step_1' onClick={ this.handleClick.bind(this) }>Start</button><br/>
-        <p>Dwelling Today</p>
       </section>
     )
   }

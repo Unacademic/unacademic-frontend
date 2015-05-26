@@ -62,15 +62,20 @@ textarea {
   width: 100%;
 }
 
+.placeholder {
+  display: flex;
+  background-color: $learnColor;
+  height: 100%;
+}
 
-@media (orientation: portrait) { 
- section.app {
+@media (min-height: 600px) {
+  .placeholder {
     display: none;
   }
 }
 
 @media (max-height: 600px) {
- section.app {
+  div.container {
     display: none;
   }
 }
@@ -98,5 +103,4 @@ textarea {
     font-size: 16px;
   }
 }
-
 

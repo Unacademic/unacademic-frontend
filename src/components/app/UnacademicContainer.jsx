@@ -30,8 +30,11 @@ class UnacademicContainer extends React.Component{
     if(appState && viewModel){
       return (
         <div>
-        <TourSelector level={ appState.levels.current }/>
-        <Unacademic viewModel={ viewModel } appState={ appState }/>
+          <div className="placeholder">HELLO</div>
+          <div className="container">
+            <TourSelector level={ appState.levels.current }/>
+            <Unacademic viewModel={ viewModel } appState={ appState }/>
+          </div>
         </div>
       )
     }
