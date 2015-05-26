@@ -23,9 +23,9 @@ class Start extends React.Component{
   render() {
     return (
       <div className={ this.classes() }>
-      <button onClick={ this.handleClick.bind(this) } className={ `${this.name}-big` }>Start</button><br/>
-      <button onClick={ this.handleClick.bind(this) } className={ `${this.name}-big ${this.name}-big-inverse` }>Learn by Dwelling</button><br/>
-      <button onClick={ this.handleClick.bind(this) } className={ `${this.name}-big ${this.name}-big-inverse` }>Today</button><br/>
+      <button onClick={ this.handleClick.bind(this) } className={ `${this.name}-big ${this.name}-big-inverse` }>Tiny Bits of Structure</button><br/>
+      <button onClick={ this.handleClick.bind(this) } className={ `${this.name}-big ${this.name}-big-inverse` }>Lots of Learning</button><br/>
+      <button onClick={ this.handleClick.bind(this) } className={ `${this.name}-big` }>Start Here</button><br/>
       </div>
     )
   }
