@@ -37,7 +37,7 @@ class API {
       let encodedUrl = encodeURIComponent(this.resourceUrl)
       let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
       let response = await axios.get(apiUrl);
-      this.data = response.data;
+      this.data = response.data || '';
     }
     return this.data;
   }

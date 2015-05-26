@@ -19,6 +19,9 @@ class Stop extends React.Component {
   }
 
   handleHover(status){
+
+    console.log(status);
+
     let { handleHover, params } = this.props;
     let { checkpoint } = params;
     let id = checkpoint.id;
@@ -38,12 +41,14 @@ class Stop extends React.Component {
     let strokeWidth = (radius / 10) * multiplier;
 
     let shape = createShape(x, y, radius, multiplier, numberOfResources);
+    let resourcePoints = R.zip(checkpoint.resources, shape.path.points())
 
-    let points = R.mapIndexed(([cx, cy], index) => {
+    let points = R.mapIndexed(([resource, point], index) => {
+      let [cx, cy] = point;
       return (
-        <Point key={ index } cx={ cx } cy={ cy } strokeWidth={ strokeWidth }/>
+        <Point key={ index } resource={ resource } cx={ cx } cy={ cy } strokeWidth={ strokeWidth }/>
       )
-    }, shape.path.points());
+    }, resourcePoints);
     let point = <Point cx={ x } cy={ y } strokeWidth={ strokeWidth }/>
 
     return (

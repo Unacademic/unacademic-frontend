@@ -41,8 +41,7 @@ class WaypointMap extends React.Component {
           x1={ 0}
           y1={ baseLine }
           x2={ width }
-          y2={ baseLine }
-          strokeWidth="2"/>
+          y2={ baseLine }/>
         { drawStops(checkpoints) }
       </svg>
     )

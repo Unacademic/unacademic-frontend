@@ -32,7 +32,6 @@ class UnacademicContainer extends React.Component{
         <div>
           <div className="placeholder">HELLO</div>
           <div className="container">
-            <TourSelector level={ appState.levels.current }/>
             <Unacademic viewModel={ viewModel } appState={ appState }/>
           </div>
         </div>

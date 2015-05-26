@@ -5,11 +5,15 @@ import ResourceListItem from './ResourceListItem.jsx';
 class ResourceList extends React.Component {
 
   render() {
-    let resources = this.props.resources;
-    let resourceList = R.map(( {title, id} ) => {
+    let { resources, selectResource } = this.props;
+    let resourceList = R.map(( {title, id, type} ) => {
       let newTitle = title.substring(0, 45);
       return (
-        <ResourceListItem key={ id } title={ title } />
+        <ResourceListItem key={ id }
+          handleClick={ selectResource.bind(this) }
+          title={ title } 
+          id={ id } 
+          type={ type } />
        )
       }, resources );
 
