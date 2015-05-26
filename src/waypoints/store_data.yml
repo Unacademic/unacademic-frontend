@@ -19,10 +19,10 @@ checkpoints:
 
     Local Storage is a so-called ‘key-value store’, which is a difficult way of
     saying that it’s one big javascript object, in this case augmented with
-    some convenience methods. 
-  instructions: 
+    some convenience methods.
+  instructions:
     - Try LocalStorage out in the developer console in your browser.
-  resources: 
+  resources:
   - title: Can I Use localStorage
     url: http://caniuse.com/#search=localstorage
   - title: A Place To Put Your Stuff
@@ -32,18 +32,18 @@ checkpoints:
   - criteria: ''
 
 - title: String it Together
-  description: | 
-    All the keys and values in local storage are simply strings. This works 
+  description: |
+    All the keys and values in local storage are simply strings. This works
     great, as long as we want to store texts. As soon as we want to persist other
     types of data, however, we first need to convert them to strings. This process
     is known under many different names: serialization, stringification, marshalling.
 
     The opposite of serialization is most often called parsing. It consists of
     translating a string back to a data structure.
-  instructions: 
-    - | 
-      Build a basic parser that translates our session documents to JavaScript objects. 
-      Included in the plunker are the expectations that your code needs to fulfill, as 
+  instructions:
+    - |
+      Build a basic parser that translates our session documents to JavaScript objects.
+      Included in the plunker are the expectations that your code needs to fulfill, as
       well as more detailed instructions.
   resources:
   - title: The Codified World

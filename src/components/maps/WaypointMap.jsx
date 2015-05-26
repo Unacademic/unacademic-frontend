@@ -28,6 +28,7 @@ class WaypointMap extends React.Component {
       let maxResources = 2;
       let baseHeight = maxHeight / maxResources;
       let params = { x, y, radius, center, baseHeight, textY, checkpoint }
+
       return <Stop
         handleHover={ handleHover.bind(this) }
         handleComplete={ handleComplete.bind(this) }
@@ -35,13 +36,13 @@ class WaypointMap extends React.Component {
     });
 
     return (
-      <svg width={ width } height={ height } className="map">
+      <svg viewBox={ `0 0 ${width} ${height}` }width={ width } height={ height } className="map">
         <line className="line"
           x1={ 0}
           y1={ baseLine }
           x2={ width }
           y2={ baseLine }
-          strokeWidth="5"/>
+          strokeWidth="2"/>
         { drawStops(checkpoints) }
       </svg>
     )

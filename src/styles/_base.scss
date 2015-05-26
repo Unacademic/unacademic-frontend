@@ -6,6 +6,7 @@
   user-select: none;
 }
 
+
 em {
   font-style: normal;
   font-family: NittyBold;
@@ -38,18 +39,9 @@ ul {
 }
 
 .title {
+  font-weight: 500;
   font-size: rem-calc(28);
   line-height: rem-calc(30);
-}
-
-img {
-  height: 100%;
-  width: 100%;
-  filter: grayscale(100%);
-}
-
-img:hover {
-  filter: grayscale(0%);
 }
 
 input, textarea {
@@ -59,3 +51,46 @@ input, textarea {
 textarea {
   width: 100%;
 }
+
+.placeholder {
+  display: flex;
+  background-color: $learnColor;
+  height: 100%;
+}
+
+@media (min-height: 600px) {
+  .placeholder {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  div.container {
+    display: none;
+  }
+}
+
+@media (min-height: 600px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-height: 800px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-height: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-height: 1080px) {
+  html {
+    font-size: 16px;
+  }
+}
+

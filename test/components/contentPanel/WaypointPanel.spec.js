@@ -21,13 +21,12 @@ describe("Waypoint Panel", () => {
       expect(mainPanel.length).to.equal(1);
     });
 
-    it("shows the description", () => {
-      let description = element.querySelectorAll('.description');
-      expect(description.length).to.equal(1)
-    });
-
-
     describe("context is sidebar", () => {
+      it("shows the description section", () => {
+        let description = element.querySelectorAll('.description');
+        expect(description.length).to.equal(1)
+      });
+
 
       it("hides the checkpoints", () => {
         let checkpoints = element.querySelectorAll('.checkpoint');
@@ -40,6 +39,11 @@ describe("Waypoint Panel", () => {
         [waypoint] = fixtures.viewModel.collection;
         element = renderWaypoint(waypoint, 'waypoints', 'learn', 'card');
       })
+
+      it("hides the description section", () => {
+        let description = element.querySelectorAll('.description');
+        expect(description.length).to.equal(0)
+      });
 
       it("shows the checkpoints", () => {
         let todo = element.querySelectorAll('.todolist');

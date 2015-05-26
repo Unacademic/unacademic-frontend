@@ -45,6 +45,7 @@
     "react-contenteditable": "0.0.2",
     "react-hot-loader": "^1.1.5",
     "react-tools": "^0.13.0-rc1",
+    "react-tour-guide": "0.0.7",
     "react-wysiwyg": "^1.0.4",
     "sass-loader": "0.4.2",
     "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",

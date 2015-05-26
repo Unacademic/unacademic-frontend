@@ -1,0 +1,265 @@
+title: Prevent Wheel Reinvention
+curator: Reika Chavers
+
+summary: Master curation at Offcourse and become an expert
+
+description: |
+  How many wheels have you had to reinvent already? Our guess would be 'too
+  many'. Somehow, we keep creating new textbooks and courses, but most
+  information is out there already. You just need a set up that organizes
+  this knowledge in one place, with just the right amount of structure. You
+  don’t want to be told what to learn, but you don’t want to figure it out
+  from scratch either. So gather those interesting blog posts, podcasts, or
+  tutorials, add your comments, and share them. That’s it!
+
+checkpoints:
+  - title: Structure your Story
+    introduction: |
+      Learning and curation at Offcourse are built around waypoints. Think of
+      them as narratives. Like every good story, they need a structure: a
+      beginning, an end, and exciting events. At Offcourse events are called
+      checkpoints. You use them to contextualize the resources you want to share.
+      Learners use checkpoints to track their progress within your story.
+
+    instructions:
+      - Read the resources for inspiration and understanding
+    resources:
+      - authors: Chuck Wendig
+        title: 25 ways to plot, plan and prep your story
+        url: "http://terribleminds.com/ramble/2011/09/14/25-ways-to-plot-plan-and-prep-your-story/"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 4
+          pertinence: 2
+          enjoyment: 4
+        time_to_digest: 22 minutes
+        tags:
+          - story telling
+          - creative thinking
+        type: text
+        notes: People tend to be more motivated in their learning with a story so create and curate your waypoints accordingly
+      - authors: Connie Malamed
+        title: Why You Need To Use Storytelling For Learning
+        url: "http://theelearningcoach.com/elearning2-0/why-you-need-to-use-storytelling-for-learning/"
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 3
+          pertinence: 3
+          enjoyment: 5
+        time_to_digest: 13 minutes
+        tags:
+          - story telling
+          -  learning
+        type: text
+        notes: The embedded movie is very entertaining
+  - title: Find References
+    introduction: |
+      Because we do not believe in reinventing the wheel
+      and because there is already so much good content out there,
+      explain and analyse your subject or theme through references.
+    instructions:
+      - Have a look at the recources to see some examples
+    resources:
+      - authors: Steffon Davis
+        title: The Internet Cure
+        url: "http://steffondavis.com/the-internet-cure-part-1-content-overload/"
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 5
+          pertinence: 4
+          enjoyment: 5
+        time_to_digest: 6 minutes
+        tags:
+          - content overload
+          - content curation
+        type: movie
+        notes: If interested also watch the other parts
+      - authors: Rueben
+        title: Study Explodes the Myth of Internet-based Information Overload
+        url: "http://holtz.com/blog/attention/study-explodes-the-myth-of-internet-based-information-overload/3955/"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 3
+          pertinence: 3
+          enjoyment: 2
+        time_to_digest: 7 minutes
+        tags:
+          - content overload
+          - information overload
+        type: text
+        notes:
+      - authors:
+        title: Evolution of the Web
+        url: "http://www.evolutionoftheweb.com/"
+        criteria:
+          clarity: 3
+          difficulty: 3
+          up_to_date: 5
+          pertinence: 2
+          enjoyment: 5
+        time_to_digest: 2 minutes
+        tags:
+          - web evolution
+          - the internet
+        type: tool
+        notes: Explore the tool
+      - authors:
+        title: The Wayback Machine
+        url: "https://archive.org/web/"
+        criteria:
+          clarity: 4
+          difficulty: 2
+          up_to_date: 5
+          pertinence: 3
+          enjoyment: 5
+        time_to_digest: 9 minutes
+        tags:
+          - internet archive
+        type: tool
+        notes: This tool lets you view websites of the past
+  - title: Explain the Relevance
+    introduction: |
+      Some references are not enough to get an understanding
+      of a theme or subject, so elaborate on why they might be relevant,
+      add introductions and highlight certain critical aspects
+      of the reference.
+    instructions:
+      - Watch the resources for an explanation
+    resources:
+      - authors: Gerd Leonhard
+        title: The Relevance Of Context In Content Curation
+        url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        criteria:
+          clarity: 3
+          difficulty: 3
+          up_to_date: 2
+          pertinence: 4
+          enjoyment: 2
+        time_to_digest: 2 minutes
+        tags:
+          - relevance
+          - content
+        type: video
+        notes: If you have any extra time look at the related videos
+      - authors: Gerd Leonhard
+        title: The Relevance Of Context In Content Curation
+        url: "https://www.youtube.com/watch?v=lDo6YrJKaoM"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 4
+          pertinence: 2
+          enjoyment: 4
+        time_to_digest: 22 minutes
+        tags:
+          - story telling
+          - creative thinking
+        type: text
+        notes: People tend to be more motivated in their learning with a story so create and curate your waypoints accordingly.
+      - authors: Mark Layne
+        title: What is Content Curation
+        url: "https://www.youtube.com/watch?v=MdMH5lT31jk"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 5
+          pertinence: 2
+          enjoyment: 3
+        time_to_digest: 3 minutes
+        tags:
+          - content curation
+        type: video
+        notes: Don't mind the advertisement
+      - authors: Margot Bloomstein
+        title: Breaking Down the Steps to Content Curation
+        url: "https://www.youtube.com/watch?v=46tTz1IpzOw"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 3
+          pertinence: 4
+          enjoyment: 3
+        time_to_digest: 3 minutes
+        tags:
+          - content curation
+          - adding value
+        type: video
+        notes: The reason to why add context is well defined
+  - title: Be Critical and Curate
+    description: |
+      Always curate content critically. For instance, do not forget to check
+      whom you are referencing to, and which are the associated
+      institutions in order to maintain the high quality we promote.
+    instructions:
+      - Read the resources for extensive understanding
+    resources:
+      - authors: Wikipedia
+        url: "https://en.wikipedia.org/wiki/Wikipedia:Identifying_reliable_sources"
+        title: "Identifying Reliable Sources"
+        criteria:
+          clarity: 4
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 4
+          enjoyment: 2
+        time_to_digest: 29 minutes
+        tags:
+          - sources
+          - referencing
+        type: text
+        notes: This article is useful but not leading for our platform
+      - authors: University of Reading
+        url: "https://www.reading.ac.uk/library/finding-info/guides/lib-citing-why.aspx "
+        title: Why is Referencing so Important?
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 5
+          pertinence: 4
+          enjoyment: 2
+        time_to_digest: 1 minute
+        tags:
+          - referencing
+        type: text
+        notes:
+      - authors: Danah Boyd
+        url: "https://www.educause.edu/ero/article/streams-content-limited-attention-flow-information-through-social-media"
+        title: "Limited Attention: The Flow of Information through Social Media"
+        criteria:
+          clarity: 2
+          difficulty: 4
+          up_to_date: 4
+          pertinence: 4
+          enjoyment: 5
+        time_to_digest: 42 minutes
+        tags:
+          - information
+          - attention
+          - content
+        type: text
+        notes: This article might seem a long read but it is worth it
+  - title: Now You Are a Real Curator
+    introduction: |
+       The role of the curator has changed over time. Our
+       notion of a curator is someone who helps you.
+    instructions:
+      - Read the reference.
+    resources:
+      - authors: Benny Wed
+        title: How the role of the curator has changed since the 1960s
+        url: "https://www.academia.edu/9672194/How_the_role_of_the_curator_has_changed_since_the_1960s"
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 4
+          enjoyment: 3
+        time_to_digest: 20 minutes
+        tags:
+          - curator
+        type: text
+        notes: Note how the role of the curator has changed over time.

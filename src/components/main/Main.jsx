@@ -1,21 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import Sidebar from '../sidebar/Sidebar.jsx';
-import Main from '../main/Main.jsx';
-import Actions from '../../actions/index';
-import Start from '../start/Start.jsx';
+import BreadCrumbs from '../breadcrumbs/BreadCrumbs.jsx';
+import LoginButton from '../authentication/LoginButton.jsx';
+import Cards from '../cards/Cards.jsx';
+import Viewer from '../viewer/Viewer.jsx';
 
-class Unacademic extends React.Component{
+class Main extends React.Component{
 
   constructor(props){
     super(props);
     this.name = 'app';
-  }
-
-  handleClick(selection){
-    let selection = { id: 'all', type: 'waypoints' };
-    Actions.setLevel(selection);
   }
 
   classes(){
@@ -31,26 +26,29 @@ class Unacademic extends React.Component{
   }
 
   render() {
+    console.log('njfjlkaf');
     let { appState, viewModel } = this.props;
     let { levels, modes, user } = appState;
     let { model, collection, data } = viewModel;
-    let level = levels.current;
 
     return (
-      <section className={ this.classes() }>
-        <section className="layout-sidebar layout-sidebar-left">
-          <Sidebar model={ model } appState={ appState }/>
+      <section className="layout-main">
+        <section className="layout-topbar">
+          <BreadCrumbs levels={ levels }></BreadCrumbs>
+          <LoginButton userId={ user }/>
         </section>
-        { level === 'introduction' && <Start/> }
-        { level !== 'introduction' && <Main {...this.props}/> }
+        <section className="layout-content">
+          { collection && <Cards collection={ collection } className="cards" /> }
+          { data && <Viewer data={ data } /> }
+        </section>
       </section>
     )
   }
 };
 
-Unacademic.propTypes = {
+Main.propTypes = {
   appState: React.PropTypes.object.isRequired,
   viewModel: React.PropTypes.object
 }
 
-export default Unacademic;
+export default Main;

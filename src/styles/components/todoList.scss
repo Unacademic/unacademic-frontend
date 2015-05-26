@@ -26,28 +26,51 @@
   vertical-align: center
 }
 
-
 .resource_item {
-  height: $baseUnit * 2;
-  padding: $baseUnit / 3;
-}
-
-.resource_item .checkbox {
-  display: inline-block;
-  margin-right: ($baseUnit / 3) * 2;
-  width: $baseUnit * 1.5;
-  height: $baseUnit * 1.5;
-  background-color: $lightBaseColor;
-  vertical-align: center
-}
-
-.resource_item p {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  height: 100%;
+  height: auto;
+  padding: $baseUnit / 3;
+  vertical-align: center
 }
+
+.checkbox_container {
+  flex: 2;
+  height: auto;
+}
+
+.resource_item:hover {
+  background-color: $learnColor;
+  .handle {
+    background-color: $learnColor;
+
+    .handle_circle {
+      fill: $baseColor;
+    }
+  }
+
+}
+
+.resource_item .handle {
+  display: block;
+  width: $twoThirdUnit;
+  height: $twoThirdUnit;
+  background-color: $lightBaseColor;
+  vertical-align: center;
+  margin: 0;
+
+  .handle_circle {
+    fill: $learnColor;
+  }
+}
+
+.resource_item .resource_item_title {
+  flex: 20;
+  margin-right: $baseUnit / 3;
+  vertical-align: center
+}
+
 
 .app-is-learn .checkbox-is-complete {
   background-color: $learnColor;

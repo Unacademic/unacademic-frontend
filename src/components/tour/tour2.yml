@@ -1,0 +1,7 @@
+steps2:
+- text: This is the first step in the tour.
+  element: .btn
+  position: bottom
+- text: This is the second step in the tour.
+  element: .step_2
+  position: right

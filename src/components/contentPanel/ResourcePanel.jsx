@@ -1,4 +1,6 @@
 import React from 'react';
+import R from 'ramda';
+import _ from 'lodash'
 import classnames from 'classnames';
 
 import Actions from '../../actions/index';
@@ -28,8 +30,9 @@ class ResourcePanel extends React.Component {
 
   render() {
     let { context, model } = this.props;
-    let { title, author, url, notes, criteria } = model;
+    let { title, author, url, notes, criteria, tags, time_to_digest } = model;
     let type = model.constructor.name.toLowerCase();
+    let tagBlocks = R.mapIndexed((tag, index) => <span key={ index } className="tag">{ _.capitalize(tag) }</span>, tags);
 
     return (
       <section className={ this.classes() }>
@@ -40,6 +43,13 @@ class ResourcePanel extends React.Component {
           <hgroup>
             <h1 className="title">{ title }</h1>
           </hgroup>
+          <section className="panel_section meta">
+            <p>Time to Digest: { time_to_digest }</p>
+          </section>
+          <section>
+            <h1>Tags</h1>
+            <p>{ tagBlocks }</p>
+          </section>
           { context === 'sidebar' && <SliderSection
               handleChange={ this.updateCriteria.bind(this) }
               model={ model }

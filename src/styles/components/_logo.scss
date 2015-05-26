@@ -1,18 +1,40 @@
 .logo {
   padding: $baseUnit;
   user-select: none;
+  transition: background-color 0.4s ease;
 
-  button, button:focus {
+  p, button, button:focus {
     font-family: NittyBold;
     outline: none;
     display: inline-block;
     font-size: rem-calc(22);
     line-height: rem-calc(30);
+    margin-bottom: rem-calc(5);
     padding: 0 $thirdUnit;
-    background-color: $baseColor;
-    color: $inverseColor;
     border: none;
   }
+
+  button, button:focus {
+    background-color: $baseColor;
+    color: $inverseColor;
+  }
+
+  p {
+    background-color: $inverseColor;
+    color: $baseColor;
+  }
+
+}
+
+.logo .logo-big, .logo .logo-big:focus {
+  margin-bottom: rem-calc(10);
+  font-size: rem-calc(33);
+  line-height: rem-calc(45);
+}
+
+.logo .logo-big.logo-big-inverse {
+  background-color: $inverseColor;
+  color: $baseColor;
 }
 
 .app-is-learn .logo {

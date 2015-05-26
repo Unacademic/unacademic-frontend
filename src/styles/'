@@ -6,7 +6,6 @@
   height: 100%;
   overflow-y: hidden;
   background: $lightBaseColor;
-  transition: background-color 0.4s ease;
 }
 
 .layout-sidebar {
@@ -17,27 +16,27 @@
 }
 
 .layout-main {
-  flex-direction: column;
+ flex-direction: column;
   flex: 1;
-}
-
-.layout-content {
-  display: block;
-  height: auto;
 }
 
 .layout-topbar {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  flex: 1;
   padding: $baseUnit;
 }
 
-.app-is-introduction.app-is-learn {
-  background-color: $learnColor;
+.app-is-introduction {
+  background-color: $baseColor;
 }
 
-.app-is-introduction.app-is-curate {
-  background-color: $curateColor;
+.app-is-introduction .layout-sidebar {
+  flex: 0;
+  transition: flex 2s ease;
 }
 
+.app-is-introduction .sidebar.sidebar-is-visible{
+  flex: 1;
+}

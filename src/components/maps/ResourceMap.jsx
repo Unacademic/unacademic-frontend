@@ -18,7 +18,7 @@ class ResourceMap extends React.Component {
     let data = [criteria];
 
     return (
-      <svg width={ width } height={ height } className="map map-resources">
+      <svg viewBox={ `0 0 ${width} ${height}` }width={ width } height={ height } className="map">
         <Radar data={ data } x={ radius } y={ radius } r={ radius }/>
       </svg>
     )

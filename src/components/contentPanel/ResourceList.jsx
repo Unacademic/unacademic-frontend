@@ -7,9 +7,9 @@ class ResourceList extends React.Component {
   render() {
     let resources = this.props.resources;
     let resourceList = R.map(( {title, id} ) => {
-      let newTitle = title.substring(0, 55);
+      let newTitle = title.substring(0, 45);
       return (
-        <ResourceListItem key={ id } title={ newTitle } />
+        <ResourceListItem key={ id } title={ title } />
        )
       }, resources );
 
