@@ -78,7 +78,7 @@ checkpoints:
         type: movie
         notes: If interested also watch the other parts
       - authors: Rueben
-        title: Study explodes the myth of Internet-based information overload
+        title: Study Explodes the Myth of Internet-based Information Overload
         url: "http://holtz.com/blog/attention/study-explodes-the-myth-of-internet-based-information-overload/3955/"
         criteria:
           clarity: 4
