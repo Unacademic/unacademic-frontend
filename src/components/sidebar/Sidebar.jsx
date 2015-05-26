@@ -30,8 +30,8 @@ class Sidebar extends React.Component {
 
     return (
       <section onDoubleClick={ this.toggleMode.bind(this) } className={ this.classes() }>
-        { level === 'introduction' && <LogoExtended mode={ modes.current }/> }
-        { level !== 'introduction' && <Logo mode={ modes.current }/> }
+        { (level === 'introduction' || level === 'waypoints') && <LogoExtended mode={ modes.current }/> }
+        { (level !== 'introduction' && level !== 'waypoints') && <Logo mode={ modes.current }/> }
         { model && <ContentPanel context={ this.name } appState={ appState } model={ model }/> }
       </section>
     )
