@@ -7,9 +7,11 @@ class Levels {
     this.levels = levels;
   }
 
+  // test this!!!!
   set({ current, selection }){
-    let { type, id, title } = selection;
+    let { type, id, title, checkpoint } = selection;
     let proposal;
+    console.log(checkpoint);
 
     switch(type){
       case 'waypoints':
@@ -40,12 +42,12 @@ class Levels {
         proposal = {
           waypoints: current.get('waypoints'),
           waypoint: current.get('waypoint'),
-          checkpoint: current.get('checkpoint'),
+          checkpoint: checkpoint ||current.get('checkpoint'),
           resource: { id, title } || current.get('resource')
         }
         break;
     }
-
+    console.log(proposal);
     proposal.current = this._getCurrent(proposal);
 
     return proposal;
