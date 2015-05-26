@@ -14,7 +14,7 @@ class CardNav extends React.Component {
     return (
       <nav className="card_nav">
         <button onClick={ this.setLevel.bind(this, selection)} className="btn btn-inverse browse">
-          Browse
+          Open
         </button>
       </nav>
     )

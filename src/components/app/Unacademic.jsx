@@ -43,7 +43,7 @@ class Unacademic extends React.Component{
           </section>
           <section className="layout-content">
             { collection && <Cards collection={ collection } className="cards" /> }
-            { data && <Viewer data={ data } /> }
+            { data && <Viewer title={ model.title } data={ data } /> }
           </section>
         </section>) }
       </section>
