@@ -58,9 +58,19 @@ textarea {
   height: 100%;
 }
 
+@media (min-width: 800px) {
+  .placeholder {
+    display: none;
+  }
+}
+
+
 @media (min-height: 600px) {
   .placeholder {
     display: none;
+  }
+  html {
+    font-size: 10px;
   }
 }
 
@@ -70,7 +80,7 @@ textarea {
   }
 }
 
-@media (min-height: 600px) {
+@media (min-height: 700px) {
   html {
     font-size: 12px;
   }
