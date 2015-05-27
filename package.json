@@ -58,6 +58,7 @@
     "yaml-loader": "^0.1.0"
   },
   "dependencies": {
-    "marked": "^0.3.3"
+    "marked": "^0.3.3",
+    "react-tour-guide": "0.0.7"
   }
 }
