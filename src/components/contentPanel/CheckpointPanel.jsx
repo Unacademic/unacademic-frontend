@@ -21,6 +21,12 @@ class CheckpointPanel extends React.Component {
     Actions.toggleComplete({ checkpoint });
   }
 
+  selectResource(selection){
+    let { id, title } = this.props.model;
+    selection.checkpoint = { id, title };
+    Actions.setLevel(selection);
+  }
+
   handleHover(item, status){
     let { context } = this.props;
     let selection = this._getSelection(item);
@@ -72,7 +78,7 @@ class CheckpointPanel extends React.Component {
 
           { context === 'sidebar' && <DescriptionSection description={ introduction }/> }
           { context === 'sidebar' && instructionsPanel() }
-          { context === 'card' && <ResourceList resources={ resources } /> }
+          { context === 'card' && <ResourceList selectResource={ this.selectResource.bind(this) } resources={ resources } /> }
         </section>
       </div>
     )

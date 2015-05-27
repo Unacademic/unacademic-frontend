@@ -28,6 +28,7 @@
 
 .layout-topbar {
   display: flex;
+  height: rem-calc(95);
   justify-content: space-between;
   flex-direction: row;
   padding: $baseUnit;

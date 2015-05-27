@@ -26,7 +26,6 @@ class Main extends React.Component{
   }
 
   render() {
-    console.log('njfjlkaf');
     let { appState, viewModel } = this.props;
     let { levels, modes, user } = appState;
     let { model, collection, data } = viewModel;

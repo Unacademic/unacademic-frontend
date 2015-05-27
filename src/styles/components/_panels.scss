@@ -49,7 +49,6 @@
 }
 
 .app-is-checkpoint .card .panel_header {
-  height: $cardWidth;
 
   hgroup .title {
     font-size: rem-calc(20px);
@@ -57,7 +56,6 @@
 }
 
 .app-is-resource .sidebar .panel_header {
-  height: $cardWidth;
 
   hgroup .title {
     font-size: rem-calc(20px);

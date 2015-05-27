@@ -40,16 +40,32 @@
   height: auto;
 }
 
-.resource_item:hover {
+.app-is-learn .resource_item:hover {
   background-color: $learnColor;
   .handle {
     background-color: $learnColor;
-
     .handle_circle {
-      fill: $baseColor;
+      fill: $lightBaseColor;
     }
   }
+}
 
+.app-is-curate .resource_item:hover {
+  background-color: $curateColor;
+  .handle {
+    background-color: $curateColor;
+    .handle_circle {
+      fill: $lightBaseColor;
+    }
+  }
+}
+
+.app-is-learn .handle_circle {
+  fill: $learnColor;
+}
+
+.app-is-curate .handle_circle {
+  fill: $curateColor;
 }
 
 .resource_item .handle {
@@ -60,9 +76,6 @@
   vertical-align: center;
   margin: 0;
 
-  .handle_circle {
-    fill: $learnColor;
-  }
 }
 
 .resource_item .resource_item_title {
