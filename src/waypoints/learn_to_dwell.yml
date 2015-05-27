@@ -129,22 +129,6 @@ checkpoints:
           - programming
           - perl
         type: text
-      - authors: Charlotte van Oostrum
-        title: |
-          Impatience, Laziness, and Hubris” in “The End of Learning
-        url: http://codingthehumanities.com/posts/the-end-of-learning
-        criteria:
-          clarity: 2
-          difficulty: 2
-          up_to_date: 3
-          pertinence: 4
-          enjoyment: 3
-        time_to_digest: 5 minutes
-        tags:
-          - virtue
-          - programming
-          - education
-        type: text
       - authors: Larry Wall
         title: |
           Patience, Diligence and Humility
@@ -235,7 +219,7 @@ checkpoints:
     resources:
       - authors: James Joyce
         title: Ulysses
-        url: https://www.gutenberg.org/files/4300/4300-h/4300-h.htm
+        url: "http://en.wikipedia.org/wiki/Ulysses_%28novel%29"
         criteria:
           clarity: 1
           difficulty: 5

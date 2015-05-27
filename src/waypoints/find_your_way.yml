@@ -1,7 +1,7 @@
 title: Find Your Way
 curator: Reika Chavers
 
-summary: learn to navigate through Offcourse
+summary: Learn to navigate through Offcourse
 
 description: |
   Do you have a hard time finding your way through the interface? We have minimised the interface design so that you can keep your focus on learning and curating. The core functionalities are limited to the ones you need: mode button, toolbar and the card stack. That's all!
@@ -69,6 +69,10 @@ checkpoints:
       It's your legend. At the top are your breadcrumbs, which show
       you where you are in the interface.
       You can use them to navigate. Try tooling your bar!
+    notes: Especially the fourth paragraph is useful.
+  - title: Anchor your learning
+    introduction: |
+      On the left you see your toolbar. Here's your information. It's your legend. At the top are your breadcrumbs, which show you where you are in the interface. You can use them to navigate. Try tooling your bar!
     instructions:
       - Consume the resources for inspiration
     resources:
