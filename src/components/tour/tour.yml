@@ -1,7 +1,25 @@
 steps:
-- text: This is the first step in the tour.
-  element: .logo
-  position: bottom
-- text: This is the second step in the tour.
-  element: .sidebar
-  position: right
+  - text: "Upon pressing start, you are greeted with a bold yellow Sidebar, as well as a collection of cards next to it. Though empty now, the Sidebar will be very useful to you while exploring Offcourse, so pay attention to how it changes with each Waypoint, Checkpoint, and Resource!"
+    element: .sidebar
+    position: middle
+  - text: "Next to our Sidebar we see a collection of cards known as Waypoints. A Waypoint represents a specific course or topic to explore, and can be considered the “top-level” of our content. Click one to learn more! (click ‘Learn to Dwell’)"
+    element: .layout-main
+    position: middle
+  - text: "(Note how Sidebar has updated). Here we’ll always find additional information about the current level we're on. Right now in our Sidebar, we see information about our Waypoint ‘Learn to Dwell’. Also note how the top has updated, too. These breadcrumbs will show you where you currently are, and how to get back home."
+    element: .sidebar
+    position: middle
+  - text: "This visualization for each Waypoint represents the number of its respective Checkpoints. As you can see, each Checkpoint takes on a particular shape, which are connected by nodes. Each of these nodes represents a Resource"
+    element: .panel_header
+    position: top
+  - text: "Now in the main area, we see a new set of cards. These are the Checkpoints that make up our Waypoint. Checkpoints, as the name implies, are used to break down our subject into focused, digestible chunks. Let’s explore the Checkpoint inspired by our friend Patrick Camacho, ‘Fuck it, Ship it.’"
+    element: .layout-main
+    position: middle
+  - text: "Now, the update to our page should seem familiar- Our Sidebar is showing information about the Checkpoint we selected, our breadcrumbs have updated to reflect this navigation, and we see the Resources that comprise this Checkpoint. Resources can be anything you find on the internet - plain text, video, audio, graphs and images - all of which incredibly useful for various learning types. (Explore two Resource Views)"
+    element: .sidebar
+    position: right
+  - text: "Users can explore all these Resources here, within Offcourse. Not only that, but they can also rate specific criteria about this Resource that we believe to be useful for any learner (list the 5 Criteria). The shape you see above is a direct representation of these scores on a scale from 0-5, giving the user visual clues as to what to expect from this Resource before even clicking on its link."
+    element: .layout-main
+    position: middle
+  - text: "As you progress through your Checkpoints, you can check them off and get visual feedback as the their respective nodes fill with color."
+    element: .sidebar
+    position: right

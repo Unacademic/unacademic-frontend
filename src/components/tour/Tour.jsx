@@ -4,10 +4,8 @@ import { steps }from './tour.yml';
 
 let tour = {
   startIndex: 0,
-  scrollToSteps: true,
   steps
 };
-
 
 let cb = function() {
   console.log('User has completed tour!');
