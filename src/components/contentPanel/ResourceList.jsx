@@ -11,8 +11,8 @@ class ResourceList extends React.Component {
       return (
         <ResourceListItem key={ id }
           handleClick={ selectResource.bind(this) }
-          title={ title } 
-          id={ id } 
+          title={ title }
+          id={ id }
           type={ type } />
        )
       }, resources );

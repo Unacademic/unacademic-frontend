@@ -34,10 +34,10 @@ describe("Resource Panel", () => {
     });
 
     it("updates the criteria on change", () => {
-      let property = { 'interesting': 2 };
+      let property = { 'clarity': 2 };
       let resource = { id: 1 };
       Actions.updateCriteria = sinon.spy();
-      let input = element.querySelector('input[name="interesting"]');
+      let input = element.querySelector('input[name="clarity"]');
       TestUtils.Simulate.change(input, { target: { value: 2 } });
       expect(Actions.updateCriteria).to.be.calledWith({ resource, property })
     });

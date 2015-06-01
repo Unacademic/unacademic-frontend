@@ -31,7 +31,10 @@ checkpoints:
         author: Marijn Haverbeke
         url: http://eloquentjavascript.net/13_dom.html
         criteria: 
-          interesting: 5
+          clarity: 5
+        tags: 
+          - one
+          - two
       - title: Rhizome
         author: Gilles Deleuze and Felix Guattari.
         url: https://www.upress.umn.edu/book-division/books/a-thousand-plateaus
