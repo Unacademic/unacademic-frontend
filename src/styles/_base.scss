@@ -53,54 +53,6 @@ textarea {
 }
 
 .placeholder {
-  display: flex;
   background-color: $learnColor;
   height: 100%;
 }
-
-@media (min-width: 800px) {
-  .placeholder {
-    display: none;
-  }
-}
-
-
-@media (min-height: 600px) {
-  .placeholder {
-    display: none;
-  }
-  html {
-    font-size: 10px;
-  }
-}
-
-@media (max-height: 600px) {
-  div.container {
-    display: none;
-  }
-}
-
-@media (min-height: 700px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media (min-height: 800px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-@media (min-height: 900px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (min-height: 1080px) {
-  html {
-    font-size: 16px;
-  }
-}
-

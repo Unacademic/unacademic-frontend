@@ -7,11 +7,7 @@ describe("Unacademic", () => {
   beforeEach(() => {
     testdom('<html><body></body></html>');
     let { appState, viewModel } = fixtures;
-    let container = TestUtils.renderIntoDocument(
-      <Unacademic viewModel={ viewModel } appState={ appState } />
-    );
-
-    element = React.findDOMNode(container);
+    element = renderElement(viewModel, appState);
   });
 
   it("renders the container with the correct classes", () => {
@@ -42,38 +38,58 @@ describe("Unacademic", () => {
     });
 
 
-    describe("topbar area", ()=> {
-      let topbar;
+    describe("during browsing", ()=> {
 
-      it("renders the container", () => {
-        topbar = main[0].querySelectorAll('.layout-topbar');
+      it("renders the topbar", () => {
+        let topbar = main[0].querySelectorAll('.layout-topbar');
         expect(topbar.length).to.equal(1);
       });
 
-      it("renders the breadcrumbs component", () => {
-        let breadcrumbs = topbar[0].querySelectorAll('.breadcrumbs');
-        expect(breadcrumbs.length).to.equal(1);
-      });
-
-      it("renders the login button", () => {
-        let breadcrumbs = topbar[0].querySelectorAll('.login');
-        expect(breadcrumbs.length).to.equal(1);
-      });
-    });
-
-    describe("content area", ()=> {
-      let content;
-
-      it("renders the container", () => {
-        content = main[0].querySelectorAll('.layout-content');
+      it("renders the content area", () => {
+        let content = main[0].querySelectorAll('.layout-content');
         expect(content.length).to.equal(1);
       });
 
-      it("renders the cards component", () => {
-        let cards = content[0].querySelectorAll('.cards');
-        expect(cards.length).to.equal(1);
+
+      it("does not render the introduction component", () => {
+        let introduction = main[0].querySelectorAll('.introduction');
+        expect(introduction.length).to.equal(0);
       });
     });
 
+    describe("during browsing", ()=> {
+
+      beforeEach(() => {
+        testdom('<html><body></body></html>');
+        let { appState, viewModel } = fixtures;
+        appState.levels.current = 'introduction';
+        element = renderElement(viewModel, appState);
+        main = element.querySelectorAll('.layout-main');
+      });
+
+      it("does not render the topbar", () => {
+        let topbar = main[0].querySelectorAll('.layout-topbar');
+        expect(topbar.length).to.equal(0);
+      });
+
+      it("does not render the content area", () => {
+        let content = main[0].querySelectorAll('.layout-content');
+        expect(content.length).to.equal(0);
+      });
+
+
+      it("renders the introduction component", () => {
+        let introduction = main[0].querySelectorAll('.introduction');
+        expect(introduction.length).to.equal(1);
+      });
+    });
   });
 });
+
+function renderElement(viewModel, appState){
+  let container = TestUtils.renderIntoDocument(
+    <Unacademic viewModel={ viewModel } appState={ appState } />
+  );
+
+  return React.findDOMNode(container);
+}

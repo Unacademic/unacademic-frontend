@@ -1,0 +1,37 @@
+.textbar {
+  font-family: NittyBold;
+  outline: none;
+  display: inline-block;
+  font-size: rem-calc(22);
+  line-height: rem-calc(30);
+  margin-bottom: rem-calc(5);
+  padding: 0 $thirdUnit;
+  border: none;
+  background-color: $baseColor;
+  color: $inverseColor;
+}
+
+.textbar.textbar-inverse {
+  background-color: $inverseColor;
+  color: $baseColor;
+}
+
+.textbar-big, .textbar-big:focus {
+  margin-bottom: rem-calc(15);
+  font-size: rem-calc(73.3333);
+  line-height: rem-calc(100);
+  padding: 0 ($thirdUnit * 2);
+}
+
+.textbar-big.textbar-inverse {
+  background-color: $inverseColor;
+  color: $baseColor;
+}
+
+.app-is-learn .introduction, .app-is-learn .logo {
+  background-color: $learnColor;
+}
+
+.app-is-curate .introduction, .app-is-curate  .logo {
+  background-color: $curateColor;
+}

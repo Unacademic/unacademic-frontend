@@ -30,9 +30,14 @@ class UnacademicContainer extends React.Component{
     if(appState && viewModel){
       return (
         <div>
-          <div className="placeholder">HELLO</div>
+          <div className="placeholder">
+          <p className="textbar">We Are Working Hard</p><br/>
+          <p className="textbar">To Support Your Device</p><br/>
+          <p className="textbar textbar-inverse">Come Back Soon</p>
+          </div>
           <div className="container">
             <Unacademic viewModel={ viewModel } appState={ appState }/>
+            { appState.levels.current !== 'introduction' && <TourSelector /> }
           </div>
         </div>
       )

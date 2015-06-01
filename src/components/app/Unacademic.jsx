@@ -41,8 +41,10 @@ class Unacademic extends React.Component{
         <section className="layout-sidebar layout-sidebar-left">
           <Sidebar model={ model } appState={ appState }/>
         </section>
-        { level === 'introduction' && <Start/> }
-        { level !== 'introduction' && <Main {...this.props}/> }
+        <section className="layout-main">
+          { level === 'introduction' && <Start/> }
+          { level !== 'introduction' && <Main {...this.props}/> }
+        </section>
       </section>
     )
   }

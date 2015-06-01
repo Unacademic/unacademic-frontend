@@ -29,9 +29,9 @@ class LogoExtended extends React.Component {
 
     return (
       <section className={ this.classes() }>
-        <button>{ title }</button><br/>
-        <p>Learn</p><br/>
-        <p>By Dwelling</p>
+        <button className="textbar">{ title }</button><br/>
+        <p className="textbar textbar-inverse">Learn</p><br/>
+        <p className="textbar textbar-inverse">By Dwelling</p>
       </section>
     )
   }

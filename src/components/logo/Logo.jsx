@@ -24,7 +24,7 @@ class Logo extends React.Component {
 
     return (
       <section className={ this.classes() }>
-        <button>{ title }</button>
+        <button className="textbar">{ title }</button>
       </section>
     )
   }
