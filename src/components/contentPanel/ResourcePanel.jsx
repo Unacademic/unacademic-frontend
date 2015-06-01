@@ -32,7 +32,12 @@ class ResourcePanel extends React.Component {
     let { context, model } = this.props;
     let { title, author, url, notes, criteria, tags, time_to_digest } = model;
     let type = model.constructor.name.toLowerCase();
-    let tagBlocks = R.mapIndexed((tag, index) => <span key={ index } className="tag">{ _.capitalize(tag) }</span>, tags);
+    let tagBlocks = R.mapIndexed((tag, index) => {
+    let formattedTag = R.map((tag) => _.capitalize(tag), tag.split(' ')).join(' ');
+      return (
+        <span key={ index } className="tag">{ formattedTag }</span>
+      );
+    }, tags);
 
     return (
       <section className={ this.classes() }>
@@ -56,9 +61,9 @@ class ResourcePanel extends React.Component {
           <section>
             <h1>Notes</h1>
             { notes }
-          </section>
-          </section>
-        </section>
+         </section>
+         </section>
+       </section>
     )
   }
 };
