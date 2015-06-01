@@ -5,7 +5,6 @@ import Sidebar from '../sidebar/Sidebar.jsx';
 import Main from '../main/Main.jsx';
 import Actions from '../../actions/index';
 import Start from '../start/Start.jsx';
-import TourSelector from '../tour/TourSelector.jsx';
 
 class Unacademic extends React.Component{
 
@@ -43,7 +42,6 @@ class Unacademic extends React.Component{
           <Sidebar model={ model } appState={ appState }/>
         </section>
         { level === 'introduction' && <Start/> }
-        { level !== 'introduction' && <TourSelector {...this.props}/> }
         { level !== 'introduction' && <Main {...this.props}/> }
       </section>
     )

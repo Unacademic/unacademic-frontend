@@ -2,6 +2,7 @@ import React from 'react';
 import AppStore from '../../stores/index'
 
 import Unacademic from './Unacademic.jsx';
+import TourSelector from '../tour/TourSelector.jsx';
 
 class UnacademicContainer extends React.Component{
 
@@ -32,6 +33,7 @@ class UnacademicContainer extends React.Component{
           <div className="placeholder">HELLO</div>
           <div className="container">
             <Unacademic viewModel={ viewModel } appState={ appState }/>
+            { appState.levels.current !== 'introduction' && <TourSelector /> }
           </div>
         </div>
       )
