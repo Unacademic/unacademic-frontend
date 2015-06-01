@@ -5,13 +5,15 @@ describe("TodoList Section", () => {
   let element;
   let handleComplete;
   let handleHover;
+  let selectElement;
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
     let { checkpoints } = fixtures.viewModel.collection[0];
     handleComplete = sinon.spy();
     handleHover = sinon.spy();
-    element = renderToDoList(checkpoints, handleComplete, handleHover);
+    selectElement = sinon.spy();
+    element = renderToDoList(checkpoints, handleComplete, selectElement, handleHover);
   })
 
   it("has the correct classes", () => {
@@ -26,9 +28,15 @@ describe("TodoList Section", () => {
   });
 
   it("checks complete when an item is clicked", ()=> {
-    let todoItem = element.querySelectorAll('.todolist_item')[0];
+    let todoItem = element.querySelectorAll('.todolist_item .checkbox')[0];
     TestUtils.Simulate.click(todoItem);
     expect(handleComplete).to.be.called;
+  });
+
+  it("selects an item when title is clicked", ()=> {
+    let todoItem = element.querySelectorAll('.todolist_item .title-resource')[0];
+    TestUtils.Simulate.click(todoItem);
+    expect(selectElement).to.be.called;
   });
 
   it("highlights an item on mouseover", ()=> {
@@ -44,9 +52,10 @@ describe("TodoList Section", () => {
   });
 });
 
-function renderToDoList(collection, handleComplete, handleHover){
+function renderToDoList(collection, handleComplete, selectElement, handleHover){
   let container = TestUtils.renderIntoDocument(
-    <TodoList collection={ collection } handleHover={ handleHover } handleComplete={ handleComplete }/>
+    <TodoList collection={ collection } handleHover={ handleHover }
+      selectElement={ selectElement } handleComplete={ handleComplete }/>
   );
 
   let element = React.findDOMNode(container);

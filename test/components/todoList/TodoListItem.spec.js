@@ -8,6 +8,7 @@ describe("TodoList Item", () => {
   let checkpoint;
   let handleHover;
   let handleClick;
+  let selectElement;
 
   beforeEach(() => {
     testdom('<html><body></body></html>');
@@ -15,7 +16,8 @@ describe("TodoList Item", () => {
     checkpoint.id = 1;
     handleHover = sinon.spy();
     handleClick = sinon.spy();
-    element = renderToDoListItem(checkpoint, handleHover, handleClick);
+    selectElement = sinon.spy();
+    element = renderToDoListItem(checkpoint, handleHover, selectElement, handleClick);
   })
 
   it("has the correct classes", () => {
@@ -23,9 +25,16 @@ describe("TodoList Item", () => {
     expect(classes).to.contain('todolist_item');
   });
 
-  it("updates the complete status on click", ()=> {
-    TestUtils.Simulate.click(element);
+  it("updates the complete status on checkbox click", ()=> {
+      let checkbox = element.querySelector('.checkbox')
+    TestUtils.Simulate.click(checkbox);
     expect(handleClick).to.be.calledWith(checkpoint.id);
+  });
+
+  it("selects the element on title click", ()=> {
+    let title = element.querySelector('.title-resource')
+    TestUtils.Simulate.click(title);
+    expect(selectElement).to.be.calledWith({ id: 1, title: "Climb Trees"  });
   });
 
   it("highlights the model on hover", ()=> {
@@ -39,9 +48,12 @@ describe("TodoList Item", () => {
   });
 });
 
-function renderToDoListItem(item, handleHover, handleClick){
+function renderToDoListItem(item, handleHover, selectElement, handleClick){
   let container = TestUtils.renderIntoDocument(
-    <TodoListItem item={ item } handleHover={ handleHover } checkDone={ handleClick }/>
+    <TodoListItem item={ item }
+      handleHover={ handleHover }
+      selectElement = { selectElement }
+      handleComplete={ handleClick }/>
   );
 
   let element = React.findDOMNode(container);
