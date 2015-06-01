@@ -1,7 +1,7 @@
 title: Don't repeat yourself
 curator: Reika Chavers
 
-summary: Master curation at Offcourse and become an expert
+summary: Master curation at Offcourse and become an expert at dwelling.
 
 description: |
   How many wheels have you had to reinvent already? Our guess would be 'too
@@ -13,7 +13,7 @@ description: |
   tutorials, add your comments, and share them. That’s it!
 
 checkpoints:
-  - title: Structure your Story
+  - title: Structure Your Story
     introduction: |
       Learning and curation at Offcourse are built around waypoints. Think of
       them as narratives. Like every good story, they need a structure: a
@@ -189,7 +189,7 @@ checkpoints:
           - adding value
         type: video
         notes: The reason to why add context is well defined
-  - title: Be Critical and Curate
+  - title: Be Critical
     description: |
       Always curate content critically. For instance, do not forget to check
       whom you are referencing to, and which are the associated
@@ -242,7 +242,7 @@ checkpoints:
           - content
         type: text
         notes: This article might seem a long read but it is worth it
-  - title: Now You Are a Real Curator
+  - title: Curate or Create
     introduction: |
        The role of the curator has changed over time. Our
        notion of a curator is someone who helps you.
