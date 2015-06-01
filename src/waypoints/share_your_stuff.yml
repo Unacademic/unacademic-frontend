@@ -1,13 +1,13 @@
 title: Share Your Stuff
 curator: Angeliki Chalkia
 
-summary: Share your stuff and contribute and learn at the same time
+summary: Share your stuff and contribute and learn at the same time.
 
 description: |
   Sharing is the cornerstone of our platform. To enrich knowlegde you need to have input and content easily accessible by everybody. Input does not necessarily mean to write and compile a waypoint yourself.You also contribute by rating and reviewing the material you have just consumed. By doing so, you actually enable your learning process and become an active member of a vital community.
 
 checkpoints:
-  - title: Rate and Review Content
+  - title: Rate and Review
     introduction: |
       Rating and reviewing content helps future users of the platform to make better choices. More important, by reviewing content, you become critical towards the material you use and you actually learn. Start rating and reviewing content on Offcourse yourself.
 
@@ -113,7 +113,7 @@ checkpoints:
         - open access
         type: video
         notes: A short promo video for the Open Access Week
-  - title: Become Part of the Community
+  - title: Become the Community
     introduction: |
       The process of learning is much better facilitated when it takes place in a community. Among like minded peers, you can easily exchange and share knowlegde, build upon existing insights and information, and actually have fun while learning.
 
