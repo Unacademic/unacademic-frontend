@@ -8,7 +8,7 @@ import tourResource from './tourData/tourResource.yml';
 
 class TourSelector extends React.Component{
   render() {
-  	switch(this.props.appState.levels){
+  	switch(this.props.appState.levels.current){
       case 'waypoints':
         return <Tour key="1" tour={ tourWaypoints }/>
       case 'waypoint':
