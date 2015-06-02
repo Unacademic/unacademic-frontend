@@ -37,7 +37,7 @@ class UnacademicContainer extends React.Component{
           </div>
           <div className="container">
             <Unacademic viewModel={ viewModel } appState={ appState }/>
-            { appState.levels.current !== 'introduction' && <TourSelector /> }
+            { appState.levels.current !== 'introduction' && <TourSelector appState={ appState } /> }
           </div>
         </div>
       )

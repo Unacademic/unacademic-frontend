@@ -1,0 +1,12 @@
+startIndex: 0
+scrollToSteps: true
+steps:
+- text: "Though empty now, the Sidebar will be very useful to you while exploring Offcourse, so pay attention to how it changes with each Waypoint, Checkpoint, and Resource!"
+  element: .sidebar
+  position: middle
+- text: "Next to our Sidebar you see a collection of cards known as Waypoints. A Waypoint represents a specific course or topic to explore. Click one to learn more!"
+  element: .layout-main
+  position: middle
+
+
+

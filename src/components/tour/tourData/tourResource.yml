@@ -1,0 +1,6 @@
+startIndex: 0
+scrollToSteps: true
+steps:
+- text: "You can explore all these Resources here, within Offcourse. Not only that, but you can also rate specific criteria about this Resource that you believe to be useful for any learner. The shape you see above is a direct representation of these scores on a scale from 0-5, giving visual clues as to what to expect from this Resource."
+  element: .layout-main
+  position: middle
