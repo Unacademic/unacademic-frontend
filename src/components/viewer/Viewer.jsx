@@ -18,7 +18,7 @@ class Viewer extends React.Component {
           warning += '<br><br>Please refer to the following link:\n'
           return warning + '<div><a href=' + data.url + ' target="_blank">' + data.title + '</a></div></warning>'
         } else {
-          return { embedly: false, content: '<iframe frameborder="0" src=' + data.url + '>' + data.url + '</iframe>' }
+          return { embedly: false, content: '<iframe sandbox="allow-forms" frameborder="0" src=' + data.url + '>' + data.url + '</iframe>' }
         }
       }
     }
