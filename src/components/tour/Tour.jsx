@@ -13,8 +13,10 @@ let tour = {
 
 let Tour = React.createClass({
   mixins: [Mixin(tour)],
-  render: function(){
+  getInitialState: function(){
     this.settings.steps = this.props.tour.steps;
+  },
+  render: function(){
     return <div className="tour"><div>{ this.props.children }</div></div>
   }
 })
