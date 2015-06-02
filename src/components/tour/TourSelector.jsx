@@ -16,7 +16,7 @@ class TourSelector extends React.Component{
       case 'checkpoint':
         return <Tour key="3" tour={ tourCheckpoint }/>
       case 'resource':
-        return <Tour key="4" tour={ tourResourse }/>
+        return <Tour key="4" tour={ tourResource }/>
       default:
         return <div></div>
     }
