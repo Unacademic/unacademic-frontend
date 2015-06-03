@@ -24,7 +24,7 @@ describe("TodoList Section", () => {
 
   it("has the correct number of elements", () => {
     let todoItems = element.querySelectorAll('.todolist_item')
-    expect(todoItems.length).to.equal(5);
+    expect(todoItems.length).to.equal(3);
   });
 
   it("checks complete when an item is clicked", ()=> {

@@ -1,0 +1,218 @@
+title: Find Your Way
+curator: Reika Chavers
+
+summary: |
+    Learn at your best through dwelling. Learn to dwell through Offcourse.
+description: |
+  Dwelling is a matter of having enough freedom to find new paths, but at the same time having enough structure to not get lost. We have minimised the interface design to give you some of that structure so you can keep your focus on learning and curating. The core functionalities are limited to the ones you need: mode button, toolbar and the card stack. That's all!
+
+checkpoints:
+  - title: Switch Cognitive Modes
+    introduction: |
+      Changing your perspective makes your learning more active. Switch between learning and curating to learn more effectively and at the same time help others to learn. Explore switching modes in Offcourse by clicking the mode button (logo) in the upper left corner.
+    instructions:
+      - Try to define your own modes in life after reading the resources
+    resources:
+      - authors: Kimm Fesenmaier
+        title: Switching on One-shot Learning in the Brain
+        url: "https://www.caltech.edu/news/switching-one-shot-learning-brain-46629"
+        criteria:
+          clarity: 4
+          difficulty: 3
+          up_to_date: 5
+          pertinence: 2
+          enjoyment: 5
+        time_to_digest: 22 minutes
+        tags:
+          - one-shot learning
+          - science
+          - brain
+        type: text
+        notes: Especially the fourth paragraph is useful.
+      - authors:
+        title: |
+          Guideline Nine, Multiple Modes
+        url: "http://www.guidelinesonlearning.com/guideline-nine"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 3
+          pertinence: 2
+          enjoyment: 2
+        time_to_digest: 2 minutes
+        tags:
+          - learning
+          - multiple modes
+        type: text
+        notes: |
+         If you have extra time, scan through the other guidelines.
+      - authors:
+        - Meryl Reis Louis
+        - Robert I Sutton
+        title: |
+          Switching Cognitive Gears, From Habits of Mind to Active Thinking
+        url: "http://hum.sagepub.com/content/44/1/55"
+        criteria:
+          clarity: 4
+          difficulty: 5
+          up_to_date: 4
+          pertinence: 3
+          enjoyment: 4
+        time_to_digest: 65 minutes
+        tags:
+          - cognitive modes
+          - creative thinking
+        type: text
+        notes: The full article is not available to everybody
+  - title: Anchor Your Learning
+    introduction: |
+      On the left you will always have this big toolbar. Here you will always find crucial information about the current level. It's function's as your legend in your learning process. At the top you see breadcrumbs, these will show you where you currently are, and how to get back home.
+    instructions:
+      - Have a look at the resources and try playing around to see how the toolbar changes!
+    resources:
+      - authors:
+        - J.D. Bransford
+        - R.D. Sherwoord
+        - T.S. Hasselbring
+        - C.K. Kinzer
+        - S.M. Williams
+        title: Anchored Instruction
+        url: "http://calteach.ucsc.edu/aboutus/documents/AnchoredInstruction.pdf"
+        criteria:
+          clarity: 4
+          difficulty: 1
+          up_to_date: 2
+          pertinence: 3
+          enjoyment: 3
+        time_to_digest: 100 minutes
+        tags:
+          - media
+          - learning
+          - anchor point
+        type: text
+        notes: |
+          see http://www.enotes.com/research-starters/anchored-instruction for an overview
+      - authors:
+        title: Toolbar
+        url: "https://en.wikipedia.org/wiki/Toolbar"
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 5
+          pertinence: 5
+          enjoyment: 2
+        time_to_digest: 2 minutes
+        tags:
+          - toolbar
+          - interface
+        type: text
+        notes: Short but sweet
+      - authors: Janne Jul Jensen
+        title: User Interface Techniques
+        url: "https://www.youtube.com/watch?v=7OSkB4BCx00"
+        criteria:
+          clarity: 4
+          difficulty: 3
+          up_to_date: 4
+          pertinence: 3
+          enjoyment: 3
+        time_to_digest: 51 minutes
+        tags:
+          - interface
+          - design
+          - usabillity
+          - users
+        type: video
+        notes: Especially the first 20 minutes are useful.
+
+
+  - title: Play Cards
+    introduction: |
+      The use of a card based interface is to resemble physical material. But this also helps structure information and helps you see what information belongs together. Just like index cards!
+    instructions:
+      - Look at the resources and organize your learning resources on index cards.
+    resources:
+      - authors:
+        - James Patten
+        title: The best computer interface? Maybe ... your hands
+        url: "https://www.ted.com/talks/james_patten_the_best_computer_interface_maybe_your_hands"
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 4
+        time_to_digest: 7 minutes
+        tags:
+          - interface
+          - fysical objects
+          - interaction
+        type: video
+        notes: Linking to physical objects helps understanding.
+      - authors: Mark Wilson
+        title: User Interface Design Basics
+        url: "http://www.usability.gov/what-and-why/user-interface-design.html"
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 4
+        time_to_digest: 15 minutes
+        tags:
+          - design
+          - user interface
+          - information architecture
+        type: text
+        notes: Note how keeping the interface simple is the first rule in Interface Design.
+      - authors:
+        title: How Google Unified its Products with a Simple Index Card
+        url: "http://www.fastcodesign.com/1672605/how-google-unified-its-products-with-a-simple-index-card"
+        criteria:
+          clarity: 4
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 4
+          enjoyment: 4
+        time_to_digest: 21 minutes
+        tags:
+          - cards
+          - google
+          - material design
+          - design language
+          - interface
+        type: text
+        notes: "Cards work to make content come forward, thanks to minimal, visual cohesion."
+      - authors:
+        title: Components - Cards
+        url: "http://www.google.com/design/spec/components/cards.html#cards-actions"
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 5
+        time_to_digest: 10 minutes
+        tags:
+          - material design
+          - google
+          - interface
+          - cards
+        type: text
+        notes:
+      - authors:
+        title: Study Flashcards
+        url: "https://www.examtime.com/flashcards/study-flashcards/"
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 2
+          enjoyment: 4
+        time_to_digest: 10 minutes
+        tags:
+          - improve learning
+          - flashcards
+          - studying
+        type: text
+        notes: Start organizing your waypoint in flashcards.

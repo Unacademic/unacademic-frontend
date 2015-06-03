@@ -34,7 +34,7 @@ describe("TodoList Item", () => {
   it("selects the element on title click", ()=> {
     let title = element.querySelector('.title-resource')
     TestUtils.Simulate.click(title);
-    expect(selectElement).to.be.calledWith({ id: 1, title: "Climb Trees"  });
+    expect(selectElement).to.be.calledWith({ id: 1, title: "Switch Cognitive Modes"  });
   });
 
   it("highlights the model on hover", ()=> {
