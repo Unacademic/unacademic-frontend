@@ -34,6 +34,8 @@ class WaypointPanel extends React.Component {
     selection.type = "checkpoint";
 
     Actions.setLevel(selection);
+
+    this.handleHover(selection.id, false);
   }  
 
   _getSelection(item){
