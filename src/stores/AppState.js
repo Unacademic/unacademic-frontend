@@ -36,7 +36,7 @@ class AppStore extends BaseStore {
   setLevel(selection){
     let current = this._get().get('levels');
     let levels = this.Levels.set({ current, selection });
-    this.update({ levels });
+    return this.update({ levels });
   }
 
   setMode(mode){

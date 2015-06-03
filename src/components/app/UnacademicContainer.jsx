@@ -31,9 +31,11 @@ class UnacademicContainer extends React.Component{
       return (
         <div>
           <div className="placeholder">
-          <p className="textbar">We Are Working Hard</p><br/>
-          <p className="textbar">To Support Your Device</p><br/>
-          <p className="textbar textbar-inverse">Come Back Soon</p>
+          <p className="textbar textbar-inverse">Lots of Learning</p><br/>
+          <p className="textbar">Does not Fit Your Screen</p><br/>
+          <p className="textbar">Yet!</p><br/>
+          <p className="textbar textbar-inverse">Come Back Soon</p><br/>
+          <p className="textbar">Offcourse_</p>
           </div>
           <div className="container">
             <Unacademic viewModel={ viewModel } appState={ appState }/>

@@ -68,23 +68,17 @@ class API {
     two.model.complete = two.model.complete ? false : true;
 
     if(two.type === 'checkpoint') {
-      console.log('checkpoint');
       R.map(function (res) {
         // this doesn make much sense... only when set to true...
         res.complete = two.model.complete;
       }, two.model.resources);
     } else if(two.type === 'resource') {
-      console.log('resource');
       let all_completed = true;
       R.map(function (res) {
         all_completed = all_completed && (res.complete ? true : false);
       }, one.checkpoint.resources);
       one.checkpoint.complete = all_completed;
     }
-
-
-    // check if we are fullfiling the 
-
   }
 
   updateCriteria({levels, criterium}){

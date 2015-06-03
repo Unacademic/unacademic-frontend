@@ -16,6 +16,7 @@ class Main extends React.Component{
     let { appState, viewModel } = this.props;
     let { levels, modes, user } = appState;
     let { model, collection, data } = viewModel;
+    let level = levels.current;
 
     return (
       <div>

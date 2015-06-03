@@ -7,7 +7,6 @@ class Levels {
     this.levels = levels;
   }
 
-  // test this!!!! --- checkpoint and waypoint added for TodoList selections (see CheckpointPanel + Waypointpanel)
   set({ current, selection }){
     let { type, id, title, checkpoint, waypoint } = selection;
     let proposal;
@@ -16,6 +15,16 @@ class Levels {
       case 'waypoints':
         proposal = {
           waypoints: { id, title } || current.get('waypoints'),
+          feedback: false,
+          waypoint: false,
+          checkpoint: false,
+          resource: false
+        }
+        break;
+      case 'feedback':
+        proposal = {
+          waypoints: { id, title } || current.get('waypoints'),
+          feedback: { title: 'Feedback' },
           waypoint: false,
           checkpoint: false,
           resource: false

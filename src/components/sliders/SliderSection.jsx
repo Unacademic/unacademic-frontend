@@ -11,7 +11,10 @@ class SliderSection extends React.Component {
 
     let criteriaFields = R.map(([fieldName, value])=> {
       return (
-          <Slider key={ fieldName } fieldName={ fieldName } value={  value } handleChange={ handleChange }/>
+          <Slider key={ fieldName }
+            fieldName={ fieldName }
+            value={ parseInt(value) }
+            handleChange={ handleChange }/>
       )
     }, criteriaNames)
 

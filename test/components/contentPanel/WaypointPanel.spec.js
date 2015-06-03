@@ -61,12 +61,15 @@ describe("Waypoint Panel", () => {
         });
 
         it("selects a level when an item title is clicked", ()=> {
-            let todoItem = element.querySelectorAll('.todolist_item .title-resource')[0];
+          let todoItem = element.querySelectorAll('.todolist_item .title-resource')[0];
           Actions.setLevel = sinon.spy();
+          Actions.setHighlight = sinon.spy();
           TestUtils.Simulate.click(todoItem);
           let waypoint = { id: 1 };
           let checkpoint = { id: 1 };
-          expect(Actions.toggleComplete).to.be.calledWith({ waypoint, checkpoint })
+          let selection = { waypoint, checkpoint };
+          expect(Actions.toggleComplete).to.be.calledWith(selection);
+          expect(Actions.setHighlight).to.be.calledWith(selection, false);
         });
 
         it("adds highlight on a mouse enter", ()=> {

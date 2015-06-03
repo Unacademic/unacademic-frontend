@@ -24,9 +24,15 @@ class Start extends React.Component{
     let barClass = 'textbar';
     return (
       <div className={ this.classes() }>
-      <button onClick={ this.handleClick.bind(this) } className={ `${barClass} ${barClass}-big ${barClass}-inverse` }>Tiny Bits of Structure</button><br/>
-      <button onClick={ this.handleClick.bind(this) } className={ `${barClass} ${barClass}-big ${barClass}-inverse` }>Lots of Learning</button><br/>
-      <button onClick={ this.handleClick.bind(this) } className={ `${barClass} ${barClass}-big` }>Start Here</button><br/>
+      <button onClick={ this.handleClick.bind(this) } className={ `${barClass} ${barClass}-big ${barClass}-inverse` }>
+        Tiny Bits of Structure
+      </button><br/>
+      <button onClick={ this.handleClick.bind(this) } className={ `${barClass} ${barClass}-big ${barClass}-inverse` }>
+        Lots of Learning
+      </button><br/>
+      <button onClick={ this.handleClick.bind(this) } className={ `${barClass} ${barClass}-big` }>
+        Start Here
+      </button><br/>
       </div>
     )
   }

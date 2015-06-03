@@ -10,8 +10,7 @@ class LoginButton extends React.Component{
   }
 
   handleClick(){
-    alert('coming soon...');
-    // Actions.authenticate();
+    Actions.setLevel({ type: 'feedback' });
   }
 
   classes(){
@@ -28,7 +27,7 @@ class LoginButton extends React.Component{
     let { userId } = this.props;
     return (
       <li onClick={ this.handleClick.bind(this) } className={ this.classes() }>
-        { userId || 'Feedback' }
+        Feedback
       </li>
     )
   }

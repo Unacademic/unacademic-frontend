@@ -14,12 +14,18 @@ class ViewModel {
   async get(appState){
     let user = appState.get('user');
     let levels = appState.get('levels');
+    let level = levels.get('current');
+    if(level === 'feedback'){
+      let type = 'feedback';
+      let url = 'https://docs.google.com/forms/d/1oqhvHKn4huwlxXEdlDJ9z1udg53tSUCkNB7i6fe_Ll4';
+      let data = await this.API.getResourceData(url);
+      return { data };
+    }
     let { type, model } = await this.API.get(levels.toJS());
 
     switch(type){
       case 'resource':
         let data = await this.API.getResourceData(model.url);
-
         current = {
           model: model,
           data: data

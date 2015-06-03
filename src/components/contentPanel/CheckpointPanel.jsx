@@ -16,15 +16,9 @@ class CheckpointPanel extends React.Component {
   }
 
   handleComplete(item){
-
-    if(!item) return;
-
-    let id = this.props.model.id;    
+    let id = this.props.model.id;
     let checkpoint ={ id };
-
-    id = item;
-    let resource = { id };
-
+    let resource = { id: item };
     Actions.toggleComplete({ checkpoint, resource });
   }
 
@@ -37,11 +31,8 @@ class CheckpointPanel extends React.Component {
   selectResource(selection){
     let { id, title } = this.props.model;
     selection.checkpoint = { id, title };
-
     selection.type = "resource";
-
     Actions.setLevel(selection);
-
     this.handleHover(selection.id, false);
   }
 
