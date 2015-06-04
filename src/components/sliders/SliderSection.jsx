@@ -1,7 +1,7 @@
-import React from 'react';
-import R from 'ramda';
-import Actions from '../../actions/index';
-import Slider from './Slider.jsx';
+import React from "react";
+import R from "ramda";
+
+import Slider from "./Slider.jsx";
 
 class SliderSection extends React.Component {
 
@@ -15,14 +15,14 @@ class SliderSection extends React.Component {
             fieldName={ fieldName }
             value={ parseInt(value) }
             handleChange={ handleChange }/>
-      )
-    }, criteriaNames)
+      );
+    }, criteriaNames);
 
     return (
-      <section className='sliders-container'>
+      <section className="sliders-container">
         { criteriaFields }
       </section>
-    )
+    );
   }
 }
 

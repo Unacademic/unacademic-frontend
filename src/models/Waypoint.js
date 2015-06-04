@@ -1,9 +1,9 @@
-import R from 'ramda';
+import R from "ramda";
 
-import BaseModel from './BaseModel';
-import Checkpoint from './Checkpoint';
+import BaseModel from "./BaseModel";
+import Checkpoint from "./Checkpoint";
 
-import schema from './schemas/waypoint.yml';
+import schema from "./schemas/waypoint.yml";
 
 let createCheckpoints = R.mapIndexed((checkpoint, index) => new Checkpoint(checkpoint, index + 1));
 

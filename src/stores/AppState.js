@@ -1,6 +1,5 @@
-import R from 'ramda';
-import BaseStore from './BaseStore';
-import AppStateConstants from '../constants/AppStateConstants';
+import BaseStore from "./BaseStore";
+import AppStateConstants from "../constants/AppStateConstants";
 
 class AppStore extends BaseStore {
 
@@ -24,8 +23,8 @@ class AppStore extends BaseStore {
   }
 
   authenticate(){
-    let viewModel = { waypoints: 'user' }
-    this.update({ user: 'yeehaa', viewModel });
+    let viewModel = { waypoints: "user" };
+    this.update({ user: "yeehaa", viewModel });
   }
 
   toggleComplete(selection){
@@ -34,14 +33,14 @@ class AppStore extends BaseStore {
   }
 
   setLevel(selection){
-    let current = this._get().get('levels');
+    let current = this._get().get("levels");
     let levels = this.Levels.set({ current, selection });
     return this.update({ levels });
   }
 
   setMode(mode){
     let modes = this.Modes.set(mode);
-    this.update({ modes })
+    this.update({ modes });
   }
 
   setHighlight(selection, status, context){
@@ -50,10 +49,10 @@ class AppStore extends BaseStore {
   }
 
   toggleMode(){
-    let currentModes = this._get().get('modes');
-    let current = currentModes.get('current');
+    let currentModes = this._get().get("modes");
+    let current = currentModes.get("current");
     let modes = this.Modes.toggle(current);
-    this.update({ modes })
+    this.update({ modes });
   }
 
   updateModelProp(propData){
@@ -77,7 +76,7 @@ class AppStore extends BaseStore {
   }
 
   updateCriteria(selection){
-    let levels = this._get().get('levels').toJS();
+    let levels = this._get().get("levels").toJS();
 
     this.ViewModel.updateCriteria({levels, criterium: selection});
     this.emitChange();

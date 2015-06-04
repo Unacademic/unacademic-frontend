@@ -1,14 +1,14 @@
-import React from 'react';
-import classnames from 'classnames';
-import R from 'ramda';
+import React from "react";
+import classnames from "classnames";
+import R from "ramda";
 
-import BreadCrumb from './BreadCrumb.jsx';
+import BreadCrumb from "./BreadCrumb.jsx";
 
 class BreadCrumbs extends React.Component {
 
   constructor(props){
     super(props);
-    this.name = 'breadcrumbs';
+    this.name = "breadcrumbs";
   }
 
   classes(){
@@ -20,10 +20,10 @@ class BreadCrumbs extends React.Component {
   render() {
     let levelData = this.props.levels;
     let current = levelData.current;
-    let levels = R.filter(([key, value]) => key !== 'current' && value, R.toPairs(levelData));
+    let levels = R.filter(([key, value]) => key !== "current" && value, R.toPairs(levelData));
 
     let breadcrumbs = R.map((level) => {
-      return <BreadCrumb key={ level } level={ level } current={ current }/>
+      return <BreadCrumb key={ level } level={ level } current={ current }/>;
     }, levels);
 
     return (
@@ -32,12 +32,12 @@ class BreadCrumbs extends React.Component {
          { breadcrumbs }
        </ul>
       </nav>
-    )
-  }
+    );
+  };
 }
 
 BreadCrumbs.propTypes = {
   levels: React.PropTypes.object.isRequired
-}
+};
 
 export default BreadCrumbs;

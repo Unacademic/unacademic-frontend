@@ -1,13 +1,13 @@
-import React from 'react';
-import marked from 'marked';
-import classnames from 'classnames';
+import React from "react";
+import marked from "marked";
+import classnames from "classnames";
 
 let renderer = new marked.Renderer();
 
 class DescriptionSection extends React.Component {
   constructor(props){
     super(props);
-    this.name = 'panel_section';
+    this.name = "panel_section";
   }
 
   classes(){
@@ -25,13 +25,13 @@ class DescriptionSection extends React.Component {
       <h1>Description</h1>
       <div className="description editable" dangerouslySetInnerHTML={ rendereredDescription }></div>
       </section>
-    )
+    );
   };
-};
+}
 
 DescriptionSection.propTypes = {
   description: React.PropTypes.string,
   isEditing: React.PropTypes.bool
-}
+};
 
 export default DescriptionSection;

@@ -1,6 +1,5 @@
-import React from 'react';
-import R from 'ramda';
-import Stop from './Stop.jsx';
+import React from "react";
+import Stop from "./Stop.jsx";
 
 class CheckpointMap extends React.Component {
 
@@ -10,8 +9,8 @@ class CheckpointMap extends React.Component {
       width: 418,
       padding: 30,
       radius: 90
-    }
-  }
+    };
+  };
 
   render() {
     let { height, width, radius, padding } = this.state;
@@ -21,8 +20,8 @@ class CheckpointMap extends React.Component {
     let center = width / 2;
     let x = center;
     let y = baseLine;
-    let highlight_points = true;
-    let params = { x, y, radius, center, checkpoint,  highlight_points}
+    let highlightPoints = true;
+    let params = { x, y, radius, center, checkpoint, highlightPoints };
 
     return (
       <svg viewBox={ `0 0 ${width} ${height}` }width={ width } height={ height } className="map">
@@ -33,12 +32,12 @@ class CheckpointMap extends React.Component {
           y2={ baseLine }/>
           <Stop handleHover={ handleHover.bind(this) } handleComplete={ handleComplete.bind(this) } params={ params }/>
       </svg>
-    )
-  }
-};
+    );
+  };
+}
 
 CheckpointMap.propTypes = {
   model: React.PropTypes.object
-}
+};
 
 export default CheckpointMap;

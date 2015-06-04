@@ -1,18 +1,18 @@
-import React from 'react';
-import R from 'ramda';
-import _ from 'lodash'
-import classnames from 'classnames';
+import React from "react";
+import R from "ramda";
+import _ from "lodash";
+import classnames from "classnames";
 
-import Actions from '../../actions/index';
+import Actions from "../../actions/index";
 
-import SliderSection from '../sliders/SliderSection.jsx';
-import ResourceMap from '../maps/ResourceMap.jsx';
+import SliderSection from "../sliders/SliderSection.jsx";
+import ResourceMap from "../maps/ResourceMap.jsx";
 
 class ResourcePanel extends React.Component {
 
   constructor(props){
     super(props);
-    this.name = 'panel';
+    this.name = "panel";
   }
 
   updateCriteria(fieldName, value) {
@@ -33,7 +33,7 @@ class ResourcePanel extends React.Component {
     let { title, author, url, notes, criteria, tags, time_to_digest } = model;
     let type = model.constructor.name.toLowerCase();
     let tagBlocks = R.mapIndexed((tag, index) => {
-    let formattedTag = R.map((tag) => _.capitalize(tag), tag.split(' ')).join(' ');
+      let formattedTag = R.map((tagWord) => _.capitalize(tagWord), tag.split(" ")).join(" ");
       return (
         <span key={ index } className="tag">{ formattedTag }</span>
       );
@@ -54,7 +54,7 @@ class ResourcePanel extends React.Component {
           <section>
             <p>{ tagBlocks }</p>
           </section>
-          { context === 'sidebar' && <SliderSection
+          { context === "sidebar" && <SliderSection
               handleChange={ this.updateCriteria.bind(this) }
               model={ model }
               criteria={ criteria }/> }
@@ -64,13 +64,13 @@ class ResourcePanel extends React.Component {
          </section>
          </section>
        </section>
-    )
-  }
-};
+    );
+  };
+}
 
 ResourcePanel.propTypes = {
   model: React.PropTypes.object,
   context: React.PropTypes.string
-}
+};
 
 export default ResourcePanel;

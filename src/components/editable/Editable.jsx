@@ -1,5 +1,5 @@
-import React from 'react';
-import Actions from '../../actions/index.js';
+import React from "react";
+import Actions from "../../actions/index.js";
 
 class Editable extends React.Component {
 
@@ -18,25 +18,25 @@ class Editable extends React.Component {
           onBlur={ this.updateProp.bind(this, fieldName) }
           defaultValue={ value }>
         </textarea>
-      )
+      );
     }
 
-    if(fieldName === 'title'){
-      return <h1 className={ classes }>{ value }</h1>
+    if(fieldName === "title"){
+      return <h1 className={ classes }>{ value }</h1>;
     }
 
-    if(fieldName === 'summary'){
-      return <p className={ classes }>{ value }</p>
+    if(fieldName === "summary"){
+      return <p className={ classes }>{ value }</p>;
     }
 
-    return <div className={ classes }>{ value }</div>
+    return <div className={ classes }>{ value }</div>;
   }
 }
 
 Editable.propTypes = {
   editing: React.PropTypes.bool,
   value: React.PropTypes.string,
-  fieldName: React.PropTypes.string,
-}
+  fieldName: React.PropTypes.string
+};
 
 export default Editable;

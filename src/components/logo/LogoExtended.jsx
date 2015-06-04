@@ -1,15 +1,15 @@
-import React from 'react';
-import classnames from 'classnames';
-import Actions from '../../actions/index';
+import React from "react";
+import classnames from "classnames";
+import Actions from "../../actions/index";
 
 class LogoExtended extends React.Component {
   constructor(props){
     super(props);
-    this.name = 'logo';
+    this.name = "logo";
   }
 
-  handleClick(selection){
-    let selection = { id: 'all', type: 'waypoints' };
+  handleClick(){
+    let selection = { id: "all", type: "waypoints" };
     Actions.setLevel(selection);
   }
 
@@ -25,7 +25,7 @@ class LogoExtended extends React.Component {
 
   render() {
     let { mode } = this.props;
-    let title = mode === 'learn' ? 'Offcourse_' : '_Offcourse';
+    let title = mode === "learn" ? "Offcourse_" : "_Offcourse";
 
     return (
       <section className={ this.classes() }>
@@ -33,12 +33,12 @@ class LogoExtended extends React.Component {
         <p className="textbar textbar-inverse">Learn</p><br/>
         <p className="textbar textbar-inverse">By Dwelling</p>
       </section>
-    )
+    );
   }
-};
+}
 
 LogoExtended.propTypes = {
   mode: React.PropTypes.string
-}
+};
 
 export default LogoExtended;

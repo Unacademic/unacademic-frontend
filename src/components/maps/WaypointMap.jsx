@@ -1,6 +1,6 @@
-import React from 'react';
-import R from 'ramda';
-import Stop from './Stop.jsx';
+import React from "react";
+import R from "ramda";
+import Stop from "./Stop.jsx";
 
 class WaypointMap extends React.Component {
   constructor(){
@@ -9,8 +9,8 @@ class WaypointMap extends React.Component {
       width: 418,
       padding: 55,
       radius: 20
-    }
-  }
+    };
+  };
 
   render() {
 
@@ -20,18 +20,19 @@ class WaypointMap extends React.Component {
     let baseLine = height / 2;
     let center = width / 2;
 
-    let interval = width / (checkpoints.length + 1)
+    let interval = width / (checkpoints.length + 1);
 
     let drawStops = R.mapIndexed((checkpoint, index) => {
       let x = interval + (index * interval);
       let y = baseLine;
-      let highlight_points = false;
-      let params = { x, y, radius, center, checkpoint, highlight_points }
+      let highlightPoints = false;
+      let params = { x, y, radius, center, checkpoint, highlightPoints };
 
-      return <Stop
-        handleHover={ handleHover.bind(this) }
-        handleComplete={ handleComplete.bind(this) }
-        key={ index } params={ params }/>
+      return (
+        <Stop handleHover={ handleHover.bind(this) }
+          handleComplete={ handleComplete.bind(this) }
+          key={ index } params={ params }/>
+      );
     });
 
     return (
@@ -43,12 +44,12 @@ class WaypointMap extends React.Component {
           y2={ baseLine }/>
         { drawStops(checkpoints) }
       </svg>
-    )
-  }
-};
+    );
+  };
+}
 
 WaypointMap.propTypes = {
   model: React.PropTypes.object
-}
+};
 
 export default WaypointMap;

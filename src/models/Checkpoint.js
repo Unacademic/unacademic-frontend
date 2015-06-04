@@ -1,9 +1,9 @@
-import R from 'ramda';
+import R from "ramda";
 
-import BaseModel from './BaseModel';
-import Resource from './Resource';
+import BaseModel from "./BaseModel";
+import Resource from "./Resource";
 
-import schema from './schemas/checkpoint.yml';
+import schema from "./schemas/checkpoint.yml";
 
 let createResources = R.mapIndexed((resource, index) => new Resource(resource, index + 1));
 

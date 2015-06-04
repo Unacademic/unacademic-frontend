@@ -22,7 +22,7 @@ class Dispatcher {
       Promise.resolve(callback(payload)).then(() => {
         resolves[i](payload);
       }, () => {
-        rejects[i](new Error('Dispatcher callback unsuccessful'));
+        rejects[i](new Error("Dispatcher callback unsuccessful"));
       });
     });
     _promises = [];

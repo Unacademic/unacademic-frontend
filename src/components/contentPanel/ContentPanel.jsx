@@ -1,16 +1,15 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import WaypointPanel from './WaypointPanel.jsx';
-import CheckpointPanel from './CheckpointPanel.jsx';
-import ResourcePanel from './ResourcePanel.jsx';
-import Actions from '../../actions/index.js';
+import WaypointPanel from "./WaypointPanel.jsx";
+import CheckpointPanel from "./CheckpointPanel.jsx";
+import ResourcePanel from "./ResourcePanel.jsx";
 
 class ContentPanel extends React.Component {
 
   constructor(props){
     super(props);
-    this.name = 'container';
+    this.name = "container";
   }
 
   classes(){
@@ -31,22 +30,22 @@ class ContentPanel extends React.Component {
       mode = appState.modes.current;
     } else {
       let type = model.constructor.name.toLowerCase();
-      level = type === 'object' ? 'waypoints' : type;
+      level = type === "object" ? "waypoints" : type;
     }
 
     return (
       <div>
-        { level === 'waypoints' && null }
-        { level === 'waypoint' && <WaypointPanel context={ context } level={ level } mode={ mode } model={ model }/> }
-        { level === 'checkpoint' && <CheckpointPanel context={ context } model={ model }/> }
-        { level === 'resource' && <ResourcePanel context={ context } model={ model }/> }
+        { level === "waypoints" && null }
+        { level === "waypoint" && <WaypointPanel context={ context } level={ level } mode={ mode } model={ model }/> }
+        { level === "checkpoint" && <CheckpointPanel context={ context } model={ model }/> }
+        { level === "resource" && <ResourcePanel context={ context } model={ model }/> }
       </div>
-    )
+    );
   }
-};
+}
 
 ContentPanel.propTypes = {
   model: React.PropTypes.object
-}
+};
 
 export default ContentPanel;

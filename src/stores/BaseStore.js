@@ -1,8 +1,8 @@
-import AppDispatcher from '../dispatcher/AppDispatcher.js'
-import { EventEmitter } from 'events';
-import _ from 'lodash';
+import AppDispatcher from "../dispatcher/AppDispatcher.js";
+import { EventEmitter } from "events";
+import _ from "lodash";
 
-const CHANGE_EVENT = 'CHANGE';
+const CHANGE_EVENT = "CHANGE";
 
 class Store extends EventEmitter {
   constructor(){

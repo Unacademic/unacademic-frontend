@@ -1,14 +1,14 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import ContentPanel from '../contentPanel/ContentPanel.jsx';
-import CardNav from './CardNav.jsx';
+import ContentPanel from "../contentPanel/ContentPanel.jsx";
+import CardNav from "./CardNav.jsx";
 
 class Card extends React.Component {
 
   constructor(props){
     super(props);
-    this.name = 'card';
+    this.name = "card";
   }
 
   classes(){
@@ -27,12 +27,12 @@ class Card extends React.Component {
       <ContentPanel context={ this.name } model={ model } />
       <CardNav model={ model } />
       </section>
-    )
+    );
   }
 }
 
 Card.propTypes = {
   model: React.PropTypes.object.isRequired
-}
+};
 
 export default Card;

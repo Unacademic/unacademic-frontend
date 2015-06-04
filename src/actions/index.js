@@ -1,6 +1,5 @@
-import AppDispatcher from '../dispatcher/AppDispatcher';
-import AppStateConstants from '../constants/AppStateConstants'
-import API from '../utils/API';
+import AppDispatcher from "../dispatcher/AppDispatcher";
+import AppStateConstants from "../constants/AppStateConstants";
 
 let Actions = {
   authenticate(){
@@ -46,7 +45,7 @@ let Actions = {
       mode: mode
     });
   },
-  toggleMode(mode){
+  toggleMode(){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.TOGGLE_MODE
     });

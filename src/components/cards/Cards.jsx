@@ -1,7 +1,7 @@
-import React from 'react';
-import R from 'ramda';
+import React from "react";
+import R from "ramda";
 
-import Card from './Card.jsx';
+import Card from "./Card.jsx";
 
 class Cards extends React.Component {
   render(){
@@ -13,12 +13,12 @@ class Cards extends React.Component {
       <section className="cards">
         { cards }
       </section>
-    )
+    );
   }
 }
 
 Cards.propTypes = {
   collection: React.PropTypes.array
-}
+};
 
 export default Cards;

@@ -1,10 +1,10 @@
-import Dispatcher from './Dispatcher';
+import Dispatcher from "./Dispatcher";
 
 class AppDispatcher extends Dispatcher {
 
   handleViewAction(action) {
     this.dispatch({
-      source: 'VIEW_ACTION',
+      source: "VIEW_ACTION",
       action: action
     });
   }

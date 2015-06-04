@@ -1,4 +1,5 @@
-import Validator from '../services/Validator'
+import Validator from "../services/Validator";
+import _ from "lodash";
 
 class BaseModel {
   constructor(data){

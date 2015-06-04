@@ -1,23 +1,23 @@
-import React from 'react';
-import R from 'ramda';
-import classnames from 'classnames';
+import React from "react";
+import R from "ramda";
+import classnames from "classnames";
 
-import CheckpointMap from '../maps/CheckpointMap.jsx';
-import TodoList from '../todoList/TodoList.jsx';
-import DescriptionSection from './sections/DescriptionSection.jsx'
-import Actions from '../../actions/index';
+import CheckpointMap from "../maps/CheckpointMap.jsx";
+import TodoList from "../todoList/TodoList.jsx";
+import DescriptionSection from "./sections/DescriptionSection.jsx";
+import Actions from "../../actions/index";
 
 
 class CheckpointPanel extends React.Component {
 
   constructor(props){
     super(props);
-    this.name = 'panel';
+    this.name = "panel";
   }
 
   handleComplete(item){
     let id = this.props.model.id;
-    let checkpoint ={ id };
+    let checkpoint = { id };
     let resource = { id: item };
     Actions.toggleComplete({ checkpoint, resource });
   }
@@ -63,7 +63,7 @@ class CheckpointPanel extends React.Component {
           { R.mapIndexed((paragraph, index) => (<li className="editable" key={ index }>{ paragraph }</li>), instructions) }
           </ul>
         </section>
-      )
+      );
     };
 
     return (
@@ -79,21 +79,21 @@ class CheckpointPanel extends React.Component {
             <h1 className="title editable">{ title }</h1>
           </hgroup>
 
-          { context === 'sidebar' && <DescriptionSection description={ introduction }/> }
-          { context === 'sidebar' && instructionsPanel() }
-          { context === 'card' && <TodoList title={ 'Resources' }
+          { context === "sidebar" && <DescriptionSection description={ introduction }/> }
+          { context === "sidebar" && instructionsPanel() }
+          { context === "card" && <TodoList title={ "Resources" }
               handleHover={ this.handleHover.bind(this) }
               handleComplete={ this.handleComplete.bind(this) }
               selectElement={ this.selectResource.bind(this) }
               collection={ resources }/> }
         </section>
       </div>
-    )
-  }
-};
+    );
+  };
+}
 
 CheckpointPanel.propTypes = {
   model: React.PropTypes.object
-}
+};
 
 export default CheckpointPanel;

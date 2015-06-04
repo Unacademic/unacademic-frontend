@@ -1,5 +1,5 @@
-import React from 'react';
-import Actions from '../../actions/index.js';
+import React from "react";
+import Actions from "../../actions/index.js";
 
 class CardNav extends React.Component {
 
@@ -17,13 +17,13 @@ class CardNav extends React.Component {
           Open
         </button>
       </nav>
-    )
+    );
   }
 }
 
 CardNav.propTypes = {
   model: React.PropTypes.object.isRequired
-}
+};
 
 
 export default CardNav;

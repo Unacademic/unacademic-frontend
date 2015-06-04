@@ -1,8 +1,6 @@
-import R from 'ramda';
+import BaseModel from "./BaseModel";
 
-import BaseModel from './BaseModel';
-
-import schema from './schemas/resource.yml';
+import schema from "./schemas/resource.yml";
 
 class Resource extends BaseModel {
 

@@ -1,8 +1,8 @@
-import React from 'react';
-import R from 'ramda';
-import RadarPaths from 'paths-js/radar';
+import React from "react";
+import radarPaths from "paths-js/radar";
 
 class Radar extends React.Component {
+
   getCurve(curve, i) {
     var path = curve.polygon.path.print();
     return (
@@ -13,17 +13,17 @@ class Radar extends React.Component {
   getRing(ring, i) {
     var path = ring.path.print();
     return (
-      <path key={ i  } d={ path } strokeWidth="1" className="ring" stroke="darkgray"/>
+      <path key={ i } d={ path } strokeWidth="1" className="ring" stroke="darkgray"/>
     );
   }
 
   getPoint(point, i) {
-      return <circle key={ i } cx={ point[0] } cy={ point[1] } r={ 12 } className="radar-point"/>
+    return <circle key={ i } cx={ point[0] } cy={ point[1] } r={ 12 } className="radar-point"/>;
   }
 
   render() {
-    let { data, max, r, rings, x, y  } = this.props;
-    let paths = RadarPaths({ data, max, r, rings, center: [x, y]  });
+    let { data, max, r, rings, x, y } = this.props;
+    let paths = radarPaths({ data, max, r, rings, center: [x, y] });
 
     let curve = paths.curves[0];
     let points = curve.polygon.path.points();
@@ -37,16 +37,16 @@ class Radar extends React.Component {
         { points.map(this.getPoint.bind(this)) }
       </g>
     );
-  }
-};
+  };
+}
 
 Radar.defaultProps = {
-  data   : [],
-  max    : 5,
-  r      : 100,
-  rings  : 5,
-  x      : 0,
-  y      : 0
+  data: [],
+  max: 5,
+  r: 100,
+  rings: 5,
+  x: 0,
+  y: 0
 };
 
 export default Radar;

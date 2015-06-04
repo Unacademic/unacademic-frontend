@@ -1,9 +1,8 @@
-import R from 'ramda';
-import { Map, Stack }  from 'immutable';
+import R from "ramda";
 
 class Levels {
 
-  constructor(levels = ['resource', 'checkpoint', 'waypoint', 'waypoints']){
+  constructor(levels = ["resource", "checkpoint", "waypoint", "waypoints"]){
     this.levels = levels;
   }
 
@@ -12,47 +11,47 @@ class Levels {
     let proposal;
 
     switch(type){
-      case 'waypoints':
+      case "waypoints":
         proposal = {
-          waypoints: { id, title } || current.get('waypoints'),
+          waypoints: { id, title } || current.get("waypoints"),
           feedback: false,
           waypoint: false,
           checkpoint: false,
           resource: false
-        }
+        };
         break;
-      case 'feedback':
+      case "feedback":
         proposal = {
-          waypoints: { id, title } || current.get('waypoints'),
-          feedback: { title: 'Feedback' },
+          waypoints: { id, title } || current.get("waypoints"),
+          feedback: { title: "Feedback" },
           waypoint: false,
           checkpoint: false,
           resource: false
-        }
+        };
         break;
-      case 'waypoint':
+      case "waypoint":
         proposal = {
-          waypoints: current.get('waypoints'),
-          waypoint: { id, title } || current.get('waypoint'),
+          waypoints: current.get("waypoints"),
+          waypoint: { id, title } || current.get("waypoint"),
           checkpoint: false,
           resource: false
-        }
+        };
         break;
-      case 'checkpoint':
+      case "checkpoint":
         proposal = {
-          waypoints: current.get('waypoints'),
-          waypoint: waypoint || current.get('waypoint'),
-          checkpoint: { id, title } || current.get('checkpoint'),
+          waypoints: current.get("waypoints"),
+          waypoint: waypoint || current.get("waypoint"),
+          checkpoint: { id, title } || current.get("checkpoint"),
           resource: false
-        }
+        };
         break;
-      case 'resource':
+      case "resource":
         proposal = {
-          waypoints: current.get('waypoints'),
-          waypoint: current.get('waypoint'),
-          checkpoint: checkpoint ||current.get('checkpoint'),
-          resource: { id, title } || current.get('resource')
-        }
+          waypoints: current.get("waypoints"),
+          waypoint: current.get("waypoint"),
+          checkpoint: checkpoint || current.get("checkpoint"),
+          resource: { id, title } || current.get("resource")
+        };
         break;
     }
     proposal.current = this._getCurrent(proposal);
@@ -62,7 +61,7 @@ class Levels {
 
   _getCurrent(levels){
     let levelPairs = R.toPairs(levels);
-    let notFalse = ([key, value]) => value;
+    let notFalse = ([, value]) => value;
     let activeLevels = R.takeWhile(notFalse, levelPairs);
     let currentLevel = R.last(activeLevels)[0];
     return currentLevel;

@@ -1,0 +1,6 @@
+parser: babel-eslint
+plugins:
+- eslint-plugin-react
+rules:
+  strict: 0
+  no-underscore-dangle: 0
