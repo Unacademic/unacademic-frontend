@@ -50,8 +50,8 @@ class WaypointPanel extends React.Component {
   }
 
   render() {
-    let { mode, model, level, context } = this.props;
-    let { id, title, image, curator, description, summary, checkpoints } = model;
+    let { mode, model, context } = this.props;
+    let { title, curator, description, summary, checkpoints } = model;
     let isEditing = mode === "curate";
 
     return (

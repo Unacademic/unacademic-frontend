@@ -14,7 +14,7 @@ class WaypointMap extends React.Component {
 
   render() {
 
-    let { height, width, radius, padding } = this.state;
+    let { height, width, radius } = this.state;
     let { model, handleComplete, handleHover } = this.props;
     let { checkpoints } = model;
     let baseLine = height / 2;

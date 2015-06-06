@@ -1,3 +1,4 @@
+/*eslint dot-notation:0 */
 import R from "ramda";
 
 class Validator {
@@ -28,7 +29,7 @@ class Validator {
     if(R.has("minWordLength", requirements)){
       let min = requirements["minWordLength"];
       let wordLength = instance[prop] && instance[prop].split(" ").length;
-      return wordLength < 2 && `${prop} has too few words`;
+      return wordLength < min && `${prop} has too few words`;
     }
 
     if(R.has("maxWordLength", requirements)){

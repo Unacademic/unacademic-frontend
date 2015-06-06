@@ -52,8 +52,7 @@ class CheckpointPanel extends React.Component {
 
   render() {
     let { model, context } = this.props;
-    let { title, highlight, introduction, instructions, resources, waypoint } = model;
-    let type = model.constructor.name.toLowerCase();
+    let { title, introduction, instructions, resources } = model;
 
     let instructionsPanel = ()=> {
       return (

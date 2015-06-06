@@ -9,7 +9,6 @@ class Logo extends React.Component {
 
   classes(){
     let { mode } = this.props;
-    let classes = ["logo", `logo-is-${ mode }`].join(" ");
     let modeClass = `${this.name}-is-${mode}`;
 
     return classnames({

@@ -24,7 +24,6 @@ class LoginButton extends React.Component{
   }
 
   render() {
-    let { userId } = this.props;
     return (
       <li onClick={ this.handleClick.bind(this) } className={ this.classes() }>
         Feedback

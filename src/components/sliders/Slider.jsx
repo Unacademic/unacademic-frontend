@@ -1,5 +1,6 @@
 import React from "react";
 
+/*eslint camelcase:0 */
 class Slider extends React.Component {
 
   handleChange(event){

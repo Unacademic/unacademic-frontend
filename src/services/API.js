@@ -1,18 +1,18 @@
-import axios from 'axios';
-import R from 'ramda';
-import _ from 'lodash';
-import Waypoint from '../models/Waypoint';
+/*eslint camelcase:0 */
+import axios from "axios";
+import R from "ramda";
+import Waypoint from "../models/Waypoint";
 
-import way from '../waypoints/find_your_way.yml';
+import way from "../waypoints/find_your_way.yml";
 way.id = 1;
 
-import dwell from '../waypoints/learn_to_dwell.yml';
+import dwell from "../waypoints/learn_to_dwell.yml";
 dwell.id = 2;
 
-import reinvent from '../waypoints/prevent_wheel_reinvention.yml';
+import reinvent from "../waypoints/prevent_wheel_reinvention.yml";
 reinvent.id = 3;
 
-import share from '../waypoints/share_your_stuff.yml';
+import share from "../waypoints/share_your_stuff.yml";
 share.id = 4;
 
 class API {
@@ -21,12 +21,12 @@ class API {
     this.baseUrl = baseUrl;
     this.get = this.get.bind(this);
     this.waypoints = this._getAll();
-    this.resourceUrl = '';
-    this.data = '';
+    this.resourceUrl = "";
+    this.data = "";
   }
 
   async get(levels){
-    let levels = this._getLevels(levels);
+    levels = this._getLevels(levels);
     let level = this._filterLevelData(levels);
     return level;
   }
@@ -34,8 +34,8 @@ class API {
   async getResourceData(url){
     if(url !== this.resourceUrl){
       this.resourceUrl = url;
-      let encodedUrl = encodeURIComponent(this.resourceUrl)
-      let apiUrl = 'http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=' + encodedUrl;
+      let encodedUrl = encodeURIComponent(this.resourceUrl);
+      let apiUrl = "http://api.embed.ly/1/extract?key=5406650948f64aeb9102b9ea2cb0955c&url=" + encodedUrl;
       let response = await axios.get(apiUrl);
       this.data = response.data;
     }
@@ -67,12 +67,12 @@ class API {
 
     two.model.complete = two.model.complete ? false : true;
 
-    if(two.type === 'checkpoint') {
+    if(two.type === "checkpoint") {
       R.map(function (res) {
         // this doesn make much sense... only when set to true...
         res.complete = two.model.complete;
       }, two.model.resources);
-    } else if(two.type === 'resource') {
+    } else if(two.type === "resource") {
       let all_completed = true;
       R.map(function (res) {
         all_completed = all_completed && (res.complete ? true : false);
@@ -91,19 +91,19 @@ class API {
   _getLevels(levels){
     let waypoints = this.waypoints;
     let waypointId = levels.waypoint && levels.waypoint.id;
-    let waypoint = R.find(R.propEq('id', waypointId), waypoints);
+    let waypoint = R.find(R.propEq("id", waypointId), waypoints);
     let checkpointId = levels.checkpoint && levels.checkpoint.id;
-    let checkpoint = waypoint && R.find(R.propEq('id', checkpointId), waypoint.checkpoints);
+    let checkpoint = waypoint && R.find(R.propEq("id", checkpointId), waypoint.checkpoints);
     let resourceId = levels.resource && levels.resource.id;
-    let resource = checkpoint && R.find(R.propEq('id', resourceId), checkpoint.resources);
+    let resource = checkpoint && R.find(R.propEq("id", resourceId), checkpoint.resources);
     return { waypoints, waypoint, checkpoint, resource };
   }
 
   _filterLevelData(levels){
-    let levelNames = ['resource', 'checkpoint', 'waypoint', 'waypoints'];
+    let levelNames = ["resource", "checkpoint", "waypoint", "waypoints"];
 
     let levelData = R.map((type) => {
-      return levels[type] && { type, model: levels[type] }
+      return levels[type] && { type, model: levels[type] };
     }, levelNames);
 
     return R.reject(R.isNil, levelData)[0];

@@ -1,3 +1,4 @@
+/*eslint camelcase:0 */
 import React from "react";
 
 class Viewer extends React.Component {
@@ -26,7 +27,7 @@ class Viewer extends React.Component {
   }
 
   render() {
-    let { data, title } = this.props;
+    let { data } = this.props;
     let html_content = this.parse(data);
 
     if(!html_content.embedly){

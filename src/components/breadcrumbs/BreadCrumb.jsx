@@ -26,7 +26,7 @@ class BreadCrumb extends React.Component {
   }
 
   render() {
-    let { level, current } = this.props;
+    let { level } = this.props;
     let [ type, {id, title} ] = level;
     let selection = { type, id, title };
     return (

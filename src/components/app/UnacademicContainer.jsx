@@ -1,8 +1,8 @@
-import React from 'react';
-import AppStore from '../../stores/index'
+import React from "react";
+import AppStore from "../../stores/index";
 
-import Unacademic from './Unacademic.jsx';
-import TourSelector from '../tour/TourSelector.jsx';
+import Unacademic from "./Unacademic.jsx";
+import TourSelector from "../tour/TourSelector.jsx";
 
 class UnacademicContainer extends React.Component{
 
@@ -39,14 +39,14 @@ class UnacademicContainer extends React.Component{
           </div>
           <div className="container">
             <Unacademic viewModel={ viewModel } appState={ appState }/>
-            { appState.levels.current !== 'introduction' && <TourSelector appState={ appState } /> }
+            { appState.levels.current !== "introduction" && <TourSelector appState={ appState } /> }
           </div>
         </div>
-      )
+      );
     }
     return null;
   }
-};
+}
 
 export default UnacademicContainer;
 

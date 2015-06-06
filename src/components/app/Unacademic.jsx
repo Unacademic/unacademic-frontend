@@ -1,21 +1,15 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import Sidebar from '../sidebar/Sidebar.jsx';
-import Main from '../main/Main.jsx';
-import Actions from '../../actions/index';
-import Start from '../start/Start.jsx';
+import Sidebar from "../sidebar/Sidebar.jsx";
+import Main from "../main/Main.jsx";
+import Start from "../start/Start.jsx";
 
 class Unacademic extends React.Component{
 
   constructor(props){
     super(props);
-    this.name = 'app';
-  }
-
-  handleClick(selection){
-    let selection = { id: 'all', type: 'waypoints' };
-    Actions.setLevel(selection);
+    this.name = "app";
   }
 
   classes(){
@@ -32,8 +26,8 @@ class Unacademic extends React.Component{
 
   render() {
     let { appState, viewModel } = this.props;
-    let { levels, modes, user } = appState;
-    let { model, collection, data } = viewModel;
+    let { levels } = appState;
+    let { model } = viewModel;
     let level = levels.current;
 
     return (
@@ -42,17 +36,17 @@ class Unacademic extends React.Component{
           <Sidebar model={ model } appState={ appState }/>
         </section>
         <section className="layout-main">
-          { level === 'introduction' && <Start/> }
-          { level !== 'introduction' && <Main {...this.props}/> }
+          { level === "introduction" && <Start/> }
+          { level !== "introduction" && <Main {...this.props}/> }
         </section>
       </section>
-    )
+    );
   }
-};
+}
 
 Unacademic.propTypes = {
   appState: React.PropTypes.object.isRequired,
   viewModel: React.PropTypes.object
-}
+};
 
 export default Unacademic;

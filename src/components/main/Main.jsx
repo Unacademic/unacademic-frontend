@@ -1,10 +1,9 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
 
-import BreadCrumbs from '../breadcrumbs/BreadCrumbs.jsx';
-import LoginButton from '../authentication/LoginButton.jsx';
-import Cards from '../cards/Cards.jsx';
-import Viewer from '../viewer/Viewer.jsx';
+import BreadCrumbs from "../breadcrumbs/BreadCrumbs.jsx";
+import LoginButton from "../authentication/LoginButton.jsx";
+import Cards from "../cards/Cards.jsx";
+import Viewer from "../viewer/Viewer.jsx";
 
 class Main extends React.Component{
 
@@ -14,9 +13,8 @@ class Main extends React.Component{
 
   render() {
     let { appState, viewModel } = this.props;
-    let { levels, modes, user } = appState;
-    let { model, collection, data } = viewModel;
-    let level = levels.current;
+    let { levels, user } = appState;
+    let { collection, data } = viewModel;
 
     return (
       <div>
@@ -29,13 +27,13 @@ class Main extends React.Component{
           { data && <Viewer data={ data } /> }
         </section>
       </div>
-    )
+    );
   }
-};
+}
 
 Main.propTypes = {
   appState: React.PropTypes.object.isRequired,
   viewModel: React.PropTypes.object
-}
+};
 
 export default Main;

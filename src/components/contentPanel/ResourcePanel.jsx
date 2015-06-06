@@ -1,3 +1,4 @@
+/*eslint camelcase:0 */
 import React from "react";
 import R from "ramda";
 import _ from "lodash";
@@ -17,7 +18,7 @@ class ResourcePanel extends React.Component {
 
   updateCriteria(fieldName, value) {
     let { id } = this.props.model;
-    let resource = { id: 1 };
+    let resource = { id };
     let property = {[fieldName]: value};
     Actions.updateCriteria({ resource, property });
   }
@@ -30,8 +31,7 @@ class ResourcePanel extends React.Component {
 
   render() {
     let { context, model } = this.props;
-    let { title, author, url, notes, criteria, tags, time_to_digest } = model;
-    let type = model.constructor.name.toLowerCase();
+    let { title, notes, criteria, tags, time_to_digest } = model;
     let tagBlocks = R.mapIndexed((tag, index) => {
       let formattedTag = R.map((tagWord) => _.capitalize(tagWord), tag.split(" ")).join(" ");
       return (

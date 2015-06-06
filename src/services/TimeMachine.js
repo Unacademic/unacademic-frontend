@@ -1,4 +1,5 @@
-import { Map, Stack }  from 'immutable';
+/*eslint new-cap:0 */
+import { Map, Stack } from "immutable";
 
 let _History;
 let _Future;
@@ -21,12 +22,12 @@ class TimeMachine {
     let isLatest = _Future.size < 1 ? true : false;
     let isEarliest = _History.size <= 1 ? true : false;
     let historyState = Map({ isEarliest, isLatest });
-    return state.set('history', historyState);
+    return state.set("history", historyState);
   }
 
   initializeHistory(){
-    _History = Stack([this.initialState])
-    _Future =  Stack([]);
+    _History = Stack([this.initialState]);
+    _Future = Stack([]);
   }
 
   update(props){

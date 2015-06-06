@@ -1,9 +1,4 @@
-import { Map, Stack }  from 'immutable';
-import R from 'ramda';
-import axios from 'axios';
-
 let current;
-let oldLevels;
 
 class ViewModel {
 
@@ -12,40 +7,40 @@ class ViewModel {
   }
 
   async get(appState){
-    let user = appState.get('user');
-    let levels = appState.get('levels');
-    let level = levels.get('current');
+    let levels = appState.get("levels");
+    let level = levels.get("current");
 
-    if(level === 'feedback'){
-      let type = 'feedback';
-      let url = 'https://docs.google.com/forms/d/1oqhvHKn4huwlxXEdlDJ9z1udg53tSUCkNB7i6fe_Ll4';
+    let { type, model } = await this.API.get(levels.toJS());
+
+    if(level === "feedback"){
+      type = "feedback";
+      let url = "https://docs.google.com/forms/d/1oqhvHKn4huwlxXEdlDJ9z1udg53tSUCkNB7i6fe_Ll4";
       let data = await this.API.getResourceData(url);
       return { data };
     }
 
-    let { type, model } = await this.API.get(levels.toJS());
 
     switch(type){
-      case 'resource':
+      case "resource":
         let data = await this.API.getResourceData(model.url);
         current = {
           model: model,
           data: data
-        }
+        };
         break;
-      case 'checkpoint':
+      case "checkpoint":
         current = {
           model: model,
-          collection: model.resources,
-        }
+          collection: model.resources
+        };
         break;
-      case 'waypoint':
+      case "waypoint":
         current = {
           model: model,
           collection: model.checkpoints
-        }
+        };
         break;
-      case 'waypoints':
+      case "waypoints":
         current = { collection: model };
         break;
     }
@@ -55,7 +50,7 @@ class ViewModel {
 
   checkDone({waypoint, checkpoint, resource}){
     if(!waypoint){
-      waypoint = { id: current.model.id }
+      waypoint = { id: current.model.id };
     }
     this.API.updateProp({waypoint, checkpoint, resource});
     return true;
@@ -68,22 +63,22 @@ class ViewModel {
   setHighlight({waypoint, checkpoint, resource}, status, context){
 
     if(!resource){
-      if(context === 'card'){
-        current.collection[waypoint.id - 1].checkpoints[checkpoint.id- 1].highlight = status;
+      if(context === "card"){
+        current.collection[waypoint.id - 1].checkpoints[checkpoint.id - 1].highlight = status;
       } else {
-        current.collection[checkpoint.id- 1].highlight = status;
+        current.collection[checkpoint.id - 1].highlight = status;
       }
     } else {
-      if(context === 'card'){
-        current.collection[checkpoint.id - 1].resources[resource.id- 1].highlight = status;
+      if(context === "card"){
+        current.collection[checkpoint.id - 1].resources[resource.id - 1].highlight = status;
       } else {
         current.collection[resource.id - 1].highlight = status;
       }
     }
   }
 
-  update(propData){
-    console.log(propData);
+  update(/* propData */){
+    // console.log(propData);
   }
 }
 

@@ -13,7 +13,7 @@ class CheckpointMap extends React.Component {
   };
 
   render() {
-    let { height, width, radius, padding } = this.state;
+    let { height, width, radius } = this.state;
     let { model, handleComplete, handleHover } = this.props;
     let checkpoint = model;
     let baseLine = height / 2;

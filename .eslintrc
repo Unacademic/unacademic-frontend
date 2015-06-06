@@ -4,3 +4,5 @@ plugins:
 rules:
   strict: 0
   no-underscore-dangle: 0
+globals:
+  document: true

@@ -13,7 +13,7 @@ class ContentPanel extends React.Component {
   }
 
   classes(){
-    let extendedName = `${this.name}-content`;
+    // let extendedName = `${this.name}-content`;
     return classnames({
       [this.name]: true
     });

@@ -1,4 +1,6 @@
 import React from "react";
+
+/*eslint new-cap:0 */
 import { Mixin } from "react-intro-tour";
 
 let tour = {

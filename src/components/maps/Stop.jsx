@@ -12,7 +12,7 @@ class Stop extends React.Component {
   }
 
   handleHover(status, resource){
-    let { handleHover, params } = this.props;
+    let { params } = this.props;
     let { checkpoint, highlightPoints} = params;
     let id = 0;
     if(!highlightPoints){
@@ -37,17 +37,17 @@ class Stop extends React.Component {
   render() {
     let { params, handleComplete } = this.props;
     let { x, y, radius, checkpoint } = params;
-    let { title, resources } = checkpoint;
+    let { resources } = checkpoint;
     let { scale, angle } = this.state;
     if(checkpoint.highlight){
       scale = scale * 1.7;
     }
     let complete = checkpoint.complete ? "stop-is-complete" : "stop-is-incomplete";
-    let numberOfResources = checkpoint.resources.length;
+    let numberOfResources = resources.length;
     let strokeWidth = (radius / 10) * scale;
 
     let shape = this.createShape(x, y, radius, scale, numberOfResources);
-    let resourcePoints = R.zip(checkpoint.resources, shape.path.points());
+    let resourcePoints = R.zip(resources, shape.path.points());
 
     let points = R.mapIndexed(([resource, point], index) => {
       let [cx, cy] = point;
