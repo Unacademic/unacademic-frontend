@@ -1,5 +1,5 @@
 import React from "react";
-import { mixin } from "react-tour-guide";
+import { Mixin } from "react-intro-tour";
 
 let tour = {
   startIndex: 0,
@@ -12,7 +12,7 @@ let tour = {
 };
 
 let Tour = React.createClass({
-  mixins: [mixin(tour)],
+  mixins: [Mixin(tour)],
   getInitialState: function(){
     this.settings.steps = this.props.tour.steps;
   },

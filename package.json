@@ -39,6 +39,7 @@
     "jsx-loader": "^0.12.2",
     "keymirror": "^0.1.1",
     "lodash": "^3.3.0",
+    "marked": "^0.3.3",
     "mocha": "^2.2.1",
     "moment": "^2.9.0",
     "nock": "^1.7.1",
@@ -49,7 +50,7 @@
     "react-contenteditable": "0.0.2",
     "react-hot-loader": "^1.1.5",
     "react-tools": "^0.13.0-rc1",
-    "react-tour-guide": "0.0.7",
+    "react-intro-tour": "0.0.7",
     "react-wysiwyg": "^1.0.4",
     "sass-loader": "0.4.2",
     "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",
@@ -60,9 +61,5 @@
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0",
     "yaml-loader": "^0.1.0"
-  },
-  "dependencies": {
-    "marked": "^0.3.3",
-    "react-tour-guide": "0.0.7"
   }
 }

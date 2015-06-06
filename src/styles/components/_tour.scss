@@ -5,8 +5,7 @@
   -moz-border-radius: 100%;
   border-radius: 100%;
 
-  background-color: black;
-  /* background-color: #E5CF39; */
+  background-color: $darkBaseColor;
   cursor: pointer;
 
   /* Animate */
@@ -118,44 +117,49 @@
 
 .tour-tooltip {
   z-index: 999;
-  width: 500px;
-  background-color: #ffffff;
-  color: #545454;
-  border: 1px solid #3d3d3d;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
-  -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
-  box-shadow: 0 8px 6px -6px rgba(0,0,0,0.4);
-  padding: 15px;
+  width: $baseUnit * 21;
+  background-color: $inverseColor;
+  padding: $baseUnit;
   text-align: center;
+}
+
+.tour-tooltip header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: $twoThirdUnit;
+  text-align: center;
+}
+
+.tour-tooltip header div {
+  margin: 0;
+  padding: rem-calc(5);
+}
+
+.tour-tooltip footer {
+  margin-top: $baseUnit;
 }
 
 .tour-tooltip p {
+  text-align: left;
+  font-size: rem-calc(18);
+  line-height: rem-calc(22);
   display: block;
-  margin: 10px auto;
-  padding: 10px;
 }
 
 .tour-tooltip .tour-btn.close {
+  font-family: NittyBold;
   cursor: pointer;
   display: block;
   width: auto;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #f4f6f4;
-  border: 1px solid #3d3d3d;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  text-align: center;
+  height: $baseUnit * 1.5;
+  background-color: $baseColor;
+  color: $inverseColor;
+  padding: $halfUnit;
 }
 
 .tour-tooltip .tour-btn.close:hover {
   -webkit-transition: border .2s ease-in-out;
   -moz-transition: border .2s ease-in-out;
   transition: border .2s ease-in-out;
-  border-color: #E5CF39;
-  color: #E5CF39;
 }
