@@ -10,13 +10,13 @@ class TourSelector extends React.Component{
   render() {
     switch(this.props.appState.levels.current){
       case "waypoints":
-        return <Tour tour={ tourWaypoints }/>;
+        return <Tour key="1" tour={ tourWaypoints }/>;
       case "waypoint":
-        return <Tour tour={ tourWaypoint }/>;
+        return <Tour key="2" tour={ tourWaypoint }/>;
       case "checkpoint":
-        return <Tour tour={ tourCheckpoint }/>;
+        return <Tour key="3" tour={ tourCheckpoint }/>;
       case "resource":
-        return <Tour tour={ tourResource }/>;
+        return <Tour key="4" tour={ tourResource }/>;
       default:
         return <div></div>;
     }
