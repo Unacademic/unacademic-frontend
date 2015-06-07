@@ -7,6 +7,7 @@ let tour = {
   startIndex: 0,
   scrollToSteps: true,
   steps: {
+    title: "some step",
     text: "empty tour",
     element: ".sidebar",
     position: "left"
