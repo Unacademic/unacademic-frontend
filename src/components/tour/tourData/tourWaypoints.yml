@@ -1,7 +1,7 @@
 startIndex: 0
 scrollToSteps: true
 steps:
-- title: First Step
+- title: The Toolbar
   text: |
     Though empty now, the Sidebar will be very useful to you while exploring
     Offcourse.
@@ -10,7 +10,7 @@ steps:
     Checkpoint, and Resource!
   element: .sidebar
   position: right
-- title: Second Step
+- title: The Waypoints
   text: |
     Next to our Sidebar you see a collection of cards known as Waypoints.
     A Waypoint represents a specific course or topic to explore.

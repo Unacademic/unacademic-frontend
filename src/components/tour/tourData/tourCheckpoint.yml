@@ -1,7 +1,7 @@
 startIndex: 0
 scrollToSteps: true
 steps:
-- title: Last Step
+- title: All Done
   text: |
     Now, the update to our page should seem familiar - Our Sidebar is showing information about the Checkpoint you selected, our breadcrumbs have updated to reflect this navigation, and show you the Resources that comprise this Checkpoint.
   element: .sidebar

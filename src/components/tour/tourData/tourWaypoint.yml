@@ -1,28 +1,28 @@
 startIndex: 0
 scrollToSteps: true
 steps:
-- title: Third Step
+- title: Updated Toolbar
   text: |
     Note how Sidebar has updated. Here you’ll always find additional information about the current level you're on. Right now in our Sidebar, you see information about our Waypoint.
   element: .sidebar
   position: middle
-- title: Fourth Step
+- title: The Breadcrumbs
   text: |
     Also note how the top has updated, too. These breadcrumbs will show you where you currently are, and how to get back home.
   element: .layout-topbar
   position: middle
-- title: Fifth Step
+- title: Data Visualization
   text: |
     This visualization for each Waypoint represents the number of its respective Checkpoints. As you can see, each Checkpoint takes on a particular shape, which are connected by nodes. Each of these nodes represents a Resource.
   element: .panel_header
   position: top
-- title: Sixth Step
+- title: The Checkpoints
   text: |
     Now in the main area, you see a new set of cards.
     These are the Checkpoints that make up our Waypoint. Checkpoints, as the name implies, are used to break down our subject into focused, digestible chunks.
   element: .layout-main
   position: middle
-- title: Seventh Step
+- title: Check the Boxes
   text: |
     As you progress through Checkpoints, you can check them off and get visual feedback as their respective nodes fill with color. Let’s explore the Checkpoint.
   element: .layout-main
