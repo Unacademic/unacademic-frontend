@@ -1,7 +1,7 @@
 import React from "react";
 
 import BreadCrumbs from "offcourse-component-breadcrumbs";
-import LoginButton from "../authentication/LoginButton.jsx";
+import LevelButton from "offcourse-component-level-button";
 import Cards from "../cards/Cards.jsx";
 import Viewer from "../viewer/Viewer.jsx";
 
@@ -29,7 +29,7 @@ class Main extends React.Component{
       <div>
         <section className="layout-topbar">
           <BreadCrumbs setLevel={ this.setLevel.bind(this) } levels={ levels }></BreadCrumbs>
-          <LoginButton userId={ user }/>
+          <LevelButton setLevel={ this.setLevel.bind(this) } type={ "feedback" } title={ "feedback" }/>
         </section>
         <section className="layout-content">
           { collection && <Cards collection={ collection } className="cards" /> }

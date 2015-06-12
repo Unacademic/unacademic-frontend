@@ -2,13 +2,16 @@
   display: block;
 }
 
-.breadcrumb, .login {
+.breadcrumb, .btn.btn-feedback {
   display: inline-block;
   font-family: NittyNormal;
   font-weight: 300;
   font-size: rem-calc(22);
   line-height: rem-calc(30);
+  margin-top: 0;
   margin-bottom: rem-calc(5);
+  width: auto;
+  height: auto;
   padding: 0 $thirdUnit;
   color: $baseColor;
   background-color: $inverseColor;
@@ -21,11 +24,11 @@
 }
 
 
-.login.login-is-active {
+.btn.btn-is-active {
   background-color: $baseColor;
   color: $inverseColor;
 }
-.login:hover {
+.btn.btn-feedback:hover {
   background-color: $baseColor;
   color: $inverseColor;
 }
