@@ -2,7 +2,7 @@
   display: block;
 }
 
-.breadcrumb, .btn.btn-feedback {
+.layout-topbar .btn {
   display: inline-block;
   font-family: NittyNormal;
   font-weight: 300;
@@ -18,9 +18,8 @@
   margin-right: rem-calc(10px);
 }
 
-.breadcrumb.breadcrumb-is-active {
-  background-color: $baseColor;
-  color: $inverseColor;
+.layout-topbar .btn:hover {
+  color: $red;
 }
 
 
@@ -28,7 +27,7 @@
   background-color: $baseColor;
   color: $inverseColor;
 }
-.btn.btn-feedback:hover {
-  background-color: $baseColor;
+
+.btn.btn-is-active:hover{
   color: $inverseColor;
 }

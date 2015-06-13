@@ -8,8 +8,6 @@ import Viewer from "../viewer/Viewer.jsx";
 // Just for temporary testing purposes...
 import Actions from "../../actions/index";
 
-/*eslint no-console:0 */
-/*eslint no-undef:0 */
 class Main extends React.Component{
 
   constructor(props){
@@ -28,8 +26,11 @@ class Main extends React.Component{
     return (
       <div>
         <section className="layout-topbar">
-          <BreadCrumbs setLevel={ this.setLevel.bind(this) } levels={ levels }></BreadCrumbs>
-          <LevelButton setLevel={ this.setLevel.bind(this) } type={ "feedback" } title={ "feedback" }/>
+          <BreadCrumbs setLevel={ this.setLevel.bind(this) }
+            levels={ levels }/>
+          <LevelButton setLevel={ this.setLevel.bind(this) }
+            level={ { title: "Feedback", type: "feedback" } }
+            current={ levels.current === "feedback" }/>
         </section>
         <section className="layout-content">
           { collection && <Cards collection={ collection } className="cards" /> }

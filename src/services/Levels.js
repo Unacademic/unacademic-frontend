@@ -22,7 +22,7 @@ class Levels {
         break;
       case "feedback":
         proposal = {
-          waypoints: { id, title } || current.get("waypoints"),
+          waypoints: { title: "All" },
           feedback: { title: "Feedback" },
           waypoint: false,
           checkpoint: false,

@@ -9,7 +9,7 @@ let API = new APIService(baseUrl);
 
 let levels = Map({
   current: "introduction",
-  waypoints: "all",
+  waypoints: false,
   waypoint: false,
   checkpoint: false,
   resource: false
