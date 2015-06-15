@@ -1,6 +1,6 @@
 import React from "react";
 import UnacademicContainer from "./components/app/UnacademicContainer.jsx";
 import "babel/polyfill";
-import "./styles/app.scss";
+import "offcourse-styles/index.css";
 
 React.render(<UnacademicContainer />, document.body);

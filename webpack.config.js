@@ -30,10 +30,11 @@ var config = {
       { test: /\.(js|jsx)$/, loader: "eslint-loader", exclude: /node_modules/},
       { test: /\.json$/, loader: 'json' },
       { test: /\.yml$/, loader: 'json!yaml' },
-      { test: /\.scss$/, loader: 'style!css!autoprefixer!sass' },
+      { test: /\.css$/, loader: 'style!css' },
       { test: /\.(png|woff)$/, loader: 'url-loader?limit=100000' }
     ]
   },
+  resolveLoader: { fallback: __dirname + "/node_modules"  },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
     new webpack.HotModuleReplacementPlugin(),

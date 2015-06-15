@@ -15,7 +15,6 @@
     "test": "node webpack-mocha.config.js"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^1.2.0",
     "axios": "^0.5.4",
     "babel": "^4.1.1",
     "babel-core": "^4.0.1",
@@ -43,9 +42,10 @@
     "mocha": "^2.2.1",
     "moment": "^2.9.0",
     "nock": "^1.7.1",
-    "node-sass": "^2.1.1",
+    "offcourse-component-bar": "0.0.1",
     "offcourse-component-breadcrumbs": "^0.2.1",
     "offcourse-component-level-button": "0.0.4",
+    "offcourse-styles": "0.0.4",
     "paths-js": "^0.3.4",
     "ramda": "^0.11.0",
     "react": "^0.13.0",
@@ -54,12 +54,11 @@
     "react-intro-tour": "0.0.7",
     "react-tools": "^0.13.0-rc1",
     "react-wysiwyg": "^1.0.4",
-    "sass-loader": "0.4.2",
     "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",
     "sinon-chai": "^2.7.0",
     "style-loader": "^0.8.3",
     "superagent": "^0.21.0",
-    "url-loader": "^0.5.5",
+    "url-loader": "^0.5.6",
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0",
     "yaml-loader": "^0.1.0"
