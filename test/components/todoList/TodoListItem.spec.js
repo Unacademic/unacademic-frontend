@@ -41,11 +41,6 @@ describe("TodoList Item", () => {
     TestUtils.Simulate.mouseOver(element);
     expect(handleHover).to.be.calledWith(checkpoint.id);
   });
-
-  it("highlights the model on hover", ()=> {
-    TestUtils.Simulate.mouseOut(element);
-    expect(handleHover).to.be.calledWith(checkpoint.id);
-  });
 });
 
 function renderToDoListItem(item, handleHover, selectElement, handleClick){
