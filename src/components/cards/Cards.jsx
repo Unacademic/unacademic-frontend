@@ -7,7 +7,7 @@ import WaypointMap from "../maps/WaypointMap.jsx";
 import Card from "offcourse-component-card";
 import CardNav from "./CardNav.jsx";
 
-let schema = ["title"];
+let schema = ["title", {"meta": ["curator"]}, "summary"];
 
 class Cards extends React.Component {
   handleComplete(modelId, item){
@@ -16,9 +16,8 @@ class Cards extends React.Component {
   }
 
   handleHover(modelId, item, status){
-    let { context } = this.props;
+    let context = "card";
     let selection = this._getSelection(modelId, item);
-    console.log(selection);
     Actions.setHighlight(selection, status, context);
   }
 
