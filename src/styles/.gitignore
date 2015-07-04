@@ -1,0 +1,8 @@
+/node_modules
+/build
+/production
+/test/testBundle.js
+.ruby-version
+npm-debug.log
+**/*.swp
+**/.DS_Store

@@ -1,0 +1,6 @@
+{
+  "name": "offcourse-styles",
+  "version": "0.0.5",
+  "description": "css for offcourse.io",
+  "styles": "index.css"
+}

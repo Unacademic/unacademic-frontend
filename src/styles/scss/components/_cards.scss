@@ -14,7 +14,6 @@
   max-width: $baseUnit;
 }
 
-
 .card {
   display: flex;
   flex-direction: column;
@@ -28,22 +27,44 @@
   padding-bottom: $baseUnit;
 }
 
-.card .card_header {
+.card_header {
   height: $imageHeight;
   background-color: $baseColor;
-
 }
 
-.card .card_container {
+.card_content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-
+  justify-content: flex-start;
+  background-color: $inverseColor;
+  padding: $baseUnit $baseUnit 0 $baseUnit;
 }
 
-.card .card_nav {
+.card_section {
+  margin-bottom: $baseUnit;
+
+  h1 {
+    padding: 0;
+    font-size: rem-calc(16);
+    line-height: rem-calc(22);
+    font-family: NittyBold;
+    margin-bottom: $baseUnit / 3;
+  }
+}
+
+.card_section-title, .card_section-meta {
+ margin-bottom: $twoThirdUnit;
+}
+
+.card_section-title .card_field {
+  font-weight: 500;
+  font-size: rem-calc(28);
+  line-height: rem-calc(30);
+}
+
+.card .card_footer {
   padding: 0 $baseUnit;
+
   button {
     margin-top: 0;
   }

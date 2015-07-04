@@ -1,8 +1,13 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  color: $baseColor;
+}
+
 .panel_header {
   height: $imageHeight;
   background-color: $baseColor;
 }
-
 
 .panel_main {
   display: flex;
@@ -10,10 +15,6 @@
   justify-content: flex-start;
   background-color: $inverseColor;
   padding: $baseUnit $baseUnit 0 $baseUnit;
-
-  hgroup {
-    margin-bottom: $twoThirdUnit;
-  }
 
   .editable {
     border: rem-calc(1px) dotted $inverseColor;
@@ -43,7 +44,6 @@
 }
 
 .app-is-checkpoint .card .panel_header {
-  height: $cardWidth;
 
   hgroup .title {
     font-size: rem-calc(20px);
@@ -51,16 +51,10 @@
 }
 
 .app-is-resource .sidebar .panel_header {
-  height: $cardWidth;
 
   hgroup .title {
     font-size: rem-calc(20px);
   }
-}
-
-.app-is-checkpoint .card .title {  
-  font-size: rem-calc(20px);
-  text-align: center;
 }
 
 .app-is-curate .sidebar .editable {
