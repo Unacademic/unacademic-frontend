@@ -1,7 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import Logo from "../logo/Logo.jsx";
-import LogoExtended from "../logo/LogoExtended.jsx";
+import Logo from "offcourse-component-logo";
 import ContentPanel from "../contentPanel/ContentPanel.jsx";
 import Actions from "../../actions/index.js";
 
@@ -28,7 +27,7 @@ class Sidebar extends React.Component {
 
     return (
       <section onDoubleClick={ this.toggleMode.bind(this) } className={ this.classes() }>
-        { (level === "introduction" || level === "waypoints") && <LogoExtended mode={ modes.current }/> }
+        { (level === "introduction" || level === "waypoints") && <Logo extended= { true } mode={ modes.current }/> }
         { (level !== "introduction" && level !== "waypoints") && <Logo mode={ modes.current }/> }
         { model && <ContentPanel context={ this.name } appState={ appState } model={ model }/> }
       </section>

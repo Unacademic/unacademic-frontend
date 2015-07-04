@@ -4,8 +4,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var config = {
   entry: {
     app: [
-      'webpack-dev-server/client?http://0.0.0.0:8080',
-      'webpack/hot/only-dev-server',
       './src/entry.jsx'
     ],
     vendor: [
@@ -13,7 +11,7 @@ var config = {
       'ramda',
       'lodash',
       'immutable',
-      'superagent'
+      'axios'
     ]
   },
   output: {
@@ -26,7 +24,7 @@ var config = {
   devtool: 'eval-source-map',
   module: {
     loaders: [
-      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel?experimental'], exclude: /node_modules/},
+      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel?experimental'], include: /src/},
       { test: /\.(js|jsx)$/, loader: "eslint-loader", exclude: /node_modules/},
       { test: /\.json$/, loader: 'json' },
       { test: /\.yml$/, loader: 'json!yaml' },
@@ -37,7 +35,6 @@ var config = {
   resolveLoader: { fallback: __dirname + "/node_modules"  },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
 };

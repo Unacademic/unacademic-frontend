@@ -24,8 +24,8 @@ class Card extends React.Component {
 
     return (
       <section className={ this.classes() }>
-      <ContentPanel context={ this.name } model={ model } />
-      <CardNav model={ model } />
+        <ContentPanel context={ this.name } model={ model } />
+        <CardNav model={ model } />
       </section>
     );
   }

@@ -47,6 +47,10 @@ class WaypointMap extends React.Component {
     );
   };
 }
+WaypointMap.defaultProps = {
+  handleHover: () => null,
+  handleComplete: () => null
+};
 
 WaypointMap.propTypes = {
   model: React.PropTypes.object

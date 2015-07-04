@@ -3,7 +3,7 @@ import classnames from "classnames";
 
 import WaypointMap from "../maps/WaypointMap.jsx";
 import Editable from "../editable/Editable.jsx";
-import TodoList from "../todoList/TodoList.jsx";
+import TodoList from "offcourse-component-todolist";
 
 import DescriptionSection from "./sections/DescriptionSection.jsx";
 
@@ -80,11 +80,15 @@ class WaypointPanel extends React.Component {
           </section>
 
           { context === "sidebar" && <DescriptionSection description={ description }/> }
-          { context === "card" && <TodoList title={ "Checkpoints" }
-              handleHover={ this.handleHover.bind(this) }
-              handleComplete={ this.handleComplete.bind(this) }
-              selectElement={ this.selectCheckpoint.bind(this) }
-              collection={ checkpoints }/> }
+
+          <section className="panel_section">
+          { context === "card" &&
+              <TodoList title={ "Resources" }
+                handleHover = { this.handleHover.bind(this) }
+                handleCheckboxClick = { this.handleComplete.bind(this) }
+                handleTitleClick = { this.selectCheckpoint.bind(this) }
+                collection={ checkpoints }/> }
+          </section>
         </section>
       </section>
     );

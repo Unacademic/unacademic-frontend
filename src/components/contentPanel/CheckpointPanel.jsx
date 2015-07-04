@@ -3,7 +3,7 @@ import R from "ramda";
 import classnames from "classnames";
 
 import CheckpointMap from "../maps/CheckpointMap.jsx";
-import TodoList from "../todoList/TodoList.jsx";
+import TodoList from "offcourse-component-todolist";
 import DescriptionSection from "./sections/DescriptionSection.jsx";
 import Actions from "../../actions/index";
 
@@ -81,9 +81,9 @@ class CheckpointPanel extends React.Component {
           { context === "sidebar" && <DescriptionSection description={ introduction }/> }
           { context === "sidebar" && instructionsPanel() }
           { context === "card" && <TodoList title={ "Resources" }
-              handleHover={ this.handleHover.bind(this) }
-              handleComplete={ this.handleComplete.bind(this) }
-              selectElement={ this.selectResource.bind(this) }
+              handleHover = { this.handleHover.bind(this) }
+              handleCheckboxClick = { this.handleComplete.bind(this) }
+              handleTitleClick = { this.selectResource.bind(this) }
               collection={ resources }/> }
         </section>
       </div>
