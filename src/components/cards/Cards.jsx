@@ -10,6 +10,7 @@ import CardNav from "./CardNav.jsx";
 let schema = ["title", {"meta": ["curator"]}, "summary"];
 
 class Cards extends React.Component {
+
   handleComplete(modelId, item){
     let selection = this._getSelection(modelId, item);
     Actions.toggleComplete(selection);
@@ -29,15 +30,22 @@ class Cards extends React.Component {
 
   render(){
     let { collection } = this.props;
-    let createCards = R.map((model) => (
-      <Card key={ model.id } schema={ schema } model={ model }>
-        <WaypointMap
-            handleHover={ this.handleHover.bind(this, model.id) }
-            handleComplete={ this.handleComplete.bind(this, model.id) }
-            model={ model }/>
-        <CardNav model={ model } />
-      </Card>
-    ));
+
+
+    let createCards = R.map((model) => {
+
+      let handlers = {
+        handleHover: this.handleHover.bind(this, model.id),
+        handleComplete: this.handleComplete.bind(this, model.id)
+      };
+
+      return (
+        <Card {...handlers} key={ model.id } schema={ schema } model={ model }>
+          <WaypointMap { ...handlers } model={ model }/>
+          <CardNav model={ model } />
+        </Card>
+      );
+    });
     let cards = createCards(collection);
 
     return (
