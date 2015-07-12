@@ -1,10 +1,18 @@
 import React from "react";
 import Actions from "../actions/index";
-import WaypointMap from "../components/maps/WaypointMap.jsx";
 import Card from "offcourse-component-card";
-import CardNav from "../components/cards/CardNav.jsx";
 
 class CardContainer extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.handleComplete = this.handleComplete.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+    this.collectionHandlers = {
+      handleComplete: this.handleComplete,
+      handleHover: this.handleHover
+    };
+  }
 
   handleComplete(item){
     let { id } = this.props.model;
@@ -26,17 +34,11 @@ class CardContainer extends React.Component {
   }
 
   render(){
-    let { model } = this.props;
-    let collectionHandlers = {
-      handleHover: this.handleHover.bind(this),
-      handleComplete: this.handleComplete.bind(this)
-    };
+    const { model } = this.props;
+    const schema = ["map", "title", {"meta": ["curator"]}, "summary", "checkpoints", "navigation"];
 
     return (
-      <Card {...collectionHandlers} model={ model }>
-        <WaypointMap { ...collectionHandlers } model={ model }/>
-        <CardNav model={ model } />
-      </Card>
+      <Card {...this.collectionHandlers} schema={ schema } model={ model }/>
     );
   }
 }

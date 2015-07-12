@@ -46,7 +46,7 @@
     "node-sass": "^3.2.0",
     "offcourse-component-bar": "0.0.1",
     "offcourse-component-breadcrumbs": "0.2.5",
-    "offcourse-component-card": "0.0.5",
+    "offcourse-component-card": "0.0.8",
     "offcourse-component-level-button": "0.0.4",
     "offcourse-component-logo": "^0.1.0",
     "offcourse-component-todolist": "0.0.7",
