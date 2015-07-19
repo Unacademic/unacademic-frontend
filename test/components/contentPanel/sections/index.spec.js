@@ -1,1 +1,0 @@
-import './DescriptionSection.spec.js';

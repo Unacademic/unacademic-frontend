@@ -1,19 +1,15 @@
-import React from "react";
-import Actions from "../../actions/index.js";
+import React, { PropTypes } from "react";
 
 class CardNav extends React.Component {
 
-  setLevel(selection){
-    Actions.setLevel(selection);
-  }
-
   render(){
+    let { model, selectModel } = this.props;
     let { type, title, id } = this.props.model;
     let selection = { type, title, id };
 
     return (
       <nav className="card_nav">
-        <button onClick={ this.setLevel.bind(this, selection)} className="btn btn-inverse browse">
+        <button onClick={ selectModel.bind(this, selection)} className="btn btn-inverse browse">
             Open
         </button>
       </nav>
@@ -21,7 +17,12 @@ class CardNav extends React.Component {
   }
 }
 
+CardNav.defaultProps = {
+  selectModel: () => {}
+};
+
 CardNav.propTypes = {
+  selectModel: PropTypes.func,
   model: React.PropTypes.object.isRequired
 };
 

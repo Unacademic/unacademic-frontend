@@ -14,14 +14,13 @@ class CheckpointMap extends React.Component {
 
   render() {
     let { height, width, radius } = this.state;
-    let { model, handleComplete, handleHover } = this.props;
-    let checkpoint = model;
+    let { collection, handleComplete, handleHover } = this.props;
     let baseLine = height / 2;
     let center = width / 2;
     let x = center;
     let y = baseLine;
     let highlightPoints = true;
-    let params = { x, y, radius, center, checkpoint, highlightPoints };
+    let params = { x, y, radius, center, collection, highlightPoints };
 
     return (
       <svg viewBox={ `0 0 ${width} ${height}` }width={ width } height={ height } className="map">

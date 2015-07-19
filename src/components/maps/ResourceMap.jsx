@@ -1,3 +1,5 @@
+/*eslint no-undef:0 */
+/*eslint no-console:0 */
 import React from "react";
 import Radar from "./Radar.jsx";
 

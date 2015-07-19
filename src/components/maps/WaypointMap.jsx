@@ -15,12 +15,11 @@ class WaypointMap extends React.Component {
   render() {
 
     let { height, width, radius } = this.state;
-    let { model, handleComplete, handleHover } = this.props;
-    let { checkpoints } = model;
+    let { collection, handleComplete, handleHover } = this.props;
     let baseLine = height / 2;
     let center = width / 2;
 
-    let interval = width / (checkpoints.length + 1);
+    let interval = width / (collection.length + 1);
 
     let drawStops = R.mapIndexed((checkpoint, index) => {
       let x = interval + (index * interval);
@@ -42,7 +41,7 @@ class WaypointMap extends React.Component {
           y1={ baseLine }
           x2={ width }
           y2={ baseLine }/>
-        { drawStops(checkpoints) }
+        { drawStops(collection) }
       </svg>
     );
   };
