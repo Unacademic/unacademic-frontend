@@ -19,7 +19,6 @@ class ViewModel {
       return { data };
     }
 
-
     switch(type){
       case "resource":
         let data = await this.API.getResourceData(model.url);
@@ -61,15 +60,14 @@ class ViewModel {
   }
 
   setHighlight({waypoint, checkpoint, resource}, status, context){
-
     if(!resource){
-      if(context === "card"){
+      if(context === "main"){
         current.collection[waypoint.id - 1].checkpoints[checkpoint.id - 1].highlight = status;
       } else {
         current.collection[checkpoint.id - 1].highlight = status;
       }
     } else {
-      if(context === "card"){
+      if(context === "main"){
         current.collection[checkpoint.id - 1].resources[resource.id - 1].highlight = status;
       } else {
         current.collection[resource.id - 1].highlight = status;

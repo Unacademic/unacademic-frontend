@@ -1,0 +1,22 @@
+checkpoint:
+  - type: map
+    fields:
+      resources: collection
+      type: null
+    component: true
+    handlers: collection
+  - type: title
+  - type: description
+    fields: introduction
+  - type: todo
+    fields: resources
+    component: true
+    handlers: collection
+  - type: nav
+    fields:
+      id: null
+      type: null
+      title: null
+    component: true
+    handlers: model
+    context: main

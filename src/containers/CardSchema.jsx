@@ -1,48 +1,31 @@
+/*eslint no-use-before-define:0 */
 /*eslint no-undef:0 */
 /*eslint no-console:0 */
-import { MapContainer, NavContainer, TodoContainer } from "./TempContainers.jsx";
+import R from "ramda";
 
-let getSchema = (type, handlers) => {
+function getSchema(type, ...rest){
+  const schemas = schemas || createSchemas(...rest);
+  return schemas[type] || schemas.fallthrough;
+}
 
-  let components = {
-    map: MapContainer,
-    nav: NavContainer,
-    todo: TodoContainer
-  };
+function createSchemas(schemas, ...rest){
+  return R.reduce((acc, data) => {
+    const type = R.keys(data)[0];
+    const rawSchema = data[type];
+    const schema = createSchema(rawSchema, ...rest);
+    acc[type] = schema;
+    return acc;
+  }, {}, schemas);
+}
 
-  let waypoint = {
-    map: { fields: {checkpoints: "collection", type: ""}, component: components.map, handlers: handlers.collection },
-    title: {},
-    meta: { fields: ["curator"] },
-    summary: {},
-    checkpoints: { fields: "checkpoints", component: components.todo, handlers: handlers.collection },
-    nav: { fields: { id: "", type: "", title: ""}, component: components.nav, handlers: handlers.model}
-  };
+function createSchema(schema, components, allHandlers, cardContext){
+  const allFields = R.map(({type, fields, component, handlers, context }) => {
+    component = component ? components[type] : undefined;
+    handlers = handlers ? allHandlers[handlers] : undefined;
+    return { type, fields, component, handlers, context };
+  }, schema);
 
-  let checkpoint = {
-    map: { fields: {resources: "collection", type: ""}, component: components.map, handlers: handlers.collection },
-    title: {},
-    resources: { fields: "resources", component: components.todo, handlers: handlers.collection },
-    nav: { fields: { id: "", type: "", title: ""}, component: components.nav, handlers: handlers.model}
-  };
-
-  let resource = {
-    map: { fields: {criteria: "collection", type: ""}, component: components.map, handlers: handlers.collection },
-    title: {},
-    nav: { fields: { id: "", type: "", title: ""}, component: components.nav, handlers: handlers.model}
-  };
-
-  let fallthrough = {
-    title: {},
-    nav: { fields: { id: "", type: "", title: ""}, component: components.nav, handlers: handlers.model}
-  };
-
-  switch(type){
-    case "waypoint": return waypoint;
-    case "checkpoint": return checkpoint;
-    case "resource": return resource;
-    default: return fallthrough;
-  }
-};
+  return R.reject(({context}) => context && context !== cardContext, allFields);
+ }
 
 export default getSchema;

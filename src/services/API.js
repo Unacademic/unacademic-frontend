@@ -105,10 +105,8 @@ class API {
     let levelData = R.map((type) => {
       return levels[type] && { type, model: levels[type] };
     }, levelNames);
-
     return R.reject(R.isNil, levelData)[0];
   }
-
 }
 
 export default API;

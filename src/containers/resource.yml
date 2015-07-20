@@ -1,0 +1,16 @@
+resource:
+  - type: map
+    fields:
+      criteria: collection
+      type: null
+    component: true
+    handlers: collection
+  - type: title
+  - type: nav
+    fields:
+      id: null
+      type: null
+      title: null
+    component: true
+    handlers: model
+    context: main

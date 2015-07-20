@@ -1,0 +1,9 @@
+fallthrough:
+  - type: title
+  - type: nav
+    fields:
+      id: null
+      type: null
+      title: null
+    component: true
+    handlers: model

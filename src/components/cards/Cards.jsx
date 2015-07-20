@@ -7,7 +7,7 @@ class Cards extends React.Component {
     let { collection } = this.props;
 
     let cards = R.map((model) => {
-      return <CardContainer key={ model.id } model={ model } />;
+      return <CardContainer context={ "main" } key={ model.id } model={ model } />;
     }, collection);
 
     return (

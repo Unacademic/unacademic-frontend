@@ -42,4 +42,4 @@ class NavContainer extends React.Component {
   }
 }
 
-export { MapContainer, NavContainer, TodoContainer };
+export default { map: MapContainer, nav: NavContainer, todo: TodoContainer };

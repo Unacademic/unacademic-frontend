@@ -1,9 +1,9 @@
-/*eslint no-undef:0 */
-/*eslint no-console:0 */
 import React from "react";
 import Actions from "../actions/index";
 import Card from "offcourse-component-card";
 import getSchema from "./CardSchema.jsx";
+import schemas from "./schemas.js";
+import components from "./TempContainers.jsx";
 
 class CardContainer extends React.Component {
 
@@ -16,14 +16,14 @@ class CardContainer extends React.Component {
   }
 
   handleComplete(item){
-    let { id } = this.props.model;
-    let selection = this._getSelection(id, item);
+    const { id } = this.props.model;
+    const selection = this._getSelection(id, item);
     Actions.toggleComplete(selection);
   }
 
   handleHover(item, status){
-    const { id } = this.props.model;
-    const context = "card";
+    const { model, context } = this.props;
+    const { id } = model;
     const selection = this._getSelection(id, item);
     Actions.setHighlight(selection, status, context);
   }
@@ -44,11 +44,10 @@ class CardContainer extends React.Component {
   }
 
   render(){
-    const { model } = this.props;
-    const type = model.constructor.name.toLowerCase();
-    model.type = type;
+    const { model, context } = this.props;
+    const { type } = model;
     const handlers = this._handlers();
-    const schema = getSchema(type, handlers);
+    const schema = getSchema(type, schemas, components, handlers, context);
 
     return (
       <Card schema={ schema } model={ model }/>

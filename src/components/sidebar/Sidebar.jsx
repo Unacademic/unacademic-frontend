@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
       <section onDoubleClick={ this.toggleMode.bind(this) } className={ this.classes() }>
         { (level === "introduction" || level === "waypoints") && <Logo extended= { true } mode={ modes.current }/> }
         { (level !== "introduction" && level !== "waypoints") && <Logo mode={ modes.current }/> }
-        { model && <CardContainer model={ model }/> }
+        { model && <CardContainer context={ "sidebar" } model={ model }/> }
       </section>
     );
   }

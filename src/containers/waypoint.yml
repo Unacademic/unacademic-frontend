@@ -1,0 +1,26 @@
+waypoint:
+  - type: map
+    fields:
+      checkpoints: collection
+      type: null
+    component: true
+    handlers: collection
+  - type: title
+  - type: meta
+    fields:
+      - curator
+  - type: summary
+  - type: description
+    context: sidebar
+  - type: todo
+    fields: checkpoints
+    component: true
+    handlers: collection
+  - type: nav
+    fields:
+      id: null
+      type: null
+      title: null
+    component: true
+    handlers: model
+    context: main
