@@ -4,7 +4,8 @@ import React from "react";
 import Radar from "./Radar.jsx";
 
 class ResourceMap extends React.Component {
-  constructor(){
+  constructor(props){
+    super(props);
     this.state = {
       height: 418,
       width: 418,

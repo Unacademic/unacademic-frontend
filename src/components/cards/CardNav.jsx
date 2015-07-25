@@ -3,13 +3,12 @@ import React, { PropTypes } from "react";
 class CardNav extends React.Component {
 
   render(){
-    let { model, selectModel } = this.props;
-    let { type, title, id } = this.props.model;
-    let selection = { type, title, id };
+    const { model, selectModel } = this.props;
+    const { type, id } = this.props.model;
 
     return (
       <nav className="card_nav">
-        <button onClick={ selectModel.bind(this, selection)} className="btn btn-inverse browse">
+        <button onClick={ selectModel.bind(this, id, type)} className="btn btn-inverse browse">
             Open
         </button>
       </nav>

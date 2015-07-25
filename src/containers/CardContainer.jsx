@@ -1,4 +1,6 @@
-import React from "react";
+/*eslint no-console:0 */
+/*eslint no-undef:0 */
+import React, { PropTypes } from "react";
 import Actions from "../actions/index";
 import Card from "offcourse-component-card";
 import getSchema from "./CardSchema.jsx";
@@ -7,40 +9,12 @@ import components from "./TempContainers.jsx";
 
 class CardContainer extends React.Component {
 
+  static propTypes = {
+    model: PropTypes.object.isRequired
+  };
+
   constructor(props){
     super(props);
-  }
-
-  selectModel(selection){
-    Actions.setLevel(selection);
-  }
-
-  handleComplete(item){
-    const { id } = this.props.model;
-    const selection = this._getSelection(id, item);
-    Actions.toggleComplete(selection);
-  }
-
-  handleHover(item, status){
-    const { model, context } = this.props;
-    const { id } = model;
-    const selection = this._getSelection(id, item);
-    Actions.setHighlight(selection, status, context);
-  }
-
-  _getSelection(modelId, itemId){
-    const waypoint = { id: modelId };
-    const checkpoint = { id: itemId };
-    return { waypoint, checkpoint };
-  }
-
-  _handlers(){
-    const handleComplete = this.handleComplete.bind(this);
-    const handleHover = this.handleHover.bind(this);
-    const selectModel = this.selectModel.bind(this);
-    const collection = { selectModel, handleComplete, handleHover };
-    const model = { selectModel };
-    return { collection, model };
   }
 
   render(){
@@ -48,15 +22,42 @@ class CardContainer extends React.Component {
     const { type } = model;
     const handlers = this._handlers();
     const schema = getSchema(type, schemas, components, handlers, context);
+    return <Card schema={ schema } model={ model }/>;
+  }
 
-    return (
-      <Card schema={ schema } model={ model }/>
-    );
+  _handlers(){
+    const handleComplete = this.handleComplete.bind(this);
+    const handleHover = this.handleHover.bind(this);
+    const selectModel = this.selectModel.bind(this);
+    const selectChild = this.selectChild.bind(this);
+    const collection = { selectModel: selectChild, handleComplete, handleHover };
+    const model = { selectModel };
+    return { collection, model };
+  }
+
+  handleComplete(id){
+    const { model } = this.props;
+    const selection = { parentId: model.id, id };
+    Actions.toggleComplete(selection);
+  }
+
+  handleHover(id, status){
+    const { model } = this.props;
+    const selection = { parentId: model.id, id };
+    Actions.setHighlight(selection, status);
+  }
+
+  selectChild(id){
+    const { model } = this.props;
+    const { type, id: parentId } = model;
+    Actions.setLevel({ type, id, parentId });
+  }
+
+  selectModel(){
+    const { model } = this.props;
+    const { type, id } = model;
+    Actions.setLevel({ type, id });
   }
 }
-
-CardContainer.propTypes = {
-  model: React.PropTypes.object.isRequired
-};
 
 export default CardContainer;

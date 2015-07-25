@@ -1,3 +1,5 @@
+/*eslint no-console:0 */
+/*eslint no-undef:0 */
 import AppDispatcher from "../dispatcher/AppDispatcher";
 import AppStateConstants from "../constants/AppStateConstants";
 
@@ -7,6 +9,7 @@ let Actions = {
       actionType: AppStateConstants.AUTHENTICATE
     });
   },
+
   toggleComplete(selection){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.TOGGLE_COMPLETE,
@@ -19,20 +22,22 @@ let Actions = {
       selection: selection
     });
   },
-  setHighlight(selection, status, context){
+
+  setHighlight(selection, status){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SET_HIGHLIGHT,
       selection: selection,
-      status: status,
-      context: context
+      status: status
     });
   },
+
   updateModelProp(propData){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.UPDATE_PROP,
       propData: propData
     });
   },
+
   setLevel(selection){
     AppDispatcher.dispatch({
       actionType: AppStateConstants.SET_LEVEL,

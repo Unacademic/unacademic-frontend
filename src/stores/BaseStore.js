@@ -6,6 +6,7 @@ const CHANGE_EVENT = "CHANGE";
 
 class Store extends EventEmitter {
   constructor(){
+    super();
     this.dispatcherIndex = AppDispatcher.register(_.bind(this.handleAction, this));
   }
 

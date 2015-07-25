@@ -6,7 +6,8 @@ import TourSelector from "../tour/TourSelector.jsx";
 
 class UnacademicContainer extends React.Component{
 
-  constructor(){
+  constructor(props){
+    super(props);
     this.state = {};
     this.onChange = this.onChange.bind(this);
   }

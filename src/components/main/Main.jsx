@@ -1,5 +1,4 @@
 import React from "react";
-
 import BreadCrumbs from "offcourse-component-breadcrumbs";
 import LevelButton from "offcourse-component-level-button";
 import Cards from "../cards/Cards.jsx";

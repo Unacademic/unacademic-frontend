@@ -1,14 +1,16 @@
+/*eslint no-console:0 */
+/*eslint no-undef:0 */
 import BaseStore from "./BaseStore";
 import AppStateConstants from "../constants/AppStateConstants";
 
 class AppStore extends BaseStore {
 
   constructor(TimeMachine, ViewModel, Levels, Modes){
+    super();
     this.TimeMachine = TimeMachine;
     this.ViewModel = ViewModel;
     this.Levels = Levels;
     this.Modes = Modes;
-    super();
   }
 
   _get(){
@@ -28,7 +30,8 @@ class AppStore extends BaseStore {
   }
 
   toggleComplete(selection){
-    this.ViewModel.checkDone(selection);
+    const appState = this._get();
+    this.ViewModel.checkDone(selection, appState);
     this.emitChange();
   }
 
@@ -43,8 +46,9 @@ class AppStore extends BaseStore {
     this.update({ modes });
   }
 
-  setHighlight(selection, status, context){
-    this.ViewModel.setHighlight(selection, status, context);
+  setHighlight(selection, status){
+    const appState = this._get();
+    this.ViewModel.setHighlight(selection, status, appState);
     this.emitChange();
   }
 
@@ -106,8 +110,8 @@ class AppStore extends BaseStore {
         this.forwardHistory();
         break;
       case AppStateConstants.SET_HIGHLIGHT:
-        let { selection, status, context } = action;
-        this.setHighlight(selection, status, context);
+        let { selection, status } = action;
+        this.setHighlight(selection, status);
         break;
       case AppStateConstants.UPDATE_MODEL_PROP:
         this.updateModelProp(action.propData);

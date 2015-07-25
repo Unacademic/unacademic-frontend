@@ -10,7 +10,7 @@ class Start extends React.Component{
   }
 
   handleClick(){
-    let selection = { title: "All", type: "waypoints" };
+    let selection = { type: "waypoints" };
     Actions.setLevel(selection);
   }
 

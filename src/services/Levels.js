@@ -6,14 +6,26 @@ class Levels {
     this.levels = levels;
   }
 
+  _lowerLevel(type){
+    switch(type){
+      case "waypoints": return "waypoint";
+      case "waypoint": return "checkpoint";
+      case "checkpoint": return "resource";
+    }
+  }
+
   set({ current, selection }){
-    let { type, id, title, checkpoint, waypoint } = selection;
+    let { type, id, parentId } = selection;
     let proposal;
+
+    if(parentId){
+      type = this._lowerLevel(type);
+    }
 
     switch(type){
       case "waypoints":
         proposal = {
-          waypoints: { id, title } || current.get("waypoints"),
+          waypoints: { id } || current.get("waypoints"),
           feedback: false,
           waypoint: false,
           checkpoint: false,
@@ -22,8 +34,8 @@ class Levels {
         break;
       case "feedback":
         proposal = {
-          waypoints: { title: "All" },
-          feedback: { title: "Feedback" },
+          waypoints: current.get("waypoints"),
+          feedback: { id: 1 },
           waypoint: false,
           checkpoint: false,
           resource: false
@@ -32,30 +44,31 @@ class Levels {
       case "waypoint":
         proposal = {
           waypoints: current.get("waypoints"),
-          waypoint: { id, title } || current.get("waypoint"),
+          waypoint: { id } || current.get("waypoint"),
           checkpoint: false,
           resource: false
         };
         break;
       case "checkpoint":
+        let waypointId = parentId ? { id: parentId } : undefined;
         proposal = {
           waypoints: current.get("waypoints"),
-          waypoint: waypoint || current.get("waypoint"),
-          checkpoint: { id, title } || current.get("checkpoint"),
+          waypoint: waypointId || current.get("waypoint"),
+          checkpoint: { id } || current.get("checkpoint"),
           resource: false
         };
         break;
       case "resource":
+        let checkpointId = parentId ? { id: parentId } : undefined;
         proposal = {
           waypoints: current.get("waypoints"),
           waypoint: current.get("waypoint"),
-          checkpoint: checkpoint || current.get("checkpoint"),
-          resource: { id, title } || current.get("resource")
+          checkpoint: checkpointId || current.get("checkpoint"),
+          resource: { id } || current.get("resource")
         };
         break;
     }
     proposal.current = this._getCurrent(proposal);
-
     return proposal;
   }
 

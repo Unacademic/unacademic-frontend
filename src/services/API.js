@@ -1,4 +1,6 @@
 /*eslint camelcase:0 */
+/*eslint no-console:0 */
+/*eslint no-undef:0 */
 import axios from "axios";
 import R from "ramda";
 import Waypoint from "../models/Waypoint";
@@ -26,7 +28,7 @@ class API {
   }
 
   async get(levels){
-    levels = this._getLevels(levels);
+    levels = this._getLevelsOld(levels);
     let level = this._filterLevelData(levels);
     return level;
   }
@@ -61,7 +63,6 @@ class API {
   }
 
   updateProp(data){
-
     let one = this._getLevels(data);
     let two = this._filterLevelData(one);
 
@@ -69,7 +70,6 @@ class API {
 
     if(two.type === "checkpoint") {
       R.map(function (res) {
-        // this doesn make much sense... only when set to true...
         res.complete = two.model.complete;
       }, two.model.resources);
     } else if(two.type === "resource") {
@@ -82,13 +82,13 @@ class API {
   }
 
   updateCriteria({levels, criterium}){
-    let levelData = this._getLevels(levels);
-    let level = this._filterLevelData(levelData);
-    let propName = Object.keys(criterium.property)[0];
+    const levelData = this._getLevels(levels);
+    const level = this._filterLevelData(levelData);
+    const propName = Object.keys(criterium.property)[0];
     level.model.criteria[propName] = criterium.property[propName];
   }
 
-  _getLevels(levels){
+  _getLevelsOld(levels){
     let waypoints = this.waypoints;
     let waypointId = levels.waypoint && levels.waypoint.id;
     let waypoint = R.find(R.propEq("id", waypointId), waypoints);
@@ -99,10 +99,17 @@ class API {
     return { waypoints, waypoint, checkpoint, resource };
   }
 
-  _filterLevelData(levels){
-    let levelNames = ["resource", "checkpoint", "waypoint", "waypoints"];
+  _getLevels(levels){
+    const waypoints = this.waypoints;
+    const waypoint = R.find(R.propEq("id", levels.waypoint), waypoints);
+    const checkpoint = waypoint && R.find(R.propEq("id", levels.checkpoint), waypoint.checkpoints);
+    const resource = checkpoint && R.find(R.propEq("id", levels.resource), checkpoint.resources);
+    return { waypoints, waypoint, checkpoint, resource };
+  }
 
-    let levelData = R.map((type) => {
+  _filterLevelData(levels){
+    const levelNames = ["resource", "checkpoint", "waypoint", "waypoints"];
+    const levelData = R.map((type) => {
       return levels[type] && { type, model: levels[type] };
     }, levelNames);
     return R.reject(R.isNil, levelData)[0];

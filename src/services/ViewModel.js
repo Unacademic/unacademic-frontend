@@ -1,3 +1,5 @@
+/*eslint no-console:0 */
+/*eslint no-undef:0 */
 let current;
 
 class ViewModel {
@@ -47,31 +49,42 @@ class ViewModel {
     return current;
   }
 
-  checkDone({waypoint, checkpoint, resource}){
-    if(!waypoint){
-      waypoint = { id: current.model.id };
-    }
-    this.API.updateProp({waypoint, checkpoint, resource});
+  checkDone(ids, appState){
+    const oldLevels = appState.get("levels").toJSON();
+    const levelIds = this._setLevelIds(ids, oldLevels);
+    this.API.updateProp(levelIds);
     return true;
+  }
+
+  _setLevelIds(ids, levels){
+    const { parentId, id } = ids;
+    let { current: currentLevel, waypoints, waypoint, checkpoint, resource } = levels;
+    switch(currentLevel){
+      case "waypoints":
+        waypoint = parentId;
+        checkpoint = id;
+       break;
+      case "checkpoint":
+        checkpoint = parentId;
+        resource = id;
+       break;
+    }
+    return { waypoints, waypoint, checkpoint, resource };
   }
 
   updateCriteria(selection){
     this.API.updateCriteria(selection);
   }
 
-  setHighlight({waypoint, checkpoint, resource}, status, context){
-    if(!resource){
-      if(context === "main"){
-        current.collection[waypoint.id - 1].checkpoints[checkpoint.id - 1].highlight = status;
-      } else {
-        current.collection[checkpoint.id - 1].highlight = status;
-      }
-    } else {
-      if(context === "main"){
-        current.collection[checkpoint.id - 1].resources[resource.id - 1].highlight = status;
-      } else {
-        current.collection[resource.id - 1].highlight = status;
-      }
+  setHighlight(ids, status, appState){
+    const { id, parentId } = ids;
+    const currentLevel = appState.get("levels").get("current");
+    switch(currentLevel){
+      case "waypoints":
+        current.collection[parentId - 1].checkpoints[id - 1].highlight = status;
+        break;
+      case "checkpoints":
+        current.collection[parentId - 1].resources[id - 1].highlight = status;
     }
   }
 

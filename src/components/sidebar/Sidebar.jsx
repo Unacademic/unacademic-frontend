@@ -1,3 +1,5 @@
+/*eslint no-console:0 */
+/*eslint no-undef:0 */
 import React from "react";
 import classnames from "classnames";
 import Logo from "offcourse-component-logo";

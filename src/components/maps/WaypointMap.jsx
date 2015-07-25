@@ -4,6 +4,7 @@ import Stop from "./Stop.jsx";
 
 class WaypointMap extends React.Component {
   constructor(){
+    super();
     this.state = {
       height: 245,
       width: 418,
