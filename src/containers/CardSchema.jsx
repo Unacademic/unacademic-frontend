@@ -1,11 +1,12 @@
 /*eslint no-use-before-define:0 */
 /*eslint no-undef:0 */
 /*eslint no-console:0 */
+let cachedSchemas;
 import R from "ramda";
 
 function getSchema(type, ...rest){
-  const schemas = schemas || createSchemas(...rest);
-  return schemas[type] || schemas.fallthrough;
+  cachedSchemas = cachedSchemas || createSchemas(...rest);
+  return cachedSchemas[type] || schemas.fallthrough;
 }
 
 function createSchemas(schemas, ...rest){

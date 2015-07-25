@@ -3,7 +3,7 @@
 import React from "react";
 import WaypointMap from "../components/maps/WaypointMap.jsx";
 import ResourceMap from "../components/maps/ResourceMap.jsx";
-import Nav from "../components/cards/CardNav.jsx";
+import Nav from "offcourse-component-card-nav";
 import Todo from "offcourse-component-todolist";
 
 class MapContainer extends React.Component {
@@ -37,8 +37,10 @@ class TodoContainer extends React.Component {
 
 class NavContainer extends React.Component {
   render(){
-    const { data: model, handlers } = this.props;
-    return <Nav model={ model } {...handlers}/>;
+    const { data, handlers } = this.props;
+    handlers.setLevel = handlers.selectModel;
+    const { type, id } = data;
+    return <Nav type={ type } id={ id } {...handlers}/>;
   }
 }
 

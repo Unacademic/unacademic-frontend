@@ -50,6 +50,7 @@
     "offcourse-component-level-button": "0.0.4",
     "offcourse-component-todolist": "0.2.1",
     "offcourse-component-logo": "^0.1.0",
+    "offcourse-component-card-nav": "^0.0.1",
     "paths-js": "^0.3.4",
     "ramda": "^0.11.0",
     "react": "^0.13.0",
