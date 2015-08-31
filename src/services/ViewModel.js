@@ -31,17 +31,22 @@ class ViewModel {
       case "checkpoint":
         current = {
           model: model,
-          collection: model.resources
+          collection: model.resources,
+          data: ""
         };
         break;
       case "waypoint":
         current = {
           model: model,
-          collection: model.checkpoints
+          collection: model.checkpoints,
+          data: ""
         };
         break;
       case "waypoints":
-        current = { collection: model };
+        current = {
+          collection: model,
+          data: ""
+        };
         break;
     }
 

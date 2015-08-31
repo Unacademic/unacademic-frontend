@@ -3,17 +3,20 @@ import axios from "axios";
 import R from "ramda";
 import Waypoint from "../models/Waypoint";
 
+import tea from "../waypoints/tea.yml";
+tea.id = 1;
+
 import way from "../waypoints/find_your_way.yml";
-way.id = 1;
+way.id = 2;
 
 import dwell from "../waypoints/learn_to_dwell.yml";
-dwell.id = 2;
+dwell.id = 3;
 
 import reinvent from "../waypoints/prevent_wheel_reinvention.yml";
-reinvent.id = 3;
+reinvent.id = 4;
 
 import share from "../waypoints/share_your_stuff.yml";
-share.id = 4;
+share.id = 5;
 
 class API {
 
@@ -43,7 +46,7 @@ class API {
   }
 
   _getAll(){
-    let apiData = [way, dwell, reinvent, share];
+    let apiData = [tea, way, dwell, reinvent, share];
 
     // let url = `${this.baseUrl}/waypoints.json`;
 

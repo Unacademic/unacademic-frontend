@@ -1,0 +1,150 @@
+title: How to Prepare and Drink Green Tea
+curator: Jan Hein Hoogstad
+
+summary: |
+  Specialty coffee bars and shops are everywhere, but there are very few places that take as much care to prepare tea. Take these resources and learn to do it yourself.
+
+description: |
+  Lesson number one in making tea: chuck your tea bag. There are many ways to prepare teas, depending upon the kind of tea you’re making, but the tea bag is not one of them. Learn about different kinds of teas, and the types of preparations specific to each of them, and discover flavors in tea that you didn’t know could be tasty. From shells of crabs to grass; from from citrus to hay. Enter the world of tea. Spoiler alert: preparing good tea is actually a lot like preparing proper coffee.
+
+checkpoints:
+  - title: Don't Use a Tea Bag
+    introduction: |
+      Tea bags were created for our convenience, but almost all tea in tea bags are broken, inferior and left over tea leaves (or even dust). But even if they are filled with good tea, the bag prevents the leaves from fully opening themselves, preventing the flavor to develop. Instead, put your leaves in your tea pot and use a strainer or a decanter instead.
+
+    instructions:
+        - Learn why you shouldn’t use a tea bag.
+    resources:
+      - authors: Tony Gebely
+        title: Why tea-bags and tea-infusers are bad
+        url: http://www.worldoftea.org/why-tea-bags-and-tea-infusers-are-bad/
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 5
+          enjoyment: 5
+        time_to_digest: 3 minutes
+        tags:
+          - tea
+          - tea bag
+        type: text
+      - authors:
+          - Tove Danovich
+        title: Me-Tea-Morphosis Tea Bags Get Second Life As Works Of Art
+        url: http://www.npr.org/sections/thesalt/2015/07/28/426874392/me-tea-morphosis-tea-bags-get-second-life-as-works-of-art
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 4
+          pertinence: 2
+          enjoyment: 5
+        time_to_digest: 5 minutes
+        tags:
+          - tea
+          - tea bag
+          - art
+        type: text
+
+  - title: Chinese Green Tea à la Gong Fu Cha
+    introduction: |
+      Western tea pots are, like tea bags, convenient. They are big enough for your family or group of friends. Traditional Gong Fu Cha pots, however, are tiny. Instead of brewing a lot of tea at once, using the Gong Fu Cha method, you can steep the same tea leaves up to 7-10 times. Each infusion, the tea changes its flavor as it moves through the different stages.
+
+    instructions:
+        - Get the tools and techniques to brew tea with the traditional Gong Fu Cha method
+    resources:
+      - authors: Daniel Lui
+        title: Chinese or Taiwanese Green Tea à la Gong Fu Cha
+        url: http://www.thechineseteashop.com/gong-fu-cha.html
+        criteria:
+          clarity: 5
+          difficulty: 4
+          up_to_date: 5
+          pertinence: 5
+          enjoyment: 3
+        time_to_digest: 30 minutes
+        tags:
+          - tea
+          - brewing
+          - gong fu cha
+        type: text
+
+  - title: Use a Kyusu to Brew Japanese Green Tea
+    introduction: |
+      Japanese green teas (with the exception of Hojicha) are steamed instead of pan fired as Chinese and Taiwanese green teas. The leaves are fragile and prepared with water as cold as 40 ºC and with a maximum of 85 ºC, depending on the tea. Prepare your Japanese teas in a Kyusu, another small tea pot with a strainer and a hollow handle.
+
+    instructions:
+        - Get the tools and techniques to brew Japanese green teas
+    resources:
+      - authors: Chado Tea House
+        title: How to brew loose-leaf Japanese green tea
+        url: https://www.chadoteahouse.com/how-to-brew-teas
+        criteria:
+          clarity: 5
+          difficulty: 2
+          up_to_date: 5
+          pertinence: 5
+          enjoyment: 4
+        time_to_digest: 15 minutes
+        tags:
+          - tea
+          - brewing
+          - Japanese
+          - Kyusu
+        type: text
+
+  - title: Taste and Describe Your Teas
+    introduction: |
+      We have a million words to describe our feelings, but what we taste or smell is often simply ‘good’ or ‘bad’. But your Japanese green tea may bear resemblance to ocean air and roses. Your green tea may have a hint of basil and a lingering taste of wet straw. It’ll take time to distinguish between and recognize flavors, but the more you know, the more you’ll experience.
+
+    instructions:
+        - Learn how to use a vocabulary to describe your flavors and smells
+    resources:
+      - authors: Le Palais des Thes
+        title: Using Your Senses to Taste Tea
+        url: http://us.palaisdesthes.com/en_us/using-senses-taste-tea
+        criteria:
+          clarity: 4
+          difficulty: 3
+          up_to_date: 4
+          pertinence: 4
+          enjoyment: 3
+        time_to_digest: 3 minutes
+        tags:
+          - tea
+          - tasting
+          - senses
+          - flavor
+          - smell
+        type: text
+      - authors: Australian Tea Masters
+        title: The Tea Flavour Wheel
+        url: https://australianteamasters.wordpress.com/2014/04/30/the-tea-flavour-wheel/
+        criteria:
+          clarity: 5
+          difficulty: 1
+          up_to_date: 5
+          pertinence: 5
+          enjoyment: 5
+        time_to_digest: 10 minutes
+        tags:
+          - tea
+          - flavor
+          - flavor wheel
+        type: image
+      - authors: Ina Yang
+        title: Tea Sommeliers Are The Hot New Thing In Food Pairing
+        url: http://www.npr.org/sections/thesalt/2015/07/21/422863066/tea-sommeliers-are-the-hot-new-thing-in-food-pairing
+        criteria:
+          clarity: 4
+          difficulty: 4
+          up_to_date: 5
+          pertinence: 2
+          enjoyment: 5
+        time_to_digest: 15 minutes
+        tags:
+          - tea
+          - tasting
+          - sommelier
+          - food pairing
+        type: text
